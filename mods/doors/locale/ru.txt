@@ -1,0 +1,5 @@
+### init.lua ###
+Wooden Door	=	Деревянная дверь
+Steel Door	=	Стальная дверь
+Glass Door	=	Стеклянная дверь
+Trapdoor	=	Люк

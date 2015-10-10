@@ -21,3 +21,5 @@ dofile(minetest.get_modpath("default").."/nodes.lua")
 dofile(minetest.get_modpath("default").."/player.lua")
 dofile(minetest.get_modpath("default").."/tools.lua")
 dofile(minetest.get_modpath("default").."/trees.lua")
+
+print(minetest.get_current_modname().." LOADED")

@@ -1,5 +1,7 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 minetest.register_tool("lottblocks:lockpick", {
-    description = "Lockpick",
+    description = SL("Lockpick"),
     inventory_image = "lottblocks_steel_lockpick.png", --Made by HeroOfTheWinds
         --https://github.com/HeroOfTheWinds/lockpicks/blob/master/textures/steel_lockpick.png
     max_stack = 1,
@@ -15,7 +17,7 @@ minetest.register_craft({
 })
 
 minetest.register_node("lottblocks:hobbit_chest", {
-        description = "Hobbit Chest",
+        description = SL("Hobbit Chest"),
         tiles = {"lottblocks_hobbit_chest_top.png", "lottblocks_hobbit_chest_top.png", "lottblocks_hobbit_chest_side.png",
                 "lottblocks_hobbit_chest_side.png", "lottblocks_hobbit_chest_side.png", "lottblocks_hobbit_chest_front.png"},
         paramtype2 = "facedir",
@@ -25,7 +27,7 @@ minetest.register_node("lottblocks:hobbit_chest", {
         sounds = default.node_sound_wood_defaults(),
         on_construct = function(pos, node, active_object_count, active_object_count_wider)
                 local meta = minetest.get_meta(pos)
-                meta:set_string("infotext", "Hobbit Chest")
+                meta:set_string("infotext", SL("Hobbit Chest"))
                 local inv = meta:get_inventory()
                 inv:set_size("main", 8*4)
         end,
@@ -39,7 +41,7 @@ minetest.register_node("lottblocks:hobbit_chest", {
             elseif item == "lottblocks:lockpick" then
                 if math.random(1, 4) ~= 3 then
                     itemstack:add_wear(65535/20)
-                    minetest.chat_send_player(player, "Lockpick failed")
+                    minetest.chat_send_player(player, SL("Lockpick failed"))
                 else
                     itemstack:add_wear(65535/18)
                     minetest.show_formspec(
@@ -47,7 +49,7 @@ minetest.register_node("lottblocks:hobbit_chest", {
     				)
                 end
 			else
-				minetest.chat_send_player(player, "Only Hobbits can open this kind of chest!")
+				minetest.chat_send_player(player, SL("Only Hobbits can open this kind of chest!"))
 			end
 		end,
     	can_dig = function(pos,player)
@@ -57,13 +59,13 @@ minetest.register_node("lottblocks:hobbit_chest", {
     	end,
 		on_punch = function(pos,player)
     	    local meta = minetest.get_meta(pos)
-            meta:set_string("infotext", "Hobbit Chest")
+            meta:set_string("infotext", SL("Hobbit Chest"))
 			meta:set_string("formspec", "")
         end,
 })
 
 minetest.register_node("lottblocks:gondor_chest", {
-        description = "Gondorian Chest",
+        description = SL("Gondorian Chest"),
         tiles = {"lottblocks_gondor_chest_top.png", "lottblocks_gondor_chest_bottom.png", "lottblocks_gondor_chest_side.png",
                 "lottblocks_gondor_chest_side.png", "lottblocks_gondor_chest_side.png", "lottblocks_gondor_chest_front.png"},
         paramtype2 = "facedir",
@@ -73,7 +75,7 @@ minetest.register_node("lottblocks:gondor_chest", {
         sounds = default.node_sound_wood_defaults(),
         on_construct = function(pos, node, active_object_count, active_object_count_wider)
                 local meta = minetest.get_meta(pos)
-                meta:set_string("infotext", "Gondorian Chest")
+                meta:set_string("infotext", SL("Gondorian Chest"))
                 local inv = meta:get_inventory()
                 inv:set_size("main", 8*4)
         end,
@@ -89,7 +91,7 @@ minetest.register_node("lottblocks:gondor_chest", {
             elseif item == "lottblocks:lockpick" then
                 if math.random(1, 4) ~= 3 then
                     itemstack:add_wear(65535/20)
-                    minetest.chat_send_player(player, "Lockpick failed")
+                    minetest.chat_send_player(player, SL("Lockpick failed"))
                 else
                     itemstack:add_wear(65535/18)
                     minetest.show_formspec(
@@ -97,7 +99,7 @@ minetest.register_node("lottblocks:gondor_chest", {
         			)
                 end
 			else
-				minetest.chat_send_player(player, "Only Humans can open this kind of chest!")
+				minetest.chat_send_player(player, SL("Only Humans can open this kind of chest!"))
 			end
 		end,
     	can_dig = function(pos,player)
@@ -107,13 +109,13 @@ minetest.register_node("lottblocks:gondor_chest", {
     	end,
 		on_punch = function(pos,player)
     	    local meta = minetest.get_meta(pos)
-            meta:set_string("infotext", "Gondorian Chest")
+            meta:set_string("infotext", SL("Gondorian Chest"))
 			meta:set_string("formspec", "")
         end,
 })
 
 minetest.register_node("lottblocks:rohan_chest", {
-        description = "Rohirrim Chest",
+        description = SL("Rohirrim Chest"),
         tiles = {"lottblocks_rohan_chest_top.png", "lottblocks_rohan_chest_bottom.png", "lottblocks_rohan_chest_side.png",
                 "lottblocks_rohan_chest_side.png", "lottblocks_rohan_chest_side.png", "lottblocks_rohan_chest_front.png"},
         paramtype2 = "facedir",
@@ -123,7 +125,7 @@ minetest.register_node("lottblocks:rohan_chest", {
         sounds = default.node_sound_wood_defaults(),
         on_construct = function(pos, node, active_object_count, active_object_count_wider)
                 local meta = minetest.get_meta(pos)
-                meta:set_string("infotext", "Rohirrim Chest")
+                meta:set_string("infotext", SL("Rohirrim Chest"))
                 local inv = meta:get_inventory()
                 inv:set_size("main", 8*4)
         end,
@@ -139,7 +141,7 @@ minetest.register_node("lottblocks:rohan_chest", {
             elseif item == "lottblocks:lockpick" then
                 if math.random(1, 4) ~= 3 then
                     itemstack:add_wear(65535/20)
-                    minetest.chat_send_player(player, "Lockpick failed")
+                    minetest.chat_send_player(player, SL("Lockpick failed"))
                 else
                     itemstack:add_wear(65535/18)
                     minetest.show_formspec(
@@ -147,7 +149,7 @@ minetest.register_node("lottblocks:rohan_chest", {
         			)
                 end
 			else
-				minetest.chat_send_player(player, "Only Humans can open this kind of chest!")
+				minetest.chat_send_player(player, SL("Only Humans can open this kind of chest!"))
 			end
 		end,
     	can_dig = function(pos,player)
@@ -157,13 +159,13 @@ minetest.register_node("lottblocks:rohan_chest", {
     	end,
 		on_punch = function(pos,player)
     	    local meta = minetest.get_meta(pos)
-            meta:set_string("infotext", "Rohirrim Chest")
+            meta:set_string("infotext", SL("Rohirrim Chest"))
 			meta:set_string("formspec", "")
         end,
 })
 
 minetest.register_node("lottblocks:elfloth_chest", {
-        description = "Elven (Lorien) Chest",
+        description = SL("Elven (Lorien) Chest"),
         tiles = {"lottblocks_elf_chest_top.png", "lottblocks_elf_chest_bottom.png", "lottblocks_elf_chest_side.png",
                 "lottblocks_elf_chest_side.png", "lottblocks_elf_chest_side.png", "lottblocks_elf_chest_front.png"},
         paramtype2 = "facedir",
@@ -173,7 +175,7 @@ minetest.register_node("lottblocks:elfloth_chest", {
         sounds = default.node_sound_wood_defaults(),
         on_construct = function(pos, node, active_object_count, active_object_count_wider)
                 local meta = minetest.get_meta(pos)
-                meta:set_string("infotext", "Elven (Lorien) Chest")
+                meta:set_string("infotext", SL("Elven (Lorien) Chest"))
                 local inv = meta:get_inventory()
                 inv:set_size("main", 8*4)
         end,
@@ -189,7 +191,7 @@ minetest.register_node("lottblocks:elfloth_chest", {
             elseif item == "lottblocks:lockpick" then
                 if math.random(1, 4) ~= 3 then
                     itemstack:add_wear(65535/20)
-                    minetest.chat_send_player(player, "Lockpick failed")
+                    minetest.chat_send_player(player, SL("Lockpick failed"))
                 else
                     itemstack:add_wear(65535/18)
                     minetest.show_formspec(
@@ -197,7 +199,7 @@ minetest.register_node("lottblocks:elfloth_chest", {
                     )
                 end
 			else
-				minetest.chat_send_player(player, "Only Elves can open this kind of chest!")
+				minetest.chat_send_player(player, SL("Only Elves can open this kind of chest!"))
 			end
 		end,
     	can_dig = function(pos,player)
@@ -207,13 +209,13 @@ minetest.register_node("lottblocks:elfloth_chest", {
     	end,
 		on_punch = function(pos,player)
     	    local meta = minetest.get_meta(pos)
-            meta:set_string("infotext", "Elven (Lorien) Chest")
+            meta:set_string("infotext", SL("Elven (Lorien) Chest"))
 			meta:set_string("formspec", "")
         end,
 })
 
 minetest.register_node("lottblocks:elfmirk_chest", {
-        description = "Elven (Mirkwood) Chest",
+        description = SL("Elven (Mirkwood) Chest"),
         tiles = {"lottblocks_elf_chest_top.png", "lottblocks_elf_chest_bottom.png", "lottblocks_elf_chest_side.png",
                 "lottblocks_elf_chest_side.png", "lottblocks_elf_chest_side.png", "lottblocks_elf_chest_front.png"},
         paramtype2 = "facedir",
@@ -223,7 +225,7 @@ minetest.register_node("lottblocks:elfmirk_chest", {
         sounds = default.node_sound_wood_defaults(),
         on_construct = function(pos, node, active_object_count, active_object_count_wider)
                 local meta = minetest.get_meta(pos)
-                meta:set_string("infotext", "Elven (Mirkwood) Chest")
+                meta:set_string("infotext", SL("Elven (Mirkwood) Chest"))
                 local inv = meta:get_inventory()
                 inv:set_size("main", 8*4)
         end,
@@ -239,7 +241,7 @@ minetest.register_node("lottblocks:elfmirk_chest", {
             elseif item == "lottblocks:lockpick" then
                 if math.random(1, 4) ~= 3 then
                     itemstack:add_wear(65535/20)
-                    minetest.chat_send_player(player, "Lockpick failed")
+                    minetest.chat_send_player(player, SL("Lockpick failed"))
                 else
                     itemstack:add_wear(65535/18)
                     minetest.show_formspec(
@@ -247,7 +249,7 @@ minetest.register_node("lottblocks:elfmirk_chest", {
                     )
                 end
 			else
-				minetest.chat_send_player(player, "Only Elves can open this kind of chest!")
+				minetest.chat_send_player(player, SL("Only Elves can open this kind of chest!"))
 			end
 		end,
     	can_dig = function(pos,player)
@@ -257,13 +259,13 @@ minetest.register_node("lottblocks:elfmirk_chest", {
     	end,
 		on_punch = function(pos,player)
     	    local meta = minetest.get_meta(pos)
-            meta:set_string("infotext", "Elven (Mirkwood) Chest")
+            meta:set_string("infotext", SL("Elven (Mirkwood) Chest"))
 			meta:set_string("formspec", "")
         end,
 })
 
 minetest.register_node("lottblocks:mordor_chest", {
-        description = "Mordor Chest",
+        description = SL("Mordor Chest"),
         tiles = {"lottblocks_mordor_chest_top.png", "lottblocks_mordor_chest_top.png", "lottblocks_mordor_chest_side.png",
                 "lottblocks_mordor_chest_side.png", "lottblocks_mordor_chest_side.png", "lottblocks_mordor_chest_front.png"},
         paramtype2 = "facedir",
@@ -273,7 +275,7 @@ minetest.register_node("lottblocks:mordor_chest", {
         sounds = default.node_sound_wood_defaults(),
         on_construct = function(pos, node, active_object_count, active_object_count_wider)
                 local meta = minetest.get_meta(pos)
-                meta:set_string("infotext", "Mordor Chest")
+                meta:set_string("infotext", SL("Mordor Chest"))
                 local inv = meta:get_inventory()
                 inv:set_size("main", 8*4)
         end,
@@ -289,7 +291,7 @@ minetest.register_node("lottblocks:mordor_chest", {
             elseif item == "lottblocks:lockpick" then
                 if math.random(1, 4) ~= 3 then
                     itemstack:add_wear(65535/20)
-                    minetest.chat_send_player(player, "Lockpick failed")
+                    minetest.chat_send_player(player, SL("Lockpick failed"))
                 else
                     itemstack:add_wear(65535/18)
                     minetest.show_formspec(
@@ -297,7 +299,7 @@ minetest.register_node("lottblocks:mordor_chest", {
         			)
                 end
 			else
-				minetest.chat_send_player(player, "Only Orcs can open this kind of chest!")
+				minetest.chat_send_player(player, SL("Only Orcs can open this kind of chest!"))
 			end
 		end,
     	can_dig = function(pos,player)
@@ -307,13 +309,13 @@ minetest.register_node("lottblocks:mordor_chest", {
     	end,
 		on_punch = function(pos,player)
     	    local meta = minetest.get_meta(pos)
-            meta:set_string("infotext", "Mordor Chest")
+            meta:set_string("infotext", SL("Mordor Chest"))
 			meta:set_string("formspec", "")
         end,
 })
 
 minetest.register_node("lottblocks:angmar_chest", {
-        description = "Angmar Chest",
+        description = SL("Angmar Chest"),
         tiles = {"lottblocks_angmar_chest_top.png", "lottblocks_angmar_chest_top.png", "lottblocks_angmar_chest_side.png",
                 "lottblocks_angmar_chest_side.png", "lottblocks_angmar_chest_side.png", "lottblocks_angmar_chest_front.png"},
         paramtype2 = "facedir",
@@ -323,7 +325,7 @@ minetest.register_node("lottblocks:angmar_chest", {
         sounds = default.node_sound_wood_defaults(),
         on_construct = function(pos, node, active_object_count, active_object_count_wider)
                 local meta = minetest.get_meta(pos)
-                meta:set_string("infotext", "Angmar Chest")
+                meta:set_string("infotext", SL("Angmar Chest"))
                 local inv = meta:get_inventory()
                 inv:set_size("main", 8*4)
         end,
@@ -339,7 +341,7 @@ minetest.register_node("lottblocks:angmar_chest", {
             elseif item == "lottblocks:lockpick" then
                 if math.random(1, 4) ~= 3 then
                     itemstack:add_wear(65535/20)
-                    minetest.chat_send_player(player, "Lockpick failed")
+                    minetest.chat_send_player(player, SL("Lockpick failed"))
                 else
                     itemstack:add_wear(65535/18)
                     minetest.show_formspec(
@@ -347,7 +349,7 @@ minetest.register_node("lottblocks:angmar_chest", {
         			)
                 end
 			else
-				minetest.chat_send_player(player, "Only Orcs can open this kind of chest!")
+				minetest.chat_send_player(player, SL("Only Orcs can open this kind of chest!"))
 			end
 		end,
     	can_dig = function(pos,player)
@@ -358,7 +360,7 @@ minetest.register_node("lottblocks:angmar_chest", {
     	--backwards compatibility: punch to set formspec
     	on_punch = function(pos,player)
     	    local meta = minetest.get_meta(pos)
-            meta:set_string("infotext", "Angmar Chest")
+            meta:set_string("infotext", SL("Angmar Chest"))
 			meta:set_string("formspec", "")
         end,
 })

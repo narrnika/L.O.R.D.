@@ -1,9 +1,11 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 dofile(minetest.get_modpath("lottother").."/rings.lua")
 dofile(minetest.get_modpath("lottother").."/ms.lua")
 dofile(minetest.get_modpath("lottother").."/flags.lua")
 
 minetest.register_node("lottother:blue_torch", {
-	description = "Blue Torch",
+	description = SL("Blue Torch"),
 	drawtype = "torchlike",
 	tiles = {
 		{name="lottother_blue_torch_floor_animated.png", animation={type="vertical_frames", aspect_w=16, aspect_h=16, length=3.0}},
@@ -29,7 +31,7 @@ minetest.register_node("lottother:blue_torch", {
 	sounds = default.node_sound_defaults(),
 })
 minetest.register_node("lottother:orc_torch", {
-	description = "Orc Torch",
+	description = SL("Orc Torch"),
 	drawtype = "torchlike",
 	tiles = {
 		{name="lottother_orc_torch_floor_animated.png", animation={type="vertical_frames", aspect_w=16, aspect_h=16, length=3.0}},
@@ -56,7 +58,7 @@ minetest.register_node("lottother:orc_torch", {
 })
 
 minetest.register_node("lottother:blue_flame", {
-	description = "Blue Flame",
+	description = SL("Blue Flame"),
 	drawtype = "firelike",
 	tiles = {{
 		name="lottother_blue_flame_animated.png",
@@ -243,7 +245,7 @@ minetest.register_craft({
 })
 
 minetest.register_node("lottother:dirt", {
-	description = "Dirt Substitute",
+	description = SL("Dirt Substitute"),
 	tiles = {"default_dirt.png"},
 	is_ground_content = true,
      drop = 'default:dirt',
@@ -252,7 +254,7 @@ minetest.register_node("lottother:dirt", {
 })
 
 minetest.register_node("lottother:snow", {
-	description = "Snow Substitute",
+	description = SL("Snow Substitute"),
 	tiles = {"default_snow.png"},
 	is_ground_content = true,
      drop = 'default:snowblock',
@@ -265,7 +267,7 @@ minetest.register_node("lottother:snow", {
 })
 
 minetest.register_node("lottother:mordor_stone", {
-	description = "Mordor Stone Substitute",
+	description = SL("Mordor Stone Substitute"),
 	tiles = {"lottmapgen_mordor_stone.png"},
 	is_ground_content = true,
      drop = 'lottmapgen:mordor_stone',
@@ -275,7 +277,7 @@ minetest.register_node("lottother:mordor_stone", {
 
 
 minetest.register_node("lottother:air", {
-	description = "Air Substitute",
+	description = SL("Air Substitute"),
 	drawtype = "glasslike",
 	tiles = {"lottother_air.png"},
 	paramtype = "light",
@@ -422,3 +424,5 @@ minetest.register_abm({
 		minetest.env:remove_node(pos)
 	end,
 })
+
+print(minetest.get_current_modname().." LOADED")

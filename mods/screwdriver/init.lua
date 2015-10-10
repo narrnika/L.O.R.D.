@@ -1,3 +1,5 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 local function nextrange(x, max)
 	x = x + 1
 	if x > max then
@@ -55,7 +57,7 @@ end
 
 -- Screwdriver
 minetest.register_tool("screwdriver:screwdriver", {
-	description = "Screwdriver (left-click rotates face, right-click rotates axis)",
+	description = SL("Screwdriver (left-click rotates face, right-click rotates axis)"),
 	inventory_image = "screwdriver.png",
 	on_use = function(itemstack, user, pointed_thing)
 		screwdriver_handler(itemstack, user, pointed_thing, 1)
@@ -82,3 +84,5 @@ minetest.register_alias("screwdriver:screwdriver1", "screwdriver:screwdriver")
 minetest.register_alias("screwdriver:screwdriver2", "screwdriver:screwdriver")
 minetest.register_alias("screwdriver:screwdriver3", "screwdriver:screwdriver")
 minetest.register_alias("screwdriver:screwdriver4", "screwdriver:screwdriver")
+
+print(minetest.get_current_modname().." LOADED")

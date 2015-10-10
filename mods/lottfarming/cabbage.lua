@@ -1,5 +1,7 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 minetest.register_craftitem("lottfarming:cabbage_seed", {
-	description = "Cabbage Seed",
+	description = SL("Cabbage Seed"),
 	inventory_image = "lottfarming_cabbage_seed.png",
 	on_place = function(itemstack, placer, pointed_thing)
 		return place_seed(itemstack, placer, pointed_thing, "lottfarming:cabbage_1")
@@ -51,7 +53,7 @@ minetest.register_node("lottfarming:cabbage_2", {
 })
 
 minetest.register_node("lottfarming:cabbage_3", {
-	description = "Cabbage",
+	description = SL("Cabbage"),
 	paramtype2 = "facedir",
 	tiles = {"lottfarming_cabbage_top.png", "lottfarming_cabbage_top.png", "lottfarming_cabbage_side.png", "lottfarming_cabbage_side.png", "lottfarming_cabbage_side.png", "lottfarming_cabbage_side.png"},
 		drop = {
@@ -70,7 +72,7 @@ minetest.register_node("lottfarming:cabbage_3", {
 })
 
 minetest.register_node("lottfarming:cabbage", {
-	description = "Cabbage",
+	description = SL("Cabbage"),
 	paramtype2 = "facedir",
 	tiles = {"lottfarming_cabbage_top.png", "lottfarming_cabbage_top.png", "lottfarming_cabbage_side.png", "lottfarming_cabbage_side.png", "lottfarming_cabbage_side.png", "lottfarming_cabbage_side.png"},
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=2, plant=1, salad=1},
@@ -89,7 +91,7 @@ minetest.register_craft({
 })
 
 minetest.register_craftitem("lottfarming:salad", {
-	description = "Salad",
+	description = SL("Salad"),
 	inventory_image = "lottfarming_salad.png",
 	on_use = minetest.item_eat(10),
 })

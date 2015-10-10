@@ -1,6 +1,8 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 -- Base Ingredients
 minetest.register_node("lottpotion:glass_bottle_mese", {
-	description = "Glass Bottle (Mese Water)",
+	description = SL("Glass Bottle (Mese Water)"),
 	drawtype = "plantlike",
 	tiles = {"vessels_glass_bottle.png^lottpotion_water_mese.png"},
 	inventory_image = "vessels_glass_bottle_inv.png^lottpotion_water_mese.png",
@@ -16,7 +18,7 @@ minetest.register_node("lottpotion:glass_bottle_mese", {
 })
 
 minetest.register_node("lottpotion:glass_bottle_geodes", {
-	description = "Glass Bottle (Geodes Crystal Water)",
+	description = SL("Glass Bottle (Geodes Crystal Water)"),
 	drawtype = "plantlike",
 	tiles = {"vessels_glass_bottle.png^lottpotion_water_geodes.png"},
 	inventory_image = "vessels_glass_bottle_inv.png^lottpotion_water_geodes.png",
@@ -32,7 +34,7 @@ minetest.register_node("lottpotion:glass_bottle_geodes", {
 })
 
 minetest.register_node("lottpotion:glass_bottle_seregon", {
-	description = "Glass Bottle (Seregon Water)",
+	description = SL("Glass Bottle (Seregon Water)"),
 	drawtype = "plantlike",
 	tiles = {"vessels_glass_bottle.png^lottpotion_water_seregon.png"},
 	inventory_image = "vessels_glass_bottle_inv.png^lottpotion_water_seregon.png",
@@ -186,20 +188,22 @@ local machine_name = "Potion Brewer"
 
 local formspec =
 	"size[8,9]"..
-	"label[0,0;"..machine_name.."]"..
+	"label[0,0;"..SL(machine_name).."]"..
 	"image[4,2;1,1;lottpotion_bubble_off.png]"..
-     "image[3,2;1,1;lottpotion_arrow.png]"..
-     "image[5,2;1,1;lottpotion_arrow.png]"..
-     "label[3.2,3.2;Fuel:]"..
+	"image[3,2;1,1;lottpotion_arrow.png]"..
+	"image[5,2;1,1;lottpotion_arrow.png]"..
+	"label[2.9,3.2;"..SL("Fuel:").."]"..
 	"list[current_name;fuel;4,3;1,1;]"..
-     "label[1,1.5;Ingredients:]"..
+	"label[1,1.5;"..SL("Ingredients:").."]"..
 	"list[current_name;src;1,2;2,1;]"..
-     "label[6,1.5;Result:]"..
+	"label[6,1.5;"..SL("Result:").."]"..
 	"list[current_name;dst;6,2;1,1;]"..
-	"list[current_player;main;0,5;8,4;]"
+	"list[current_player;main;0,5;8,4;]"..
+	"background[-0.5,-0.65;9,10.35;gui_brewerbg.png]"..
+	"listcolors[#606060AA;#888;#141318;#30434C;#FFF]"
 
 minetest.register_node("lottpotion:potion_brewer", {
-	description = machine_name,
+	description = SL(machine_name),
 	drawtype = "plantlike",
 	visual_scale = 1.0,
 	tiles = {"lottpotion_potion_brewer.png"},
@@ -216,7 +220,7 @@ minetest.register_node("lottpotion:potion_brewer", {
 	on_construct = function(pos)
 		local meta = minetest.env:get_meta(pos)
 		meta:set_string("formspec", formspec)
-		meta:set_string("infotext", machine_name)
+		meta:set_string("infotext", SL(machine_name))
 		local inv = meta:get_inventory()
 		inv:set_size("fuel", 1)
 		inv:set_size("src", 2)
@@ -295,22 +299,24 @@ minetest.register_abm({
 		if meta:get_float("fuel_time") < meta:get_float("fuel_totaltime") then
 			local percent = math.floor(meta:get_float("fuel_time") /
 					meta:get_float("fuel_totaltime") * 100)
-			meta:set_string("infotext", ("%s Brewing"):format(machine_name).." ("..percent.."%)")
+			meta:set_string("infotext", SL(("%s Brewing"):format(machine_name)).." ("..percent.."%)")
 			lottpotion.swap_node(pos, "lottpotion:potion_brewer_active")
 			meta:set_string("formspec",
-					"size[8,9]"..
-					"label[0,0;"..machine_name.."]"..
-					"image[4,2;1,1;lottpotion_bubble_off.png^[lowpart:"..
-					(percent)..":lottpotion_bubble.png]"..
-     				"image[3,2;1,1;lottpotion_arrow.png]"..
-     				"image[5,2;1,1;lottpotion_arrow.png]"..
-					"label[3.2,3.2;Fuel:]"..
-					"list[current_name;fuel;4,3;1,1;]"..
-     				"label[1,1.5;Ingredients:]"..
-					"list[current_name;src;1,2;2,1;]"..
-    				     "label[6,1.5;Result:]"..
-					"list[current_name;dst;6,2;1,1;]"..
-					"list[current_player;main;0,5;8,4;]")
+				"size[8,9]"..
+				"label[0,0;"..SL(machine_name).."]"..
+				"image[4,2;1,1;lottpotion_bubble_off.png^[lowpart:"..
+				(percent)..":lottpotion_bubble.png]"..
+				"image[3,2;1,1;lottpotion_arrow.png]"..
+				"image[5,2;1,1;lottpotion_arrow.png]"..
+				"label[2.9,3.2;"..SL("Fuel:").."]"..
+				"list[current_name;fuel;4,3;1,1;]"..
+				"label[1,1.5;"..SL("Ingredients:").."]"..
+				"list[current_name;src;1,2;2,1;]"..
+				"label[6,1.5;"..SL("Result:").."]"..
+				"list[current_name;dst;6,2;1,1;]"..
+				"list[current_player;main;0,5;8,4;]"..
+				"background[-0.5,-0.65;9,10.35;gui_brewerbg.png]"..
+				"listcolors[#606060AA;#888;#141318;#30434C;#FFF]")
 			return
 		end
           
@@ -318,7 +324,7 @@ minetest.register_abm({
 
 		if not recipe then
 			if was_active then
-				meta:set_string("infotext", ("%s is empty"):format(machine_name))
+				meta:set_string("infotext", SL(("%s is empty"):format(machine_name)))
 				lottpotion.swap_node(pos, "lottpotion:potion_brewer")
 				meta:set_string("formspec", formspec)
 			end
@@ -334,7 +340,7 @@ minetest.register_abm({
 		end
 
 		if fuel.time <= 0 then
-			meta:set_string("infotext", ("%s Out Of Heat"):format(machine_name))
+			meta:set_string("infotext", SL(("%s Out Of Heat"):format(machine_name)))
 			lottpotion.swap_node(pos, "lottpotion:potion_brewer")
 			meta:set_string("formspec", formspec)
 			return

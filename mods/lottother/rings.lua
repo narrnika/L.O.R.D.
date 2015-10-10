@@ -1,20 +1,22 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 minetest.register_craftitem("lottother:ringsilver_lump", {
-	description = "Unrefined Ring Silver",
+	description = SL("Unrefined Ring Silver"),
 	inventory_image = "lottother_ringsilver_lump.png",
      groups = {forbidden=1},
 })
 minetest.register_craftitem("lottother:ringsilver_ingot", {
-	description = "Refined Ring Silver",
+	description = SL("Refined Ring Silver"),
 	inventory_image = "lottother_ringsilver_ingot.png",
      groups = {forbidden=1},
 })
 minetest.register_craftitem("lottother:ring", {
-	description = "Plain Ring",
+	description = SL("Plain Ring"),
 	inventory_image = "lottother_ring.png",
      groups = {forbidden=1},
 })
 minetest.register_craftitem("lottother:purple_gem", {
-	description = "Purple Gem",
+	description = SL("Purple Gem"),
 	inventory_image = "lottother_purplegem.png",
      groups = {forbidden=1},
 })
@@ -23,17 +25,17 @@ minetest.register_craftitem("lottother:purple_gem", {
 --ELF RINGS
 --FUNCTION = Sets your health to max every 30 seconds.
 minetest.register_craftitem("lottother:blue_gem_ring", {
-	description = "Blue Gem Ring.",
+	description = SL("Blue Gem Ring"),
 	inventory_image = "lottother_bluegem_ring.png",
      groups = {forbidden=1},
 })
 minetest.register_craftitem("lottother:blue_am_ring", {
-	description = "Blue Almost Magic Ring",
+	description = SL("Blue Almost Magic Ring"),
 	inventory_image = "lottother_bluegem_am_ring.png",
      groups = {forbidden=1},
 })
 minetest.register_craftitem("lottother:vilya", {
-	description = "Vilya",
+	description = SL("Vilya"),
 	inventory_image = "lottother_vilya.png",
      groups = {forbidden=1},
 })
@@ -52,17 +54,17 @@ end)
 
 --FUNCTION = Makes (good) mobs follow you.
 minetest.register_craftitem("lottother:red_gem_ring", {
-	description = "Red Gem Ring",
+	description = SL("Red Gem Ring"),
 	inventory_image = "lottother_redgem_ring.png",
      groups = {forbidden=1},
 })
 minetest.register_craftitem("lottother:red_am_ring", {
-	description = "Red Almost Magic Ring",
+	description = SL("Red Almost Magic Ring"),
 	inventory_image = "lottother_redgem_am_ring.png",
      groups = {forbidden=1},
 })
 minetest.register_craftitem("lottother:narya", {
-	description = "Narya",
+	description = SL("Narya"),
 	inventory_image = "lottother_narya.png",
      groups = {forbidden=1},
 })
@@ -70,17 +72,17 @@ minetest.register_craftitem("lottother:narya", {
 
 --FUNCTION = Same armor stats as a full set of mithril. 
 minetest.register_craftitem("lottother:white_gem_ring", {
-	description = "White Gem Ring",
+	description = SL("White Gem Ring"),
 	inventory_image = "lottother_whitegem_ring.png",
      groups = {forbidden=1},
 })
 minetest.register_craftitem("lottother:white_am_ring", {
-	description = "White Almost Magic Ring",
+	description = SL("White Almost Magic Ring"),
 	inventory_image = "lottother_whitegem_am_ring.png",
      groups = {forbidden=1},
 })
 minetest.register_tool("lottother:nenya", {
-	description = "Nenya",
+	description = SL("Nenya"),
 	inventory_image = "lottother_nenya_inv.png",
 	groups = {armor_head=15, armor_torso=20, armor_legs=20, armor_feet=15, armor_shield=25,forbidden=1},
 	wear = 0,
@@ -180,22 +182,22 @@ minetest.register_craft({
 --OTHER RINGS
 --Mithril ring (base for Dwarf ring)
 minetest.register_craftitem("lottother:purple_gem_ring", {
-	description = "Purple Gem Ring",
+	description = SL("Purple Gem Ring"),
 	inventory_image = "lottother_purplegem_ring.png",
      groups = {forbidden=1},
 })
 minetest.register_craftitem("lottother:purple_gem_mithril_ring", {
-	description = "Purple Gem Mithril Ring",
+	description = SL("Purple Gem Mithril Ring"),
 	inventory_image = "lottother_purplegem_mithril_ring.png",
      groups = {forbidden=1},
 })
 minetest.register_craftitem("lottother:purple_am_ring", {
-	description = "Mithril Almost Magic Ring",
+	description = SL("Mithril Almost Magic Ring"),
 	inventory_image = "lottother_purplegem_am_ring.png",
      groups = {forbidden=1},
 })
 minetest.register_craftitem("lottother:dwarf_ring", {
-	description = "Dwarf Ring",
+	description = SL("Dwarf Ring"),
 	inventory_image = "lottother_dwarf_ring.png",
      groups = {forbidden=1},
 })

@@ -1,3 +1,5 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 lottblocks = {}
 
 dofile(minetest.get_modpath("lottblocks").."/wooden_stuff.lua") --This has trapdoors, doors, tables and chairs in all the kinds of wood.
@@ -9,13 +11,13 @@ dofile(minetest.get_modpath("lottblocks").."/chests.lua")
 dofile(minetest.get_modpath("lottblocks").."/lamps.lua")
 
 minetest.register_node("lottblocks:snowycobble", {
-	description = "Snowy Cobblestone",
+	description = SL("Snowy Cobblestone"),
 	tiles = {"lottblocks_snowycobble.png"},
 	is_ground_content = false,
 	groups = {cracky=3},
 })
 minetest.register_node("lottblocks:orc_brick", {
-	description = "Orc Brick",
+	description = SL("Orc Brick"),
 	tiles = {"lottblocks_orc_brick.png"},
 	is_ground_content = false,
 	groups = {cracky=2},
@@ -23,11 +25,11 @@ minetest.register_node("lottblocks:orc_brick", {
 stairs.register_stair_and_slab("orc_brick", "lottblocks:orc_brick",
 		{cracky=2},
 		{"lottblocks_orc_brick.png"},
-		"Orc Brick",
-		"Orc Brick"
+		SL("Orc Brick Stair"),
+		SL("Orc Brick Slab")
 )
 minetest.register_node("lottblocks:marble_brick", {
-	description = "Marble Brick",
+	description = SL("Marble Brick"),
 	tiles = {"lottblocks_marble_brick.png"},
 	is_ground_content = false,
 	groups = {cracky=2},
@@ -35,8 +37,8 @@ minetest.register_node("lottblocks:marble_brick", {
 stairs.register_stair_and_slab("marble_brick", "lottblocks:marble_brick",
 		{cracky=2},
 		{"lottblocks_marble_brick.png"},
-		"Marble Brick",
-		"Marble Brick"
+		SL("Marble Brick Stair"),
+		SL("Marble Brick Slab")
 )
 minetest.register_craft({
 	output = 'lottblocks:marble_brick 4',
@@ -52,3 +54,5 @@ minetest.register_craft({
 		{'lottmapgen:mordor_stone', 'lottmapgen:mordor_stone'},
 	}
 })
+
+print(minetest.get_current_modname().." LOADED")

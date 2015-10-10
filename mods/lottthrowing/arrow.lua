@@ -1,5 +1,7 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 minetest.register_craftitem("lottthrowing:arrow", {
-	description = "Arrow",
+	description = SL("Arrow"),
 	inventory_image = "lottthrowing_arrow.png",
 })
 

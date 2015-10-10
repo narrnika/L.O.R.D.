@@ -1,3 +1,4 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
 -- Minetest 0.4 mod: farming
 -- See README.txt for licensing and other information.
 
@@ -7,7 +8,7 @@ farming = {}
 -- Soil
 --
 minetest.register_node("farming:soil", {
-	description = "Soil",
+	description = SL("Soil"),
 	tiles = {"farming_soil.png", "default_dirt.png"},
 	drop = "default:dirt",
 	is_ground_content = true,
@@ -16,7 +17,7 @@ minetest.register_node("farming:soil", {
 })
 
 minetest.register_node("farming:soil_wet", {
-	description = "Wet Soil",
+	description = SL("Wet Soil"),
 	tiles = {"farming_soil_wet.png", "farming_soil_wet_side.png"},
 	drop = "default:dirt",
 	is_ground_content = true,
@@ -107,7 +108,7 @@ function farming.hoe_on_use(itemstack, user, pointed_thing, uses)
 end
 
 minetest.register_tool("farming:hoe_wood", {
-	description = "Wooden Hoe",
+	description = SL("Wooden Hoe"),
 	inventory_image = "farming_tool_woodhoe.png",
 	
 	on_use = function(itemstack, user, pointed_thing)
@@ -116,7 +117,7 @@ minetest.register_tool("farming:hoe_wood", {
 })
 
 minetest.register_tool("farming:hoe_stone", {
-	description = "Stone Hoe",
+	description = SL("Stone Hoe"),
 	inventory_image = "farming_tool_stonehoe.png",
 	
 	on_use = function(itemstack, user, pointed_thing)
@@ -125,7 +126,7 @@ minetest.register_tool("farming:hoe_stone", {
 })
 
 minetest.register_tool("farming:hoe_steel", {
-	description = "Steel Hoe",
+	description = SL("Steel Hoe"),
 	inventory_image = "farming_tool_steelhoe.png",
 	
 	on_use = function(itemstack, user, pointed_thing)
@@ -134,7 +135,7 @@ minetest.register_tool("farming:hoe_steel", {
 })
 
 minetest.register_tool("farming:hoe_bronze", {
-	description = "Bronze Hoe",
+	description = SL("Bronze Hoe"),
 	inventory_image = "farming_tool_bronzehoe.png",
 	
 	on_use = function(itemstack, user, pointed_thing)
@@ -182,7 +183,7 @@ minetest.register_craft({
 -- Override grass for drops
 --
 minetest.register_node(":default:grass_1", {
-	description = "Grass",
+	description = SL("Grass"),
 	drawtype = "plantlike",
 	tiles = {"default_grass_1.png"},
 	-- use a bigger inventory image
@@ -216,7 +217,7 @@ minetest.register_node(":default:grass_1", {
 
 for i=2,5 do
 	minetest.register_node(":default:grass_"..i, {
-		description = "Grass",
+		description = SL("Grass"),
 		drawtype = "plantlike",
 		tiles = {"default_grass_"..i..".png"},
 		inventory_image = "default_grass_"..i..".png",
@@ -244,7 +245,7 @@ for i=2,5 do
 end
 
 minetest.register_node(":default:junglegrass", {
-	description = "Jungle Grass",
+	description = SL("Jungle Grass"),
 	drawtype = "plantlike",
 	visual_scale = 1.3,
 	tiles = {"default_junglegrass.png"},
@@ -321,7 +322,7 @@ end
 -- Wheat
 --
 minetest.register_craftitem("farming:seed_wheat", {
-	description = "Wheat Seed",
+	description = SL("Wheat Seed"),
 	inventory_image = "farming_wheat_seed.png",
 	on_place = function(itemstack, placer, pointed_thing)
 		return place_seed(itemstack, placer, pointed_thing, "farming:wheat_1")
@@ -329,17 +330,17 @@ minetest.register_craftitem("farming:seed_wheat", {
 })
 
 minetest.register_craftitem("farming:wheat", {
-	description = "Wheat",
+	description = SL("Wheat"),
 	inventory_image = "farming_wheat.png",
 })
 
 minetest.register_craftitem("farming:flour", {
-	description = "Flour",
+	description = SL("Flour"),
 	inventory_image = "farming_flour.png",
 })
 
 minetest.register_craftitem("farming:bread", {
-	description = "Bread",
+	description = SL("Bread"),
 	inventory_image = "farming_bread.png",
 	on_use = minetest.item_eat(4),
 })
@@ -421,7 +422,7 @@ minetest.register_abm({
 -- Cotton
 --
 minetest.register_craftitem("farming:seed_cotton", {
-	description = "Cotton Seed",
+	description = SL("Cotton Seed"),
 	inventory_image = "farming_cotton_seed.png",
 	on_place = function(itemstack, placer, pointed_thing)
 		return place_seed(itemstack, placer, pointed_thing, "farming:cotton_1")
@@ -429,7 +430,7 @@ minetest.register_craftitem("farming:seed_cotton", {
 })
 
 minetest.register_craftitem("farming:string", {
-	description = "String",
+	description = SL("String"),
 	inventory_image = "farming_string.png",
 })
 
@@ -502,3 +503,5 @@ minetest.register_abm({
 		minetest.set_node(pos, {name="farming:cotton_"..height})
 	end
 })
+
+print(minetest.get_current_modname().." LOADED")

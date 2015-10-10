@@ -5,3 +5,4 @@ lottores
 worldedit
 lottother
 areas?
+intllib?

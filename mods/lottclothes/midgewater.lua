@@ -1,3 +1,5 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 -- the simplest outfit available.
 -- made from green felt & wood (just cut down the nearest tree).
 
@@ -5,7 +7,7 @@ local level=1
 
 -- cap (head)
 minetest.register_tool("lottclothes:cap_midgewater", {
-	description = "Midgewater Cap",
+	description = SL("Midgewater Cap"),
 	inventory_image = "lottclothes_inv_cap_midgewater.png",
 	groups = {armor_head=0, armor_heal=0, clothes=1},
 	wear = 0
@@ -22,7 +24,7 @@ minetest.register_craft({
 
 -- jacket (torso)
 minetest.register_tool("lottclothes:jacket_midgewater", {
-	description = "Midgewater Jacket",
+	description = SL("Midgewater Jacket"),
 	inventory_image = "lottclothes_inv_jacket_midgewater.png",
 	groups = {armor_torso=0, armor_heal=0, clothes=1},
 	wear = 0
@@ -39,7 +41,7 @@ minetest.register_craft({
 
 -- pants (legs)
 minetest.register_tool("lottclothes:pants_midgewater", {
-	description = "Midgewater Pants",
+	description = SL("Midgewater Pants"),
 	inventory_image = "lottclothes_inv_pants_midgewater.png",
 	groups = {armor_legs=0, armor_heal=0, clothes=1},
 	wear = 0
@@ -56,7 +58,7 @@ minetest.register_craft({
 
 -- boots (feet)
 minetest.register_tool("lottclothes:boots_midgewater", {
-	description = "Midgewater Boots",
+	description = SL("Midgewater Boots"),
 	inventory_image = "lottclothes_inv_boots_midgewater.png",
 	groups = {armor_feet=0, armor_heal=0, clothes=1},
 	wear = 0

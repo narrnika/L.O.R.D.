@@ -1,12 +1,14 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 minetest.register_craftitem("lottfarming:corn_seed", {
-	description = "Corn Seeds",
+	description = SL("Corn Seeds"),
 	inventory_image = "lottfarming_corn_seed.png",
 	on_place = function(itemstack, placer, pointed_thing)
 		return place_seed(itemstack, placer, pointed_thing, "lottfarming:corn_1")
 	end,
 })
 minetest.register_craftitem("lottfarming:corn", {
-	description = "Corn",
+	description = SL("Corn"),
 	inventory_image = "lottfarming_corn.png",
      groups = {salad=1},
 	on_use = minetest.item_eat(4),

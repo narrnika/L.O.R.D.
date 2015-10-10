@@ -1,4 +1,5 @@
 -- minetest/creative/init.lua
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
 
 minetest.register_privilege("creative", {
 	description = "Creative Mode",
@@ -83,9 +84,9 @@ creative_inventory.set_creative_formspec = function(player, start_i, pagenum)
 	player:set_inventory_formspec("size[12,9.5]"..
 			"list[current_player;main;0,0;8,2;]"..
             "list[current_player;main;10,0;2,8;16]"..
-			"button[8,0;2,1;creative_switchpalette;Palette]"..
-			"button[8,1;2,1;creative_clear;Clear]"..
-            "label[4,2;Trash:]"..
+			"button[8,0;2,1;creative_switchpalette;"..SL("Palette").."]"..
+			"button[8,1;2,1;creative_clear;"..SL("Clear").."]"..
+            "label[4,2;"..SL("Trash")..":]"..
             "list[detached:creative_trash;main;5,2;1,1;]"..
 			"listring[current_player;main]"..
 			"listring[current_player;craft]"..
@@ -93,7 +94,7 @@ creative_inventory.set_creative_formspec = function(player, start_i, pagenum)
 			"listring[detached:creative;main]"..
 			"button[0,2.3;1,1;creative_prev;<]"..
 			"button[1,2.3;1,1;creative_next;>]"..
-            "button[10,8.5;2,1;main;Main]"..
+            "button[10,8.5;2,1;main;"..SL("Main").."]"..
     		"background[5,5;1,1;gui_formbg.png;true]"..
         	"label[2,2.4;"..tostring(pagenum).."/"..tostring(pagemax).."]"..
 			"list[detached:creative;main;0,3.3;10,6;"..tostring(start_i).."]")
@@ -205,3 +206,5 @@ if minetest.setting_getbool("creative_mode") then
 	end
 
 end
+
+print(minetest.get_current_modname().." LOADED")

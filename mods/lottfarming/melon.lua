@@ -1,5 +1,7 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 minetest.register_craftitem("lottfarming:melon_seed", {
-	description = "Melon Seed",
+	description = SL("Melon Seed"),
 	inventory_image = "lottfarming_melon_seed.png",
 	on_place = function(itemstack, placer, pointed_thing)
 		return place_seed(itemstack, placer, pointed_thing, "lottfarming:melon_1")
@@ -51,7 +53,7 @@ minetest.register_node("lottfarming:melon_2", {
 })
 
 minetest.register_node("lottfarming:melon_3", {
-	description = "Melon",
+	description = SL("Melon"),
 	paramtype2 = "facedir",
 	tiles = {"lottfarming_melon_top.png", "lottfarming_melon_top.png", "lottfarming_melon_side.png", "lottfarming_melon_side.png", "lottfarming_melon_side.png", "lottfarming_melon_side.png"},
 		drop = {
@@ -68,7 +70,7 @@ minetest.register_node("lottfarming:melon_3", {
 
 minetest.register_alias("lottfarming:melon_slice", "lottfarming:melon")
 minetest.register_craftitem("lottfarming:melon", {
-	description = "Melon",
+	description = SL("Melon"),
 	inventory_image = "lottfarming_melon.png",
 	on_use = minetest.item_eat(2),
 })

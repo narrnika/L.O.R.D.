@@ -1,5 +1,7 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 minetest.register_craftitem("lottfarming:tomatoes_seed", {
-	description = "Tomato Seeds",
+	description = SL("Tomato Seeds"),
 	inventory_image = "lottfarming_tomatoes_seed.png",
 	on_place = function(itemstack, placer, pointed_thing)
 		return place_seed(itemstack, placer, pointed_thing, "lottfarming:tomatoes_1")
@@ -75,7 +77,7 @@ minetest.register_node("lottfarming:tomatoes_4", {
 })
 
 minetest.register_craftitem("lottfarming:tomatoes", {
-	description = "Tomato",
+	description = SL("Tomato"),
 	inventory_image = "lottfarming_tomatoes.png",
 	on_use = minetest.item_eat(2),
 	groups = {salad=1},
@@ -91,13 +93,13 @@ minetest.register_craft({
 })
 
 minetest.register_craftitem("lottfarming:tomatoes_cooked", {
-	description = "Cooked Tomato",
+	description = SL("Cooked Tomato"),
 	inventory_image = "lottfarming_tomatoes_cooked.png",
 	on_use = minetest.item_eat(2),
 })
 
 minetest.register_craftitem("lottfarming:tomato_soup", {
-	description = "Tomato Soup",
+	description = SL("Tomato Soup"),
 	inventory_image = "lottfarming_tomato_soup.png",
 	on_use = minetest.item_eat(10),
 })

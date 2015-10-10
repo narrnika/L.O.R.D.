@@ -189,3 +189,5 @@ dofile(minetest.get_modpath("lottfarming").."/green.lua")
 
 -- ========= ORC FOOD =========
 dofile(minetest.get_modpath("lottfarming").."/orc_food.lua")
+
+print(minetest.get_current_modname().." LOADED")

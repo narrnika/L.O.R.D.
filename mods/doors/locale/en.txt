@@ -1,0 +1,5 @@
+### init.lua ###
+Wooden Door	=	Wooden Door
+Steel Door	=	Steel Door
+Glass Door	=	Glass Door
+Trapdoor	=	Trapdoor

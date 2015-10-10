@@ -1,6 +1,8 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 minetest.register_node("lottpotion:cauldron_full",{
     drawtype="nodebox",
-	description= "Filled Cauldron",
+	description= SL("Filled Cauldron"),
     tiles = {"lottpotion_cauldron_top.png", "lottpotion_cauldron_side.png", "lottpotion_cauldron_side.png",
 		"lottpotion_cauldron_side.png", "lottpotion_cauldron_side.png", "lottpotion_cauldron_side.png"},
 	paramtype = "light",
@@ -25,7 +27,7 @@ minetest.register_node("lottpotion:cauldron_full",{
 
 minetest.register_node("lottpotion:cauldron_two_third_full",{
     drawtype="nodebox",
-    description= "Two Third Filled Cauldron",
+    description= SL("Two Third Filled Cauldron"),
     tiles = {"lottpotion_cauldron_top.png", "lottpotion_cauldron_side.png", "lottpotion_cauldron_side.png",
 		"lottpotion_cauldron_side.png", "lottpotion_cauldron_side.png", "lottpotion_cauldron_side.png"},
 	paramtype = "light",
@@ -49,7 +51,7 @@ minetest.register_node("lottpotion:cauldron_two_third_full",{
 
 minetest.register_node("lottpotion:cauldron_one_third_full",{
     drawtype="nodebox",
-	description= "One Third Filled Cauldron",
+	description= SL("One Third Filled Cauldron"),
     tiles = {"lottpotion_cauldron_top.png", "lottpotion_cauldron_side.png", "lottpotion_cauldron_side.png",
 		"lottpotion_cauldron_side.png", "lottpotion_cauldron_side.png", "lottpotion_cauldron_side.png"},
 	paramtype = "light",
@@ -73,6 +75,7 @@ minetest.register_node("lottpotion:cauldron_one_third_full",{
 
 minetest.register_node("lottpotion:cauldron_empty",{
     drawtype="nodebox",
+	description= SL("Empty Cauldron"),
     tiles = {"lottpotion_cauldron_side.png"},
     paramtype = "light",
 	paramtype2 = "facedir",
@@ -100,7 +103,7 @@ minetest.register_node("lottpotion:cauldron_empty",{
 })
 
 minetest.register_node(":vessels:glass_bottle", {
-	description = "Glass Bottle (empty)",
+	description = SL("Glass Bottle (empty)"),
 	drawtype = "plantlike",
 	tiles = {"vessels_glass_bottle.png"},
 	inventory_image = "vessels_glass_bottle_inv.png",
@@ -142,7 +145,7 @@ minetest.register_node(":vessels:glass_bottle", {
 })
 
 minetest.register_node("lottpotion:glass_bottle_water", {
-	description = "Glass Bottle (Water)",
+	description = SL("Glass Bottle (Water)"),
 	drawtype = "plantlike",
 	tiles = {"vessels_glass_bottle.png^lottpotion_water.png"},
 	inventory_image = "vessels_glass_bottle_inv.png^lottpotion_water.png",
@@ -158,7 +161,7 @@ minetest.register_node("lottpotion:glass_bottle_water", {
 })
 
 minetest.register_node(":vessels:drinking_glass", {
-	description = "Drinking Glass (empty)",
+	description = SL("Drinking Glass (empty)"),
 	drawtype = "plantlike",
 	tiles = {"vessels_drinking_glass.png"},
 	inventory_image = "vessels_drinking_glass_inv.png",
@@ -200,7 +203,7 @@ minetest.register_node(":vessels:drinking_glass", {
 })
 
 minetest.register_node("lottpotion:drinking_glass_water", {
-	description = "Drinking Glass (Water)",
+	description = SL("Drinking Glass (Water)"),
 	drawtype = "plantlike",
 	tiles = {"lottpotion_glass_water.png"},
 	inventory_image = "lottpotion_glass_water.png",
@@ -215,6 +218,7 @@ minetest.register_node("lottpotion:drinking_glass_water", {
 	sounds = default.node_sound_glass_defaults(),
 })
 
+--[[
 minetest.register_craft( {
 	type = "shapeless",
 	output = "vessels:glass_fragments",
@@ -223,7 +227,7 @@ minetest.register_craft( {
 		"group:vessel",
 	},
 })
-
+]]--
 minetest.register_craft({
 	output = 'lottpotion:cauldron_empty',
 	recipe = {

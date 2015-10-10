@@ -1,5 +1,7 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 minetest.register_craftitem("lottfarming:athelas_seed", {
-	description = "Athelas Seeds",
+	description = SL("Athelas Seeds"),
 	inventory_image = "lottfarming_athelas_seed.png",
 	on_place = function(itemstack, placer, pointed_thing)
 		return place_seed(itemstack, placer, pointed_thing, "lottfarming:athelas_1")
@@ -59,7 +61,7 @@ minetest.register_node("lottfarming:athelas_3", {
 })
 
 minetest.register_craftitem("lottfarming:athelas", {
-	description = "Athelas",
+	description = SL("Athelas"),
 	inventory_image = "lottfarming_athelas.png",
 })
 

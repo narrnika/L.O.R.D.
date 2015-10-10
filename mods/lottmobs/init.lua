@@ -1,3 +1,5 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 lottmobs = {}
 
 lottmobs.guard = function(self, clicker, payment)
@@ -7,7 +9,7 @@ lottmobs.guard = function(self, clicker, payment)
 	or item:get_name() == "farming:bread" then
 		local hp = self.object:get_hp()
 		if hp >= self.hp_max then
-			minetest.chat_send_player(name, "NPC at full health.")
+			minetest.chat_send_player(name, SL("NPC at full health."))
 			return
 		end
 		hp = hp + 4
@@ -87,10 +89,6 @@ mobs:register_mob("lottmobs:chicken", {
 	sounds = {
 	},
 })
-mobs:register_spawn("lottmobs:chicken", {"lottmapgen:gondor_grass"}, 20, -1, 6000, 3, 31000)
-mobs:register_spawn("lottmobs:chicken", {"lottmapgen:dunland_grass"}, 20, -1, 6000, 3, 31000)
-mobs:register_spawn("lottmobs:chicken", {"lottmapgen:rohan_grass"}, 20, -1, 6000, 3, 31000)
-mobs:register_spawn("lottmobs:chicken", {"lottmapgen:shire_grass"}, 20, -1, 5000, 3, 31000)
 
 mobs:register_mob("lottmobs:ent", {
 	type = "npc",
@@ -185,7 +183,6 @@ mobs:register_mob("lottmobs:ent", {
 	step = 1,
 
 })
-mobs:register_spawn("lottmobs:ent", {"lottmapgen:fangorn_grass"}, 20, -1, 6000, 3, 31000)
 
 mobs:register_mob("lottmobs:spider", {
 	type = "monster",
@@ -247,7 +244,7 @@ mobs:register_mob("lottmobs:spider", {
 	},
 	step = 1,
 })
-mobs:register_spawn("lottmobs:spider", {"lottmapgen:mirkwood_grass"}, 20, -10, 6000, 3, 31000)
+--mobs:register_spawn("lottmobs:spider", {"lottmapgen:mirkwood_grass"}, 20, -10, 6000, 3, 31000)
 
 mobs:register_mob("lottmobs:rohan_guard", {
 	type = "npc",
@@ -347,7 +344,6 @@ mobs:register_mob("lottmobs:rohan_guard", {
 	group_attack = true,
 	step = 1,
 })
-mobs:register_spawn("lottmobs:rohan_guard", {"lottmapgen:rohan_grass"}, 20, -1, 6000, 3, 31000)
 
 mobs:register_mob("lottmobs:gondor_guard", {
 	type = "npc",
@@ -463,7 +459,7 @@ mobs:register_mob("lottmobs:gondor_guard", {
 	group_attack = true,
 	step = 1,
 })
-mobs:register_spawn("lottmobs:gondor_guard", {"lottmapgen:gondor_grass"}, 20, -1, 6000, 3, 31000)
+--mobs:register_spawn("lottmobs:gondor_guard", {"lottmapgen:gondor_grass"}, 20, -1, 6000, 3, 31000)
 
 mobs:register_mob("lottmobs:ithilien_ranger", {
 	type = "npc",
@@ -559,7 +555,6 @@ mobs:register_mob("lottmobs:ithilien_ranger", {
 	group_attack = true,
 	step = 1,
 })
-mobs:register_spawn("lottmobs:ithilien_ranger", {"lottmapgen:ithilien_grass"}, 20, -1, 6000, 3, 31000)
 
 mobs:register_mob("lottmobs:dunlending", {
 	type = "monster",
@@ -665,7 +660,6 @@ mobs:register_mob("lottmobs:dunlending", {
 	},
 	step = 1,
 })
-mobs:register_spawn("lottmobs:dunlending", {"lottmapgen:dunland_grass"}, 20, -1, 6000, 3, 31000)
 
 mobs:register_mob("lottmobs:hobbit", {
 	type = "animal",
@@ -764,7 +758,7 @@ mobs:register_mob("lottmobs:hobbit", {
 	sounds = {
 	},
 })
-mobs:register_spawn("lottmobs:hobbit", {"lottmapgen:shire_grass"}, 20, -1, 6000, 3, 31000)
+--mobs:register_spawn("lottmobs:hobbit", {"lottmapgen:shire_grass"}, 20, -1, 6000, 3, 31000)
 
 local orc_armor = "lottarmor_chestplate_steel.png^lottarmor_leggings_steel.png^lottarmor_helmet_steel.png^lottarmor_boots_steel.png^lottarmor_shield_steel.png^[colorize:#00000055"
 
@@ -860,10 +854,6 @@ mobs:register_mob("lottmobs:orc", {
 	group_attack = true,
 	step = 1,
 })
-mobs:register_spawn("lottmobs:orc", {"lottmapgen:mordor_stone"}, 20, -1, 500, 3, 31000)
-mobs:register_spawn("lottmobs:orc", {"default:snowblock"}, 15, -1, 8000, 3, 31000)
-mobs:register_spawn("lottmobs:orc", {"default:dirt_with_snow"}, 15, -1, 8000, 3, 31000)
-mobs:register_spawn("lottmobs:orc", {"lottmapgen:angsnowblock"}, 20, -1, 6000, 5, 31000)
 
 mobs:register_mob("lottmobs:raiding_orc", {
 	type = "monster",
@@ -885,47 +875,47 @@ mobs:register_mob("lottmobs:raiding_orc", {
 	damage = 3,
 	drops = {
 		{name = "default:sword_steel",
-		chance = 10,
+		chance = 5,
 		min = 1,
 		max = 1,},
 		{name = "lottarmor:helmet_steel",
-		chance = 17,
+		chance = 12,
 		min = 1,
 		max = 1,},
 		{name = "lottarmor:chestplate_steel",
-		chance = 17,
+		chance = 12,
 		min = 1,
 		max = 1,},
 		{name = "lottarmor:leggings_steel",
-		chance = 17,
+		chance = 12,
 		min = 1,
 		max = 1,},
 		{name = "lottarmor:boots_steel",
-		chance = 17,
+		chance = 12,
 		min = 1,
 		max = 1,},
 		{name = "lottarmor:shield_steel",
-		chance = 17,
+		chance = 12,
 		min = 1,
 		max = 1,},
 		{name = "lottmobs:meat_raw",
-		chance = 10,
+		chance = 5,
 		min = 1,
 		max = 3,},
 		{name = "lottfarming:orc_food",
-		chance = 20,
+		chance = 15,
 		min = 1,
 		max = 3,},
 		{name = "farming:bread",
-		chance = 10,
+		chance = 5,
 		min = 1,
 		max = 3,},
 		{name = "lottpotion:wine",
-		chance = 25,
+		chance = 20,
 		min = 1,
 		max = 5,},
 		{name = "lottfarming:potato",
-		chance = 10,
+		chance = 5,
 		min = 1,
 		max = 5,},
 	},
@@ -959,9 +949,6 @@ mobs:register_mob("lottmobs:raiding_orc", {
 	group_attack = true,
 	step = 1,
 })
-mobs:register_spawn("lottmobs:raiding_orc", {"lottmapgen:ithilien_grass"}, 2, -1, 4000, 5, 31000)
-mobs:register_spawn("lottmobs:raiding_orc", {"lottmapgen:rohan_grass"}, 2, -1, 4000, 5, 31000)
-mobs:register_spawn("lottmobs:raiding_orc", {"lottmapgen:gondor_grass"}, 2, -1, 4000, 5, 31000)
 
 mobs:register_mob("lottmobs:warg", {
 	type = "monster",
@@ -1015,9 +1002,6 @@ mobs:register_mob("lottmobs:warg", {
 	step = 1,
 	sounds = {},
 })
-mobs:register_spawn("lottmobs:warg", {"lottmapgen:mordor_stone"}, 20, -1, 5000, 3, 31000)
-mobs:register_spawn("lottmobs:warg", {"default:snowblock"}, 15, -1, 7500, 3, 31000)
-mobs:register_spawn("lottmobs:warg", {"lottmapgen:angsnowblock"}, 20, -1, 5000, 5, 31000)
 
 mobs:register_mob("lottmobs:uruk_hai", {
 	type = "monster",
@@ -1110,8 +1094,6 @@ mobs:register_mob("lottmobs:uruk_hai", {
 	group_attack = true,
 	step = 1,
 })
-mobs:register_spawn("lottmobs:uruk_hai", {"lottmapgen:mordor_stone"}, 15, -1, 2000, 3, 31000)
-mobs:register_spawn("lottmobs:uruk_hai", {"lottmapgen:fangorn_grass"}, 2, -1, 2000, 3, 31000)
 
 mobs:register_mob("lottmobs:battle_troll", {
 	type = "monster",
@@ -1188,7 +1170,6 @@ mobs:register_mob("lottmobs:battle_troll", {
 	group_attack = true,
 	step = 1,
 })
-mobs:register_spawn("lottmobs:battle_troll", {"lottmapgen:mordor_stone"}, 10, -1, 10000, 5, 31000)
 
 mobs:register_mob("lottmobs:half_troll", {
 	type = "monster",
@@ -1275,10 +1256,6 @@ mobs:register_mob("lottmobs:half_troll", {
 	group_attack = true,
 	step = 1,
 })
-mobs:register_spawn("lottmobs:half_troll", {"default:snow"}, 15, -1, 8000, 3, 31000)
-mobs:register_spawn("lottmobs:half_troll", {"default:snowblock"}, 15, -1, 8000, 3, 31000)
-mobs:register_spawn("lottmobs:half_troll", {"default:dirt_with_snow"}, 15, -1, 8000, 3, 31000)
-mobs:register_spawn("lottmobs:half_troll", {"lottmapgen:angsnowblock"}, 20, -1, 6000, 5, 31000)
 
 mobs:register_mob("lottmobs:nazgul", {
 	type = "monster",
@@ -1359,7 +1336,6 @@ mobs:register_mob("lottmobs:nazgul", {
 	group_attack = true,
 	step = 1,
 })
-mobs:register_spawn("lottmobs:nazgul", {"default:stone"}, 2, -1, 20000, 3, -50)
 
 mobs:register_mob("lottmobs:witch_king", {
 	type = "monster",
@@ -1439,7 +1415,6 @@ mobs:register_mob("lottmobs:witch_king", {
 	group_attack = true,
 	step = 1,
 })
-mobs:register_spawn("lottmobs:witch_king", {"default:stone"}, 2, -1, 40000, 10, -1000)
 
 mobs:register_mob("lottmobs:balrog", {
 	type = "monster",
@@ -1548,7 +1523,6 @@ mobs:register_mob("lottmobs:balrog", {
 	group_attack = true,
 	step = 1,
 })
-mobs:register_spawn("lottmobs:balrog", {"default:stone"}, 2, -1, 100000, 10, -10000)
 
 mobs:register_mob("lottmobs:dead_men", {
 	type = "monster",
@@ -1595,7 +1569,6 @@ mobs:register_mob("lottmobs:dead_men", {
 	group_attack = true,
 	step = 1,
 })
-mobs:register_spawn("lottmobs:dead_men", {"default:mossycobble"}, 2, -1, 6000, 10, -100)
 
 mobs:register_mob("lottmobs:troll", {
 	type = "monster",
@@ -1690,10 +1663,6 @@ mobs:register_mob("lottmobs:troll", {
 	group_attack = true,
 	step = 1,
 })
-mobs:register_spawn("lottmobs:troll", {"default:stone"}, 2, -1, 8000, 5, -10)
-mobs:register_spawn("lottmobs:troll", {"default:snow"}, 2, -1, 6000, 5, 31000)
-mobs:register_spawn("lottmobs:troll", {"default:snowblock"}, 2, -1, 6000, 5, 31000)
-mobs:register_spawn("lottmobs:troll", {"lottmapgen:angsnowblock"}, 2, -1, 6000, 5, 31000)
 
 -- Arrows
 
@@ -1741,3 +1710,7 @@ mobs:register_arrow("lottmobs:darkball", {
 		end
 	end
 })
+
+dofile(minetest.get_modpath("lottmobs").."/spawn.lua")
+
+print(minetest.get_current_modname().." LOADED")

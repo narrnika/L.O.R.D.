@@ -2,6 +2,8 @@
 -- See README for more information
 -- Released by Zeg9 under WTFPL
 
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 zcc = {}
 zcc.users = {}
 zcc.crafts = {}
@@ -111,7 +113,7 @@ zcc.formspec = function(pn)
 	local alt = zcc.users[pn].alt
 	local current_item = zcc.users[pn].current_item
 	local formspec = "size[8,7.5]"
-	.. "button_exit[6,7;2,0.5;;Exit]"
+	.. "button_exit[6,7;2,0.5;;"..SL("Exit").."]"
 	if zcc.users[pn].history.index > 1 then
 		formspec = formspec .. "image_button[0,1;1,1;zcg_previous.png;zcc_previous;;false;false;zcg_previous_press.png]"
 	else
@@ -169,9 +171,9 @@ zcc.formspec = function(pn)
 	if i >= npp then
 		formspec = formspec .. "button[1,7;1,.5;zcc_page:"..(page+1)..";>>]"
 	end
-	formspec = formspec .. "label[2,6.85;Page "..(page+1).."/"..(math.floor(#zcc.itemlist/npp+1)).."]" -- The Y is approximatively the good one to have it centered vertically...
+	formspec = formspec .. "label[2,6.85;"..SL("Page").." "..(page+1).."/"..(math.floor(#zcc.itemlist/npp+1)).."]" -- The Y is approximatively the good one to have it centered vertically...
      formspec = formspec .. "background[5,5;1,1;craft_formbg.png;true]"
-     formspec = formspec .. "label[0,0;Book of Cooking]"
+     formspec = formspec .. "label[0,0;"..SL("Book of Cooking").."]"
 	return formspec
 end
 
@@ -214,7 +216,7 @@ minetest.register_on_player_receive_fields(function(player,formname,fields)
 end)
 
 minetest.register_tool("lottinventory:cooking_book",{
-    description = "Book of Cooking",
+    description = SL("Book of Cooking"),
     groups = {book=1},
     inventory_image = "lottinventory_cooks_book.png",
     wield_image = "",

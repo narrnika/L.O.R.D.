@@ -1,33 +1,35 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 minetest.register_tool("lottclothes:hood_elven", {
-	description = "Elven Hood",
+	description = SL("Elven Hood"),
 	inventory_image = "lottclothes_inv_hood_elven.png",
 	groups = {armor_feet=0, armor_heal=0, clothes=1},
 	wear = 0
 })
 
 minetest.register_tool("lottclothes:shirt_elven", {
-	description = "Elven Shirt",
+	description = SL("Elven Shirt"),
 	inventory_image = "lottclothes_inv_shirt_elven.png",
 	groups = {armor_feet=0, armor_heal=0, clothes=1},
 	wear = 0
 })
 
 minetest.register_tool("lottclothes:trousers_elven", {
-	description = "Elven Trousers",
+	description = SL("Elven Trousers"),
 	inventory_image = "lottclothes_inv_trousers_elven.png",
 	groups = {armor_feet=0, armor_heal=0, clothes=1},
 	wear = 0
 })
 
 minetest.register_tool("lottclothes:shoes_elven", {
-	description = "Elven Shoes",
+	description = SL("Elven Shoes"),
 	inventory_image = "lottclothes_inv_shoes_elven.png",
 	groups = {armor_feet=0, armor_heal=0, clothes=1},
 	wear = 0
 })
 
 minetest.register_tool("lottclothes:cloak_elven", {
-	description = "Elven Cloak",
+	description = SL("Elven Cloak"),
 	inventory_image = "lottclothes_inv_cloak_elven.png",
 	groups = {armor_feet=0, armor_heal=0, clothes=1},
 	wear = 0

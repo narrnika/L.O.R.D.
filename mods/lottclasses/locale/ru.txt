@@ -1,0 +1,15 @@
+### init.lua ###
+Please select the race you wish to be:	=	Выберите вашу расу и пол:
+Dwarf	=	Гномы
+Elf	=	Эльфы
+Man	=	Люди
+Orc	=	Орки
+Hobbit	=	Хоббиты
+Male	=	Муж.
+Female	=	Жен.
+
+You are now a member of the race of dwarves, go forth into the world.	=	Теперь ты являешься членом рассы гномов, можешь идти в мир.
+You are now a member of the race of elves, go forth into the world.	=	Теперь ты являешься членом рассы эльфов, можешь идти в мир.
+You are now a member of the race of men, go forth into the world.	=	Теперь ты являешься членом рассы людей, можешь идти в мир.
+You are now a member of the race of orcs, go forth into the world.	=	Теперь ты являешься членом рассы орков, можешь идти в мир.
+You are now a member of the race of hobbits, go forth into the world.	=	Теперь ты являешься членом рассы хоббитов, можешь идти в мир.

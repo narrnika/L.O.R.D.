@@ -1,6 +1,8 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 lottpotion.register_arrow = function(potion_name, name, hname, potion_use_funct, desc, img)
 	minetest.register_craftitem(potion_name.."_arrow", {
-		description = "Potion Arrow ("..desc..")",
+		description = SL("Potion Arrow").." ("..desc..")",
 		inventory_image = img.."^lottthrowing_arrow.png",
 		groups = {},
 	})

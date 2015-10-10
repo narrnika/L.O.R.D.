@@ -1,3 +1,4 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
 
 local function is_ground(pos)
 	local nn = minetest.get_node(pos).name
@@ -217,7 +218,7 @@ end
 ---------------------
 
 lottmobs:register_horse("lottmobs:horseh1", {
-	description = "Brown Horse",
+	description = SL("Brown Horse"),
 	inventory_image = "lottmobs_horse_inventory.png",
 	}, {
 	physical = true,
@@ -242,7 +243,7 @@ lottmobs:register_horse("lottmobs:horseh1", {
 --horse white
 
 lottmobs:register_horse("lottmobs:horsepegh1", {
-	description = "White Horse",
+	description = SL("White Horse"),
 	inventory_image = "lottmobs_horsepeg_inventory.png",
 	}, {
 	physical = true,
@@ -267,7 +268,7 @@ lottmobs:register_horse("lottmobs:horsepegh1", {
 --horse arabik
 
 lottmobs:register_horse("lottmobs:horsearah1", {
-	description = "Black Horse",
+	description = SL("Black Horse"),
 	inventory_image = "lottmobs_horseara_inventory.png",
 	}, {
 	physical = true,
@@ -291,7 +292,7 @@ lottmobs:register_horse("lottmobs:horsearah1", {
 
 
 lottmobs:register_horse("lottmobs:shireponyblackh1", {
-	description = "Shire Pony",
+	description = SL("Shire Pony 1"),
 	inventory_image = "lottmobs_shireponyblack_inventory.png",
 	}, {
 	physical = true,
@@ -315,7 +316,7 @@ lottmobs:register_horse("lottmobs:shireponyblackh1", {
 
 
 lottmobs:register_horse("lottmobs:shireponyh1", {
-	description = "Shire Pony",
+	description = SL("Shire Pony 2"),
 	inventory_image = "lottmobs_shirepony_inventory.png",
 	}, {
 	physical = true,
@@ -390,7 +391,6 @@ mobs:register_mob("lottmobs:horse", {
 	step=1,
 	passive = true,
 })
-mobs:register_spawn("lottmobs:horse", {"lottmapgen:rohan_grass"}, 20, -1, 6000, 3, 31000)
 
 mobs:register_mob("lottmobs:horsepeg", {
 	type = "animal",
@@ -442,7 +442,6 @@ mobs:register_mob("lottmobs:horsepeg", {
 	step=1,
 	passive = true,
 })
-mobs:register_spawn("lottmobs:horsepeg", {"lottmapgen:rohan_grass"}, 20, -1, 7000, 3, 31000)
 
 
 mobs:register_mob("lottmobs:horseara", {
@@ -495,7 +494,6 @@ mobs:register_mob("lottmobs:horseara", {
 	step=1,
 	passive = true,
 })
-mobs:register_spawn("lottmobs:horseara", {"lottmapgen:rohan_grass"}, 20, -1, 7000, 3, 31000)
 
 mobs:register_mob("lottmobs:shirepony", {
 	type = "animal",
@@ -548,7 +546,6 @@ mobs:register_mob("lottmobs:shirepony", {
 	step=1,
 	passive = true,
 })
-mobs:register_spawn("lottmobs:shirepony", {"lottmapgen:shire_grass"}, 20, -1, 6000, 3, 31000)
 
 mobs:register_mob("lottmobs:shireponyblack", {
 	type = "animal",
@@ -601,4 +598,3 @@ mobs:register_mob("lottmobs:shireponyblack", {
 	step=1,
 	passive = true,
 })
-mobs:register_spawn("lottmobs:shireponyblack", {"lottmapgen:shire_grass"}, 20, -1, 9000, 3, 31000)

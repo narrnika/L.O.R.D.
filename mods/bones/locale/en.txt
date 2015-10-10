@@ -1,0 +1,11 @@
+### init.lua ###
+Bones Block	=	Bones Block
+Bone Dust	=	Bone Dust
+Bone	=	Bone
+Bone Scythe	=	Bone Scythe
+Skeleton Head	=	Skeleton Head
+Skeleton	=	Skeleton
+
+Pile of Bones	=	Pile of Bones
+Fresh bones of	=	Fresh bones of
+Old bones of	=	Old bones of

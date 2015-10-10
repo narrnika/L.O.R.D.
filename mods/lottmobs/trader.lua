@@ -1,3 +1,5 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 --This code comes almost exclusively from the trader and inventory of mobf, by Sapier.
 --The copyright notice bellow is from mobf:
 -------------------------------------------------------------------------------
@@ -220,20 +222,24 @@ function lottmobs_trader(self, clicker, entity, race, image, priv)
 		lottmobs.trader_inventory.set_size(lottmobs.trader_inventory,"payment",1)
 		lottmobs.add_goods(entity, race)
 	end
-	minetest.chat_send_player(player, "[NPC] <Trader " .. self.game_name .. "> Hello, " .. player .. ", have a look at my wares.")
-	minetest.show_formspec(player, "trade",
-		"size[8,10;]" ..
-		 "background[5,5;1,1;" .. image .. ";true]" ..
-		"label[0,0;Trader " .. self.game_name .. "'s stock:]" ..
-		"list[detached:" .. unique_entity_id .. ";goods;.5,.5;3,5;]" ..
-		"label[4.5,0.5;Selection]" ..
-		"list[detached:" .. unique_entity_id .. ";selection;4.5,1;5.5,2;]" ..
-		"label[6,0.5;Price]" ..
-		"list[detached:" .. unique_entity_id .. ";price;6,1;7,2;]" ..
-		"label[4.5,3.5;Payment]" ..
-		"list[detached:" .. unique_entity_id .. ";payment;4.5,4;5.5,5;]" ..
-		"label[6,3.5;Brought items]" ..
-		"list[detached:" .. unique_entity_id .. ";takeaway;6,4;7.5,5.5;]" ..
-		"list[current_player;main;0,6;8,4;]"
-	)
+
+	if self.game_name ~= nil then
+		minetest.chat_send_player(player, "[NPC] <"..SL("Trader").." "..SL(self.game_name).."> "..SL("Hello")..", "..player..", "..SL("have a look at my wares."))
+		minetest.show_formspec(player, "trade",
+			"size[8,10;]" ..
+			 "background[5,5;1,1;" .. image .. ";true]" ..
+			"label[0,0;"..SL("Trader").." " .. SL(self.game_name) .. SL("'s stock:").."]" ..
+			"list[detached:" .. unique_entity_id .. ";goods;.5,.5;3,5;]" ..
+			"label[4.5,0.5;"..SL("Selection").."]" ..
+			"list[detached:" .. unique_entity_id .. ";selection;4.5,1;5.5,2;]" ..
+			"label[6,0.5;"..SL("Price").."]" ..
+			"list[detached:" .. unique_entity_id .. ";price;6,1;7,2;]" ..
+			"label[4.5,3.5;"..SL("Payment").."]" ..
+			"list[detached:" .. unique_entity_id .. ";payment;4.5,4;5.5,5;]" ..
+			"label[6,3.5;"..SL("Brought items").."]" ..
+			"list[detached:" .. unique_entity_id .. ";takeaway;6,4;7.5,5.5;]" ..
+			"list[current_player;main;0,6;8,4;]"
+		)
+	end
+
 end

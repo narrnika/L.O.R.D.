@@ -1,5 +1,7 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 minetest.register_node("lottblocks:dwarf_harp", {
-	description = "Dwarvern Harp",
+	description = SL("Dwarvern Harp"),
 	tiles = {"lottblocks_harp1.png", "lottblocks_harp2.png", "lottblocks_harp3.png", "lottblocks_harp4.png", "lottblocks_harp5.png", "lottblocks_harp6.png"},
 	drawtype = "nodebox",
 	paramtype = "light",
@@ -46,7 +48,7 @@ minetest.register_node("lottblocks:dwarf_harp", {
 })
 
 minetest.register_craftitem("lottblocks:dwarf_harp_strings", {
-	description = "Dwarvern Harp Strings",
+	description = SL("Dwarvern Harp Strings"),
 	inventory_image = "lottblocks_harp_strings.png",
 })
 
@@ -83,7 +85,7 @@ for _, row in ipairs(whistle) do
 	local note = row[2]
 	local craftwood = row[3]
 	minetest.register_craftitem("lottblocks:whistle_" .. wood, {
-		description = wood:gsub("^%l", string.upper) .. " (Note " .. note .. ") Whistle",
+		description = SL(wood:gsub("^%l", string.upper) .. " (Note " .. note .. ") Whistle"),
 		inventory_image = "lottblocks_" .. wood .. "_whistle.png",
 		on_use = function(itemstack, user)
 			minetest.sound_play(note, {

@@ -1,3 +1,5 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 local creative = minetest.setting_getbool("creative_mode")
 
 local lottthrowing_register_axe = function(axe, desc, damage, craft1, craft2)
@@ -21,7 +23,7 @@ local lottthrowing_register_axe = function(axe, desc, damage, craft1, craft2)
 	end
 
 	minetest.register_craftitem("lottthrowing:axe_" .. axe, {
-		description = desc .. " Throwing Axe",
+		description = SL(desc .. " Throwing Axe"),
 	    on_use = function(itemstack, user, pointed_thing)
 	        lottthrowing_throw_axe(item, user, pointed_thing)
 	        if not creative then

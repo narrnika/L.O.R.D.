@@ -1,3 +1,5 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 -- ITEMS and TOOLS
 
 minetest.register_craft({
@@ -10,12 +12,12 @@ minetest.register_craft({
 })
 
 minetest.register_craftitem("lottfarming:bowl", {
-	description = "Bowl",
+	description = SL("Bowl"),
 	inventory_image = "lottfarming_bowl.png",
 })
 
 minetest.register_node("lottfarming:decay_tree", {
-	description = "Decaying Wood",
+	description = SL("Decaying Wood"),
 	tile_images = {'default_tree_top.png^lottfarming_decay_tree.png', 'default_tree.png', 	'default_tree.png'},
      is_ground_content = true,
 	groups = {crumbly=3, fungi=3},
@@ -41,7 +43,7 @@ local function decaying_wood(pos, inv, p)
 end
 
 minetest.register_tool("lottfarming:bacteria_fertiliser", {
-	description = "Bacteria Fertiliser",
+	description = SL("Bacteria Fertiliser"),
 	inventory_image = "lottfarming_bacteria_fertiliser.png",
 	on_use = function(itemstack, user, pointed_thing)
 		if decaying_wood(pointed_thing.under, user:get_inventory(), 10) then

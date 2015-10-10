@@ -1,3 +1,4 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
 --
 -- Helper functions
 --
@@ -177,7 +178,7 @@ minetest.register_entity("boats:row_boat", row_boat)
 
 
 minetest.register_craftitem("boats:row_boat", {
-	description = "Boat",
+	description = SL("Boat"),
 	inventory_image = "rowboat_inventory.png",
 	wield_image = "rowboat_wield.png",
 	wield_scale = {x = 2, y = 2, z = 1},
@@ -357,7 +358,7 @@ end
 minetest.register_entity("boats:sail_boat", sail_boat)
 
 minetest.register_craftitem("boats:sail_boat", {
-	description = "Sail Boat",
+	description = SL("Sail Boat"),
 	inventory_image = "sailboat_inventory.png",
 	wield_image = "sailboat_wield.png",
 	wield_scale = {x=2, y=2, z=1},
@@ -387,3 +388,5 @@ minetest.register_craft({
 		{"group:tree", "boats:row_boat", "group:tree"},
 	},
 })
+
+print(minetest.get_current_modname().." LOADED")

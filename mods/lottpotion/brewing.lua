@@ -1,3 +1,5 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 lottpotion.make_pipe = function( pipes, horizontal )
    local result = {};
    for i, v in pairs( pipes ) do
@@ -165,22 +167,22 @@ local machine_name = "Brewer"
 
 local formspec =
 	"size[8,9]"..
-	"label[0,0;"..machine_name.."]"..
+	"label[0,0;"..SL(machine_name).."]"..
 	"image[4,2;1,1;default_brewer_inv.png]"..
-    "image[3,2;1,1;lottpotion_arrow.png]"..
-    "image[5,2;1,1;lottpotion_arrow.png]"..
-    "label[3.2,3.2;Fuel:]"..
+	"image[3,2;1,1;lottpotion_arrow.png]"..
+	"image[5,2;1,1;lottpotion_arrow.png]"..
+	"label[2.9,3.2;"..SL("Fuel:").."]"..
 	"list[current_name;fuel;4,3;1,1;]"..
-     "label[1,1.5;Ingredients:]"..
+	"label[1,1.5;"..SL("Ingredients:").."]"..
 	"list[current_name;src;1,2;2,1;]"..
-     "label[6,1.5;Result:]"..
+	"label[6,1.5;"..SL("Result:").."]"..
 	"list[current_name;dst;6,2;1,1;]"..
 	"list[current_player;main;0,5;8,4;]"..
 	"background[-0.5,-0.65;9,10.35;gui_brewerbg.png]"..
 	"listcolors[#606060AA;#888;#141318;#30434C;#FFF]"
 
 minetest.register_node("lottpotion:brewer", {
-	description = machine_name,
+	description = SL(machine_name),
 	drawtype = "nodebox",
 	tiles = {"default_wood.png"},
 	node_box = {
@@ -200,7 +202,7 @@ minetest.register_node("lottpotion:brewer", {
 	on_construct = function(pos)
 		local meta = minetest.env:get_meta(pos)
 		meta:set_string("formspec", formspec)
-		meta:set_string("infotext", machine_name)
+		meta:set_string("infotext", SL(machine_name))
 		local inv = meta:get_inventory()
 		inv:set_size("fuel", 1)
 		inv:set_size("src", 2)
@@ -210,13 +212,13 @@ minetest.register_node("lottpotion:brewer", {
 	--backwards compatibility: punch to set formspec
   	on_punch = function(pos,player)
   	    local meta = minetest.get_meta(pos)
-        meta:set_string("infotext", machine_name)
+        meta:set_string("infotext", SL(machine_name))
         meta:set_string("formspec", formspec)
     end
 })
 
 minetest.register_node("lottpotion:brewer_active", {
-	description = machine_name,
+	description = SL(machine_name),
 	drawtype = "nodebox",
      tiles = {"default_wood.png"},
 	node_box = {
@@ -290,20 +292,20 @@ minetest.register_abm({
 		if meta:get_float("fuel_time") < meta:get_float("fuel_totaltime") then
 			local percent = math.floor(meta:get_float("fuel_time") /
 					meta:get_float("fuel_totaltime") * 100)
-			meta:set_string("infotext", ("%s Brewing"):format(machine_name).." ("..percent.."%)")
+			meta:set_string("infotext", SL(("%s Brewing"):format(machine_name)).." ("..percent.."%)")
 			lottpotion.swap_node(pos, "lottpotion:brewer_active")
 			meta:set_string("formspec",
 					"size[8,9]"..
-					"label[0,0;"..machine_name.."]"..
+					"label[0,0;"..SL(machine_name).."]"..
 					"image[4,2;1,1;default_brewer_inv.png^[lowpart:"..
 					(percent)..":lottpotion_bubble.png]"..
      				"image[3,2;1,1;lottpotion_arrow.png]"..
      				"image[5,2;1,1;lottpotion_arrow.png]"..
-					"label[3.2,3.2;Fuel:]"..
+					"label[2.9,3.2;"..SL("Fuel:").."]"..
 					"list[current_name;fuel;4,3;1,1;]"..
-     				"label[1,1.5;Ingredients:]"..
+     				"label[1,1.5;"..SL("Ingredients:").."]"..
 					"list[current_name;src;1,2;2,1;]"..
-    				"label[6,1.5;Result:]"..
+    				"label[6,1.5;"..SL("Result:").."]"..
 					"list[current_name;dst;6,2;1,1;]"..
 					"list[current_player;main;0,5;8,4;]"..
 					"background[-0.5,-0.65;9,10.35;gui_brewerbg.png]"..
@@ -315,7 +317,7 @@ minetest.register_abm({
 
 		if not recipe then
 			if was_active then
-				meta:set_string("infotext", ("%s is empty"):format(machine_name))
+				meta:set_string("infotext", SL(("%s is empty"):format(machine_name)))
 				lottpotion.swap_node(pos, "lottpotion:brewer")
 				meta:set_string("formspec", formspec)
 			end
@@ -331,7 +333,7 @@ minetest.register_abm({
 		end
 
 		if fuel.time <= 0 then
-			meta:set_string("infotext", ("%s Out Of Heat"):format(machine_name))
+			meta:set_string("infotext", SL(("%s Out Of Heat"):format(machine_name)))
 			lottpotion.swap_node(pos, "lottpotion:brewer")
 			meta:set_string("formspec", formspec)
 			return

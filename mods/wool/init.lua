@@ -1,3 +1,4 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
 -- minetest/wool/init.lua
 
 -- Backwards compatibility with jordach's 16-color wool mod
@@ -32,7 +33,7 @@ for _, row in ipairs(wool.dyes) do
 	local craft_color_group = row[3]
 	-- Node Definition
 	minetest.register_node("wool:"..name, {
-		description = desc.." Wool",
+		description = SL(desc.." Wool"),
 		tiles = {"wool_"..name..".png"},
 		groups = {snappy=2,choppy=2,oddly_breakable_by_hand=3,flammable=3,wool=1},
 		sounds = default.node_sound_defaults(),
@@ -40,8 +41,8 @@ for _, row in ipairs(wool.dyes) do
 	stairs.register_stair_and_slab("wool"..name, "wool:"..name,
 		{snappy=2,choppy=2,oddly_breakable_by_hand=2,flammable=3},
 		{"wool_"..name..".png"},
-		desc.." Wool Stair",
-		desc.." Wool Slab",
+		SL(desc.." Wool Stair"),
+		SL(desc.." Wool Slab"),
 		default.node_sound_wood_defaults())
 	if craft_color_group then
 		-- Crafting from dye and white wool
@@ -53,3 +54,4 @@ for _, row in ipairs(wool.dyes) do
 	end
 end
 
+print(minetest.get_current_modname().." LOADED")

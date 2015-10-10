@@ -1,7 +1,9 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 -- Ores:
 
 minetest.register_node("lottores:limestone_ore", {
-	description = "Limestone Ore",
+	description = SL("Limestone Ore"),
 	tiles = {"default_stone.png^lottores_limestone_ore.png"},
 	is_ground_content = true,
 	groups = {cracky=3},
@@ -10,7 +12,7 @@ minetest.register_node("lottores:limestone_ore", {
 })
 
 minetest.register_node("lottores:rough_rock", {
-	description = "Rough Rock",
+	description = SL("Rough Rock"),
 	tiles = {"default_stone.png^lottores_rough_rock.png"},
 	is_ground_content = true,
 	groups = {cracky=2},
@@ -19,7 +21,7 @@ minetest.register_node("lottores:rough_rock", {
 })
 
 minetest.register_node("lottores:silver_ore", {
-	description = "Silver Ore",
+	description = SL("Silver Ore"),
 	tiles = {"default_stone.png^lottores_silver_ore.png"},
 	is_ground_content = true,
 	groups = {cracky=2},
@@ -28,7 +30,7 @@ minetest.register_node("lottores:silver_ore", {
 })
 
 minetest.register_node("lottores:tin_ore", {
-	description = "Tin Ore",
+	description = SL("Tin Ore"),
 	tiles = {"default_stone.png^lottores_tin_ore.png"},
 	is_ground_content = true,
 	groups = {cracky=3},
@@ -37,7 +39,7 @@ minetest.register_node("lottores:tin_ore", {
 })
 
 minetest.register_node("lottores:lead_ore", {
-	description = "Lead Ore",
+	description = SL("Lead Ore"),
 	tiles = {"default_stone.png^lottores_lead_ore.png"},
 	is_ground_content = true,
 	groups = {cracky=2},
@@ -46,7 +48,7 @@ minetest.register_node("lottores:lead_ore", {
 })
 	
 minetest.register_node("lottores:mithril_ore", {
-	description = "Mithril Ore",
+	description = SL("Mithril Ore"),
 	tiles = {"default_stone.png^lottores_mithril_ore.png"},
 	is_ground_content = true,
 	groups = {cracky=1},
@@ -55,7 +57,7 @@ minetest.register_node("lottores:mithril_ore", {
 })
 
 minetest.register_node("lottores:blue_gem_ore", {
-	description = "Blue Gem Ore",
+	description = SL("Blue Gem Ore"),
 	tiles = {"default_stone.png^lottores_bluegem_ore.png"},
 	is_ground_content = true,
 	groups = {cracky=1},
@@ -74,7 +76,7 @@ minetest.register_node("lottores:blue_gem_ore", {
 })
 
 minetest.register_node("lottores:white_gem_ore", {
-	description = "White Gem Ore",
+	description = SL("White Gem Ore"),
 	tiles = {"default_stone.png^lottores_whitegem_ore.png"},
 	is_ground_content = true,
 	groups = {cracky=1},
@@ -93,7 +95,7 @@ minetest.register_node("lottores:white_gem_ore", {
 })
 
 minetest.register_node("lottores:red_gem_ore", {
-	description = "Red Gem Ore",
+	description = SL("Red Gem Ore"),
 	tiles = {"default_stone.png^lottores_redgem_ore.png"},
 	is_ground_content = true,
 	groups = {cracky=1},
@@ -291,93 +293,93 @@ minetest.register_ore({
 -- Craft Items
 
 minetest.register_craftitem("lottores:limestone_lump", {
-	description = "Limestone Lump",
+	description = SL("Limestone Lump"),
 	inventory_image = "lottores_limestone_lump.png",
 })
 
 minetest.register_craftitem("lottores:rough_rock_lump", {
-	description = "Rough Rock Lump",
+	description = SL("Rough Rock Lump"),
 	inventory_image = "lottores_rough_rock_lump.png",
 })
 
 minetest.register_craftitem("lottores:silver_lump", {
-	description = "Silver Lump",
+	description = SL("Silver Lump"),
 	inventory_image = "lottores_silver_lump.png",
 })
 
 minetest.register_craftitem("lottores:silver_ingot", {
-	description = "Silver Ingot",
+	description = SL("Silver Ingot"),
 	inventory_image = "lottores_silver_ingot.png",
 })
 
 minetest.register_craftitem("lottores:tin_lump", {
-	description = "Tin Lump",
+	description = SL("Tin Lump"),
 	inventory_image = "lottores_tin_lump.png",
 })
 
 minetest.register_craftitem("lottores:tin_ingot", {
-	description = "Tin Ingot",
+	description = SL("Tin Ingot"),
 	inventory_image = "lottores_tin_ingot.png",
 })
 
 minetest.register_craftitem("lottores:lead_lump", {
-	description = "Lead Lump",
+	description = SL("Lead Lump"),
 	inventory_image = "lottores_lead_lump.png",
 })
 
 minetest.register_craftitem("lottores:lead_ingot", {
-	description = "Lead Ingot",
+	description = SL("Lead Ingot"),
 	inventory_image = "lottores_lead_ingot.png",
 })
 
 minetest.register_craftitem("lottores:mithril_lump", {
-	description = "Mithril Lump",
+	description = SL("Mithril Lump"),
 	inventory_image = "lottores_mithril_lump.png",
 })
 
 minetest.register_craftitem("lottores:mithril_ingot", {
-	description = "Mithril Ingot",
+	description = SL("Mithril Ingot"),
 	inventory_image = "lottores_mithril_ingot.png",
 })
 
 minetest.register_craftitem("lottores:galvorn_ingot", {
-	description = "Galvorn Ingot",
+	description = SL("Galvorn Ingot"),
 	inventory_image = "lottores_galvorn_ingot.png",
      groups = {forbidden=1},
 })
 
 minetest.register_craftitem("lottores:tilkal_ingot", {
-	description = "Tilkal Ingot",
+	description = SL("Tilkal Ingot"),
 	inventory_image = "lottores_tilkal_ingot.png",
      groups = {forbidden=1},
 })
 
 minetest.register_craftitem("lottores:blue_gem", {
-	description = "Blue Gem",
+	description = SL("Blue Gem"),
 	inventory_image = "lottores_bluegem.png",
 })
 
 minetest.register_craftitem("lottores:red_gem", {
-	description = "Red Gem",
+	description = SL("Red Gem"),
 	inventory_image = "lottores_redgem.png",
 })
 
 minetest.register_craftitem("lottores:white_gem", {
-	description = "White Gem",
+	description = SL("White Gem"),
 	inventory_image = "lottores_whitegem.png",
 })
 
 -- Nodes
 
 minetest.register_node("lottores:tilkal", {
-	description = "Tilkal",
+	description = SL("Tilkal"),
 	tiles = {"lottores_tilkal.png"},
 	sounds = default.node_sound_defaults(),
 	groups = {forbidden=1},
 })
 
 minetest.register_node("lottores:limestone", {
-	description = "Limestone",
+	description = SL("Limestone"),
 	tiles = {"lottores_limestone_ore.png"},
 	is_ground_content = true,
 	groups = {cracky=3, stone=2},
@@ -385,7 +387,7 @@ minetest.register_node("lottores:limestone", {
 })
 
 minetest.register_node("lottores:marble", {
-	description = "Marble",
+	description = SL("Marble"),
 	tiles = {"lottores_marble.png"},
 	is_ground_content = true,
 	groups = {cracky=3},
@@ -393,7 +395,7 @@ minetest.register_node("lottores:marble", {
 })
 
 minetest.register_node("lottores:geodes_crystal_1", {
-	description = "Geodes Crystal",
+	description = SL("Geodes Crystal"),
 	drawtype = "nodebox",
 	tiles = {"lottores_geodes_crystal.png"},
      paramtype = "light",
@@ -518,7 +520,7 @@ minetest.register_node("lottores:geodes_crystal_5", {
 })
 
 minetest.register_node("lottores:silver_block", {
-	description = "Silver Block",
+	description = SL("Silver Block"),
 	tiles = {"lottores_silver_block.png"},
 	is_ground_content = true,
 	groups = {cracky=1,level=2},
@@ -526,7 +528,7 @@ minetest.register_node("lottores:silver_block", {
 })
 
 minetest.register_node("lottores:tin_block", {
-	description = "Tin Block",
+	description = SL("Tin Block"),
 	tiles = {"lottores_tin_block.png"},
 	is_ground_content = true,
 	groups = {cracky=1},
@@ -534,7 +536,7 @@ minetest.register_node("lottores:tin_block", {
 })
 
 minetest.register_node("lottores:lead_block", {
-	description = "Lead Block",
+	description = SL("Lead Block"),
 	tiles = {"lottores_lead_block.png"},
 	is_ground_content = true,
 	groups = {cracky=1},
@@ -542,7 +544,7 @@ minetest.register_node("lottores:lead_block", {
 })
 
 minetest.register_node("lottores:mithril_block", {
-	description = "Mithril Block",
+	description = SL("Mithril Block"),
 	tiles = {"lottores_mithril_block.png"},
 	is_ground_content = true,
 	groups = {cracky=1,level=2},
@@ -550,7 +552,7 @@ minetest.register_node("lottores:mithril_block", {
 })
 
 minetest.register_node("lottores:galvorn_block", {
-	description = "Galvorn Block",
+	description = SL("Galvorn Block"),
 	tiles = {"lottores_galvorn_block.png"},
 	is_ground_content = true,
 	groups = {cracky=1,level=2,forbidden=1},
@@ -560,7 +562,7 @@ minetest.register_node("lottores:galvorn_block", {
 -- Ithildin
 
 minetest.register_node("lottores:ithildin_0", {
-	description = "Ithildin",
+	description = SL("Ithildin"),
 	tiles = {"ithildin_0.png"},
 	drawtype = "glasslike",
 	paramtype = "light",
@@ -573,7 +575,7 @@ minetest.register_node("lottores:ithildin_0", {
 })
 
 minetest.register_node("lottores:ithildin_1", {
-	description = "Ithildin",
+	description = SL("Ithildin"),
 	tiles = {"ithildin_1.png"},
 	inventory_image = {"ithildin_1.png"},
 	wield_image = {"ithildin_1.png"},
@@ -589,7 +591,7 @@ minetest.register_node("lottores:ithildin_1", {
 })
 
 minetest.register_node("lottores:ithildin_stone_0", {
-	description = "Ithildin Stone",
+	description = SL("Ithildin Stone"),
 	tiles = {"default_stone.png"},
 	drawtype = 'normal',
 	walkable = true,
@@ -601,7 +603,7 @@ minetest.register_node("lottores:ithildin_stone_0", {
 })
 
 minetest.register_node("lottores:ithildin_stone_1", {
-	description = "Ithildin Stone",
+	description = SL("Ithildin Stone"),
 	tiles = {"default_stone.png^ithildin_1.png"},
 	drawtype = 'glasslike',
 	walkable = false,
@@ -614,7 +616,7 @@ minetest.register_node("lottores:ithildin_stone_1", {
 })
 
 minetest.register_node("lottores:ithildin_stonelamp_0", {
-	description = "Ithildin Stonelamp",
+	description = SL("Ithildin Stonelamp"),
 	tiles = {"default_stone.png"},
 	drawtype = 'normal',
 	walkable = true,
@@ -626,7 +628,7 @@ minetest.register_node("lottores:ithildin_stonelamp_0", {
 })
 
 minetest.register_node("lottores:ithildin_stonelamp_1", {
-	description = "Ithildin Stonelamp",
+	description = SL("Ithildin Stonelamp"),
 	tiles = {"default_stone.png^ithildin_lamp_1.png"},
 	drawtype = 'normal',
 	walkable = true,
@@ -639,7 +641,7 @@ minetest.register_node("lottores:ithildin_stonelamp_1", {
 })
 
 minetest.register_node("lottores:ithildin_lamp_0", {
-	description = "Ithildin Lamp",
+	description = SL("Ithildin Lamp"),
 	tiles = {"ithildin_lamp_0.png"},
 	paramtype = "light",
 	drawtype = 'glasslike',
@@ -652,7 +654,7 @@ minetest.register_node("lottores:ithildin_lamp_0", {
 })
 
 minetest.register_node("lottores:ithildin_lamp_1", {
-	description = "Ithildin Lamp",
+	description = SL("Ithildin Lamp"),
 	tiles = {"ithildin_lamp_1.png"},
 	paramtype = "light",
 	drawtype = 'glasslike',
@@ -767,7 +769,7 @@ minetest.register_abm(
 -- Pickaxe
 
 minetest.register_tool("lottores:copperpick", {
-	description = "Copper Pickaxe",
+	description = SL("Copper Pickaxe"),
 	inventory_image = "lottores_copperpick.png",
 	tool_capabilities = {
 		full_punch_interval = 1.0,
@@ -779,7 +781,7 @@ minetest.register_tool("lottores:copperpick", {
 	},
 })
 minetest.register_tool("lottores:tinpick", {
-	description = "Tin Pickaxe",
+	description = SL("Tin Pickaxe"),
 	inventory_image = "lottores_tinpick.png",
 	tool_capabilities = {
 		full_punch_interval = 1.0,
@@ -791,7 +793,7 @@ minetest.register_tool("lottores:tinpick", {
 	},
 })
 minetest.register_tool("lottores:silverpick", {
-	description = "Silver Pickaxe",
+	description = SL("Silver Pickaxe"),
 	inventory_image = "lottores_silverpick.png",
 	tool_capabilities = {
 		full_punch_interval = 1.0,
@@ -803,7 +805,7 @@ minetest.register_tool("lottores:silverpick", {
 	},
 })
 minetest.register_tool("lottores:goldpick", {
-	description = "Gold Pickaxe",
+	description = SL("Gold Pickaxe"),
 	inventory_image = "lottores_goldpick.png",
 	tool_capabilities = {
 		full_punch_interval = 1.0,
@@ -815,7 +817,7 @@ minetest.register_tool("lottores:goldpick", {
 	},
 })
 minetest.register_tool("lottores:galvornpick", {
-	description = "Galvorn Pickaxe",
+	description = SL("Galvorn Pickaxe"),
 	inventory_image = "lottores_galvornpick.png",
      groups = {forbidden=1},
 	tool_capabilities = {
@@ -828,7 +830,7 @@ minetest.register_tool("lottores:galvornpick", {
 	},
 })
 minetest.register_tool("lottores:mithrilpick", {
-	description = "Mithril Pickaxe",
+	description = SL("Mithril Pickaxe"),
 	inventory_image = "lottores_mithrilpick.png",
 	tool_capabilities = {
 		full_punch_interval = 0.8,
@@ -843,7 +845,7 @@ minetest.register_tool("lottores:mithrilpick", {
 -- Axe
 
 minetest.register_tool("lottores:copperaxe", {
-	description = "Copper Axe",
+	description = SL("Copper Axe"),
 	inventory_image = "lottores_copperaxe.png",
 	tool_capabilities = {
 		full_punch_interval = 1.0,
@@ -855,7 +857,7 @@ minetest.register_tool("lottores:copperaxe", {
 	},
 })
 minetest.register_tool("lottores:tinaxe", {
-	description = "Tin Axe",
+	description = SL("Tin Axe"),
 	inventory_image = "lottores_tinaxe.png",
 	tool_capabilities = {
 		full_punch_interval = 1.0,
@@ -867,7 +869,7 @@ minetest.register_tool("lottores:tinaxe", {
 	},
 })
 minetest.register_tool("lottores:silveraxe", {
-	description = "Silver Axe",
+	description = SL("Silver Axe"),
 	inventory_image = "lottores_silveraxe.png",
 	tool_capabilities = {
 		full_punch_interval = 1.0,
@@ -879,7 +881,7 @@ minetest.register_tool("lottores:silveraxe", {
 	},
 })
 minetest.register_tool("lottores:goldaxe", {
-	description = "Gold Axe",
+	description = SL("Gold Axe"),
 	inventory_image = "lottores_goldaxe.png",
 	tool_capabilities = {
 		full_punch_interval = 1.0,
@@ -891,7 +893,7 @@ minetest.register_tool("lottores:goldaxe", {
 	},
 })
 minetest.register_tool("lottores:galvornaxe", {
-	description = "Galvorn Axe",
+	description = SL("Galvorn Axe"),
 	inventory_image = "lottores_galvornaxe.png",
      groups = {forbidden=1},
 	tool_capabilities = {
@@ -904,7 +906,7 @@ minetest.register_tool("lottores:galvornaxe", {
 	},
 })
 minetest.register_tool("lottores:mithrilaxe", {
-	description = "Mithril Axe",
+	description = SL("Mithril Axe"),
 	inventory_image = "lottores_mithrilaxe.png",
 	tool_capabilities = {
 		full_punch_interval = 0.8,
@@ -919,7 +921,7 @@ minetest.register_tool("lottores:mithrilaxe", {
 -- Sword
 
 minetest.register_tool("lottores:coppersword", {
-	description = "Copper Sword",
+	description = SL("Copper Sword"),
 	inventory_image = "lottores_coppersword.png",
 	tool_capabilities = {
 		full_punch_interval = 1.25,
@@ -931,7 +933,7 @@ minetest.register_tool("lottores:coppersword", {
 	}
 })
 minetest.register_tool("lottores:tinsword", {
-	description = "Tin Sword",
+	description = SL("Tin Sword"),
 	inventory_image = "lottores_tinsword.png",
 	tool_capabilities = {
 		full_punch_interval = 1.25,
@@ -943,7 +945,7 @@ minetest.register_tool("lottores:tinsword", {
 	}
 })
 minetest.register_tool("lottores:silversword", {
-	description = "Silver Sword",
+	description = SL("Silver Sword"),
 	inventory_image = "lottores_silversword.png",
 	tool_capabilities = {
 		full_punch_interval = 1,
@@ -955,7 +957,7 @@ minetest.register_tool("lottores:silversword", {
 	}
 })
 minetest.register_tool("lottores:goldsword", {
-	description = "Gold Sword",
+	description = SL("Gold Sword"),
 	inventory_image = "lottores_goldsword.png",
 	tool_capabilities = {
 		full_punch_interval = 0.75,
@@ -967,7 +969,7 @@ minetest.register_tool("lottores:goldsword", {
 	}
 })
 minetest.register_tool("lottores:galvornsword", {
-	description = "Galvorn Sword",
+	description = SL("Galvorn Sword"),
 	inventory_image = "lottores_galvornsword.png",
      groups = {forbidden=1},
 	tool_capabilities = {
@@ -980,7 +982,7 @@ minetest.register_tool("lottores:galvornsword", {
 	}
 })
 minetest.register_tool("lottores:mithrilsword", {
-	description = "Mithril Sword",
+	description = SL("Mithril Sword"),
 	inventory_image = "lottores_mithrilsword.png",
 	tool_capabilities = {
 		full_punch_interval = 0.25,
@@ -995,7 +997,7 @@ minetest.register_tool("lottores:mithrilsword", {
 -- Shovel
 
 minetest.register_tool("lottores:coppershovel", {
-	description = "Copper Shovel",
+	description = SL("Copper Shovel"),
 	inventory_image = "lottores_coppershovel.png",
 	wield_image = "lottores_coppershovel.png^[transformR90",
 	tool_capabilities = {
@@ -1008,7 +1010,7 @@ minetest.register_tool("lottores:coppershovel", {
 	},
 })
 minetest.register_tool("lottores:tinshovel", {
-	description = "Tin Shovel",
+	description = SL("Tin Shovel"),
 	inventory_image = "lottores_tinshovel.png",
 	wield_image = "lottores_tinshovel.png^[transformR90",
 	tool_capabilities = {
@@ -1021,7 +1023,7 @@ minetest.register_tool("lottores:tinshovel", {
 	},
 })
 minetest.register_tool("lottores:silvershovel", {
-	description = "Silver Shovel",
+	description = SL("Silver Shovel"),
 	inventory_image = "lottores_silvershovel.png",
 	wield_image = "lottores_silvershovel.png^[transformR90",
 	tool_capabilities = {
@@ -1034,7 +1036,7 @@ minetest.register_tool("lottores:silvershovel", {
 	},
 })
 minetest.register_tool("lottores:goldshovel", {
-	description = "Gold Shovel",
+	description = SL("Gold Shovel"),
 	inventory_image = "lottores_goldshovel.png",
 	wield_image = "lottores_goldshovel.png^[transformR90",
 	tool_capabilities = {
@@ -1047,7 +1049,7 @@ minetest.register_tool("lottores:goldshovel", {
 	},
 })
 minetest.register_tool("lottores:galvornshovel", {
-	description = "Galvorn Shovel",
+	description = SL("Galvorn Shovel"),
 	inventory_image = "lottores_galvornshovel.png",
 	wield_image = "lottores_galvornshovel.png^[transformR90",
      groups = {forbidden=1},
@@ -1061,7 +1063,7 @@ minetest.register_tool("lottores:galvornshovel", {
 	},
 })
 minetest.register_tool("lottores:mithrilshovel", {
-	description = "Mithril Shovel",
+	description = SL("Mithril Shovel"),
 	inventory_image = "lottores_mithrilshovel.png",
 	wield_image = "lottores_mithrilshovel.png^[transformR90",
 	tool_capabilities = {
@@ -1079,57 +1081,57 @@ minetest.register_tool("lottores:mithrilshovel", {
 stairs.register_stair_and_slab("tilkal", "lottores:tilkal",
         {forbidden=1},
 		{"lottores_tilkal.png"},
-		"Tilkal Stair",
-		"Tilkal Slab",
+		SL("Tilkal Stair"),
+		SL("Tilkal Slab"),
 		default.node_sound_stone_defaults())
 		
 stairs.register_stair_and_slab("limestone", "lottores:limestone",
         {cracky=3, stone=2},
 		{"lottores_limestone_ore.png"},
-		"Limestone Stair",
-		"Limestone Slab",
+		SL("Limestone Stair"),
+		SL("Limestone Slab"),
 		default.node_sound_stone_defaults())
 
 stairs.register_stair_and_slab("marble", "lottores:marble",
         {cracky=3},
 		{"lottores_marble.png"},
-		"Marble Stair",
-		"Marble Slab",
+		SL("Marble Stair"),
+		SL("Marble Slab"),
 		default.node_sound_stone_defaults())
 
 stairs.register_stair_and_slab("silver_block", "lottores:silver_block",
         {cracky=1,level=2},
 		{"lottores_silver_block.png"},
-		"Silver Stair",
-		"Silver Slab",
+		SL("Silver Stair"),
+		SL("Silver Slab"),
 		default.node_sound_stone_defaults())
 
 stairs.register_stair_and_slab("tin_block", "lottores:tin_block",
         {cracky=1},
 		{"lottores_tin_block.png"},
-		"Tin Stair",
-		"Tin Slab",
+		SL("Tin Stair"),
+		SL("Tin Slab"),
 		default.node_sound_stone_defaults())
 
 stairs.register_stair_and_slab("lead_block", "lottores:lead_block",
         {cracky=1},
 		{"lottores_lead_block.png"},
-		"Lead Stair",
-		"Lead Slab",
+		SL("Lead Stair"),
+		SL("Lead Slab"),
 		default.node_sound_stone_defaults())
 	
 stairs.register_stair_and_slab("mithril_block", "lottores:mithril_block",
         {cracky=1,level=2},
 		{"lottores_mithril_block.png"},
-		"Mithril Stair",
-		"Mithril Slab",
+		SL("Mithril Stair"),
+		SL("Mithril Slab"),
 		default.node_sound_stone_defaults())
 	
 stairs.register_stair_and_slab("tin_block", "lottores:galvorn_block",
         {cracky=1,level=2,forbidden=1},
 		{"lottores_galvorn_block.png"},
-		"Galvorn Stair",
-		"Galvorn Slab",
+		SL("Galvorn Stair"),
+		SL("Galvorn Slab"),
 		default.node_sound_stone_defaults())
 	
 -- Crafting
@@ -1545,7 +1547,7 @@ minetest.register_craft({
 --Blocks
 
 minetest.register_node("lottores:mineral_pearl", {
-	description = "Pearl Ore",
+	description = SL("Pearl Ore"),
 	tiles = {"default_sand.png^lottores_mineral_pearl.png"},
 	paramtype = "light",
 	is_ground_content = true,
@@ -1564,7 +1566,7 @@ minetest.register_node("lottores:mineral_pearl", {
 })
 
 minetest.register_node("lottores:mineral_salt", {
-	description = "Salt Mineral",
+	description = SL("Salt Mineral"),
 	tiles = {"default_dirt.png^lottores_mineral_salt.png"},
 	paramtype = "light",
 	is_ground_content = true,
@@ -1583,7 +1585,7 @@ minetest.register_node("lottores:mineral_salt", {
 })
 
 minetest.register_node( "lottores:pearl_block", {
-	description = "Pearl Block",
+	description = SL("Pearl Block"),
      alpha = 200,
 	tile_images = { "default_sand.png^lottores_pearl_block.png" },
 	is_ground_content = true,
@@ -1592,7 +1594,7 @@ minetest.register_node( "lottores:pearl_block", {
 })
 
 minetest.register_node( "lottores:salt_block", {
-	description = "Salt Block",
+	description = SL("Salt Block"),
 	tile_images = { "default_clay.png^lottores_salt_block.png" },
 	is_ground_content = true,
 	groups = {snappy=2,cracky=3,oddly_breakable_by_hand=3},
@@ -1601,7 +1603,7 @@ minetest.register_node( "lottores:salt_block", {
 })
 
 minetest.register_node("lottores:salt", {
-	description = "Salt",
+	description = SL("Salt"),
 	drawtype = "plantlike",
 	visual_scale = 1.0,
 	tiles = {"lottores_salt.png"},
@@ -1617,7 +1619,7 @@ minetest.register_node("lottores:salt", {
 -- Craft items
 
 minetest.register_craftitem("lottores:pearl", {
-	description = "Pearl",
+	description = SL("Pearl"),
 	inventory_image = "lottores_pearl.png",
 })	
 
@@ -1677,3 +1679,5 @@ stairs.register_stair_and_slab("salt", "lottores:salt_block",
 		"Salt Stair",
 		"Salt Slab",
 		default.node_sound_stone_defaults())
+
+print(minetest.get_current_modname().." LOADED")

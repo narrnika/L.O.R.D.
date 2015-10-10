@@ -1,3 +1,5 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 lottpotion = {}
 
 dofile(minetest.get_modpath("lottpotion").."/cauldron.lua")
@@ -94,11 +96,11 @@ lottpotion = {
 		end
 		lottpotion.addPrefs(playername, def.speed, def.jump, def.gravity)
 		lottpotion.refresh(playername)
-		minetest.chat_send_player(playername, "You are under the effects of the "..type.." potion.")
+		minetest.chat_send_player(playername, SL("You are under the effects of the "..type.." potion."))
 		minetest.after(time, function()
 			lottpotion.addPrefs(playername, 0-def.speed, 0-def.jump, 0-def.gravity)
 			lottpotion.refresh(playername)
-			minetest.chat_send_player(playername, "The effects of the "..type.." potion have worn off.")
+			minetest.chat_send_player(playername, SL("The effects of the "..type.." potion have worn off."))
 		end)
 	end,
 	addPrefs = function(playername, speed, jump, gravity)
@@ -119,7 +121,7 @@ lottpotion = {
 			for i=1, #def.types do
 				local sdata = def.types[i]
 				local item_def = {
-					description = name.." (Strength: "..tps[t]..sdata.type..")",
+					description = SL(name.." (Strength: "..tps[t]..sdata.type..")"),
 					inventory_image = "lottpotion_bottle.png^lottpotion_"..(def.texture or sname)..".png^lottpotion_"..tps[t]..sdata.type..".png",
 					drawtype = "plantlike",
 					paramtype = "light",
@@ -361,35 +363,35 @@ minetest.register_chatcommand("effect", {
 })
 
 minetest.register_craftitem( "lottpotion:wine", {
-	description = "Wine",
+	description = SL("Wine"),
 	inventory_image = "lottpotion_wine.png",
 	wield_image = "lottpotion_wine.png",
 	on_use = minetest.item_eat(6),
 })
 
 minetest.register_craftitem( "lottpotion:beer", {
-	description = "Beer",
+	description = SL("Beer"),
 	inventory_image = "lottpotion_beer.png",
 	wield_image = "lottpotion_beer.png",
 	on_use = minetest.item_eat(6),
 })
 
 minetest.register_craftitem( "lottpotion:ale", {
-	description = "Ale",
+	description = SL("Ale"),
 	inventory_image = "lottpotion_ale.png",
 	wield_image = "lottpotion_ale.png",
 	on_use = minetest.item_eat(5),
 })
 
 minetest.register_craftitem( "lottpotion:mead", {
-	description = "Mead",
+	description = SL("Mead"),
 	inventory_image = "lottpotion_mead.png",
 	wield_image = "lottpotion_mead.png",
 	on_use = minetest.item_eat(5),
 })
 
 minetest.register_craftitem( "lottpotion:cider", {
-	description = "Cider",
+	description = SL("Cider"),
 	inventory_image = "lottpotion_cider.png",
 	wield_image = "lottpotion_cider.png",
 	on_use = minetest.item_eat(4),
@@ -401,7 +403,7 @@ function lottpotion.can_dig(pos, player)
 	if not inv:is_empty("src") or not inv:is_empty("dst") or not inv:is_empty("fuel") or
 	   not inv:is_empty("upgrade1") or not inv:is_empty("upgrade2") then
 		minetest.chat_send_player(player:get_player_name(),
-			"Brewer cannot be removed because it is not empty")
+			SL("Brewer cannot be removed because it is not empty"))
 		return false
 	else
 		return true
@@ -419,3 +421,5 @@ end
 
 dofile(minetest.get_modpath("lottpotion").."/potionbrewing.lua")
 dofile(minetest.get_modpath("lottpotion").."/brewing.lua")
+
+print(minetest.get_current_modname().." LOADED")

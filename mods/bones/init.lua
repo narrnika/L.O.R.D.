@@ -1,3 +1,5 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 -- Minetest 0.4 mod: bones
 -- See README.txt for licensing and other information. 
 
@@ -17,7 +19,7 @@ local function is_owner(pos, name)
 end
 
 minetest.register_node("bones:bones", {
-	description = "Bones Block",
+	description = SL("Bones Block"),
 	tiles = {
 		"bones_top.png",
 		"bones_bottom.png",
@@ -59,7 +61,7 @@ minetest.register_node("bones:bones", {
 	on_metadata_inventory_take = function(pos, listname, index, stack, player)
 		local meta = minetest.get_meta(pos)
 		if meta:get_string("owner") ~= "" and meta:get_inventory():is_empty("main") then
-			meta:set_string("infotext", meta:get_string("owner").."'s old bones")
+			meta:set_string("infotext", SL("Old bones of").." "..meta:get_string("owner"))
 			meta:set_string("owner", "")
 		end
 	end,
@@ -68,7 +70,7 @@ minetest.register_node("bones:bones", {
 		local meta = minetest.get_meta(pos)
 		local inv = meta:get_inventory()
 		inv:set_size("main", 8*4)
-		meta:set_string("infotext", "Pile of Bones")
+		meta:set_string("infotext", SL("Pile of Bones"))
   		meta:set_string("formspec",bones_formspec)
 	end,
 
@@ -83,7 +85,7 @@ minetest.register_node("bones:bones", {
 			return
 		end
 		if time >= publish then
-			meta:set_string("infotext", meta:get_string("owner").."'s old bones")
+			meta:set_string("infotext", SL("Old bones of").." "..meta:get_string("owner"))
 			meta:set_string("owner", "")
 		else
 			return true
@@ -154,7 +156,7 @@ minetest.register_on_dieplayer(function(player)
 		player_inv:set_stack("craft", i, nil)
 	end
 	
-	meta:set_string("infotext", player:get_player_name().."'s fresh bones")
+	meta:set_string("infotext", SL("Fresh bones of").." "..player:get_player_name())
 	meta:set_string("owner", player:get_player_name())
 	meta:set_string("formspec",bones_formspec)
 	meta:set_int("time", 0)
@@ -273,7 +275,7 @@ elseif n.name == "farming:cotton_7" then
 end
 
 minetest.register_craftitem("bones:bonedust", {
-	description = "Bone Dust",
+	description = SL("Bone Dust"),
 	inventory_image = "bones_bonedust.png",
 	liquids_pointable = false,
 	stack_max = 99,
@@ -287,7 +289,7 @@ minetest.register_craftitem("bones:bonedust", {
 })
 
 minetest.register_craftitem("bones:bone", {
-	description = "Bone",
+	description = SL("Bone"),
 	inventory_image = "bones_bone.png",
 })
 
@@ -332,7 +334,7 @@ minetest.register_craft({
 })
 
 minetest.register_tool("bones:bone_scythe", {
-	description = "Bone Scythe",
+	description = SL("Bone Scythe"),
 	inventory_image = "bones_scythe.png",
 	tool_capabilities = {
 		full_punch_interval = 0.7,
@@ -363,7 +365,7 @@ minetest.register_craft({
 })
 
 minetest.register_node("bones:skeleton", {
-	description = "Skeleton Head",
+	description = SL("Skeleton Head"),
      drawtype = "nodebox",
 	tiles = {
 		"bones_skeleton_top.png",
@@ -393,7 +395,7 @@ minetest.register_node("bones:skeleton", {
 })
 
 minetest.register_node("bones:skeleton_body", {
-	description = "Skeleton",
+	description = SL("Skeleton"),
 	drawtype = "nodebox",
 	tiles = {"bones_skeleton_top.png"},
 	inventory_image = "bones_skeleton.png",
@@ -445,3 +447,5 @@ minetest.register_node("bones:skeleton_body", {
 	    minetest.env:remove_node(p)
     end
 })
+
+print(minetest.get_current_modname().." LOADED")

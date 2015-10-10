@@ -1,3 +1,5 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 --------------------------------------------------------------------------------
 -- fabrics.lua: colored fabrics as ingredient for clothes
 --------------------------------------------------------------------------------
@@ -17,12 +19,12 @@ local fabric_colors = {
 	pink   = "dye:pink",
 	red    = "dye:red",
 	white  = "dye:white",
-	yellow = "dye:yellow"	
+	yellow = "dye:yellow"
 }
 
 -- flaxthreads made of dry_shrub. 2:1
 minetest.register_craftitem("lottclothes:flaxthread", {
-	description = "Flax Thread",
+	description = SL("Flax Thread"),
 	inventory_image = "lottclothes_flaxthread.png",
 })
 minetest.register_craft({
@@ -34,7 +36,7 @@ minetest.register_craft({
 -- flax, a fabric made of flaxthreads
 for color, dye in pairs(fabric_colors) do
 	minetest.register_craftitem("lottclothes:flax_"..color, {
-		description = color:gsub("^%l", string.upper).." Flax",
+		description = SL(color:gsub("^%l", string.upper).." Flax"),
 		inventory_image = "lottclothes_flax_"..color..".png"
 	})
 	
@@ -64,7 +66,7 @@ end
 
 -- feltthreads
 minetest.register_craftitem("lottclothes:feltthread", {
-	description = "Felt Thread",
+	description = SL("Felt Thread"),
 	inventory_image = "lottclothes_feltthread.png",
 })
 minetest.register_craft({
@@ -77,7 +79,7 @@ minetest.register_craft({
 -- felt, a fabric made of feltthreads
 for color, dye in pairs(fabric_colors) do
 	minetest.register_craftitem("lottclothes:felt_"..color, {
-		description = color:gsub("^%l", string.upper).." Felt",
+		description = SL(color:gsub("^%l", string.upper).." Felt"),
 		inventory_image = "lottclothes_felt_"..color..".png"
 	})
 	

@@ -1,3 +1,5 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 -- Minetest 0.4 mod: bucket
 -- See README.txt for licensing and other information.
 
@@ -126,7 +128,7 @@ function bucket.register_liquid(source, flowing, itemname, inventory_image, name
 end
 
 minetest.register_craftitem("bucket:bucket_empty", {
-	description = "Empty Bucket",
+	description = SL("Empty Bucket"),
 	inventory_image = "bucket.png",
 	stack_max = 1,
 	liquids_pointable = true,
@@ -164,7 +166,7 @@ bucket.register_liquid(
 	"default:water_flowing",
 	"bucket:bucket_water",
 	"bucket_water.png",
-	"Water Bucket"
+	SL("Water Bucket")
 )
 
 bucket.register_liquid(
@@ -172,7 +174,7 @@ bucket.register_liquid(
 	"default:lava_flowing",
 	"bucket:bucket_lava",
 	"bucket_lava.png",
-	"Lava Bucket"
+	SL("Lava Bucket")
 )
 
 minetest.register_craft({
@@ -181,3 +183,5 @@ minetest.register_craft({
 	burntime = 60,
 	replacements = {{"bucket:bucket_lava", "bucket:bucket_empty"}},
 })
+
+print(minetest.get_current_modname().." LOADED")

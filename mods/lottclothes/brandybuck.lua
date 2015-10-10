@@ -1,3 +1,5 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 -- basic outfit from the the brandybuck family.
 -- made from blue flax and copper ingot.
 -- hasn't got headwear.
@@ -6,7 +8,7 @@ local level=2
 
 -- shirt (torso)
 minetest.register_tool("lottclothes:shirt_brandybuck", {
-	description = "Brandybuck Shirt",
+	description = SL("Brandybuck Shirt"),
 	inventory_image = "lottclothes_inv_shirt_brandybuck.png",
 	groups = {armor_torso=0, armor_heal=0, clothes=1},
 	wear = 0
@@ -23,7 +25,7 @@ minetest.register_craft({
 
 -- trousers (legs)
 minetest.register_tool("lottclothes:trousers_brandybuck", {
-	description = "Brandybuck Trousers",
+	description = SL("Brandybuck Trousers"),
 	inventory_image = "lottclothes_inv_trousers_brandybuck.png",
 	groups = {armor_legs=0, armor_heal=0, clothes=1},
 	wear = 0
@@ -40,7 +42,7 @@ minetest.register_craft({
 
 -- shoes (feet)
 minetest.register_tool("lottclothes:shoes_brandybuck", {
-	description = "Brandybuck Shoes",
+	description = SL("Brandybuck Shoes"),
 	inventory_image = "lottclothes_inv_shoes_brandybuck.png",
 	groups = {armor_feet=0, armor_heal=0, clothes=1},
 	wear = 0

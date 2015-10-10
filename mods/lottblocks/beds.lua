@@ -1,8 +1,9 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
 
 local lottblocks_list = {
-	{ "Red Bed", "red"},	
-	{ "Blue Bed", "blue"},
-	{ "Green Bed", "green"},
+	{ SL("Red Bed"), "red"},	
+	{ SL("Blue Bed"), "blue"},
+	{ SL("Green Bed"), "green"},
 }
 
 for i in ipairs(lottblocks_list) do

@@ -1,3 +1,5 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 dofile(minetest.get_modpath(minetest.get_current_modname()).."/zcg.lua")
 dofile(minetest.get_modpath(minetest.get_current_modname()).."/cooking.lua")
 dofile(minetest.get_modpath(minetest.get_current_modname()).."/forbidden.lua")
@@ -25,17 +27,17 @@ end)
 
 --Bags
 minetest.register_tool("lottinventory:small", {
-	description = "Small Bag",
+	description = SL("Small Bag"),
 	inventory_image = "bags_small.png",
 	groups = {bagslots=8},
 })
 minetest.register_tool("lottinventory:medium", {
-	description = "Medium Bag",
+	description = SL("Medium Bag"),
 	inventory_image = "bags_medium.png",
 	groups = {bagslots=16},
 })
 minetest.register_tool("lottinventory:large", {
-	description = "Large Bag",
+	description = SL("Large Bag"),
 	inventory_image = "bags_large.png",
 	groups = {bagslots=24, forbidden=1},
 })
@@ -125,3 +127,5 @@ minetest.register_craft({
 		{'lottinventory:crafts_book', 'lottinventory:brewing_book', 'lottores:tilkal_ingot'},
 	}
 })
+
+print(minetest.get_current_modname().." LOADED")

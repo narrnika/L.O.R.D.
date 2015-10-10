@@ -1,5 +1,7 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 minetest.register_craftitem("lottfarming:brown_mushroom_spore", {
-	description = "Brown Mushroom Spores",
+	description = SL("Brown Mushroom Spores"),
 	inventory_image = "lottfarming_brown_mushroom_spore.png",
 	on_place = function(itemstack, placer, pointed_thing)
 		return place_spore(itemstack, placer, pointed_thing, "lottfarming:brown_mushroom_1")
@@ -7,7 +9,7 @@ minetest.register_craftitem("lottfarming:brown_mushroom_spore", {
 })
 
 minetest.register_craftitem("lottfarming:brown_mushroom", {
-	description = "Brown Mushroom",
+	description = SL("Brown Mushroom"),
 	tiles = {"lottfarming_brown_mushroom_4.png"},
 	groups = {mushroom=1, flower=1, color_brown=1},
 	inventory_image = "lottfarming_brown_mushroom.png",

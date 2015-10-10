@@ -1,3 +1,5 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 -- Minetest 0.4 mod: stairs
 -- See README.txt for licensing and other information.
 
@@ -215,70 +217,71 @@ end
 stairs.register_stair_and_slab("wood", "default:wood",
 		{snappy=2,choppy=2,oddly_breakable_by_hand=2,flammable=3},
 		{"default_wood.png"},
-		"Wooden Stair",
-		"Wooden Slab",
+		SL("Wooden Stair"),
+		SL("Wooden Slab"),
 		default.node_sound_wood_defaults())
 
 stairs.register_stair_and_slab("stone", "default:stone",
 		{cracky=3},
 		{"default_stone.png"},
-		"Stone Stair",
-		"Stone Slab",
+		SL("Stone Stair"),
+		SL("Stone Slab"),
 		default.node_sound_stone_defaults())
 
 stairs.register_stair_and_slab("cobble", "default:cobble",
 		{cracky=3},
 		{"default_cobble.png"},
-		"Cobble Stair",
-		"Cobble Slab",
+		SL("Cobble Stair"),
+		SL("Cobble Slab"),
 		default.node_sound_stone_defaults())
 
 stairs.register_stair_and_slab("brick", "default:brick",
 		{cracky=3},
 		{"default_brick.png"},
-		"Brick Stair",
-		"Brick Slab",
+		SL("Brick Stair"),
+		SL("Brick Slab"),
 		default.node_sound_stone_defaults())
 
 stairs.register_stair_and_slab("sandstone", "default:sandstone",
 		{crumbly=2,cracky=2},
 		{"default_sandstone.png"},
-		"Sandstone Stair",
-		"Sandstone Slab",
+		SL("Sandstone Stair"),
+		SL("Sandstone Slab"),
 		default.node_sound_stone_defaults())
 
 stairs.register_stair_and_slab("junglewood", "default:junglewood",
 		{snappy=2,choppy=2,oddly_breakable_by_hand=2,flammable=3},
 		{"default_junglewood.png"},
-		"Junglewood Stair",
-		"Junglewood Slab",
+		SL("Junglewood Stair"),
+		SL("Junglewood Slab"),
 		default.node_sound_wood_defaults())
 
 stairs.register_stair_and_slab("stonebrick", "default:stonebrick",
 		{cracky=3},
 		{"default_stone_brick.png"},
-		"Stone Brick Stair",
-		"Stone Brick Slab",
+		SL("Stone Brick Stair"),
+		SL("Stone Brick Slab"),
 		default.node_sound_stone_defaults())
 
 stairs.register_stair_and_slab("desert_stonebrick", "default:desert_stonebrick",
 		{cracky=3},
 		{"default_desert_stone_brick.png"},
-		"Desert Stone Brick Stair",
-		"Desert Stone Brick Slab",
+		SL("Desert Stone Brick Stair"),
+		SL("Desert Stone Brick Slab"),
 		default.node_sound_stone_defaults())
 
 stairs.register_stair_and_slab("desert_stone", "default:desert_stone",
 		{cracky=3},
 		{"default_desert_stone.png"},
-		"Desert Stone Stair",
-		"Desert Stone Slab",
+		SL("Desert Stone Stair"),
+		SL("Desert Stone Slab"),
 		default.node_sound_stone_defaults())
 
 stairs.register_stair_and_slab("desert_cobble", "default:desert_cobble",
 		{cracky=3},
 		{"default_desert_cobble.png"},
-		"Desert Cobble Stair",
-		"Desert Cobble Slab",
+		SL("Desert Cobble Stair"),
+		SL("Desert Cobble Slab"),
 		default.node_sound_stone_defaults())
 
+print(minetest.get_current_modname().." LOADED")

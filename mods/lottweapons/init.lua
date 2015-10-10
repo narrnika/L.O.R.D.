@@ -1,8 +1,10 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 --Weapons!
 
 -- Battle axes:
 minetest.register_tool("lottweapons:wood_battleaxe", {
-	description = "Training Battleaxe",
+	description = SL("Training Battleaxe"),
 	inventory_image = "lottweapons_wood_battleaxe.png",
 	tool_capabilities = {
 		full_punch_interval = 2,
@@ -16,7 +18,7 @@ minetest.register_tool("lottweapons:wood_battleaxe", {
 })
 
 minetest.register_tool("lottweapons:stone_battleaxe", {
-	description = "Stone Battleaxe",
+	description = SL("Stone Battleaxe"),
 	inventory_image = "lottweapons_stone_battleaxe.png",
 	tool_capabilities = {
 		full_punch_interval = 1.50,
@@ -30,7 +32,7 @@ minetest.register_tool("lottweapons:stone_battleaxe", {
 })
 
 minetest.register_tool("lottweapons:copper_battleaxe", {
-	description = "Copper Battleaxe",
+	description = SL("Copper Battleaxe"),
 	inventory_image = "lottweapons_copper_battleaxe.png",
 	tool_capabilities = {
 		full_punch_interval = 1.25,
@@ -44,7 +46,7 @@ minetest.register_tool("lottweapons:copper_battleaxe", {
 })
 
 minetest.register_tool("lottweapons:tin_battleaxe", {
-	description = "Tin Battleaxe",
+	description = SL("Tin Battleaxe"),
 	inventory_image = "lottweapons_tin_battleaxe.png",
 	tool_capabilities = {
 		full_punch_interval = 1.25,
@@ -58,7 +60,7 @@ minetest.register_tool("lottweapons:tin_battleaxe", {
 })
 
 minetest.register_tool("lottweapons:steel_battleaxe", {
-	description = "Steel Battleaxe",
+	description = SL("Steel Battleaxe"),
 	inventory_image = "lottweapons_steel_battleaxe.png",
 	tool_capabilities = {
 		full_punch_interval = 1.05,
@@ -72,7 +74,7 @@ minetest.register_tool("lottweapons:steel_battleaxe", {
 })
 
 minetest.register_tool("lottweapons:bronze_battleaxe", {
-	description = "Bronze Battleaxe",
+	description = SL("Bronze Battleaxe"),
 	inventory_image = "lottweapons_bronze_battleaxe.png",
 	tool_capabilities = {
 		full_punch_interval = 0.90,
@@ -86,7 +88,7 @@ minetest.register_tool("lottweapons:bronze_battleaxe", {
 })
 
 minetest.register_tool("lottweapons:silver_battleaxe", {
-	description = "Silver Battleaxe",
+	description = SL("Silver Battleaxe"),
 	inventory_image = "lottweapons_silver_battleaxe.png",
 	tool_capabilities = {
 		full_punch_interval = 1,
@@ -100,7 +102,7 @@ minetest.register_tool("lottweapons:silver_battleaxe", {
 })
 
 minetest.register_tool("lottweapons:gold_battleaxe", {
-	description = "Gold Battleaxe",
+	description = SL("Gold Battleaxe"),
 	inventory_image = "lottweapons_gold_battleaxe.png",
 	tool_capabilities = {
 		full_punch_interval = 0.75,
@@ -114,7 +116,7 @@ minetest.register_tool("lottweapons:gold_battleaxe", {
 })
 
 minetest.register_tool("lottweapons:galvorn_battleaxe", {
-	description = "Galvorn Battleaxe",
+	description = SL("Galvorn Battleaxe"),
 	inventory_image = "lottweapons_galvorn_battleaxe.png",
      groups = {forbidden=1},
 	tool_capabilities = {
@@ -129,7 +131,7 @@ minetest.register_tool("lottweapons:galvorn_battleaxe", {
 })
 
 minetest.register_tool("lottweapons:mithril_battleaxe", {
-	description = "Mithril Battleaxe",
+	description = SL("Mithril Battleaxe"),
 	inventory_image = "lottweapons_mithril_battleaxe.png",
 	tool_capabilities = {
 		full_punch_interval = .25,
@@ -144,7 +146,7 @@ minetest.register_tool("lottweapons:mithril_battleaxe", {
 
 --Warhammers:
 minetest.register_tool("lottweapons:wood_warhammer", {
-	description = "Training Warhammer",
+	description = SL("Training Warhammer"),
 	inventory_image = "lottweapons_wood_warhammer.png",
 	range = 2,
 	tool_capabilities = {
@@ -158,7 +160,7 @@ minetest.register_tool("lottweapons:wood_warhammer", {
 })
 
 minetest.register_tool("lottweapons:stone_warhammer", {
-	description = "Stone Warhammer",
+	description = SL("Stone Warhammer"),
 	inventory_image = "lottweapons_stone_warhammer.png",
 	range = 2,
 	tool_capabilities = {
@@ -172,7 +174,7 @@ minetest.register_tool("lottweapons:stone_warhammer", {
 })
 
 minetest.register_tool("lottweapons:copper_warhammer", {
-	description = "Copper Warhammer",
+	description = SL("Copper Warhammer"),
 	inventory_image = "lottweapons_copper_warhammer.png",
 	range = 2,
 	tool_capabilities = {
@@ -186,7 +188,7 @@ minetest.register_tool("lottweapons:copper_warhammer", {
 })
 
 minetest.register_tool("lottweapons:tin_warhammer", {
-	description = "Tin Warhammer",
+	description = SL("Tin Warhammer"),
 	inventory_image = "lottweapons_tin_warhammer.png",
 	range = 2,
 	tool_capabilities = {
@@ -200,7 +202,7 @@ minetest.register_tool("lottweapons:tin_warhammer", {
 })
 
 minetest.register_tool("lottweapons:steel_warhammer", {
-	description = "Steel Warhammer",
+	description = SL("Steel Warhammer"),
 	inventory_image = "lottweapons_steel_warhammer.png",
 	range = 2,
 	tool_capabilities = {
@@ -214,7 +216,7 @@ minetest.register_tool("lottweapons:steel_warhammer", {
 })
 
 minetest.register_tool("lottweapons:bronze_warhammer", {
-	description = "Bronze Warhammer",
+	description = SL("Bronze Warhammer"),
 	inventory_image = "lottweapons_bronze_warhammer.png",
 	range = 2,
 	tool_capabilities = {
@@ -228,7 +230,7 @@ minetest.register_tool("lottweapons:bronze_warhammer", {
 })
 
 minetest.register_tool("lottweapons:silver_warhammer", {
-	description = "Silver Warhammer",
+	description = SL("Silver Warhammer"),
 	inventory_image = "lottweapons_silver_warhammer.png",
 	range = 2,
 	tool_capabilities = {
@@ -242,7 +244,7 @@ minetest.register_tool("lottweapons:silver_warhammer", {
 })
 
 minetest.register_tool("lottweapons:gold_warhammer", {
-	description = "Gold Warhammer",
+	description = SL("Gold Warhammer"),
 	inventory_image = "lottweapons_gold_warhammer.png",
 	tool_capabilities = {
 		full_punch_interval = 0.75,
@@ -255,7 +257,7 @@ minetest.register_tool("lottweapons:gold_warhammer", {
 })
 
 minetest.register_tool("lottweapons:galvorn_warhammer", {
-	description = "Galvorn Warhammer",
+	description = SL("Galvorn Warhammer"),
 	inventory_image = "lottweapons_galvorn_warhammer.png",
 	range = 2,
      groups = {forbidden=1},
@@ -270,7 +272,7 @@ minetest.register_tool("lottweapons:galvorn_warhammer", {
 })
 
 minetest.register_tool("lottweapons:mithril_warhammer", {
-	description = "Mithril Warhammer",
+	description = SL("Mithril Warhammer"),
 	inventory_image = "lottweapons_mithril_warhammer.png",
 	range = 2,
 	tool_capabilities = {
@@ -285,7 +287,7 @@ minetest.register_tool("lottweapons:mithril_warhammer", {
 
 --Spears:
 minetest.register_tool("lottweapons:wood_spear", {
-	description = "Training Spear",
+	description = SL("Training Spear"),
 	inventory_image = "lottweapons_wood_spear.png",
 	wield_image = "lottweapons_wood_spear.png^[transformFX",
 	range = 7,
@@ -300,7 +302,7 @@ minetest.register_tool("lottweapons:wood_spear", {
 })
 
 minetest.register_tool("lottweapons:stone_spear", {
-	description = "Stone Spear",
+	description = SL("Stone Spear"),
 	inventory_image = "lottweapons_stone_spear.png",
 	wield_image = "lottweapons_stone_spear.png^[transformFX",
 	range = 7,
@@ -315,7 +317,7 @@ minetest.register_tool("lottweapons:stone_spear", {
 })
 
 minetest.register_tool("lottweapons:copper_spear", {
-	description = "Copper Spear",
+	description = SL("Copper Spear"),
 	inventory_image = "lottweapons_copper_spear.png",
 	wield_image = "lottweapons_copper_spear.png^[transformFX",
 	tool_capabilities = {
@@ -329,7 +331,7 @@ minetest.register_tool("lottweapons:copper_spear", {
 })
 
 minetest.register_tool("lottweapons:tin_spear", {
-	description = "Tin Spear",
+	description = SL("Tin Spear"),
 	inventory_image = "lottweapons_tin_spear.png",
 	wield_image = "lottweapons_tin_spear.png^[transformFX",
 	range = 7,
@@ -344,7 +346,7 @@ minetest.register_tool("lottweapons:tin_spear", {
 })
 
 minetest.register_tool("lottweapons:steel_spear", {
-	description = "Steel Spear",
+	description = SL("Steel Spear"),
 	inventory_image = "lottweapons_steel_spear.png",
 	wield_image = "lottweapons_steel_spear.png^[transformFX",
 	range = 7,
@@ -359,7 +361,7 @@ minetest.register_tool("lottweapons:steel_spear", {
 })
 
 minetest.register_tool("lottweapons:bronze_spear", {
-	description = "Bronze Spear",
+	description = SL("Bronze Spear"),
 	inventory_image = "lottweapons_bronze_spear.png",
 	wield_image = "lottweapons_bronze_spear.png^[transformFX",
 	range = 7,
@@ -374,7 +376,7 @@ minetest.register_tool("lottweapons:bronze_spear", {
 })
 
 minetest.register_tool("lottweapons:silver_spear", {
-	description = "Silver Spear",
+	description = SL("Silver Spear"),
 	inventory_image = "lottweapons_silver_spear.png",
 	wield_image = "lottweapons_silver_spear.png^[transformFX",
 	range = 7,
@@ -389,7 +391,7 @@ minetest.register_tool("lottweapons:silver_spear", {
 })
 
 minetest.register_tool("lottweapons:gold_spear", {
-	description = "Gold Spear",
+	description = SL("Gold Spear"),
 	inventory_image = "lottweapons_gold_spear.png",
 	wield_image = "lottweapons_gold_spear.png^[transformFX",
 	range = 7,
@@ -404,7 +406,7 @@ minetest.register_tool("lottweapons:gold_spear", {
 })
 
 minetest.register_tool("lottweapons:galvorn_spear", {
-	description = "Galvorn Spear",
+	description = SL("Galvorn Spear"),
 	inventory_image = "lottweapons_galvorn_spear.png",
 	wield_image = "lottweapons_galvorn_spear.png^[transformFX",
 	range = 7,
@@ -420,7 +422,7 @@ minetest.register_tool("lottweapons:galvorn_spear", {
 })
 
 minetest.register_tool("lottweapons:mithril_spear", {
-	description = "Mithril Spear",
+	description = SL("Mithril Spear"),
 	inventory_image = "lottweapons_mithril_spear.png",
 	wield_image = "lottweapons_mithril_spear.png^[transformFX",
 	range = 7,
@@ -436,7 +438,7 @@ minetest.register_tool("lottweapons:mithril_spear", {
 
 --Daggers:
 minetest.register_tool("lottweapons:wood_dagger", {
-	description = "Training Dagger",
+	description = SL("Training Dagger"),
 	inventory_image = "lottweapons_wood_dagger.png",
 	range = 3,
 	tool_capabilities = {
@@ -450,7 +452,7 @@ minetest.register_tool("lottweapons:wood_dagger", {
 })
 
 minetest.register_tool("lottweapons:stone_dagger", {
-	description = "Stone Dagger",
+	description = SL("Stone Dagger"),
 	inventory_image = "lottweapons_stone_dagger.png",
 	range = 3,
 	tool_capabilities = {
@@ -464,7 +466,7 @@ minetest.register_tool("lottweapons:stone_dagger", {
 })
 
 minetest.register_tool("lottweapons:copper_dagger", {
-	description = "Copper Dagger",
+	description = SL("Copper Dagger"),
 	inventory_image = "lottweapons_copper_dagger.png",
 	range = 3,
 	tool_capabilities = {
@@ -478,7 +480,7 @@ minetest.register_tool("lottweapons:copper_dagger", {
 })
 
 minetest.register_tool("lottweapons:tin_dagger", {
-	description = "Tin Dagger",
+	description = SL("Tin Dagger"),
 	inventory_image = "lottweapons_tin_dagger.png",
 	range = 3,
 	tool_capabilities = {
@@ -492,7 +494,7 @@ minetest.register_tool("lottweapons:tin_dagger", {
 })
 
 minetest.register_tool("lottweapons:steel_dagger", {
-	description = "Steel Dagger",
+	description = SL("Steel Dagger"),
 	inventory_image = "lottweapons_steel_dagger.png",
 	range = 3,
 	tool_capabilities = {
@@ -506,7 +508,7 @@ minetest.register_tool("lottweapons:steel_dagger", {
 })
 
 minetest.register_tool("lottweapons:bronze_dagger", {
-	description = "Bronze Dagger",
+	description = SL("Bronze Dagger"),
 	inventory_image = "lottweapons_bronze_dagger.png",
 	range = 3,
 	tool_capabilities = {
@@ -520,7 +522,7 @@ minetest.register_tool("lottweapons:bronze_dagger", {
 })
 
 minetest.register_tool("lottweapons:silver_dagger", {
-	description = "Silver Dagger",
+	description = SL("Silver Dagger"),
 	inventory_image = "lottweapons_silver_dagger.png",
 	range = 3,
 	tool_capabilities = {
@@ -534,7 +536,7 @@ minetest.register_tool("lottweapons:silver_dagger", {
 })
 
 minetest.register_tool("lottweapons:gold_dagger", {
-	description = "Gold Dagger",
+	description = SL("Gold Dagger"),
 	inventory_image = "lottweapons_gold_dagger.png",
 	range = 3,
 	tool_capabilities = {
@@ -548,7 +550,7 @@ minetest.register_tool("lottweapons:gold_dagger", {
 })
 
 minetest.register_tool("lottweapons:galvorn_dagger", {
-	description = "Galvorn Dagger",
+	description = SL("Galvorn Dagger"),
 	inventory_image = "lottweapons_galvorn_dagger.png",
 	range = 3,
      groups = {forbidden=1},
@@ -563,7 +565,7 @@ minetest.register_tool("lottweapons:galvorn_dagger", {
 })
 
 minetest.register_tool("lottweapons:mithril_dagger", {
-	description = "Mithril Dagger",
+	description = SL("Mithril Dagger"),
 	inventory_image = "lottweapons_mithril_dagger.png",
 	range = 3,
 	tool_capabilities = {
@@ -579,7 +581,7 @@ minetest.register_tool("lottweapons:mithril_dagger", {
 -- Special weapons
 
 minetest.register_tool("lottweapons:elven_sword", {
-	description = "Elven Sword",
+	description = SL("Elven Sword"),
 	inventory_image = "lottweapons_elven_sword.png",
 	tool_capabilities = {
 		full_punch_interval = 0.25,
@@ -592,7 +594,7 @@ minetest.register_tool("lottweapons:elven_sword", {
 })
 
 minetest.register_tool("lottweapons:orc_sword", {
-	description = "Orcish Sword",
+	description = SL("Orcish Sword"),
 	inventory_image = "lottweapons_orc_sword.png",
 	tool_capabilities = {
 		full_punch_interval = 0.75,
@@ -972,3 +974,5 @@ minetest.register_craft({
 		{'', 'group:stick', ''},
 	}
 })
+
+print(minetest.get_current_modname().." LOADED")

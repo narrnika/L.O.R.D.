@@ -1,3 +1,5 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 arrows = {
 	{"lottthrowing:arrow", "lottthrowing:arrow_entity"},
      {"lottthrowing:arrow_mithril", "lottthrowing:arrow_mithril_entity"},
@@ -59,7 +61,7 @@ local lottthrowing_shoot_bolt = function(itemstack, player)
 end
 
 minetest.register_tool("lottthrowing:bow_wood", {
-	description = "Normal Wood Bow",
+	description = SL("Normal Wood Bow"),
 	inventory_image = "lottthrowing_bow_wood.png",
     stack_max = 1,
 	on_use = function(itemstack, user, pointed_thing)
@@ -73,7 +75,7 @@ minetest.register_tool("lottthrowing:bow_wood", {
 })
 
 minetest.register_tool("lottthrowing:bow_wood_alder", {
-	description = "Alder Wood Bow",
+	description = SL("Alder Wood Bow"),
 	inventory_image = "lottthrowing_bow_wood_alder.png",
     stack_max = 1,
 	on_use = function(itemstack, user, pointed_thing)
@@ -87,7 +89,7 @@ minetest.register_tool("lottthrowing:bow_wood_alder", {
 })
 
 minetest.register_tool("lottthrowing:bow_wood_birch", {
-	description = "Birch Wood Bow",
+	description = SL("Birch Wood Bow"),
 	inventory_image = "lottthrowing_bow_wood_birch.png",
     stack_max = 1,
 	on_use = function(itemstack, user, pointed_thing)
@@ -101,7 +103,7 @@ minetest.register_tool("lottthrowing:bow_wood_birch", {
 })
 
 minetest.register_tool("lottthrowing:bow_wood_lebethron", {
-	description = "Lebethron Wood Bow",
+	description = SL("Lebethron Wood Bow"),
 	inventory_image = "lottthrowing_bow_wood_lebethron.png",
     stack_max = 1,
 	on_use = function(itemstack, user, pointed_thing)
@@ -115,7 +117,7 @@ minetest.register_tool("lottthrowing:bow_wood_lebethron", {
 })
 
 minetest.register_tool("lottthrowing:bow_wood_mallorn", {
-	description = "Mallorn Bow",
+	description = SL("Mallorn Bow"),
 	inventory_image = "lottthrowing_bow_wood_mallorn.png",
     stack_max = 1,
 	on_use = function(itemstack, user, pointed_thing)
@@ -174,7 +176,7 @@ minetest.register_craft({
 })
 
 minetest.register_tool("lottthrowing:crossbow_wood", {
-	description = "Wooden Crossbow",
+	description = SL("Wooden Crossbow"),
 	inventory_image = "lottthrowing_crossbow_wood.png",
      stack_max = 1,
 	on_use = function(itemstack, user, pointed_thing)
@@ -188,7 +190,7 @@ minetest.register_tool("lottthrowing:crossbow_wood", {
 })
 
 minetest.register_tool("lottthrowing:crossbow_steel", {
-	description = "Steel Crossbow",
+	description = SL("Steel Crossbow"),
 	inventory_image = "lottthrowing_crossbow_steel.png",
      stack_max = 1,
 	on_use = function(itemstack, user, pointed_thing)
@@ -202,7 +204,7 @@ minetest.register_tool("lottthrowing:crossbow_steel", {
 })
 
 minetest.register_tool("lottthrowing:crossbow_tin", {
-	description = "Tin Crossbow",
+	description = SL("Tin Crossbow"),
 	inventory_image = "lottthrowing_crossbow_tin.png",
      stack_max = 1,
 	on_use = function(itemstack, user, pointed_thing)
@@ -216,7 +218,7 @@ minetest.register_tool("lottthrowing:crossbow_tin", {
 })
 
 minetest.register_tool("lottthrowing:crossbow_silver", {
-	description = "Silver Crossbow",
+	description = SL("Silver Crossbow"),
 	inventory_image = "lottthrowing_crossbow_silver.png",
      stack_max = 1,
 	on_use = function(itemstack, user, pointed_thing)
@@ -230,7 +232,7 @@ minetest.register_tool("lottthrowing:crossbow_silver", {
 })
 
 minetest.register_tool("lottthrowing:crossbow_gold", {
-	description = "Gold Crossbow",
+	description = SL("Gold Crossbow"),
 	inventory_image = "lottthrowing_crossbow_gold.png",
      stack_max = 1,
 	on_use = function(itemstack, user, pointed_thing)
@@ -244,7 +246,7 @@ minetest.register_tool("lottthrowing:crossbow_gold", {
 })
 
 minetest.register_tool("lottthrowing:crossbow_galvorn", {
-	description = "Galvorn Crossbow",
+	description = SL("Galvorn Crossbow"),
 	inventory_image = "lottthrowing_crossbow_galvorn.png",
      groups = {forbidden=1},
      stack_max = 1,
@@ -259,7 +261,7 @@ minetest.register_tool("lottthrowing:crossbow_galvorn", {
 })
 
 minetest.register_tool("lottthrowing:crossbow_mithril", {
-	description = "Mithril Crossbow",
+	description = SL("Mithril Crossbow"),
 	inventory_image = "lottthrowing_crossbow_mithril.png",
      stack_max = 1,
 	on_use = function(itemstack, user, pointed_thing)
@@ -337,16 +339,14 @@ minetest.register_craft({
 
 dofile(minetest.get_modpath("lottthrowing").."/arrow.lua")
 dofile(minetest.get_modpath("lottthrowing").."/mithril_arrow.lua")
-dofile(minetest.get_modpath("lottthrowing").."/fire_arrow.lua")
-dofile(minetest.get_modpath("lottthrowing").."/bluefire_arrow.lua")
-dofile(minetest.get_modpath("lottthrowing").."/magical_arrow.lua")
 
 dofile(minetest.get_modpath("lottthrowing").."/bolt.lua")
 dofile(minetest.get_modpath("lottthrowing").."/mithril_bolt.lua")
-dofile(minetest.get_modpath("lottthrowing").."/fire_bolt.lua")
 
 dofile(minetest.get_modpath("lottthrowing").."/axe.lua")
 
 if minetest.setting_get("log_mods") then
 	minetest.log("action", "lottthrowing loaded")
 end
+
+print(minetest.get_current_modname().." LOADED")

@@ -1,5 +1,7 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 minetest.register_craftitem("lottfarming:orc_food", {
-	description = "Orc Food",
+	description = SL("Orc Food"),
 	inventory_image = "lottfarming_orc_food.png",
 	on_use = function(itemstack, user, pointed_thing)
 		local name = user:get_player_name()
@@ -38,7 +40,7 @@ minetest.register_craft({
 })
 
 minetest.register_craftitem("lottfarming:orc_medicine", {
-	description = "Orc medicine",
+	description = SL("Orc medicine"),
 	inventory_image = "lottfarming_orc_medicine.png",
 	on_use = function(itemstack, user, pointed_thing)
 		user:set_hp(20)

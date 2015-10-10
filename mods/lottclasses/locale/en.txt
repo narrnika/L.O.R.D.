@@ -1,0 +1,15 @@
+### init.lua ###
+Please select the race you wish to be:	=	Please select the race you wish to be:
+Dwarf	=	Dwarf
+Elf	=	Elf
+Man	=	Man
+Orc	=	Orc
+Hobbit	=	Hobbit
+Male	=	Male
+Female	=	Female
+
+You are now a member of the race of dwarves, go forth into the world.	=	You are now a member of the race of dwarves, go forth into the world.
+You are now a member of the race of elves, go forth into the world.	=	You are now a member of the race of elves, go forth into the world.
+You are now a member of the race of man, go forth into the world.	=	You are now a member of the race of men, go forth into the world.
+You are now a member of the race of orcs, go forth into the world.	=	You are now a member of the race of orcs, go forth into the world.
+You are now a member of the race of hobbits, go forth into the world.	=	You are now a member of the race of hobbits, go forth into the world.

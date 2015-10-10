@@ -1,5 +1,7 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 minetest.register_node("lottmapgen:fog", {
-	description = "Fog",
+	description = SL("Fog"),
 	drawtype = "glasslike",
 	tiles = {"lottmapgen_fog.png"},
 	paramtype = "light",
@@ -15,7 +17,7 @@ minetest.register_node("lottmapgen:fog", {
 })
 
 minetest.register_node("lottmapgen:angsnowblock", {
-	description = "Snow Block",
+	description = SL("Snow Block"),
 	tiles = {"default_snow.png"},
 	is_ground_content = true,
      drop = 'default:snowblock',
@@ -28,7 +30,7 @@ minetest.register_node("lottmapgen:angsnowblock", {
 })
 
 minetest.register_node("lottmapgen:frozen_stone", {
-	description = "Frozen Stone",
+	description = SL("Frozen Stone"),
 	tiles = {"default_stone.png^lottmapgen_frozen.png"},
 	is_ground_content = true,
 	groups = {cracky=3, stone=1},
@@ -37,7 +39,7 @@ minetest.register_node("lottmapgen:frozen_stone", {
 })
 
 minetest.register_node("lottmapgen:mordor_stone", {
-	description = "Mordor Stone",
+	description = SL("Mordor Stone"),
 	tiles = {"lottmapgen_mordor_stone.png"},
 	is_ground_content = true,
 	groups = {cracky=3, stone=1},
@@ -45,7 +47,7 @@ minetest.register_node("lottmapgen:mordor_stone", {
 })
 
 minetest.register_node(":default:ice", {
-	description = "Ice",
+	description = SL("Ice"),
 	drawtype = "glasslike",
 	tiles = {"lottmapgen_ice.png"},
 	is_ground_content = true,
@@ -57,7 +59,7 @@ minetest.register_node(":default:ice", {
 })
 
 minetest.register_node("lottmapgen:blacksource", {
-	description = "Black Water Source",
+	description = SL("Black Water Source"),
 	drawtype = "liquid",
 	inventory_image = minetest.inventorycube("lottmapgen_black_water.png"),
 	tiles = {"lottmapgen_black_water.png"},
@@ -106,7 +108,7 @@ minetest.register_node("lottmapgen:blackflowing", {
 })
 
 minetest.register_node("lottmapgen:black_river_source", {
-	description = "Black River Source",
+	description = SL("Black River Source"),
 	drawtype = "liquid",
 	inventory_image = minetest.inventorycube("lottmapgen_black_water.png"),
 	tiles = {"lottmapgen_black_water.png"},
@@ -161,7 +163,7 @@ minetest.register_node("lottmapgen:black_river_flowing", {
 -- Grasses
 
 minetest.register_node("lottmapgen:dunland_grass", {
-	description = "Dunland Grass",
+	description = SL("Dunland Grass"),
 	tiles = {"lottmapgen_dunland_grass.png", "default_dirt.png", {name = "default_dirt.png^lottmapgen_dunland_grass_side.png", tileable_vertical = false}},
 	is_ground_content = true,
 	groups = {crumbly=3,soil=1, not_in_creative_inventory =1,lottmapgen_grass=1},
@@ -172,7 +174,7 @@ minetest.register_node("lottmapgen:dunland_grass", {
 })
 
 minetest.register_node("lottmapgen:ironhill_grass", {
-	description = "Iron Hills Grass",
+	description = SL("Iron Hills Grass"),
 	tiles = {"lottmapgen_dunland_grass.png", "default_dirt.png", {name =  "default_dirt.png^lottmapgen_dunland_grass_side.png", tileable_vertical = false}},
 	is_ground_content = true,
 	groups = {crumbly=3,soil=1, not_in_creative_inventory =1,lottmapgen_grass=1},
@@ -183,7 +185,7 @@ minetest.register_node("lottmapgen:ironhill_grass", {
 })
 
 minetest.register_node("lottmapgen:gondor_grass", {
-	description = "Gondor Grass",
+	description = SL("Gondor Grass"),
 	tiles = {"default_grass.png", "default_dirt.png", {name = "default_dirt.png^default_grass_side.png", tileable_vertical = false}},
 	is_ground_content = true,
 	groups = {crumbly=3,soil=1, not_in_creative_inventory =1,lottmapgen_grass=1},
@@ -194,7 +196,7 @@ minetest.register_node("lottmapgen:gondor_grass", {
 })
 
 minetest.register_node("lottmapgen:lorien_grass", {
-	description = "Lorien Grass",
+	description = SL("Lorien Grass"),
 	tiles = {"lottmapgen_lorien_grass.png", "default_dirt.png", {name =  "default_dirt.png^lottmapgen_lorien_grass_side.png", tileable_vertical = false}},
 	is_ground_content = true,
 	groups = {crumbly=3,soil=1, not_in_creative_inventory =1,lottmapgen_grass=1},
@@ -216,7 +218,7 @@ minetest.register_node("lottmapgen:fangorn_grass", {
 })
 
 minetest.register_node("lottmapgen:mirkwood_grass", {
-	description = "Mirkwood Grass",
+	description = SL("Mirkwood Grass"),
 	tiles = {"lottmapgen_mirkwood_grass.png", "default_dirt.png", {name =  "default_dirt.png^lottmapgen_mirkwood_grass_side.png", tileable_vertical = false}},
 	is_ground_content = true,
 	groups = {crumbly=3,soil=1, not_in_creative_inventory =1,lottmapgen_grass=1},
@@ -227,7 +229,7 @@ minetest.register_node("lottmapgen:mirkwood_grass", {
 })
 
 minetest.register_node("lottmapgen:rohan_grass", {
-	description = "? Grass",
+	description = SL("Rohan Grass"),
 	tiles = {"lottmapgen_rohan_grass.png", "default_dirt.png", {name =  "default_dirt.png^lottmapgen_rohan_grass_side.png", tileable_vertical = false}},
 	is_ground_content = true,
 	groups = {crumbly=3,soil=1, not_in_creative_inventory =1,lottmapgen_grass=1},
@@ -238,7 +240,7 @@ minetest.register_node("lottmapgen:rohan_grass", {
 })
 
 minetest.register_node("lottmapgen:shire_grass", {
-	description = "Shire Grass",
+	description = SL("Shire Grass"),
 	tiles = {"lottmapgen_shire_grass.png", "default_dirt.png", {name =  "default_dirt.png^lottmapgen_shire_grass_side.png", tileable_vertical = false}},
 	is_ground_content = true,
 	groups = {crumbly=3,soil=1, lottmapgen_grass=1, not_in_creative_inventory =1},
@@ -249,7 +251,7 @@ minetest.register_node("lottmapgen:shire_grass", {
 })
 
 minetest.register_node("lottmapgen:ithilien_grass", {
-	description = "Ithilien Grass",
+	description = SL("Ithilien Grass"),
 	tiles = {"default_grass.png", "default_dirt.png", {name = "default_dirt.png^default_grass_side.png", tileable_vertical = false}},
 	is_ground_content = true,
 	groups = {crumbly=3,soil=1, lottmapgen_grass=1, not_in_creative_inventory =1},

@@ -1,62 +1,64 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 -- Register Shields
 minetest.register_tool("lottarmor:shield_wood", {
-	description = "Training Shield",
+	description = SL("Training Shield"),
 	inventory_image = "lottarmor_inv_shield_wood.png",
 	groups = {armor_head=2.5, armor_heal=0, armor_use=2000, armor_healing=0, physics_speed=0.2},
 	wear = 0,
 })
 
 minetest.register_tool("lottarmor:shield_tin", {
-	description = "Tin Shield",
+	description = SL("Tin Shield"),
 	inventory_image = "lottarmor_inv_shield_tin.png",
 	groups = {armor_shield=5, armor_heal=0, armor_use=1750, armor_healing=0},
 	wear = 0,
 })
 
 minetest.register_tool("lottarmor:shield_copper", {
-	description = "Copper Shield",
+	description = SL("Copper Shield"),
 	inventory_image = "lottarmor_inv_shield_copper.png",
 	groups = {armor_shield=5, armor_heal=0, armor_use=1750, armor_healing=0},
 	wear = 0,
 })
 
 minetest.register_tool("lottarmor:shield_steel", {
-	description = "Steel Shield",
+	description = SL("Steel Shield"),
 	inventory_image = "lottarmor_inv_shield_steel.png",
 	groups = {armor_shield=10, armor_heal=0, armor_use=1250, armor_healing=0},
 	wear = 0,
 })
 
 minetest.register_tool("lottarmor:shield_bronze", {
-	description = "Bronze Shield",
+	description = SL("Bronze Shield"),
 	inventory_image = "lottarmor_inv_shield_bronze.png",
 	groups = {armor_shield=12, armor_heal=6, armor_use=750, armor_healing=0},
 	wear = 0,
 })
 
 minetest.register_tool("lottarmor:shield_silver", {
-	description = "Silver Shield",
+	description = SL("Silver Shield"),
 	inventory_image = "lottarmor_inv_shield_silver.png",
 	groups = {armor_shield=15, armor_heal=6, armor_use=1000, armor_healing=0, physics_speed=-0.05},
 	wear = 0,
 })
 
 minetest.register_tool("lottarmor:shield_gold", {
-	description = "Gold Shield",
+	description = SL("Gold Shield"),
 	inventory_image = "lottarmor_inv_shield_gold.png",
 	groups = {armor_shield=15, armor_heal=12, armor_use=500, armor_healing=0, physics_speed=-0.05},
 	wear = 0,
 })
 
 minetest.register_tool("lottarmor:shield_galvorn", {
-	description = "Galvorn Shield",
+	description = SL("Galvorn Shield"),
 	inventory_image = "lottarmor_inv_shield_galvorn.png",
 	groups = {armor_shield=15, armor_heal=12, armor_use=250, armor_healing=0, physics_speed=-0.1, physics_sneak=-1, forbidden=1},
 	wear = 0,
 })
 
 minetest.register_tool("lottarmor:shield_mithril", {
-	description = "Mithril Shield",
+	description = SL("Mithril Shield"),
 	inventory_image = "lottarmor_inv_shield_mithril.png",
 	groups = {armor_shield=25, armor_heal=12, armor_use=100, armor_healing=0, physics_speed=-0.1, physics_sneak=-1},
 	wear = 0,

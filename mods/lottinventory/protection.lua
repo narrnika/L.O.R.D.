@@ -2,6 +2,8 @@
 -- See README for more information
 -- Released by Zeg9 under WTFPL
 
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 zpc = {}
 zpc.users = {}
 zpc.crafts = {}
@@ -106,7 +108,7 @@ zpc.formspec = function(pn)
 	local alt = zpc.users[pn].alt
 	local current_item = zpc.users[pn].current_item
 	local formspec = "size[8,7.5]"
-	.. "button_exit[6,7;2,0.5;;Exit]"
+	.. "button_exit[6,7;2,0.5;;"..SL("Exit").."]"
 	if zpc.users[pn].history.index > 1 then
 		formspec = formspec .. "image_button[0,1;1,1;zcg_previous.png;zpc_previous;;false;false;zcg_previous_press.png]"
 	else
@@ -164,8 +166,8 @@ zpc.formspec = function(pn)
 	if i >= npp then
 		formspec = formspec .. "button[1,7;1,.5;zpc_page:"..(page+1)..";>>]"
 	end
-	formspec = formspec .. "label[2,6.85;Page "..(page+1).."/"..(math.floor(#zpc.itemlist/npp+1)).."]" -- The Y is approximatively the good one to have it centered vertically...
-     formspec = formspec .. "label[0,0;Book of Protection]"
+	formspec = formspec .. "label[2,6.85;"..SL("Page").." "..(page+1).."/"..(math.floor(#zpc.itemlist/npp+1)).."]" -- The Y is approximatively the good one to have it centered vertically...
+     formspec = formspec .. "label[0,0;"..SL("Book of Protection").."]"
      formspec = formspec .. "background[5,5;1,1;craft_formbg.png;true]"
 	return formspec
 end
@@ -209,7 +211,7 @@ minetest.register_on_player_receive_fields(function(player,formname,fields)
 end)
 
 minetest.register_tool("lottinventory:protection_book",{
-    description = "Book of Protection",
+    description = SL("Book of Protection"),
     groups = {book=1},
     inventory_image = "lottinventory_protection_book.png",
     wield_image = "",

@@ -1,7 +1,8 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
 -- minetest/fire/init.lua
 
 minetest.register_node("fire:basic_flame", {
-	description = "Fire",
+	description = SL("Fire"),
 	drawtype = "firelike",
 	tiles = {{
 		name="fire_basic_flame_animated.png",
@@ -111,18 +112,23 @@ minetest.register_abm({
 	chance = 2,
 	action = function(p0, node, _, _)
 		-- If there is water or stuff like that around flame, don't ignite
+		-- Если есть вода или тому подобное вокруг пламени, не воспламеняется
 		if fire.flame_should_extinguish(p0) then
 			return
 		end
-		local p = fire.find_pos_for_flame_around(p0)
+		--[[badger
+                local p = fire.find_pos_for_flame_around(p0)
 		if p then
 			minetest.set_node(p, {name="fire:basic_flame"})
 			fire.on_flame_add_at(p)
 		end
+                ]]--
 	end,
 })
 
 -- Rarely ignite things from far
+-- Редко зажечь вещи издалека
+--[[badger
 minetest.register_abm({
 	nodenames = {"group:igniter"},
 	neighbors = {"air"},
@@ -148,34 +154,42 @@ minetest.register_abm({
 		end
 	end,
 })
+]]--
 
 -- Remove flammable nodes and flame
+-- Удалить горючие узлы и пламя
 minetest.register_abm({
 	nodenames = {"fire:basic_flame"},
 	interval = 1,
 	chance = 2,
 	action = function(p0, node, _, _)
 		-- If there is water or stuff like that around flame, remove flame
+		-- Если есть вода или тому подобное вокруг пламени, пламя удалить
 		if fire.flame_should_extinguish(p0) then
 			minetest.remove_node(p0)
 			fire.on_flame_remove_at(p0)
 			return
 		end
 		-- Make the following things rarer
+		-- Сделайте следующие вещи реже
 		if math.random(1,3) == 1 then
 			return
 		end
 		-- If there are no flammable nodes around flame, remove flame
-		if not minetest.find_node_near(p0, 1, {"group:flammable"}) then
+		-- Если нет легковоспламеняющихся узлы вокруг пламени, пламя удалить
+		--if not minetest.find_node_near(p0, 1, {"group:flammable"}) then
 			minetest.remove_node(p0)
 			fire.on_flame_remove_at(p0)
 			return
-		end
-		if math.random(1,4) == 1 then
+		--end
+		--[[badger
+                if math.random(1,4) == 1 then
 			-- remove a flammable node around flame
+			-- удалить горючие узел вокруг пламени
 			local p = minetest.find_node_near(p0, 1, {"group:flammable"})
 			if p then
 				-- If there is water or stuff like that around flame, don't remove
+				-- Если есть вода или тому подобное вокруг пламени, не удалять
 				if fire.flame_should_extinguish(p0) then
 					return
 				end
@@ -187,5 +201,8 @@ minetest.register_abm({
 			minetest.remove_node(p0)
 			fire.on_flame_remove_at(p0)
 		end
+                ]]--
 	end,
 })
+
+print(minetest.get_current_modname().." LOADED")

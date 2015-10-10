@@ -1,0 +1,11 @@
+### init.lua ###
+Bones Block	=	Костяной блок
+Bone Dust	=	Костяная пыть
+Bone	=	Кость
+Bone Scythe	=	Костяная коса
+Skeleton Head	=	Череп
+Skeleton	=	Скелет
+
+Pile of Bones	=	Куча костей
+Fresh bones of	=	Свежие кости
+Old bones of	=	Старые кости

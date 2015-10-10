@@ -1,3 +1,5 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 -- basic outfit from the chetwood forest.
 -- made from green and brown felt & tin ingot.
 
@@ -5,7 +7,7 @@ local level=2
 
 -- cap (head)
 minetest.register_tool("lottclothes:cap_chetwood", {
-	description = "Chetwood Cap",
+	description = SL("Chetwood Cap"),
 	inventory_image = "lottclothes_inv_cap_chetwood.png",
 	groups = {armor_head=0, armor_heal=0, clothes=1},
 	wear = 0
@@ -22,7 +24,7 @@ minetest.register_craft({
 
 -- jacket (torso)
 minetest.register_tool("lottclothes:jacket_chetwood", {
-	description = "Chetwood Jacket",
+	description = SL("Chetwood Jacket"),
 	inventory_image = "lottclothes_inv_jacket_chetwood.png",
 	groups = {armor_torso=0, armor_heal=0, clothes=1},
 	wear = 0
@@ -39,7 +41,7 @@ minetest.register_craft({
 
 -- pants (legs)
 minetest.register_tool("lottclothes:pants_chetwood", {
-	description = "Chetwood Pants",
+	description = SL("Chetwood Pants"),
 	inventory_image = "lottclothes_inv_pants_chetwood.png",
 	groups = {armor_legs=0, armor_heal=0, clothes=1},
 	wear = 0
@@ -56,7 +58,7 @@ minetest.register_craft({
 
 -- boots (feet)
 minetest.register_tool("lottclothes:boots_chetwood", {
-	description = "Chetwood Boots",
+	description = SL("Chetwood Boots"),
 	inventory_image = "lottclothes_inv_boots_chetwood.png",
 	groups = {armor_feet=0, armor_heal=0, clothes=1},
 	wear = 0

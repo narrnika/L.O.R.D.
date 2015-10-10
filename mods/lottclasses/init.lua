@@ -1,3 +1,5 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 minetest.register_privilege("GAMEmale", {
 	description = "A male player",
 	give_to_singleplayer = false,
@@ -33,18 +35,18 @@ local race_chooser = "size[8,6]"..
 	"background[8,6;1,1;gui_formbg.png;true]"..
 	"tablecolumns[color;text]"..
 	"tableoptions[background=#00000000;highlight=#00000000;border=false]"..
-	"table[0,0;6,0.5;race_message;#A52A2A,Please select the race you wish to be:;1]"..
+	"table[0,0;6,0.5;race_message;#A52A2A,"..SL("Please select the race you wish to be:")..";1]"..
 	"image[0.25,1.4;0.75,0.75;dwarf.png]"..
-	"button_exit[1,1.5;2,0.5;dwarf;Dwarf]"..
+	"button_exit[1,1.5;2,0.5;dwarf;"..SL("Dwarf").."]"..
 	"image[4.75,1.4;0.75,0.75;elf.png]"..
-	"button_exit[5.5,1.5;2,0.5;elf;Elf]"..
+	"button_exit[5.5,1.5;2,0.5;elf;"..SL("Elf").."]"..
 	"image[0.25,2.4;0.75,0.75;man.png]"..
-	"button_exit[1,2.5;2,0.5;man;Man]"..
+	"button_exit[1,2.5;2,0.5;man;"..SL("Man").."]"..
 	"image[4.75,2.4;0.75,0.75;orc.png]"..
-	"button_exit[5.5,2.5;2,0.5;orc;Orc]"..
+	"button_exit[5.5,2.5;2,0.5;orc;"..SL("Orc").."]"..
 	"image[0.25,3.4;0.75,0.75;hobbit.png]"..
-	"button_exit[1,3.5;2,0.5;hobbit;Hobbit]"..
-	"dropdown[5.5,3.4;2;gender;Male,Female;1]"
+	"button_exit[1,3.5;2,0.5;hobbit;"..SL("Hobbit").."]"..
+	"dropdown[5.5,3.4;2;gender;"..SL("Male")..","..SL("Female")..";1]"
 
 chance = 0
 
@@ -314,7 +316,7 @@ minetest.register_on_joinplayer(function(player)
 end)
 
 local function player_race_stuff(race, text, mf, func, name, privs, player)
-	minetest.chat_send_player(name, "You are now a member of the race of " .. text ..", go forth into the world.")
+	minetest.chat_send_player(name, SL("You are now a member of the race of " .. text ..", go forth into the world."))
 	privs["GAME" .. race] = true
 	privs["GAME" .. mf] = true
 	minetest.set_player_privs(name, privs)
@@ -333,19 +335,19 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 	if formname ~= "race_selector" then return end
 	local name = player:get_player_name()
 	local privs = minetest.get_player_privs(name)
-	if fields.gender == "Male" then
+	if fields.gender == SL("Male") then
 		if fields.dwarf then
 			player_race_stuff("dwarf", "dwarves", "male", give_stuff_dwarf, name, privs, player)
 		elseif fields.elf then
 			player_race_stuff("elf", "elves", "male", give_stuff_elf, name, privs, player)
 		elseif fields.man then
-			player_race_stuff("men", "man", "male", give_stuff_man, name, privs, player)
+			player_race_stuff("man", "men", "male", give_stuff_man, name, privs, player)
 		elseif fields.orc then
 			player_race_stuff("orc", "orcs", "male", give_stuff_orc, name, privs, player)
 		elseif fields.hobbit then
 			player_race_stuff("hobbit", "hobbits", "male", give_stuff_hobbit, name, privs, player)
 		end
-	elseif fields.gender == "Female" then
+	elseif fields.gender == SL("Female") then
 		if fields.dwarf then
 			player_race_stuff("dwarf", "dwarves", "female", give_stuff_dwarf, name, privs, player)
 		elseif fields.elf then
@@ -353,7 +355,7 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 		elseif fields.man then
 			player_race_stuff("man", "men", "female", give_stuff_man, name, privs, player)
 		elseif fields.orc then
-			player_race_stuff("orc", "orc", "female", give_stuff_orc, name, privs, player)
+			player_race_stuff("orc", "orcs", "female", give_stuff_orc, name, privs, player)
 		elseif fields.hobbit then
 			player_race_stuff("hobbit", "hobbits", "female", give_stuff_hobbit, name, privs, player)
 		end
@@ -399,3 +401,5 @@ minetest.register_chatcommand("race", {
 		end
 	end,
 })
+
+print(minetest.get_current_modname().." LOADED")

@@ -1,3 +1,5 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 -- Global Defaults - use armor.conf to override these
 
 ARMOR_INIT_DELAY = 1
@@ -109,11 +111,11 @@ local get_formspec = function(player,page)
 	if page=="bags" then
 		return "size[8,7.5]"
 			.."list[current_player;main;0,3.5;8,4;]"
-			.."button[0,0;2,0.5;main;Back]"
-			.."button[0,2;2,0.5;bag1;Bag 1]"
-			.."button[2,2;2,0.5;bag2;Bag 2]"
-			.."button[4,2;2,0.5;bag3;Bag 3]"
-			.."button[6,2;2,0.5;bag4;Bag 4]"
+			.."button[0,0;2,0.5;main;"..SL("Back").."]"
+			.."button[0,2;2,0.5;bag1;"..SL("Bag").." 1]"
+			.."button[2,2;2,0.5;bag2;"..SL("Bag").." 2]"
+			.."button[4,2;2,0.5;bag3;"..SL("Bag").." 3]"
+			.."button[6,2;2,0.5;bag4;"..SL("Bag").." 4]"
 			.."list[detached:"..player:get_player_name().."_bags;bag1;0.5,1;1,1;]"
 			.."list[detached:"..player:get_player_name().."_bags;bag2;2.5,1;1,1;]"
 			.."list[detached:"..player:get_player_name().."_bags;bag3;4.5,1;1,1;]"
@@ -125,8 +127,8 @@ local get_formspec = function(player,page)
 			local image = player:get_inventory():get_stack("bag"..i, 1):get_definition().inventory_image
 			return "size[8,8.5]"
 				.."list[current_player;main;0,4.5;8,4;]"
-				.."button[0,0;2,0.5;main;Main]"
-				.."button[2,0;2,0.5;bags;Bags]"
+				.."button[0,0;2,0.5;main;"..SL("Main").."]"
+				.."button[2,0;2,0.5;bags;"..SL("Bags").."]"
 				.."image[7,0;1,1;"..image.."]"
 				.."list[current_player;bag"..i.."contents;0,1;8,3;]"
                 .."background[5,5;1,1;gui_formbg.png;true]"

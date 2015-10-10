@@ -1,10 +1,12 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 function lottblocks.register_wooden_stuff(name, description, texture, wood_name)
     local node_groups = minetest.registered_nodes[wood_name].groups
     local groups_door = node_groups
     groups_door.door = 1
 	if name ~= "wood" then
 		doors:register_door("lottblocks:door_" .. name, {
-        	description =  description .. " Door",
+        	description =  SL(description .. " Door"),
         	inventory_image = "lottblocks_door_" .. name .. ".png",
         	groups = groups_door,
         	tiles_bottom = {"lottblocks_door_" .. name .."_b.png", "lottblocks_edge_" .. name ..".png"},
@@ -20,7 +22,7 @@ function lottblocks.register_wooden_stuff(name, description, texture, wood_name)
         })
 		node_groups.not_in_creative_inventory = 0
 		doors.register_trapdoor("lottblocks:hatch_" .. name, {
-        	description = description .. " Trapdoor",
+        	description = SL(description .. " Trapdoor"),
         	wield_image = "lottblocks_hatch_" .. name ..".png",
         	tile_open = "lottblocks_hatch_" .. name .. "_open.png",
         	tile_closed = "lottblocks_hatch_" .. name .. ".png",
@@ -38,7 +40,7 @@ function lottblocks.register_wooden_stuff(name, description, texture, wood_name)
         	}
         })
 		minetest.register_node("lottblocks:fence_" .. name, {
-			description = description .. " Fence",
+			description = SL(description .. " Fence"),
 			drawtype = "fencelike",
 			tiles = {texture},
 			inventory_image = "lottblocks_" .. name .. "_fence.png",
@@ -60,7 +62,7 @@ function lottblocks.register_wooden_stuff(name, description, texture, wood_name)
 		})
     end
     minetest.register_node("lottblocks:" .. name .. "_table", {
-        description = description .. "Table",
+        description = SL(description .. " Table"),
     	tiles = {texture},
     	drawtype = "nodebox",
     	sunlight_propagates = true,
@@ -83,7 +85,7 @@ function lottblocks.register_wooden_stuff(name, description, texture, wood_name)
     	groups = node_groups
     })
     minetest.register_node("lottblocks:" .. name .."_chair", {
-        description = description .. "Chair",
+        description = SL(description .. " Chair"),
     	tiles = {texture},
     	drawtype = "nodebox",
     	sunlight_propagates = true,

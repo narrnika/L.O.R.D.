@@ -1,5 +1,7 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 minetest.register_craftitem("lottfarming:barley_seed", {
-	description = "Barley Seeds",
+	description = SL("Barley Seeds"),
 	inventory_image = "lottfarming_barley_seed.png",
 	on_place = function(itemstack, placer, pointed_thing)
 		return place_seed(itemstack, placer, pointed_thing, "lottfarming:barley_1")
@@ -59,7 +61,7 @@ minetest.register_node("lottfarming:barley_3", {
 })
 
 minetest.register_craftitem("lottfarming:barley", {
-	description = "Barley",
+	description = SL("Barley"),
 	inventory_image = "lottfarming_barley_3.png",
 })
 
@@ -73,7 +75,7 @@ minetest.register_craft({
 })
 
 minetest.register_craftitem("lottfarming:barley_cooked", {
-	description = "Cooked Barley",
+	description = SL("Cooked Barley"),
 	inventory_image = "lottfarming_barley_cooked.png",
 	on_use = minetest.item_eat(2),
 })

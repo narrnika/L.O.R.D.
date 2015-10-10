@@ -1,3 +1,5 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 doors = {}
 
 -- Registers a door
@@ -256,7 +258,7 @@ function doors:register_door(name, def)
 end
 
 doors:register_door("doors:door_wood", {
-	description = "Wooden Door",
+	description = SL("Wooden Door"),
 	inventory_image = "door_wood.png",
 	groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=2,door=1},
 	tiles_bottom = {"door_wood_b.png", "door_brown.png"},
@@ -273,7 +275,7 @@ minetest.register_craft({
 })
 
 doors:register_door("doors:door_steel", {
-	description = "Steel Door",
+	description = SL("Steel Door"),
 	inventory_image = "door_steel.png",
 	groups = {snappy=1,bendy=2,cracky=1,melty=2,level=2,door=1},
 	tiles_bottom = {"door_steel_b.png", "door_grey.png"},
@@ -296,7 +298,7 @@ minetest.register_alias("doors:door_wood_b_c", "doors:door_wood_b_1")
 minetest.register_alias("doors:door_wood_b_o", "doors:door_wood_b_1")
 
 doors:register_door("doors:door_glass", {
-	description = "Glass Door",
+	description = SL("Glass Door"),
 	inventory_image = "door_glass.png",
 	groups = {snappy=1,cracky=1,oddly_breakable_by_hand=3,door=1},
 	tiles_bottom = {"door_glass_b.png", "door_glass_side.png"},
@@ -371,7 +373,7 @@ end
 
 
 doors.register_trapdoor("doors:trapdoor", {
-	description = "Trapdoor",
+	description = SL("Trapdoor"),
 	inventory_image = "door_trapdoor.png",
 	wield_image = "door_trapdoor.png",
 	tile_open = "door_trapdoor_open.png",
@@ -390,3 +392,5 @@ minetest.register_craft({
 		{'default:wood', 'default:wood'},
 	}
 })
+
+print(minetest.get_current_modname().." LOADED")

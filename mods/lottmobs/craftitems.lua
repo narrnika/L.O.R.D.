@@ -1,11 +1,13 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 minetest.register_craftitem("lottmobs:meat", {
-	description = "Cooked Meat",
+	description = SL("Cooked Meat"),
 	inventory_image = "lottmobs_meat.png",
 	on_use = minetest.item_eat(4),
 })
 
 minetest.register_craftitem("lottmobs:meat_raw", {
-	description = "Raw Meat",
+	description = SL("Raw Meat"),
 	inventory_image = "lottmobs_meat_raw.png",
 })
 
@@ -16,13 +18,13 @@ minetest.register_craft({
 })
 
 minetest.register_craftitem("lottmobs:dirty_shirt", {
-    description = "Dirty Jacket",
+    description = SL("Dirty Jacket"),
     inventory_image = "lottclothes_inv_jacket_midgewater.png^[colorize:#935d3675",
     stack_max = 1,
 })
 
 minetest.register_craftitem("lottmobs:dirty_trousers", {
-    description = "Dirty Trousers",
+    description = SL("Dirty Trousers"),
     inventory_image = "lottclothes_inv_pants_midgewater.png^[colorize:#935d3675",
     stack_max = 1,
 })

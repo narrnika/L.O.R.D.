@@ -1,3 +1,5 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 minetest.register_alias("lottother:lamp_wood", "lottblocks:lamp_wood")
 minetest.register_alias("lottother:lamp_middle_wood", "lottblocks:lamp_middle_wood")
 minetest.register_alias("lottother:lamp_top_wood", "lottblocks:lamp_top_wood")
@@ -26,7 +28,7 @@ function lottblocks.register_lamp(material, description, inv_texture, post1_text
 	local node_small = "lottblocks:small_lamp_" .. material
 	minetest.register_node(node_bottom, {
 		drop = "",
-		description = description .. " Lamppost",
+		description = SL(description .. " Lamppost"),
 		tiles = {post1_texture},
 		inventory_image = inv_texture,
 		wield_image = inv_texture,
@@ -43,7 +45,7 @@ function lottblocks.register_lamp(material, description, inv_texture, post1_text
 		on_place = function(itemstack, placer, pointed_thing)
 	    	local pos = pointed_thing.above;
 	    	if(minetest.env:get_node({x=pos.x, y=pos.y+1, z=pos.z}).name ~= "air") or (minetest.env:get_node({x=pos.x, y=pos.y+2, z=pos.z}).name ~= "air") then
-	    		minetest.chat_send_player( placer:get_player_name(), 'Not enough space for lamppost to be placed' )
+	    		minetest.chat_send_player( placer:get_player_name(), SL('Not enough space for lamppost to be placed') )
 	    		return;
 	    	end
 	    	return minetest.item_place(itemstack, placer, pointed_thing);
@@ -105,7 +107,7 @@ function lottblocks.register_lamp(material, description, inv_texture, post1_text
 		end
 	})
 	minetest.register_node(node_small, {
-		description = description .. " Small Lamp",
+		description = SL(description .. " Small Lamp"),
 		groups = {choppy=2,oddly_breakable_by_hand=1,flammable=2},
 		tiles = {
 			top_texture, top_texture,

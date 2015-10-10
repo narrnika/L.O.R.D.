@@ -1,10 +1,60 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 dofile(minetest.get_modpath("lottplants").."/nodes.lua")
 dofile(minetest.get_modpath("lottplants").."/wild_food.lua")
 dofile(minetest.get_modpath("lottplants").."/flowers.lua")
+
+-- ===== GROWING TIME =====
+
+ALDINT = 67
+ALDCHA = 11
+
+APPINT = 67
+APPCHA = 11
+
+BIRINT = 67
+BIRCHA = 11
+
+BEEINT = 67
+BEECHA = 11
+
+CULINT = 67
+CULCHA = 11
+
+ELMINT = 67
+ELMCHA = 11
+
+FIRINT = 67
+FIRCHA = 11
+
+LEBINT = 67
+LEBCHA = 11
+
+MALINT = 67
+MALCHA = 11
+
+MIRINT = 67
+MIRCHA = 11
+
+PININT = 67
+PINCHA = 11
+
+PLUINT = 67
+PLUCHA = 11
+
+ROWINT = 67
+ROWCHA = 11
+
+WHIINT = 67
+WHICHA = 11
+
+YAVINT = 67
+YAVCHA = 11
+
 dofile(minetest.get_modpath("lottplants").."/functions.lua")
 
 minetest.register_node("lottplants:brambles_of_mordor", {
-	description = "Brambles Of Mordor",
+	description = SL("Brambles Of Mordor"),
 	drawtype = "plantlike",
 	tiles = { "lottplants_brambles_of_mordor.png" },
 	inventory_image = "lottplants_brambles_of_mordor.png",
@@ -23,7 +73,7 @@ minetest.register_node("lottplants:brambles_of_mordor", {
 })
 
 minetest.register_node("lottplants:brambles_of_mordor_fake", {
-	description = "Brambles Of Mordor",
+	description = SL("Brambles Of Mordor"),
 	drawtype = "plantlike",
 	tiles = { "lottplants_brambles_of_mordor.png" },
 	inventory_image = "lottplants_brambles_of_mordor.png",
@@ -41,7 +91,7 @@ minetest.register_node("lottplants:brambles_of_mordor_fake", {
 })
 
 minetest.register_node("lottplants:pilinehtar", {
-	description = "Pilinehtar",
+	description = SL("Pilinehtar"),
 	drawtype = "plantlike",
 	tiles = { "lottplants_pilinehtar.png" },
 	inventory_image = "lottplants_pilinehtar.png",
@@ -60,7 +110,7 @@ minetest.register_node("lottplants:pilinehtar", {
 })
 
 minetest.register_node("lottplants:pilinehtar_fake", {
-	description = "Pilinehtar",
+	description = SL("Pilinehtar"),
 	drawtype = "plantlike",
 	tiles = { "lottplants_pilinehtar.png" },
 	inventory_image = "lottplants_pilinehtar.png",
@@ -124,7 +174,9 @@ minetest.register_abm({
 })
 
 minetest.register_craftitem("lottplants:honey", {
-	description = "Honey",
+	description = SL("Honey"),
 	inventory_image = "lottplants_honey.png",
 	on_use = minetest.item_eat(1),
 })
+
+print(minetest.get_current_modname().." LOADED")
