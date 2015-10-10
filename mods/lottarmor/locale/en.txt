@@ -41,6 +41,7 @@ Back = Back
 Bag = Bag
 Main = Main
 Bags = Bags
+got destroyed!	=	got destroyed!
 
 ### shield.lua ###
 Training Shield	=	Training Shield

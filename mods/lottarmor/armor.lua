@@ -306,7 +306,7 @@ armor.update_armor = function(self, player)
 				if stack:get_count() == 0 then
 					local desc = minetest.registered_items[item].description
 					if desc then
-						minetest.chat_send_player(name, "Your "..desc.." got destroyed!")
+						minetest.chat_send_player(name, desc.." "..SL("got destroyed!"))
 					end
 					self:set_player_armor(player)
 					armor:update_inventory(player)
