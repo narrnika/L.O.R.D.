@@ -1,0 +1,4 @@
+### init.lua ###
+Home set!	=	Домашняя точка установлена!
+Teleported to home!	=	Перемещение на домашнюю точку!
+Set a home using /sethome	=	Задайте домашнюю точку используя /sethome

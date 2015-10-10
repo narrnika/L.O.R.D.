@@ -1,0 +1,4 @@
+### init.lua ###
+Home set!	=	Home set!
+Teleported to home!	=	Teleported to home!
+Set a home using /sethome	=	Set a home using /sethome

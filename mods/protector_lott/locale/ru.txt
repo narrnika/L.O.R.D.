@@ -1,0 +1,24 @@
+### init.lua ###
+Protection Block	=	Защитный блок
+Protection Logo	=	Знак защиты
+Protected Wooden Door	=	Защищённая деревянная дверь
+Protected Steel Door	=	Защищённая стальная дверь
+Protected Chest	=	Защищённый сундук
+
+Protection	=	Защита
+owned by	=	только для
+
+PUNCH node to show protected area or USE for area check	=	Ударьте этот нод для подсветки защищённой области.
+Members: (type player name then press Enter to add)	=	Доступ для (введите имя игрока и нажмите Enter для добавления):
+Close	=	Закрыть
+
+This area is owned by	=	Это только для
+Protection located at:	=	Защитный блок на координатах
+Members:	=	Так же доступно для
+This area is not protected.	=	Этот блок не защищён.
+You can build here.	=	Вы можете здесь строить.
+
+Overlaps into another protected area!	=	Перекрытие с другими защищёнными регионами!
+
+To Chest	=	В сундук
+To Inventory	=	В инвентарь

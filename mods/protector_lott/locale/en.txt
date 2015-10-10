@@ -1,0 +1,24 @@
+### init.lua ###
+Protection Block	=	Protection Block
+Protection Logo	=	Protection Logo
+Protected Wooden Door	=	Protected Wooden Door
+Protected Steel Door	=	Protected Steel Door
+Protected Chest	=	Protected Chest
+
+Protection	=	Protection
+owned by	=	owned by
+
+PUNCH node to show protected area or USE for area check	=	PUNCH node to show protected area or USE for area check
+Members: (type player name then press Enter to add)	=	Members: (type player name then press Enter to add)
+Close	=	Close
+
+This area is owned by	=	This area is owned by
+Protection located at:	=	Protection located at:
+Members:	=	Members:
+This area is not protected.	=	This area is not protected.
+You can build here.	=	You can build here.
+
+Overlaps into another protected area!	=	Overlaps into another protected area!
+
+To Chest	=	To Chest
+To Inventory	=	To Inventory
