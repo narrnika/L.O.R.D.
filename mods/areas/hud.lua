@@ -1,3 +1,5 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 -- This is inspired by the landrush mod by Bremaweb
 
 areas.hud = {}
@@ -10,9 +12,9 @@ minetest.register_globalstep(function(dtime)
 		for id, area in pairs(areas:getAreasAtPos(pos)) do
 			table.insert(areaStrings, ("%s [%u] (%s%s)")
 					:format(area.name, id, area.owner,
-					area.open and ":open" or ""))
+					area.open and SL(":open") or ""))
 		end
-		local areaString = "Areas:"
+		local areaString = SL("Areas:")
 		if #areaStrings > 0 then
 			areaString = areaString.."\n"..
 				table.concat(areaStrings, "\n")

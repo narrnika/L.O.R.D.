@@ -1,3 +1,5 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 -- Areas mod by ShadowNinja
 -- Based on node_ownership
 -- License: LGPLv2+
@@ -20,15 +22,15 @@ dofile(areas.modpath.."/hud.lua")
 areas:load()
 
 minetest.register_privilege("areas", {
-	description = "Can administer areas."
+	description = SL("Can administer areas.")
 })
 minetest.register_privilege("areas_high_limit", {
-	description = "Can can more, bigger areas."
+	description = SL("Can can more, bigger areas.")
 })
 
 if not minetest.registered_privileges[areas.config.self_protection_privilege] then
 	minetest.register_privilege(areas.config.self_protection_privilege, {
-		description = "Can protect areas.",
+		description = SL("Can protect areas.")
 	})
 end
 
@@ -37,3 +39,4 @@ if minetest.setting_getbool("log_mod") then
 	minetest.log("action", "areas loaded in "..diffTime.."s.")
 end
 
+print(minetest.get_current_modname().." LOADED")
