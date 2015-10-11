@@ -111,7 +111,6 @@ signs_lib.sign_post_model = {
 
 -- Boilerplate to support localized strings if intllib mod is installed.
 local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
-signs_lib.gettext = S
 
 -- the list of standard sign nodes
 
