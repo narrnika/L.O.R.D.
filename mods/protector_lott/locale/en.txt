@@ -22,3 +22,5 @@ Overlaps into another protected area!	=	Overlaps into another protected area!
 
 To Chest	=	To Chest
 To Inventory	=	To Inventory
+
+Ignore player protection	=	Ignore player protection

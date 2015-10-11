@@ -2,3 +2,4 @@
 Home set!	=	Home set!
 Teleported to home!	=	Teleported to home!
 Set a home using /sethome	=	Set a home using /sethome
+Can use /sethome and /home	=	Can use /sethome and /home

@@ -1,0 +1,2 @@
+### init.lua ###
+Can use WorldEdit commands	=	Возможность редактировать мир с помощью команд WorldEdit

@@ -1,3 +1,4 @@
+### init.lua ###
 Sign	=	Sign
 Sign locked	=	Sign locked
 Sign (orange, metal)	=	Sign (orange, metal)
@@ -10,3 +11,4 @@ Sign (blue, metal)	=	Sign (blue, metal)
 Sign (brown, metal)	=	Sign (brown, metal)
 Locked sign, owned by	=	Locked sign, owned by
 Write	=	Write
+Can edit all locked signs	=	Can edit all locked signs

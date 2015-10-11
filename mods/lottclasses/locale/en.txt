@@ -13,3 +13,11 @@ You are now a member of the race of elves, go forth into the world.	=	You are no
 You are now a member of the race of man, go forth into the world.	=	You are now a member of the race of men, go forth into the world.
 You are now a member of the race of orcs, go forth into the world.	=	You are now a member of the race of orcs, go forth into the world.
 You are now a member of the race of hobbits, go forth into the world.	=	You are now a member of the race of hobbits, go forth into the world.
+
+A male player	=	A male player
+A female player	=	A female player
+A dwarf player	=	A dwarf player
+An elf player	=	An elf player
+A human player	=	A human player
+An orc player	=	An orc player
+A hobbit player	=	A hobbit player

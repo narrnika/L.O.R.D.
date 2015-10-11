@@ -1,31 +1,31 @@
 local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
 
 minetest.register_privilege("GAMEmale", {
-	description = "A male player",
+	description = SL("A male player"),
 	give_to_singleplayer = false,
 })
 minetest.register_privilege("GAMEfemale", {
-	description = "A female player",
+	description = SL("A female player"),
 	give_to_singleplayer = false,
 })
 minetest.register_privilege("GAMEdwarf", {
-	description = "A dwarf player",
+	description = SL("A dwarf player"),
 	give_to_singleplayer = false,
 })
 minetest.register_privilege("GAMEelf", {
-	description = "An elf player",
+	description = SL("An elf player"),
 	give_to_singleplayer = false,
 })
 minetest.register_privilege("GAMEman", {
-	description = "A human player",
+	description = SL("A human player"),
 	give_to_singleplayer = false,
 })
 minetest.register_privilege("GAMEorc", {
-	description = "An orc player",
+	description = SL("An orc player"),
 	give_to_singleplayer = false,
 })
 minetest.register_privilege("GAMEhobbit", {
-	description = "A hobbit player",
+	description = SL("A hobbit player"),
 	give_to_singleplayer = false,
 })
 

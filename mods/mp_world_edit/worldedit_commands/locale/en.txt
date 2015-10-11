@@ -1,0 +1,2 @@
+### init.lua ###
+Can use WorldEdit commands	=	Can use WorldEdit commands

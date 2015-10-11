@@ -737,7 +737,7 @@ minetest.register_node(":signs:sign_post", {
 
 -- Locked wall sign
 
-minetest.register_privilege("sign_editor", "Can edit all locked signs")
+minetest.register_privilege("sign_editor", SL("Can edit all locked signs"))
 
 minetest.register_node(":locked_sign:sign_wall_locked", {
 	description = SL("Sign locked"),

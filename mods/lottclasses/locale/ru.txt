@@ -13,3 +13,11 @@ You are now a member of the race of elves, go forth into the world.	=	Тепер
 You are now a member of the race of men, go forth into the world.	=	Теперь ты являешься членом рассы людей, можешь идти в мир.
 You are now a member of the race of orcs, go forth into the world.	=	Теперь ты являешься членом рассы орков, можешь идти в мир.
 You are now a member of the race of hobbits, go forth into the world.	=	Теперь ты являешься членом рассы хоббитов, можешь идти в мир.
+
+A male player	=	Персонаж мужского пола
+A female player	=	Персонаж женского пола
+A dwarf player	=	Персонаж - представитель рассы гномов
+An elf player	=	Персонаж - представитель рассы эльфов
+A human player	=	Персонаж - представитель рассы людей
+An orc player	=	Персонаж - представитель рассы орков
+A hobbit player	=	Персонаж - представитель рассы хоббитов

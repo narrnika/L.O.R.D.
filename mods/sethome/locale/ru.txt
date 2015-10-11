@@ -2,3 +2,4 @@
 Home set!	=	Домашняя точка установлена!
 Teleported to home!	=	Перемещение на домашнюю точку!
 Set a home using /sethome	=	Задайте домашнюю точку используя /sethome
+Can use /sethome and /home	=	Возможность использовать команды /sethome и /home

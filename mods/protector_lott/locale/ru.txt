@@ -22,3 +22,5 @@ Overlaps into another protected area!	=	Перекрытие с другими �
 
 To Chest	=	В сундук
 To Inventory	=	В инвентарь
+
+Ignore player protection	=	Возможность игнорировать защиту игроков

@@ -2,7 +2,7 @@
 local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
 
 minetest.register_privilege("creative", {
-	description = "Creative Mode",
+	description = SL("Creative Mode"),
 	give_to_singleplayer= false,
 })
 creative_inventory = {}

@@ -1,6 +1,6 @@
 local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
 
-minetest.register_privilege("delprotect","Ignore player protection")
+minetest.register_privilege("delprotect", SL("Ignore player protection"))
 
 prot = {}
 

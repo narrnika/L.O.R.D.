@@ -24,7 +24,7 @@ end
 
 loadhomes()
 
-minetest.register_privilege("home", "Can use /sethome and /home")
+minetest.register_privilege("home", SL("Can use /sethome and /home"))
 
 local changed = false
 

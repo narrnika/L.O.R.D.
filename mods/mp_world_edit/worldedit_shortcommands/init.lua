@@ -48,3 +48,5 @@ worldedit.alias_chatcommand("/rsr", "/restore")
 worldedit.alias_chatcommand("/l", "/lua")
 worldedit.alias_chatcommand("/lt", "/luatransform")
 worldedit.alias_chatcommand("/clro", "/clearobjects")
+
+print(minetest.get_current_modname().." LOADED")

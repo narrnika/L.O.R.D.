@@ -1,7 +1,7 @@
 ### init.lua ###
 Can administer areas.	=	Возможность управлять территориями
-Can can more, bigger areas.	=	Возможность защитить большие территории.
-Can protect areas.	=	Возможность защитить территорию.
+Can can more, bigger areas.	=	Возможность защищать большие территории
+Can protect areas.	=	Возможность защищать территории
 
 ### internal.lua ###
 Self protection is disabled or you do not have the necessary privilege.	=	Возможность защиты территорий отключена или же Вы не имеете соответствующией привилегии.

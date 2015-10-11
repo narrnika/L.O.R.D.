@@ -118,3 +118,5 @@ do
 		end,
 	}
 end
+
+print(minetest.get_current_modname().." LOADED")

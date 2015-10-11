@@ -1,4 +1,6 @@
-minetest.register_privilege("worldedit", "Can use WorldEdit commands")
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
+minetest.register_privilege("worldedit", SL("Can use WorldEdit commands"))
 
 worldedit.set_pos = {}
 worldedit.inspect = {}
@@ -1152,3 +1154,5 @@ minetest.register_chatcommand("/clearobjects", {
 		worldedit.player_notify(name, count .. " objects cleared")
 	end),
 })
+
+print(minetest.get_current_modname().." LOADED")
