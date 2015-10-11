@@ -201,7 +201,7 @@ minetest.register_craft({
 	}
 })
 
-doors:register_door("castle:oak_door", {
+doors.register_door("castle:oak_door", {
 	description = "Oak Door",
 	inventory_image = "castle_oak_door_inv.png",
 	groups = {choppy=2,door=1},
@@ -210,7 +210,7 @@ doors:register_door("castle:oak_door", {
 	only_placer_can_open = true,
 })
 
-doors:register_door("castle:jail_door", {
+doors.register_door("castle:jail_door", {
 	description = "Jail Door",
 	inventory_image = "castle_jail_door_inv.png",
 	groups = {cracky=2,door=1},
@@ -387,4 +387,83 @@ minetest.register_craft({
 	}
 })
 
-print(minetest.get_current_modname().." LOADED")
+if minetest.get_modpath("moreblocks") then
+	
+	stairsplus:register_all("castle", "dungeon_stone", "castle:dungeon_stone", {
+		description = "Dungeon Stone",
+		tiles = {"castle_dungeon_stone.png"},
+		groups = {cracky=1, not_in_creative_inventory=1},
+		sounds = default.node_sound_stone_defaults(),
+		sunlight_propagates = true,
+	})
+
+	stairsplus:register_all("castle", "pavement_brick", "castle:pavement_brick", {
+		description = "Pavement Brick",
+		tiles = {"castle_pavement_brick.png"},
+		groups = {cracky=1, not_in_creative_inventory=1},
+		sounds = default.node_sound_stone_defaults(),
+		sunlight_propagates = true,
+		})
+
+	stairsplus:register_all("castle", "stonewall", "castle:stonewall", {
+		description = "Stone Wall",
+		tiles = {"castle_stonewall.png"},
+		groups = {cracky=1, not_in_creative_inventory=1},
+		sounds = default.node_sound_stone_defaults(),
+		sunlight_propagates = true,
+	})
+
+	stairsplus:register_all("castle", "rubble", "castle:rubble", {
+		description = "Rubble",
+		tiles = {"castle_rubble.png"},
+		groups = {cracky=1, not_in_creative_inventory=1},
+		sounds = default.node_sound_stone_defaults(),
+		sunlight_propagates = true,
+		})
+	end
+
+stairs.register_stair_and_slab("dungeon_stone", "castle:dungeon_stone",
+		{cracky=3},
+		{"castle_dungeon_stone.png"},
+		"Dungeon Stone Stair",
+		"Dungeon Stone Slab",
+		default.node_sound_stone_defaults())
+
+stairs.register_stair_and_slab("castle_pavement_brick", "castle:pavement_brick",
+		{cracky=3},
+		{"castle_pavement_brick.png"},
+		"Castle Pavement Stair",
+		"Castle Pavement Slab",
+		default.node_sound_stone_defaults())
+
+minetest.register_craft({
+	output = "stairs:slab_dungeon_stone 6",
+	recipe = {
+		{"castle:dungeon_stone","castle:dungeon_stone","castle:dungeon_stone"},
+	}
+})
+
+minetest.register_craft({
+	output = "stairs:slab_pavement_brick 6",
+	recipe = {
+		{"castle:pavement_brick","castle:pavement_brick","castle:pavement_brick"},
+	}
+})
+
+minetest.register_craft({
+	output = "stairs:stair_dungeon_stone 4",
+	recipe = {
+		{"","","castle:dungeon_stone"},
+		{"","castle:dungeon_stone","castle:dungeon_stone"},
+		{"castle:dungeon_stone","castle:dungeon_stone","castle:dungeon_stone"},
+	}
+})
+
+minetest.register_craft({
+	output = "stairs:stair_pavement_brick 4",
+	recipe = {
+		{"","","castle:pavement_brick"},
+		{"","castle:pavement_brick","castle:pavement_brick"},
+		{"castle:pavement_brick","castle:pavement_brick","castle:pavement_brick"},
+	}
+})

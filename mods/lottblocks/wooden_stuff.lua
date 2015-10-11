@@ -5,7 +5,7 @@ function lottblocks.register_wooden_stuff(name, description, texture, wood_name)
     local groups_door = node_groups
     groups_door.door = 1
 	if name ~= "wood" then
-		doors:register_door("lottblocks:door_" .. name, {
+		doors.register_door("lottblocks:door_" .. name, {
         	description =  SL(description .. " Door"),
         	inventory_image = "lottblocks_door_" .. name .. ".png",
         	groups = groups_door,
@@ -23,14 +23,14 @@ function lottblocks.register_wooden_stuff(name, description, texture, wood_name)
 		node_groups.not_in_creative_inventory = 0
 		doors.register_trapdoor("lottblocks:hatch_" .. name, {
         	description = SL(description .. " Trapdoor"),
+			inventory_image = "lottblocks_hatch_" .. name ..".png",
         	wield_image = "lottblocks_hatch_" .. name ..".png",
-        	tile_open = "lottblocks_hatch_" .. name .. "_open.png",
-        	tile_closed = "lottblocks_hatch_" .. name .. ".png",
-        	tile_side = "door_trapdoor_side.png",
+			tile_front = "lottblocks_hatch_" .. name .. ".png",
+			tile_side = "doors_trapdoor_side.png",
         	groups = node_groups,
         	sounds = default.node_sound_wood_defaults(),
-        	sound_open = "door_door_open",
-        	sound_close = "door_door_close"
+        	sound_open = "doors_door_open",
+        	sound_close = "doors_door_close"
         })
         minetest.register_craft({
         	output = "lottblocks:hatch_" .. name,

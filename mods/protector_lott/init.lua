@@ -451,15 +451,15 @@ end
 
 local name = "protector_lott:door_wood"
 
-doors:register_door(name, {
+doors.register_door(name, {
 	description = SL("Protected Wooden Door"),
-	inventory_image = "door_wood.png^protector_logo.png",
+	inventory_image = "doors_wood.png^protector_logo.png",
 	groups = {
 		snappy = 1, choppy = 2, oddly_breakable_by_hand = 2,
 		door = 1, unbreakable = 1
 	},
-	tiles_bottom = {"door_wood_b.png^protector_logo.png", "door_brown.png"},
-	tiles_top = {"door_wood_a.png", "door_brown.png"},
+	tiles_bottom = {"doors_wood_b.png^protector_logo.png", "doors_brown.png"},
+	tiles_top = {"doors_wood_a.png", "doors_brown.png"},
 	sounds = default.node_sound_wood_defaults(),
 	sunlight = false,
 })
@@ -520,15 +520,15 @@ minetest.register_craft({
 
 local name = "protector_lott:door_steel"
 
-doors:register_door(name, {
+doors.register_door(name, {
 	description = SL("Protected Steel Door"),
-	inventory_image = "door_steel.png^protector_logo.png",
+	inventory_image = "doors_steel.png^protector_logo.png",
 	groups = {
 		snappy = 1, bendy = 2, cracky = 1,
 		level = 2, door = 1, unbreakable = 1
 	},
-	tiles_bottom = {"door_steel_b.png^protector_logo.png", "door_grey.png"},
-	tiles_top = {"door_steel_a.png", "door_grey.png"},
+	tiles_bottom = {"doors_steel_b.png^protector_logo.png", "doors_grey.png"},
+	tiles_top = {"doors_steel_a.png", "doors_grey.png"},
 	sounds = default.node_sound_wood_defaults(),
 	sunlight = false,
 })

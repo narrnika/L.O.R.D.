@@ -2,4 +2,6 @@
 Wooden Door	=	Wooden Door
 Steel Door	=	Steel Door
 Glass Door	=	Glass Door
+Obsidian Glass Door	=	Obsidian Glass Door
 Trapdoor	=	Trapdoor
+Owned by	=	Owned by
