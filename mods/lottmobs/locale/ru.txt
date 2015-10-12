@@ -2,6 +2,7 @@
 NPC at full health.	=	NPC здоров.
 
 ### craftitems.lua ###
+Spider Poison	=	Паучий яд
 Cooked Meat	=	Жаренное мясо
 Raw Meat	=	Сырое мясо
 Dirty Jacket	=	Грязная куртка

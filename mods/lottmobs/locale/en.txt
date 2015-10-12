@@ -2,6 +2,7 @@
 NPC at full health.	=	NPC at full health.
 
 ### craftitems.lua ###
+Spider Poison	=	Spider Poison
 Cooked Meat	=	Cooked Meat
 Raw Meat	=	Raw Meat
 Dirty Jacket	=	Dirty Jacket
