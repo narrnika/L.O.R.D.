@@ -1,0 +1,15 @@
+### init.lua ###
+Item frame	=	Item frame
+Wooden Pedestal	=	Wooden Pedestal
+Stone Pedestal	=	Stone Pedestal
+Cobblestone Pedestal	=	Cobblestone Pedestal
+Desert Stone Pedestal	=	Desert Stone Pedestal
+Desert Cobblestone Pedestal	=	Desert Cobblestone Pedestal
+Desert Stone Brick Pedestal	=	Desert Stone Brick Pedestal
+Brick Pedestal	=	Brick Pedestal
+Sandstone Pedestal	=	Sandstone Pedestal
+Sandstone Brick Pedestal	=	Sandstone Brick Pedestal
+Stone Brick Pedestal	=	Stone Brick Pedestal
+
+Item frame (owned by	=	Item frame (owned by
+Pedestal (owned by	=	Pedestal (owned by

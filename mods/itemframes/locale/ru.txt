@@ -1,0 +1,19 @@
+### init.lua ###
+Item frame	=	Рамка
+
+Wooden Pedestal	=	Деревянный пьедестал
+Brick Pedestal	=	Кирпичный пьедестал
+
+Stone Pedestal	=	Каменный пьедестал
+Stone Brick Pedestal	=	Пьедестал из каменных блоков
+Cobblestone Pedestal	=	Пьедестал из булыжника
+
+Desert Stone Pedestal	=	Пьедестал из пустынного камня
+Desert Stone Brick Pedestal	=	Пьедестал из блоков пустынного камня
+Desert Cobblestone Pedestal	=	Пьедестал из пустынного булыжника
+
+Sandstone Pedestal	=	Пьедестал из песчанника
+Sandstone Brick Pedestal	=	Пьедестал из блоков песчанника
+
+Item frame (owned by	=	Рамка (только для
+Pedestal (owned by	=	Пьедестал (только для
