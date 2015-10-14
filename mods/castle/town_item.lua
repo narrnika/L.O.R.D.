@@ -244,6 +244,30 @@ minetest.register_craft({
 	}
 })
 
+minetest.register_node("castle:straw", {
+	description = "Straw",
+	tiles = {"castle_straw.png"},
+	is_ground_content = false,
+	groups = {snappy=3, flammable=4},
+	sounds = default.node_sound_leaves_defaults(),
+})
+
+minetest.register_craft({
+	output = "castle:straw 3",
+	recipe = {
+		{"farming:wheat", "farming:wheat", "farming:wheat"},
+		{"farming:wheat", "farming:wheat", "farming:wheat"},
+		{"farming:wheat", "farming:wheat", "farming:wheat"},
+	}
+})
+
+minetest.register_craft({
+	output = "farming:wheat 3",
+	recipe = {
+		{"castle:straw"},
+	}
+})
+
 minetest.register_node("castle:bound_straw", {
 	description = "Bound Straw",
 	drawtype = "normal",
@@ -259,9 +283,9 @@ minetest.register_craft({
 	}
 })
 
-stairs.register_stair_and_slab("straw", "farming:straw",
+stairs.register_stair_and_slab("straw", "castle:straw",
 	{choppy=3, flammable=1, oddly_breakable_by_hand=3},
-	{"farming_straw.png"},
+	{"castle_straw.png"},
 	"Castle Straw Stair",
 	"Castle Straw Slab",
 	default.node_sound_leaves_defaults()
