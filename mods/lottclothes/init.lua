@@ -20,4 +20,4 @@ dofile(minetest.get_modpath(minetest.get_current_modname()).."/ettenmoor.lua")
 dofile(minetest.get_modpath(minetest.get_current_modname()).."/cloaks.lua")
 dofile(minetest.get_modpath(minetest.get_current_modname()).."/elven.lua")
 
-print(minetest.get_current_modname().." LOADED")
+if minetest.setting_getbool("msg_loading_mods") then minetest.log("action", minetest.get_current_modname().." mod LOADED") end

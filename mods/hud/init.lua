@@ -304,3 +304,5 @@ minetest.after(2.5, function()
 		if timer2 > HUD_HUNGER_TICK then timer2 = 0 end
 	end)
 end)
+
+if minetest.setting_getbool("msg_loading_mods") then minetest.log("action", minetest.get_current_modname().." mod LOADED") end

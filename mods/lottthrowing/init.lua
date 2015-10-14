@@ -349,4 +349,4 @@ if minetest.setting_get("log_mods") then
 	minetest.log("action", "lottthrowing loaded")
 end
 
-print(minetest.get_current_modname().." LOADED")
+if minetest.setting_getbool("msg_loading_mods") then minetest.log("action", minetest.get_current_modname().." mod LOADED") end

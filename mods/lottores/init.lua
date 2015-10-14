@@ -1680,4 +1680,4 @@ stairs.register_stair_and_slab("salt", "lottores:salt_block",
 		"Salt Slab",
 		default.node_sound_stone_defaults())
 
-print(minetest.get_current_modname().." LOADED")
+if minetest.setting_getbool("msg_loading_mods") then minetest.log("action", minetest.get_current_modname().." mod LOADED") end

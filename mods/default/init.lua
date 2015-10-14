@@ -22,4 +22,4 @@ dofile(minetest.get_modpath("default").."/player.lua")
 dofile(minetest.get_modpath("default").."/tools.lua")
 dofile(minetest.get_modpath("default").."/trees.lua")
 
-print(minetest.get_current_modname().." LOADED")
+if minetest.setting_getbool("msg_loading_mods") then minetest.log("action", minetest.get_current_modname().." mod LOADED") end

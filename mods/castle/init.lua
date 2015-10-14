@@ -467,3 +467,5 @@ minetest.register_craft({
 		{"castle:pavement_brick","castle:pavement_brick","castle:pavement_brick"},
 	}
 })
+
+if minetest.setting_getbool("msg_loading_mods") then minetest.log("action", minetest.get_current_modname().." mod LOADED") end

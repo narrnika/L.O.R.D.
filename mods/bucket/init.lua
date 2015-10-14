@@ -184,4 +184,4 @@ minetest.register_craft({
 	replacements = {{"bucket:bucket_lava", "bucket:bucket_empty"}},
 })
 
-print(minetest.get_current_modname().." LOADED")
+if minetest.setting_getbool("msg_loading_mods") then minetest.log("action", minetest.get_current_modname().." mod LOADED") end
