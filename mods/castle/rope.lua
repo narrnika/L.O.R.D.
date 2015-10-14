@@ -1,5 +1,7 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 minetest.register_node("castle:ropes",{
-	description = "Rope",
+	description = SL("Rope"),
 	drawtype = "nodebox",
 	sunlight_propagates = true,
 	tiles = {"castle_ropes.png"},
@@ -31,7 +33,6 @@ minetest.register_craft({
 })
 
 minetest.register_node("castle:box_rope", {
-    description = "Rope from Ropebox",
     drawtype = "nodebox",
     paramtype = "light",
     sunlight_propagates = true,
@@ -61,7 +62,7 @@ minetest.register_node("castle:box_rope", {
 })
 
 minetest.register_node("castle:ropebox", {
-    description = "Ropebox",
+    description = SL("Ropebox"),
     drawtype = "nodebox",
     sunlight_propagates = true,
     tiles = {"castle_ropebox_top.png",

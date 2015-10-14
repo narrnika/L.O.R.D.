@@ -1,8 +1,10 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 local tapestry = {}
 
 minetest.register_node("castle:tapestry_top", {
 	drawtype = "nodebox",
-         description = "Tapestry Top",
+	description = SL("Tapestry Top"),
 	tiles = {"default_wood.png"},
 	sunlight_propagates = true,
 	groups = {flammable=3,oddly_breakable_by_hand=1},
@@ -53,8 +55,8 @@ for _, row in ipairs(tapestry.colours) do
 	local craft_color_group = row[3]
 	-- Node Definition
 	minetest.register_node("castle:tapestry_"..name, {
-	         drawtype = "nodebox",
-		description = desc.." Tapestry",
+		drawtype = "nodebox",
+		description = SL(desc.." Tapestry"),
 		tiles = {"wool_"..name..".png"},
 		groups = {oddly_breakable_by_hand=3,flammable=3,not_in_creative_inventory=1},
 		sounds = default.node_sound_defaults(),
@@ -98,7 +100,7 @@ for _, row in ipairs(tapestry.colours) do
 	-- Node Definition
 	minetest.register_node("castle:long_tapestry_"..name, {
 	         drawtype = "nodebox",
-		description = desc.." Tapestry (Long)",
+		description = SL(desc.." Tapestry (Long)"),
 		tiles = {"wool_"..name..".png"},
 		groups = {oddly_breakable_by_hand=3,flammable=3,not_in_creative_inventory=1},
 		sounds = default.node_sound_defaults(),
@@ -142,7 +144,7 @@ for _, row in ipairs(tapestry.colours) do
 	-- Node Definition
 	minetest.register_node("castle:very_long_tapestry_"..name, {
 	         drawtype = "nodebox",
-		description = desc.." Tapestry (Very Long)",
+		description = SL(desc.." Tapestry (Very Long)"),
 		tiles = {"wool_"..name..".png"},
 		groups = {oddly_breakable_by_hand=3,flammable=3,not_in_creative_inventory=1},
 		sounds = default.node_sound_defaults(),

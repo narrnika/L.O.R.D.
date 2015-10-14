@@ -1,3 +1,5 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 minetest.register_alias("darkage:box",         "castle:crate")
 minetest.register_alias("cottages:straw",      "farming:straw")
 minetest.register_alias("castle:straw",        "farming:straw")
@@ -8,7 +10,7 @@ minetest.register_alias("darkage:lamp",        "castle:street_light")
 
 minetest.register_node("castle:anvil",{
 	drawtype = "nodebox",
-	description = "Anvil",
+	description = SL("Anvil"),
 	tiles = {"castle_steel.png"},
 	groups = {cracky=2,falling_node=1},
 	paramtype = "light",
@@ -35,7 +37,7 @@ minetest.register_craft({
 })
 
 minetest.register_node("castle:workbench",{
-	description = "Workbench",
+	description = SL("Workbench"),
 	tiles = {"castle_workbench_top.png", "default_wood.png", "castle_workbench_1.png", "castle_workbench_1.png", "castle_workbench_2.png", "castle_workbench_2.png"},
 	paramtype2 = "facedir",
 	paramtype = "light",
@@ -51,7 +53,7 @@ minetest.register_node("castle:workbench",{
 			'label[7.5,0;Craft Output]' ..
 			'list[context;dst;8,1;1,4;]' ..
 			'list[current_player;main;1,6;8,4;]' )
-        meta:set_string( 'infotext', 'Workbench' )
+        meta:set_string( 'infotext', SL('Workbench'))
         local inv = meta:get_inventory()
         inv:set_size( 'src', 2 * 4 )
 		inv:set_size( 'rec', 3 * 3 )
@@ -152,15 +154,6 @@ minetest.register_abm( {
 	end
 } )
 
-
-local function has_locked_chest_privilege(meta, player)
-	if player:get_player_name() ~= meta:get_string("owner") then
-		return false
-	end
-	return true
-end
-
-
 minetest.register_craft({
 	output = "castle:workbench",
 	recipe = {
@@ -171,7 +164,7 @@ minetest.register_craft({
 })
 
 minetest.register_node("castle:dungeon_stone", {
-	description = "Dungeon Stone",
+	description = SL("Dungeon Stone"),
 	drawtype = "normal",
 	tiles = {"castle_dungeon_stone.png"},
 	groups = {cracky=2},
@@ -194,58 +187,8 @@ minetest.register_craft({
 	}
 })
 
-minetest.register_node("castle:crate", {
-	description = "Crate",
-	drawtype = "normal",
-	tiles = {"castle_crate_top.png","castle_crate_top.png","castle_crate.png","castle_crate.png","castle_crate.png","castle_crate.png"},
-	groups = {choppy=3},
-	paramtype = "light",
-	on_construct = function(pos)
-		local meta = minetest.get_meta(pos)
-		meta:set_string("formspec",
-				"size[8,9]"..
-				"list[current_name;main;0,1;8,4;]"..
-				"list[current_player;main;0,5;8,4;]")
-		meta:set_string("infotext", "Crate")
-		local inv = meta:get_inventory()
-		inv:set_size("main", 8*3)
-	end,
-	can_dig = function(pos,player)
-		local meta = minetest.get_meta(pos);
-		local inv = meta:get_inventory()
-		return inv:is_empty("main")
-	end,
-	on_metadata_inventory_move = function(pos, from_list, from_index, to_list, to_index, count, player)
-		minetest.log("action", player:get_player_name()..
-				" moves stuff in crate at "..minetest.pos_to_string(pos))
-	end,
-    on_metadata_inventory_put = function(pos, listname, index, stack, player)
-		minetest.log("action", player:get_player_name()..
-				" moves stuff to crate at "..minetest.pos_to_string(pos))
-	end,
-    on_metadata_inventory_take = function(pos, listname, index, stack, player)
-		minetest.log("action", player:get_player_name()..
-				" takes stuff from crate at "..minetest.pos_to_string(pos))
-	end,
-})
-
-local function has_locked_chest_privilege(meta, player)
-	if player:get_player_name() ~= meta:get_string("owner") then
-		return false
-	end
-	return true
-end
-
-minetest.register_craft({
-	output = "castle:crate",
-	recipe = {
-		{"default:wood", "default:wood", "default:wood"},
-		{"default:wood", "default:steel_ingot", "default:wood"},
-	}
-})
-
 minetest.register_node("castle:straw", {
-	description = "Straw",
+	description = SL("Straw"),
 	tiles = {"castle_straw.png"},
 	is_ground_content = false,
 	groups = {snappy=3, flammable=4},
@@ -269,7 +212,7 @@ minetest.register_craft({
 })
 
 minetest.register_node("castle:bound_straw", {
-	description = "Bound Straw",
+	description = SL("Bound Straw"),
 	drawtype = "normal",
 	tiles = {"castle_straw_bale.png"},
 	groups = {choppy=4, flammable=1, oddly_breakable_by_hand=3},
@@ -286,31 +229,14 @@ minetest.register_craft({
 stairs.register_stair_and_slab("straw", "castle:straw",
 	{choppy=3, flammable=1, oddly_breakable_by_hand=3},
 	{"castle_straw.png"},
-	"Castle Straw Stair",
-	"Castle Straw Slab",
+	SL("Castle Straw Stair"),
+	SL("Castle Straw Slab"),
 	default.node_sound_leaves_defaults()
 )
 
-minetest.register_node("castle:pavement", {
-	description = "Paving Stone",
-	drawtype = "normal",
-	tiles = {"castle_pavement_brick.png"},
-	groups = {cracky=2},
-	paramtype = "light",
-})
-
-minetest.register_craft({
-	output = "castle:pavement 4",
-	recipe = {
-		{"default:stone", "default:cobble"},
-		{"default:cobble", "default:stone"},
-	}
-})
-
-
 minetest.register_node("castle:light",{
 	drawtype = "glasslike",
-	description = "Light Block",
+	description = SL("Light Block"),
 	sunlight_propagates = true,
 	light_source = 14,
 	tiles = {"castle_street_light.png"},
@@ -326,5 +252,3 @@ minetest.register_craft({
 		{"default:stick", "default:glass", "default:stick"},
 	}
 })
-
-

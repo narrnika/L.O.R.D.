@@ -1,3 +1,5 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 minetest.register_alias("castle:pillars_bottom", "castle:pillars_stonewall_bottom")
 minetest.register_alias("castle:pillars_top", "castle:pillars_stonewall_top")
 minetest.register_alias("castle:pillars_middle", "castle:pillars_stonewall_middle")
@@ -5,7 +7,6 @@ minetest.register_alias("castle:pillars_middle", "castle:pillars_stonewall_middl
 local pillar = {}
 
 pillar.types = {
-	{"stonewall", "Stonewall", "castle_stonewall", "castle:stonewall"},
     {"cobble", "Cobble", "default_cobble", "default:cobble"},
     {"stonebrick", "Stonebrick", "default_stone_brick", "default:stonebrick"},
     {"sandstonebrick", "Sandstone Brick", "default_sandstone_brick", "default:sandstonebrick"},
@@ -23,7 +24,7 @@ for _, row in ipairs(pillar.types) do
 	-- Node Definition
 	minetest.register_node("castle:pillars_"..name.."_bottom", {
 	    drawtype = "nodebox",
-		description = desc.." Pillar Base",
+		description = SL(desc.." Pillar Base"),
 		tiles = {tile..".png"},
 		groups = {cracky=3,attached_node=1},
 		sounds = default.node_sound_defaults(),
@@ -40,7 +41,7 @@ for _, row in ipairs(pillar.types) do
 	})
 	minetest.register_node("castle:pillars_"..name.."_top", {
 	    drawtype = "nodebox",
-		description = desc.." Pillar Top",
+		description = SL(desc.." Pillar Top"),
 		tiles = {tile..".png"},
 		groups = {cracky=3,attached_node=1},
 		sounds = default.node_sound_defaults(),
@@ -57,7 +58,7 @@ for _, row in ipairs(pillar.types) do
 	})
 	minetest.register_node("castle:pillars_"..name.."_middle", {
 	    drawtype = "nodebox",
-		description = desc.." Pillar Middle",
+		description = SL(desc.." Pillar Middle"),
 		tiles = {tile..".png"},
 		groups = {cracky=3,attached_node=1},
 		sounds = default.node_sound_defaults(),

@@ -1,3 +1,5 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 minetest.register_alias("castle:arrowslit", "castle:arrowslit_stonewall")
 minetest.register_alias("castle:arrowslit_hole", "castle:arrowslit_stonewall_hole")
 minetest.register_alias("castle:arrowslit", "castle:arrowslit_stonewall_cross")
@@ -5,7 +7,6 @@ minetest.register_alias("castle:arrowslit", "castle:arrowslit_stonewall_cross")
 local arrowslit = {}
 
 arrowslit.types = {
-	{"stonewall", "Stonewall", "castle_stonewall", "castle:stonewall"},
     {"cobble", "Cobble", "default_cobble", "default:cobble"},
     {"stonebrick", "Stonebrick", "default_stone_brick", "default:stonebrick"},
     {"sandstonebrick", "Sandstone Brick", "default_sandstone_brick", "default:sandstonebrick"},
@@ -23,7 +24,7 @@ for _, row in ipairs(arrowslit.types) do
 	-- Node Definition
 	minetest.register_node("castle:arrowslit_"..name, {
 	    drawtype = "nodebox",
-		description = desc.." Arrowslit",
+		description = SL(desc.." Arrowslit"),
 		tiles = {tile..".png"},
 		groups = {cracky=3},
 		sounds = default.node_sound_defaults(),
@@ -47,7 +48,7 @@ for _, row in ipairs(arrowslit.types) do
 	})
 	minetest.register_node("castle:arrowslit_"..name.."_cross", {
 	    drawtype = "nodebox",
-		description = desc.." Arrowslit with Cross",
+		description = SL(desc.." Arrowslit with Cross"),
 		tiles = {tile..".png"},
 		groups = {cracky=3},
 		sounds = default.node_sound_defaults(),
@@ -75,7 +76,7 @@ for _, row in ipairs(arrowslit.types) do
 	})
 	minetest.register_node("castle:arrowslit_"..name.."_hole", {
 	    drawtype = "nodebox",
-		description = desc.." Arrowslit with Hole",
+		description = SL(desc.." Arrowslit with Hole"),
 		tiles = {tile..".png"},
 		groups = {cracky=3},
 		sounds = default.node_sound_defaults(),

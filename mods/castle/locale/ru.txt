@@ -1,0 +1,124 @@
+### pillars.lua ###
+Stone Pillar Base	=	Основание каменной колонны
+Stone Pillar Middle	=	Каменная колонна
+Stone Pillar Top	=	Навершие каменной колонны
+Stonebrick Pillar Base	=	Основание колонны из каменных блоков
+Stonebrick Pillar Middle	=	Колонна из каменных блоков
+Stonebrick Pillar Top	=	Навершие колонны из каменных блоков
+Cobble Pillar Base	=	Основание колонны из булыжника
+Cobble Pillar Middle	=	Колонна из булыжника
+Cobble Pillar Top	=	Навершие колонны из булыжника
+Desert Stone Pillar Base	=	Основание колонны из пустынного камня
+Desert Stone Pillar Middle	=	Колонна из пустынного камня
+Desert Stone Pillar Top	=	Навершие колонны из пустынного камня
+Desert Stone Brick Pillar Base	=	Основание колонны из блоков пустынного камня
+Desert Stone Brick Pillar Middle	=	Колонна из блоков пустынного камня
+Desert Stone Brick Pillar Top	=	Навершие колонны из блоков пустынного камня
+Sandstone Pillar Base	=	Основание колонны из песчанника
+Sandstone Pillar Middle	=	Колонна из песчанника
+Sandstone Pillar Top	=	Навершие колонны из песчанника
+Sandstone Brick Pillar Base	=	Основание колонны из блоков песчанника
+Sandstone Brick Pillar Middle	=	Колонна из блоков песчанника
+Sandstone Brick Pillar Top	=	Навершие колонны из блоков песчанника
+
+### arrowslit.lua ###
+Cobble Arrowslit	=	Прямая бойница из булыжника
+Stonebrick Arrowslit	=	Прямая бойница из каменных блоков
+Sandstone Brick Arrowslit	=	Прямая бойница из блоков песчанника
+Desert Stone Brick Arrowslit	=	Прямая бойница из блоков пустынного камня
+Stone Arrowslit	=	Прямая каменная бойница
+Sandstone Arrowslit	=	Прямая бойница из песчанника
+Desert Stone Arrowslit	=	Прямая бойница из пустынного камня
+ 		 
+Cobble Arrowslit with Cross	=	Крестовая бойница из булыжника
+Stonebrick Arrowslit with Cross	=	Крестовая бойница из каменных блоков
+Sandstone Brick Arrowslit with Cross	=	Крестовая бойница из блоков песчанника
+Desert Stone Brick Arrowslit with Cross	=	Крестовая бойница из блоков пустынного камня
+Stone Arrowslit with Cross	=	Крестовая каменная бойница
+Sandstone Arrowslit with Cross	=	Крестовая бойница из песчанника
+Desert Stone Arrowslit with Cross	=	Крестовая бойница из пустынного камня
+ 		 
+Cobble Arrowslit with Hole	=	Т-образная бойница из булыжника
+Stonebrick Arrowslit with Hole	=	Т-образная бойница из каменных блоков
+Sandstone Brick Arrowslit with Hole	=	Т-образная бойница из блоков песчанника
+Desert Stone Brick Arrowslit with Hole	=	Т-образная бойница из блоков пустынного камня
+Stone Arrowslit with Hole	=	Т-образная каменная бойница
+Sandstone Arrowslit with Hole	=	Т-образная бойница из песчанника
+Desert Stone Arrowslit with Hole	=	Т-образная бойница из пустынного камня
+
+### tapestry.lua ###
+Tapestry Top	=	Основание для гобелена
+White Tapestry	=	Белый гобелен
+White Tapestry (Long)	=	Белый гобелен (длинный)
+White Tapestry (Very Long)	=	Белый гобелен (очень длинный)
+Grey Tapestry	=	Серый гобелен
+Grey Tapestry (Long)	=	Серый гобелен (длинный)
+Grey Tapestry (Very Long)	=	Серый гобелен (очень длинный)
+Dark Grey Tapestry	=	Тёмно-серый гобелен
+Dark Grey Tapestry (Long)	=	Тёмно-серый гобелен (длинный)
+Dark Grey Tapestry (Very Long)	=	Тёмно-серый гобелен (очень длинный)
+Black Tapestry	=	Чёрный гобелен
+Black Tapestry (Long)	=	Чёрный гобелен (длинный)
+Black Tapestry (Very Long)	=	Чёрный гобелен (очень длинный)
+Violet Tapestry	=	Фиолетовый гобелен
+Violet Tapestry (Long)	=	Фиолетовый гобелен (длинный)
+Violet Tapestry (Very Long)	=	Фиолетовый гобелен (очень длинный)
+Blue Tapestry	=	Синий гобелен
+Blue Tapestry (Long)	=	Синий гобелен (длинный)
+Blue Tapestry (Very Long)	=	Синий гобелен (очень длинный)
+Cyan Tapestry	=	Голубой гобелен
+Cyan Tapestry (Long)	=	Голубой гобелен (длинный)
+Cyan Tapestry (Very Long)	=	Голубой гобелен (очень длинный)
+Dark Green Tapestry	=	Тёмно-зелёный гобелен
+Dark Green Tapestry (Long)	=	Тёмно-зелёный гобелен (длинный)
+Dark Green Tapestry (Very Long)	=	Тёмно-зелёный гобелен (очень длинный)
+Green Tapestry	=	Зелёный гобелен
+Green Tapestry (Long)	=	Зелёный гобелен (длинный)
+Green Tapestry (Very Long)	=	Зелёный гобелен (очень длинный)
+Yellow Tapestry	=	Жёлтый гобелен
+Yellow Tapestry (Long)	=	Жёлтый гобелен (длинный)
+Yellow Tapestry (Very Long)	=	Жёлтый гобелен (очень длинный)
+Brown Tapestry	=	Коричневый гобелен
+Brown Tapestry (Long)	=	Коричневый гобелен (длинный)
+Brown Tapestry (Very Long)	=	Коричневый гобелен (очень длинный)
+Orange Tapestry	=	Оранжевый гобелен
+Orange Tapestry (Long)	=	Оранжевый гобелен (длинный)
+Orange Tapestry (Very Long)	=	Оранжевый гобелен (очень длинный)
+Red Tapestry	=	Красный гобелен
+Red Tapestry (Long)	=	Красный гобелен (длинный)
+Red Tapestry (Very Long)	=	Красный гобелен (очень длинный)
+Magenta Tapestry	=	Пурпурный гобелен
+Magenta Tapestry (Long)	=	Пурпурный гобелен (длинный)
+Magenta Tapestry (Very Long)	=	Пурпурный гобелен (очень длинный)
+Pink Tapestry	=	Розовый гобелен
+Pink Tapestry (Long)	=	Розовый гобелен (длинный)
+Pink Tapestry (Very Long)	=	Розовый гобелен (очень длинный)
+
+### jailbars.lua ###
+Jailbars	=	Решётка
+
+### town_item.lua ###
+Anvil	=	Наковальня
+Workbench	=	Рабочий стол
+Dungeon Stone	=	Малахит
+Straw	=	Сено
+Bound Straw	=	Обвязанное сено
+Castle Straw Stair	=	Ступенька из сена
+Castle Straw Slab	=	Плита из сена
+Light Block	=	Витражные светильник
+
+### shields_decor.lua ###
+Mounted Shield	=	Декоративный щит
+
+### rope.lua ###
+Rope	=	Гномья верёвка
+Ropebox	=	Блок для гномей верёвки
+
+### init.lua ###
+Oak Door	=	Дверь с зарешоченным окном
+Jail Door	=	Дверь-решётка
+Ironbound Chest	=	Ларец
+Ironbound Chest (owned by	=	Ларец (только для
+Battleaxe	=	Боевой топор гномов
+Dungeon Stone Stair	=	Малахитовая ступенька
+Dungeon Stone Slab	=	Малохитовая плита

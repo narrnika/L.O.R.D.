@@ -1,0 +1,125 @@
+### pillars.lua ###
+Stone Pillar Base	=	Stone Pillar Base
+Stone Pillar Middle	=	Stone Pillar Middle
+Stone Pillar Top	=	Stone Pillar Top
+Stonebrick Pillar Base	=	Stonebrick Pillar Base
+Stonebrick Pillar Middle	=	Stonebrick Pillar Middle
+Stonebrick Pillar Top	=	Stonebrick Pillar Top
+Cobble Pillar Base	=	Cobble Pillar Base
+Cobble Pillar Middle	=	Cobble Pillar Middle
+Cobble Pillar Top	=	Cobble Pillar Top
+Desert Stone Pillar Base	=	Desert Stone Pillar Base
+Desert Stone Pillar Middle	=	Desert Stone Pillar Middle
+Desert Stone Pillar Top	=	Desert Stone Pillar Top
+Desert Stone Brick Pillar Base	=	Desert Stone Brick Pillar Base
+Desert Stone Brick Pillar Middle	=	Desert Stone Brick Pillar Middle
+Desert Stone Brick Pillar Top	=	Desert Stone Brick Pillar Top
+Sandstone Pillar Base	=	Sandstone Pillar Base
+Sandstone Pillar Middle	=	Sandstone Pillar Middle
+Sandstone Pillar Top	=	Sandstone Pillar Top
+Sandstone Brick Pillar Base	=	Sandstone Brick Pillar Base
+Sandstone Brick Pillar Middle	=	Sandstone Brick Pillar Middle
+Sandstone Brick Pillar Top	=	Sandstone Brick Pillar Top
+
+### arrowslit.lua ###
+Cobble Arrowslit	=	Cobble Arrowslit
+Stonebrick Arrowslit	=	Stonebrick Arrowslit
+Sandstone Brick Arrowslit	=	Sandstone Brick Arrowslit
+Desert Stone Brick Arrowslit	=	Desert Stone Brick Arrowslit
+Stone Arrowslit	=	Stone Arrowslit
+Sandstone Arrowslit	=	Sandstone Arrowslit
+Desert Stone Arrowslit	=	Desert Stone Arrowslit
+
+Cobble Arrowslit with Cross	=	Cobble Arrowslit with Cross
+Stonebrick Arrowslit with Cross	=	Stonebrick Arrowslit with Cross
+Sandstone Brick Arrowslit with Cross	=	Sandstone Brick Arrowslit with Cross
+Desert Stone Brick Arrowslit with Cross	=	Desert Stone Brick Arrowslit with Cross
+Stone Arrowslit with Cross	=	Stone Arrowslit with Cross
+Sandstone Arrowslit with Cross	=	Sandstone Arrowslit with Cross
+Desert Stone Arrowslit with Cross	=	Desert Stone Arrowslit with Cross
+
+Cobble Arrowslit with Hole	=	Cobble Arrowslit with Hole
+Stonebrick Arrowslit with Hole	=	Stonebrick Arrowslit with Hole
+Sandstone Brick Arrowslit with Hole	=	Sandstone Brick Arrowslit with Hole
+Desert Stone Brick Arrowslit with Hole	=	Desert Stone Brick Arrowslit with Hole
+Stone Arrowslit with Hole	=	Stone Arrowslit with Hole
+Sandstone Arrowslit with Hole	=	Sandstone Arrowslit with Hole
+Desert Stone Arrowslit with Hole	=	Desert Stone Arrowslit with Hole
+
+
+### tapestry.lua ###
+Tapestry Top	=	Tapestry Top
+White Tapestry	=	White Tapestry
+White Tapestry (Long)	=	White Tapestry (Long)
+White Tapestry (Very Long)	=	White Tapestry (Very Long)
+Grey Tapestry	=	Grey Tapestry
+Grey Tapestry (Long)	=	Grey Tapestry (Long)
+Grey Tapestry (Very Long)	=	Grey Tapestry (Very Long)
+Dark Grey Tapestry	=	Dark Grey Tapestry
+Dark Grey Tapestry (Long)	=	Dark Grey Tapestry (Long)
+Dark Grey Tapestry (Very Long)	=	Dark Grey Tapestry (Very Long)
+Black Tapestry	=	Black Tapestry
+Black Tapestry (Long)	=	Black Tapestry (Long)
+Black Tapestry (Very Long)	=	Black Tapestry (Very Long)
+Violet Tapestry	=	Violet Tapestry
+Violet Tapestry (Long)	=	Violet Tapestry (Long)
+Violet Tapestry (Very Long)	=	Violet Tapestry (Very Long)
+Blue Tapestry	=	Blue Tapestry
+Blue Tapestry (Long)	=	Blue Tapestry (Long)
+Blue Tapestry (Very Long)	=	Blue Tapestry (Very Long)
+Cyan Tapestry	=	Cyan Tapestry
+Cyan Tapestry (Long)	=	Cyan Tapestry (Long)
+Cyan Tapestry (Very Long)	=	Cyan Tapestry (Very Long)
+Dark Green Tapestry	=	Dark Green Tapestry
+Dark Green Tapestry (Long)	=	Dark Green Tapestry (Long)
+Dark Green Tapestry (Very Long)	=	Dark Green Tapestry (Very Long)
+Green Tapestry	=	Green Tapestry
+Green Tapestry (Long)	=	Green Tapestry (Long)
+Green Tapestry (Very Long)	=	Green Tapestry (Very Long)
+Yellow Tapestry	=	Yellow Tapestry
+Yellow Tapestry (Long)	=	Yellow Tapestry (Long)
+Yellow Tapestry (Very Long)	=	Yellow Tapestry (Very Long)
+Brown Tapestry	=	Brown Tapestry
+Brown Tapestry (Long)	=	Brown Tapestry (Long)
+Brown Tapestry (Very Long)	=	Brown Tapestry (Very Long)
+Orange Tapestry	=	Orange Tapestry
+Orange Tapestry (Long)	=	Orange Tapestry (Long)
+Orange Tapestry (Very Long)	=	Orange Tapestry (Very Long)
+Red Tapestry	=	Red Tapestry
+Red Tapestry (Long)	=	Red Tapestry (Long)
+Red Tapestry (Very Long)	=	Red Tapestry (Very Long)
+Magenta Tapestry	=	Magenta Tapestry
+Magenta Tapestry (Long)	=	Magenta Tapestry (Long)
+Magenta Tapestry (Very Long)	=	Magenta Tapestry (Very Long)
+Pink Tapestry	=	Pink Tapestry
+Pink Tapestry (Long)	=	Pink Tapestry (Long)
+Pink Tapestry (Very Long)	=	Pink Tapestry (Very Long)
+
+### jailbars.lua ###
+Jailbars	=	Jailbars
+
+### town_item.lua ###
+Anvil	=	Anvil
+Workbench	=	Workbench
+Dungeon Stone	=	Dungeon Stone
+Straw	=	Straw
+Bound Straw	=	Bound Straw
+Castle Straw Stair	=	Castle Straw Stair
+Castle Straw Slab	=	Castle Straw Slab
+Light Block	=	Light Block
+
+### shields_decor.lua ###
+Mounted Shield	=	Mounted Shield
+
+### rope.lua ###
+Rope	=	Rope
+Ropebox	=	Ropebox
+
+### init.lua ###
+Oak Door	=	Oak Door
+Jail Door	=	Jail Door
+Ironbound Chest	=	Ironbound Chest
+Ironbound Chest (owned by	=	Ironbound Chest (owned by
+Battleaxe	=	Battleaxe
+Dungeon Stone Stair	=	Dungeon Stone Stair
+Dungeon Stone Slab	=	Dungeon Stone Slab

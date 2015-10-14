@@ -1,3 +1,5 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 -- xjailbarss mod by xyz
 
 local function rshift(x, by)
@@ -91,7 +93,7 @@ for i = 1, 15 do
 end
 
 minetest.register_node("castle:jailbars", {
-    description = "Jailbars",
+    description = SL("Jailbars"),
     tile_images = {"castle_space.png"},
     inventory_image = "castle_jailbars.png",
     wield_image = "castle_jailbars.png",
@@ -110,4 +112,3 @@ minetest.register_craft({
 		{"default:steel_ingot","","default:steel_ingot"},
 	}
 })
-
