@@ -19,3 +19,7 @@ Desert Stone Stair	=	Ступенька из пустынного камня
 Desert Stone Slab	=	Плита из пустынного камня
 Desert Cobble Stair	=	Ступенька из пустынного булыжника
 Desert Cobble Slab	=	Плита из пустынного булыжника
+Sandstone Brick Stair	=	Ступенька из блоков песчанника
+Sandstone Brick Slab	=	Плита из блоков песчанника
+Obsidian Stair	=	Обсидиановая ступенька
+Obsidian Slab	=	Обсидиановая плита

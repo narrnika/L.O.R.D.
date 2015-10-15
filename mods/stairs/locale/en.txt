@@ -19,3 +19,7 @@ Desert Stone Stair	=	Desert Stone Stair
 Desert Stone Slab	=	Desert Stone Slab
 Desert Cobble Stair	=	Desert Cobble Stair
 Desert Cobble Slab	=	Desert Cobble Slab
+Sandstone Brick Stair	=	Sandstone Brick Stair
+Sandstone Brick Slab	=	Sandstone Brick Slab
+Obsidian Stair	=	Obsidian Stair
+Obsidian Slab	=	Obsidian Slab

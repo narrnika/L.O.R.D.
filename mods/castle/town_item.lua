@@ -234,6 +234,22 @@ stairs.register_stair_and_slab("straw", "castle:straw",
 	default.node_sound_leaves_defaults()
 )
 
+minetest.register_node("castle:pavement", {
+	description = SL("Paving Stone"),
+	drawtype = "normal",
+	tiles = {"castle_pavement_brick.png"},
+	groups = {cracky=2},
+	paramtype = "light",
+})
+
+minetest.register_craft({
+	output = "castle:pavement 4",
+	recipe = {
+		{"default:stone", "default:cobble"},
+		{"default:cobble", "default:stone"},
+	}
+})
+
 minetest.register_node("castle:light",{
 	drawtype = "glasslike",
 	description = SL("Light Block"),

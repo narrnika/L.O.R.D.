@@ -4,5 +4,6 @@ lottfarming
 lottores
 worldedit
 lottother
+stairs
 areas?
 intllib?

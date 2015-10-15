@@ -15,3 +15,6 @@ Mirkwood Grass	=	Трава Мирквуда
 Rohan Grass	=	Трава Рохана
 Shire Grass	=	Shire трава
 Ithilien Grass	=	Трава Итилиэна
+
+Mordor Stone Stair	=	Ступенька из камня Мордора
+Mordor Stone Slab	=	Плита из камня Мордора

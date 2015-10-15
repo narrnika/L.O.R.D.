@@ -284,4 +284,18 @@ stairs.register_stair_and_slab("desert_cobble", "default:desert_cobble",
 		SL("Desert Cobble Slab"),
 		default.node_sound_stone_defaults())
 
+stairs.register_stair_and_slab("sandstonebrick", "default:sandstonebrick",
+		{cracky=3},
+		{"default_sandstone_brick.png"},
+		SL("Sandstone Brick Stair"),
+		SL("Sandstone Brick Slab"),
+		default.node_sound_stone_defaults())
+
+stairs.register_stair_and_slab("obsidian", "default:obsidian",
+		{cracky=3},
+		{"default_obsidian.png"},
+		SL("Obsidian Stair"),
+		SL("Obsidian Slab"),
+		default.node_sound_stone_defaults())
+
 if minetest.setting_getbool("msg_loading_mods") then minetest.log("action", minetest.get_current_modname().." mod LOADED") end

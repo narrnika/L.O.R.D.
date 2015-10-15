@@ -46,6 +46,13 @@ minetest.register_node("lottmapgen:mordor_stone", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
+stairs.register_stair_and_slab("mordor_stone", "lottmapgen:mordor_stone",
+		{cracky=3, stone=1},
+		{"lottmapgen_mordor_stone.png"},
+		SL("Mordor Stone Stair"),
+		SL("Mordor Stone Slab"),
+		default.node_sound_stone_defaults())
+
 minetest.register_node(":default:ice", {
 	description = SL("Ice"),
 	drawtype = "glasslike",

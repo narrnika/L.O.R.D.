@@ -217,4 +217,28 @@ minetest.register_craft({
 	}
 })
 
+stairs.register_stair_and_slab("pavement", "castle:pavement",
+		{cracky=3},
+		{"castle_pavement_brick.png"},
+		SL("Castle Pavement Stair"),
+		SL("Castle Pavement Slab"),
+		default.node_sound_stone_defaults())
+
+minetest.register_craft({
+	output = "stairs:slab_pavement 6",
+	recipe = {
+		{"castle:pavement","castle:pavement","castle:pavement"},
+	}
+})
+
+minetest.register_craft({
+	output = "stairs:stair_pavement 4",
+	recipe = {
+		{"","","castle:pavement"},
+		{"","castle:pavement","castle:pavement"},
+		{"castle:pavement","castle:pavement","castle:pavement"},
+	}
+})
+
+
 if minetest.setting_getbool("msg_loading_mods") then minetest.log("action", minetest.get_current_modname().." mod LOADED") end

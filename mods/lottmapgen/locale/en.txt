@@ -15,3 +15,6 @@ Mirkwood Grass	=	Mirkwood Grass
 Rohan Grass	=	Rohan Grass
 Shire Grass	=	Shire Grass
 Ithilien Grass	=	Ithilien Grass
+
+Mordor Stone Stair	=	Mordor Stone Stair
+Mordor Stone Slab	=	Mordor Stone Slab

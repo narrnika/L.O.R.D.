@@ -273,6 +273,55 @@ itemframes.register_pedestal("stonebrick", "default:stonebrick",
 		default.node_sound_stone_defaults()
 )
 
+itemframes.register_pedestal("obsidian", "default:obsidian",
+		{cracky=1,level=2,pedestal=1},
+		{"default_obsidian.png"},
+		SL("Obsidian Pedestal"),
+		default.node_sound_stone_defaults()
+)
+
+itemframes.register_pedestal("mordor_stone", "lottmapgen:mordor_stone",
+		{cracky=3, stone=1, pedestal=1},
+		{"lottmapgen_mordor_stone.png"},
+		SL("Mordor Stone Pedestal"),
+		default.node_sound_stone_defaults()
+)
+
+itemframes.register_pedestal("dungeon_stone", "castle:dungeon_stone",
+		{cracky=2, pedestal=1},
+		{"castle_dungeon_stone.png"},
+		SL("Dungeon Stone Pedestal"),
+		default.node_sound_stone_defaults()
+)
+
+itemframes.register_pedestal("pavement", "castle:pavement",
+		{cracky=2, pedestal=1},
+		{"castle_pavement_brick.png"},
+		SL("Paving Stone Pedestal"),
+		default.node_sound_stone_defaults()
+)
+
+itemframes.register_pedestal("marble", "lottores:marble",
+		{cracky=3, pedestal=1},
+		{"lottores_marble.png"},
+		SL("Marble Pedestal"),
+		default.node_sound_stone_defaults()
+)
+
+itemframes.register_pedestal("marble_brick", "lottblocks:marble_brick",
+		{cracky=2, pedestal=1},
+		{"lottblocks_marble_brick.png"},
+		SL("Marble Brick Pedestal"),
+		default.node_sound_stone_defaults()
+)
+
+itemframes.register_pedestal("orc_brick", "lottblocks:orc_brick",
+		{cracky=2, pedestal=1},
+		{"lottblocks_orc_brick.png"},
+		SL("Orc Brick Pedestal"),
+		default.node_sound_stone_defaults()
+)
+
 -- automatically restore entities lost from
 -- frames/pedestals due to /clearobjects or similar
 
