@@ -45,19 +45,21 @@ minetest.register_node("castle:workbench",{
 	drawtype = "normal",
     on_construct = function ( pos )
         local meta = minetest.get_meta( pos )
-		meta:set_string( 'formspec', 'size[10,10;]' ..
-			'label[1,0;Source Material]' ..
-			'list[context;src;1,1;2,4;]' ..
-			'label[4,0;Recipe to Use]' ..
-			'list[context;rec;4,1;3,3;]' ..
-			'label[7.5,0;Craft Output]' ..
-			'list[context;dst;8,1;1,4;]' ..
-			'list[current_player;main;1,6;8,4;]' )
+		meta:set_string( 'formspec', 'size[8,9;]' ..
+			"background[-0.5,-0.65;9,10.35;gui_chestbg.png]"..
+			"listcolors[#606060AA;#888;#141318;#30434C;#FFF]"..
+			'label[0,0;'..SL('Source Material')..']' ..
+			'list[context;src;0,0.5;2,4;]' ..
+			'label[3.5,0.5;'..SL('Recipe to Use')..']' ..
+			'list[context;rec;2.5,1;3,3;]' ..
+			'label[6,0;'..SL('Craft Output')..']' ..
+			'list[context;dst;6,0.5;2,4;]' ..
+			'list[current_player;main;0,5;8,4;]' )
         meta:set_string( 'infotext', SL('Workbench'))
         local inv = meta:get_inventory()
         inv:set_size( 'src', 2 * 4 )
 		inv:set_size( 'rec', 3 * 3 )
-		inv:set_size( 'dst', 1 * 4 )
+		inv:set_size( 'dst', 2 * 4 )
     end,
 	can_dig = function(pos,player)
 		local meta = minetest.get_meta(pos);

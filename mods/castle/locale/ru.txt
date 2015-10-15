@@ -164,6 +164,10 @@ Castle Straw Slab	=	Плита из сена
 Light Block	=	Витражные светильник
 Paving Stone	=	Брусчатка
 
+Source Material	=	Метериалы:
+Recipe to Use	=	Схема:
+Craft Output	=	Результат:
+
 ### shields_decor.lua ###
 Mounted Shield	=	Декоративный щит
 

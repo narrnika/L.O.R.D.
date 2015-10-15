@@ -49,7 +49,9 @@ function default.get_ironbound_chest_formspec(pos)
 	local formspec =
 		"size[8,9]"..
 		"list[nodemeta:".. spos .. ";main;0,0;8,4;]"..
-		"list[current_player;main;0,5;8,4;]"
+		"list[current_player;main;0,5;8,4;]"..
+		"background[-0.5,-0.65;9,10.35;gui_chestbg.png]"..
+		"listcolors[#606060AA;#888;#141318;#30434C;#FFF]"
 	return formspec
 end
 

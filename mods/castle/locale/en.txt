@@ -164,6 +164,10 @@ Castle Straw Slab	=	Castle Straw Slab
 Light Block	=	Light Block
 Paving Stone	=	Paving Stone
 
+Source Material	=	Source Material
+Recipe to Use	=	Recipe to Use
+Craft Output	=	Craft Output
+
 ### shields_decor.lua ###
 Mounted Shield	=	Mounted Shield
 
