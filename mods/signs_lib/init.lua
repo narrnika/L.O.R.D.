@@ -1,3 +1,5 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 -- This mod provides the visible text on signs library used by Home Decor
 -- and perhaps other mods at some point in the future.  Forked from thexyz's/
 -- PilzAdam's original text-on-signs mod and rewritten by Vanessa Ezekowitz
@@ -110,7 +112,6 @@ signs_lib.sign_post_model = {
 }
 
 -- Boilerplate to support localized strings if intllib mod is installed.
-local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
 
 -- the list of standard sign nodes
 
