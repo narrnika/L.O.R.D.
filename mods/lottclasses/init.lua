@@ -381,23 +381,28 @@ end)
 
 minetest.register_chatcommand("race", {
 	params = "<name>",
-	description = "print out privileges of player",
+	description = SL("print out privileges of player"),
 	func = function(name, param)
 		param = (param ~= "" and param or name)
 		if minetest.check_player_privs(param, {GAMEdwarf = true}) then
-			return true, "Race of " .. param .. ": Dwarf"
+			return true, SL("Race of").." " .. param .. ": "..SL("Dwarf")
 		elseif minetest.check_player_privs(param, {GAMEelf = true}) then
-			return true, "Race of " .. param .. ": Elf"
+			return true, SL("Race of").." " .. param .. ": "..SL("Elf")
 		elseif minetest.check_player_privs(param, {GAMEman = true}) then
-			return true, "Race of " .. param .. ": Man"
+			return true, SL("Race of").." " .. param .. ": "..SL("Man")
 		elseif minetest.check_player_privs(param, {GAMEorc = true}) then
-			return true, "Race of " .. param .. ": Orc"
+			return true, SL("Race of").." " .. param .. ": "..SL("Orc")
 		elseif minetest.check_player_privs(param, {GAMEhobbit = true}) then
-			return true, "Race of " .. param .. ": Hobbit"
+			return true, SL("Race of").." " .. param .. ": "..SL("Hobbit")
 		elseif minetest.check_player_privs(param, {shout = true}) ~= nil then
-			return true, param .. " has not chosen a race!"
+--			return true, param .. " has not chosen a race!"
+			if param == name then
+				minetest.show_formspec(name, "race_selector", race_chooser)
+			else
+				return true, param .. " "..SL("has not chosen a race!")
+			end
 		else
-			return true, param .. " does not exist!"
+			return true, param .. " "..SL("does not exist!")
 		end
 	end,
 })

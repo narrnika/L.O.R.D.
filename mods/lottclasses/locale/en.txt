@@ -21,3 +21,8 @@ An elf player	=	An elf player
 A human player	=	A human player
 An orc player	=	An orc player
 A hobbit player	=	A hobbit player
+
+print out privileges of player	=	print out privileges of player
+Race of	=	Race of
+has not chosen a race!	=	has not chosen a race!
+does not exist!	=	does not exist!
