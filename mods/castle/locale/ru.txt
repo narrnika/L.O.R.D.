@@ -168,6 +168,24 @@ Source Material	=	Метериалы:
 Recipe to Use	=	Схема:
 Craft Output	=	Результат:
 
+### murder_hole.lua ###
+Brick Block Murder Hole	=	Кирпичная дыра-убийца
+Obsidian Murder Hole	=	Обсидиановая дыра-убийца
+Stone Murder Hole	=	Каменная дыра-убийца
+Cobble Murder Hole	=	Дыра-убийца из булыжника
+Stonebrick Murder Hole	=	Дыра-убийца из каменных блоков
+Desert Stone Murder Hole	=	Дыра-убийца из пустынного камня
+Desert Cobble Murder Hole	=	Дыра-убийца из пустынного булыжника
+Desert Stone Brick Murder Hole	=	Дыра-убийца из блоков пустынного камня
+Sandstone Murder Hole	=	Дыра-убийца из песчанника
+Sandstone Brick Murder Hole	=	Дыра-убийца из блоков песчанника
+Dungeon Stone Murder Hole	=	Дыра-убийца из малахита
+Paving Stone Murder Hole	=	Дыра-убийца из брусчатки
+Marble Murder Hole	=	Дыра-убийца из мрамора
+Marble Brick Murder Hole	=	Дыра-убийца из мраморных кирпичей
+Orc Brick Murder Hole	=	Дыра-убийца из оркского камня
+Mordor Stone Murder Hole	=	Дыра-убийца из камня Мордора
+
 ### shields_decor.lua ###
 Mounted Shield	=	Декоративный щит
 
@@ -178,6 +196,8 @@ Ropebox	=	Блок для гномей верёвки
 ### init.lua ###
 Oak Door	=	Дверь с зарешоченным окном
 Jail Door	=	Дверь-решётка
+Oak Door With Lock	=	Дверь с зарешоченным окном с замком
+Jail Door With Lock	=	Дверь-решётка с замком
 Ironbound Chest	=	Ларец
 Ironbound Chest (owned by	=	Ларец (только для
 Battleaxe	=	Боевой топор гномов

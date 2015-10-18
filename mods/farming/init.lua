@@ -114,6 +114,7 @@ minetest.register_tool("farming:hoe_wood", {
 	on_use = function(itemstack, user, pointed_thing)
 		return farming.hoe_on_use(itemstack, user, pointed_thing, 30)
 	end,
+	groups = {wooden = 1},
 })
 
 minetest.register_tool("farming:hoe_stone", {
@@ -132,6 +133,7 @@ minetest.register_tool("farming:hoe_steel", {
 	on_use = function(itemstack, user, pointed_thing)
 		return farming.hoe_on_use(itemstack, user, pointed_thing, 200)
 	end,
+	groups = {steel_item = 1},
 })
 
 minetest.register_tool("farming:hoe_bronze", {
@@ -141,6 +143,7 @@ minetest.register_tool("farming:hoe_bronze", {
 	on_use = function(itemstack, user, pointed_thing)
 		return farming.hoe_on_use(itemstack, user, pointed_thing, 220)
 	end,
+	groups = {bronze_item = 1},
 })
 
 minetest.register_craft({

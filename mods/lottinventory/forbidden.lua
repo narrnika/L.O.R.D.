@@ -222,7 +222,7 @@ minetest.register_tool("lottinventory:forbidden_crafts_book",{
             choppy={times={[3]=0.90}, maxwear=0.05, maxlevel=0}
         }
     },
-    groups = {armor_crafts=1, book=1},
+    groups = {armor_crafts=1, book=1, paper=1},
     on_place = function(itemstack, player, pointed_thing)
 		local pn = player:get_player_name();
 		if zfc.users[pn] == nil then zfc.users[pn] = {current_item = "", alt = 1, page = 0, history={index=0,list={}}} end

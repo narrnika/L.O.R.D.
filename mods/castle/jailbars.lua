@@ -97,6 +97,7 @@ minetest.register_node("castle:jailbars", {
     tile_images = {"castle_space.png"},
     inventory_image = "castle_jailbars.png",
     wield_image = "castle_jailbars.png",
+    groups = {steel_item = 1},
     node_placement_prediction = "",
     on_construct = update_jailbars
 })

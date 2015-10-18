@@ -33,6 +33,7 @@ minetest.register_tool("default:pick_wood", {
 		},
 		damage_groups = {fleshy=2},
 	},
+	groups = {wooden=1},
 })
 minetest.register_tool("default:pick_stone", {
 	description = SL("Stone Pickaxe"),
@@ -57,6 +58,7 @@ minetest.register_tool("default:pick_steel", {
 		},
 		damage_groups = {fleshy=4},
 	},
+	groups = {steel_item=1},
 })
 minetest.register_tool("default:pick_bronze", {
 	description = SL("Bronze Pickaxe"),
@@ -69,6 +71,7 @@ minetest.register_tool("default:pick_bronze", {
 		},
 		damage_groups = {fleshy=4},
 	},
+	groups = {bronze_item=1},
 })
 
 --
@@ -87,6 +90,7 @@ minetest.register_tool("default:shovel_wood", {
 		},
 		damage_groups = {fleshy=2},
 	},
+	groups = {wooden=1},
 })
 minetest.register_tool("default:shovel_stone", {
 	description = SL("Stone Shovel"),
@@ -113,6 +117,7 @@ minetest.register_tool("default:shovel_steel", {
 		},
 		damage_groups = {fleshy=3},
 	},
+	groups = {steel_item=1},
 })
 minetest.register_tool("default:shovel_bronze", {
 	description = SL("Bronze Shovel"),
@@ -126,6 +131,7 @@ minetest.register_tool("default:shovel_bronze", {
 		},
 		damage_groups = {fleshy=3},
 	},
+	groups = {bronze_item=1},
 })
 
 --
@@ -143,6 +149,7 @@ minetest.register_tool("default:axe_wood", {
 		},
 		damage_groups = {fleshy=2},
 	},
+	groups = {wooden=1},
 })
 minetest.register_tool("default:axe_stone", {
 	description = SL("Stone Axe"),
@@ -167,6 +174,7 @@ minetest.register_tool("default:axe_steel", {
 		},
 		damage_groups = {fleshy=4},
 	},
+	groups = {steel_item=1},
 })
 minetest.register_tool("default:axe_bronze", {
 	description = SL("Bronze Axe"),
@@ -179,6 +187,7 @@ minetest.register_tool("default:axe_bronze", {
 		},
 		damage_groups = {fleshy=4},
 	},
+	groups = {bronze_item=1},
 })
 
 --
@@ -195,7 +204,8 @@ minetest.register_tool("default:sword_wood", {
 			snappy={times={[2]=1.6, [3]=0.40}, uses=10, maxlevel=1},
 		},
 		damage_groups = {fleshy=2},
-	}
+	},
+	groups = {wooden=1},
 })
 minetest.register_tool("default:sword_stone", {
 	description = SL("Stone Sword"),
@@ -219,7 +229,8 @@ minetest.register_tool("default:sword_steel", {
 			snappy={times={[1]=2.5, [2]=1.20, [3]=0.35}, uses=30, maxlevel=2},
 		},
 		damage_groups = {fleshy=6},
-	}
+	},
+	groups = {steel_item=1},
 })
 minetest.register_tool("default:sword_bronze", {
 	description = SL("Bronze Sword"),
@@ -231,5 +242,6 @@ minetest.register_tool("default:sword_bronze", {
 			snappy={times={[1]=2.5, [2]=1.20, [3]=0.35}, uses=40, maxlevel=2},
 		},
 		damage_groups = {fleshy=6},
-	}
+	},
+	groups = {bronze_item=1},
 })

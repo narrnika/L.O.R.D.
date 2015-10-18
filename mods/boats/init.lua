@@ -180,6 +180,7 @@ minetest.register_entity("boats:row_boat", row_boat)
 minetest.register_craftitem("boats:row_boat", {
 	description = SL("Boat"),
 	inventory_image = "rowboat_inventory.png",
+	groups = {wooden = 1},
 	wield_image = "rowboat_wield.png",
 	wield_scale = {x = 2, y = 2, z = 1},
 	liquids_pointable = true,
@@ -360,6 +361,7 @@ minetest.register_entity("boats:sail_boat", sail_boat)
 minetest.register_craftitem("boats:sail_boat", {
 	description = SL("Sail Boat"),
 	inventory_image = "sailboat_inventory.png",
+	groups = {wooden = 1},
 	wield_image = "sailboat_wield.png",
 	wield_scale = {x=2, y=2, z=1},
 	liquids_pointable = true,

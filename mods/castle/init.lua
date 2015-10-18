@@ -3,27 +3,48 @@ local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s en
 dofile(minetest.get_modpath("castle").."/pillars.lua") --колонны
 dofile(minetest.get_modpath("castle").."/arrowslit.lua") --бойницы
 dofile(minetest.get_modpath("castle").."/tapestry.lua") --гобелены
-dofile(minetest.get_modpath("castle").."/jailbars.lua") --?решётки
-dofile(minetest.get_modpath("castle").."/town_item.lua") --?
+dofile(minetest.get_modpath("castle").."/jailbars.lua") --решётки
+dofile(minetest.get_modpath("castle").."/town_item.lua") --всяко-разно
+dofile(minetest.get_modpath("castle").."/murder_hole.lua") --дыры-убийцы
 dofile(minetest.get_modpath("castle").."/shields_decor.lua") --декор.щиты
 dofile(minetest.get_modpath("castle").."/rope.lua") --блок с троссом
 
 doors.register_door("castle:oak_door", {
 	description = SL("Oak Door"),
 	inventory_image = "castle_oak_door_inv.png",
-	groups = {choppy=2,door=1},
+	groups = {choppy=2,door=1, wooden = 1},
+	tiles_bottom = {"castle_oak_door_bottom.png", "door_oak.png"},
+	tiles_top = {"castle_oak_door_top.png", "door_oak.png"},
+	sunlight = true,
+})
+
+doors.register_door("castle:oak_door_lock", {
+	description = SL("Oak Door With Lock"),
+	inventory_image = "castle_oak_door_inv.png^doors_lock.png",
+	groups = {choppy=2,door=1, wooden = 1},
 	tiles_bottom = {"castle_oak_door_bottom.png", "door_oak.png"},
 	tiles_top = {"castle_oak_door_top.png", "door_oak.png"},
 	only_placer_can_open = true,
+	sunlight = true,
 })
 
 doors.register_door("castle:jail_door", {
 	description = SL("Jail Door"),
 	inventory_image = "castle_jail_door_inv.png",
-	groups = {cracky=2,door=1},
+	groups = {cracky=2,door=1, steel_item=1},
+	tiles_bottom = {"castle_jail_door_bottom.png", "door_jail.png"},
+	tiles_top = {"castle_jail_door_top.png", "door_jail.png"},
+	sunlight = true,
+})
+
+doors.register_door("castle:jail_door_lock", {
+	description = SL("Jail Door With Lock"),
+	inventory_image = "castle_jail_door_inv.png^doors_lock.png",
+	groups = {cracky=2,door=1, steel_item=1},
 	tiles_bottom = {"castle_jail_door_bottom.png", "door_jail.png"},
 	tiles_top = {"castle_jail_door_top.png", "door_jail.png"},
 	only_placer_can_open = true,
+	sunlight = true,
 })
 
 minetest.register_craft({
@@ -41,6 +62,20 @@ minetest.register_craft({
 		{"castle:jailbars", "castle:jailbars"},
 		{"castle:jailbars", "castle:jailbars"},
 		{"castle:jailbars", "castle:jailbars"}
+	}
+})
+
+minetest.register_craft({
+	output = "castle:oak_door_lock",
+	recipe = {
+		{"castle:oak_door", "default:steel_ingot"}
+	}
+})
+
+minetest.register_craft({
+	output = "castle:jail_door_lock",
+	recipe = {
+		{"castle:jail_door", "default:steel_ingot"}
 	}
 })
 
@@ -73,7 +108,7 @@ minetest.register_node("castle:ironbound_chest",{
 			"castle_ironbound_chest_front.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky=2},
+	groups = {cracky=2, wooden = 1},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -186,11 +221,12 @@ minetest.register_tool("castle:battleaxe", {
 		},
 		damage_groups = {fleshy=7},
 	},
+	groups = {steel_item = 1},
 })
 minetest.register_craft({
 	output = "castle:battleaxe",
 	recipe = {
-		{"default:steel_ingot", "default:steel_ingot","default:steel_ingot"},
+		{"default:steel_ingot", "default:mese_crystal","default:steel_ingot"},
 		{"default:steel_ingot", "default:stick","default:steel_ingot"},
                   {"", "default:stick",""}
 	}
@@ -203,44 +239,12 @@ stairs.register_stair_and_slab("dungeon_stone", "castle:dungeon_stone",
 		SL("Dungeon Stone Slab"),
 		default.node_sound_stone_defaults())
 
-minetest.register_craft({
-	output = "stairs:slab_dungeon_stone 6",
-	recipe = {
-		{"castle:dungeon_stone","castle:dungeon_stone","castle:dungeon_stone"},
-	}
-})
-
-minetest.register_craft({
-	output = "stairs:stair_dungeon_stone 4",
-	recipe = {
-		{"","","castle:dungeon_stone"},
-		{"","castle:dungeon_stone","castle:dungeon_stone"},
-		{"castle:dungeon_stone","castle:dungeon_stone","castle:dungeon_stone"},
-	}
-})
-
 stairs.register_stair_and_slab("pavement", "castle:pavement",
 		{cracky=3},
 		{"castle_pavement_brick.png"},
 		SL("Castle Pavement Stair"),
 		SL("Castle Pavement Slab"),
 		default.node_sound_stone_defaults())
-
-minetest.register_craft({
-	output = "stairs:slab_pavement 6",
-	recipe = {
-		{"castle:pavement","castle:pavement","castle:pavement"},
-	}
-})
-
-minetest.register_craft({
-	output = "stairs:stair_pavement 4",
-	recipe = {
-		{"","","castle:pavement"},
-		{"","castle:pavement","castle:pavement"},
-		{"castle:pavement","castle:pavement","castle:pavement"},
-	}
-})
 
 
 if minetest.setting_getbool("msg_loading_mods") then minetest.log("action", minetest.get_current_modname().." mod LOADED") end

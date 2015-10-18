@@ -70,7 +70,7 @@ minetest.register_tool("lottinventory:brewing_book",{
     wield_image = "",
     wield_scale = {x=1,y=1,z=1},
     stack_max = 1,
-    groups = {cook_crafts=1, book=1},
+    groups = {cook_crafts=1, book=1, paper=1},
     tool_capabilities = {
         full_punch_interval = 1.0,
         max_drop_level=0,

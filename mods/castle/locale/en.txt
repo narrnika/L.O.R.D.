@@ -168,6 +168,24 @@ Source Material	=	Source Material
 Recipe to Use	=	Recipe to Use
 Craft Output	=	Craft Output
 
+### murder_hole.lua ###
+Brick Block Murder Hole	=	Brick Block Murder Hole
+Obsidian Murder Hole	=	Obsidian Murder Hole
+Stone Murder Hole	=	Stone Murder Hole
+Stonebrick Murder Hole	=	Stonebrick Murder Hole
+Cobble Murder Hole	=	Cobble Murder Hole
+Desert Stone Murder Hole	=	Desert Stone Murder Hole
+Desert Cobble Murder Hole	=	Desert Cobble Murder Hole
+Desert Stone Brick Murder Hole	=	Desert Stone Brick Murder Hole
+Sandstone Murder Hole	=	Sandstone Murder Hole
+Sandstone Brick Murder Hole	=	Sandstone Brick Murder Hole
+Dungeon Stone Murder Hole	=	Dungeon Stone Murder Hole
+Paving Stone Murder Hole	=	Paving Stone Murder Hole
+Marble Murder Hole	=	Marble Murder Hole
+Marble Brick Murder Hole	=	Marble Brick Murder Hole
+Orc Brick Murder Hole	=	Orc Brick Murder Hole
+Mordor Stone Murder Hole	=	Mordor Stone Murder Hole
+
 ### shields_decor.lua ###
 Mounted Shield	=	Mounted Shield
 
@@ -178,6 +196,8 @@ Ropebox	=	Ropebox
 ### init.lua ###
 Oak Door	=	Oak Door
 Jail Door	=	Jail Door
+Oak Door With Lock	=	Oak Door With Lock
+Jail Door With Lock	=	Jail Door With Lock
 Ironbound Chest	=	Ironbound Chest
 Ironbound Chest (owned by	=	Ironbound Chest (owned by
 Battleaxe	=	Battleaxe

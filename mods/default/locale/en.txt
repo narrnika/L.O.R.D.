@@ -3,6 +3,7 @@ Stick	=	Stick
 Paper	=	Paper
 Book	=	Book
 Coal Lump	=	Coal Lump
+Charcoal Lump	=	Charcoal Lump
 Iron Lump	=	Iron Lump
 Copper Lump	=	Copper Lump
 Mese Crystal	=	Mese Crystal

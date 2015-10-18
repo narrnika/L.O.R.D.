@@ -10,17 +10,23 @@ minetest.register_craftitem("default:stick", {
 minetest.register_craftitem("default:paper", {
 	description = SL("Paper"),
 	inventory_image = "default_paper.png",
+	groups = {book=1, paper=1},
 })
 
 minetest.register_craftitem("default:book", {
 	description = SL("Book"),
-     groups = {book=1},
 	inventory_image = "default_book.png",
+	groups = {book=1, paper=1},
 })
 
 minetest.register_craftitem("default:coal_lump", {
 	description = SL("Coal Lump"),
 	inventory_image = "default_coal_lump.png",
+})
+
+minetest.register_craftitem("default:charcoal_lump", {
+	description = SL("Charcoal Lump"),
+	inventory_image = "charcoal_lump.png",
 })
 
 minetest.register_craftitem("default:iron_lump", {

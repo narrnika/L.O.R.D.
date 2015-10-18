@@ -3,6 +3,7 @@ Stick	=	Палочка
 Paper	=	Бумага
 Book	=	Книга
 Coal Lump	=	Уголь
+Charcoal Lump	=	Древесный уголь
 Iron Lump	=	Железо
 Copper Lump	=	Медь
 Mese Crystal	=	MESE-кристалл

@@ -1,9 +1,5 @@
 ### init.lua ###
-Protection Block	=	Защитный блок
 Protection Logo	=	Знак защиты
-Protected Wooden Door	=	Защищённая деревянная дверь
-Protected Steel Door	=	Защищённая стальная дверь
-Protected Chest	=	Защищённый сундук
 
 Protection	=	Защита
 owned by	=	только для
@@ -24,3 +20,40 @@ To Chest	=	В сундук
 To Inventory	=	В инвентарь
 
 Ignore player protection	=	Возможность игнорировать защиту игроков
+
+### blocks.lua ###
+Protection Brick Block	=	Защитный кирпич
+Protection Obsidian	=	Защитный обсидиан
+Protection Stone	=	Защитный камень
+Protection Cobble	=	Защитный булыжник
+Protection Stonebrick	=	Защитный каменный кирпич
+Protection Desert Stone	=	Защитный пустынный камень
+Protection Desert Cobble	=	Защитный пустынный булыжник
+Protection Desert Stone Brick	=	Защитный кирпич из пустынного камня
+Protection Sandstone	=	Защитный песчанник
+Protection Sandstone Brick	=	Защитный кирпич из песчанника
+Protection Dungeon Stone	=	Защитный малажит
+Protection Paving Stone	=	Защитная брусчатка
+Protection Marble	=	Защитный мрамор
+Protection Marble Brick	=	Защитный мраморный кирпич
+Protection Orc Brick	=	Защитный оркский камень
+Protection Mordor Stone	=	Защитный камень Мордора
+
+### doors.lua ###
+Protected Steel Door	=	Защищённая стальная дверь
+Protected Glass Door	=	Защищённая стеклянная дверь
+Protected Obsidian Glass Door	=	Защищённая стеклянно-обсидиановая дверь
+
+Protected Wooden Door	=	Защищённая яблоневая дверь
+Protected Junglewood Door	=	Защищённая эвкалиптовая дверь
+Protected Alder Door	=	Защищённая ольховая дверь
+Protected Birch Door	=	Защищённая берёзовая дверь
+Protected Pine Door	=	Защищённая сосновая дверь
+Protected Lebethron Door	=	Защищённая лебетроновая дверь
+Protected Mallorn Door	=	Защищённая маллорновая дверь
+
+Protected Oak Door	=	Защищённая дверь с зарешоченным окном
+Protected Jail Door	=	Защищённая дверь-решётка
+
+### chests.lua ###
+Protected Chest	=	Защищённый сундук

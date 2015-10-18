@@ -779,6 +779,7 @@ minetest.register_tool("lottores:copperpick", {
 		},
 		damage_groups = {fleshy=4},
 	},
+	groups = {copper_item = 1},
 })
 minetest.register_tool("lottores:tinpick", {
 	description = SL("Tin Pickaxe"),
@@ -791,6 +792,7 @@ minetest.register_tool("lottores:tinpick", {
 		},
 		damage_groups = {fleshy=4},
 	},
+	groups = {tin_item = 1},
 })
 minetest.register_tool("lottores:silverpick", {
 	description = SL("Silver Pickaxe"),
@@ -803,6 +805,7 @@ minetest.register_tool("lottores:silverpick", {
 		},
 		damage_groups = {fleshy=4},
 	},
+	groups = {silver_item = 1},
 })
 minetest.register_tool("lottores:goldpick", {
 	description = SL("Gold Pickaxe"),
@@ -815,6 +818,7 @@ minetest.register_tool("lottores:goldpick", {
 		},
 		damage_groups = {fleshy=4},
 	},
+	groups = {gold_item = 1},
 })
 minetest.register_tool("lottores:galvornpick", {
 	description = SL("Galvorn Pickaxe"),
@@ -828,6 +832,7 @@ minetest.register_tool("lottores:galvornpick", {
 		},
 		damage_groups = {fleshy=5},
 	},
+	groups = {galvorn_item = 1},
 })
 minetest.register_tool("lottores:mithrilpick", {
 	description = SL("Mithril Pickaxe"),
@@ -840,6 +845,7 @@ minetest.register_tool("lottores:mithrilpick", {
 		},
 		damage_groups = {fleshy=5},
 	},
+	groups = {mithril_item = 1},
 })
 
 -- Axe
@@ -855,6 +861,7 @@ minetest.register_tool("lottores:copperaxe", {
 		},
 		damage_groups = {fleshy=4},
 	},
+	groups = {copper_item = 1},
 })
 minetest.register_tool("lottores:tinaxe", {
 	description = SL("Tin Axe"),
@@ -867,6 +874,7 @@ minetest.register_tool("lottores:tinaxe", {
 		},
 		damage_groups = {fleshy=4},
 	},
+	groups = {tin_item = 1},
 })
 minetest.register_tool("lottores:silveraxe", {
 	description = SL("Silver Axe"),
@@ -879,6 +887,7 @@ minetest.register_tool("lottores:silveraxe", {
 		},
 		damage_groups = {fleshy=4},
 	},
+	groups = {silver_item = 1},
 })
 minetest.register_tool("lottores:goldaxe", {
 	description = SL("Gold Axe"),
@@ -891,6 +900,7 @@ minetest.register_tool("lottores:goldaxe", {
 		},
 		damage_groups = {fleshy=4},
 	},
+	groups = {gold_item = 1},
 })
 minetest.register_tool("lottores:galvornaxe", {
 	description = SL("Galvorn Axe"),
@@ -904,6 +914,7 @@ minetest.register_tool("lottores:galvornaxe", {
 		},
 		damage_groups = {fleshy=6},
 	},
+	groups = {galvorn_item = 1},
 })
 minetest.register_tool("lottores:mithrilaxe", {
 	description = SL("Mithril Axe"),
@@ -916,6 +927,7 @@ minetest.register_tool("lottores:mithrilaxe", {
 		},
 		damage_groups = {fleshy=7},
 	},
+	groups = {mithril_item = 1},
 })
 
 -- Sword
@@ -930,7 +942,8 @@ minetest.register_tool("lottores:coppersword", {
 			snappy={times={[1]=2.5, [2]=1.20, [3]=0.35}, uses=30, maxlevel=2},
 		},
 		damage_groups = {fleshy=6},
-	}
+	},
+	groups = {copper_item = 1},
 })
 minetest.register_tool("lottores:tinsword", {
 	description = SL("Tin Sword"),
@@ -942,7 +955,8 @@ minetest.register_tool("lottores:tinsword", {
 			snappy={times={[1]=2.5, [2]=1.20, [3]=0.35}, uses=35, maxlevel=2},
 		},
 		damage_groups = {fleshy=6},
-	}
+	},
+	groups = {tin_item = 1},
 })
 minetest.register_tool("lottores:silversword", {
 	description = SL("Silver Sword"),
@@ -954,7 +968,8 @@ minetest.register_tool("lottores:silversword", {
 			snappy={times={[1]=2.3, [2]=1.10, [3]=0.35}, uses=30, maxlevel=2},
 		},
 		damage_groups = {fleshy=6},
-	}
+	},
+	groups = {silver_item = 1},
 })
 minetest.register_tool("lottores:goldsword", {
 	description = SL("Gold Sword"),
@@ -966,7 +981,8 @@ minetest.register_tool("lottores:goldsword", {
 			snappy={times={[1]=2.3, [2]=1.10, [3]=0.35}, uses=40, maxlevel=2},
 		},
 		damage_groups = {fleshy=6},
-	}
+	},
+	groups = {gold_item = 1},
 })
 minetest.register_tool("lottores:galvornsword", {
 	description = SL("Galvorn Sword"),
@@ -979,7 +995,8 @@ minetest.register_tool("lottores:galvornsword", {
 			snappy={times={[1]=2.0, [2]=1.00, [3]=0.35}, uses=40, maxlevel=3},
 		},
 		damage_groups = {fleshy=7},
-	}
+	},
+	groups = {galvorn_item = 1},
 })
 minetest.register_tool("lottores:mithrilsword", {
 	description = SL("Mithril Sword"),
@@ -991,7 +1008,8 @@ minetest.register_tool("lottores:mithrilsword", {
 			snappy={times={[1]=0.70, [2]=0.80, [3]=0.25}, uses=80, maxlevel=3},
 		},
 		damage_groups = {fleshy=8},
-	}
+	},
+	groups = {mithril_item = 1},
 })
 
 -- Shovel
@@ -1008,6 +1026,7 @@ minetest.register_tool("lottores:coppershovel", {
 		},
 		damage_groups = {fleshy=3},
 	},
+	groups = {copper_item = 1},
 })
 minetest.register_tool("lottores:tinshovel", {
 	description = SL("Tin Shovel"),
@@ -1021,6 +1040,7 @@ minetest.register_tool("lottores:tinshovel", {
 		},
 		damage_groups = {fleshy=3},
 	},
+	groups = {tin_item = 1},
 })
 minetest.register_tool("lottores:silvershovel", {
 	description = SL("Silver Shovel"),
@@ -1034,6 +1054,7 @@ minetest.register_tool("lottores:silvershovel", {
 		},
 		damage_groups = {fleshy=3},
 	},
+	groups = {silver_item = 1},
 })
 minetest.register_tool("lottores:goldshovel", {
 	description = SL("Gold Shovel"),
@@ -1047,6 +1068,7 @@ minetest.register_tool("lottores:goldshovel", {
 		},
 		damage_groups = {fleshy=3},
 	},
+	groups = {gold_item = 1},
 })
 minetest.register_tool("lottores:galvornshovel", {
 	description = SL("Galvorn Shovel"),
@@ -1061,6 +1083,7 @@ minetest.register_tool("lottores:galvornshovel", {
 		},
 		damage_groups = {fleshy=4},
 	},
+	groups = {galvorn_item = 1},
 })
 minetest.register_tool("lottores:mithrilshovel", {
 	description = SL("Mithril Shovel"),
@@ -1074,6 +1097,7 @@ minetest.register_tool("lottores:mithrilshovel", {
 		},
 		damage_groups = {fleshy=4},
 	},
+	groups = {mithril_item = 1},
 })
 
 -- Stairs & Slabs
@@ -1679,5 +1703,35 @@ stairs.register_stair_and_slab("salt", "lottores:salt_block",
 		SL("Salt Stair"),
 		SL("Salt Slab"),
 		default.node_sound_stone_defaults())
+
+minetest.register_craft({
+	type = "cooking",
+	output = "lottores:tin_ingot",
+	recipe = "group:tin_item",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "lottores:lead_ingot",
+	recipe = "group:lead_item",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "lottores:silver_ingot",
+	recipe = "group:silver_item",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "lottores:mithril_ingot",
+	recipe = "group:mithril_item",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "lottores:galvorn_ingot",
+	recipe = "group:galvorn_item",
+})
 
 if minetest.setting_getbool("msg_loading_mods") then minetest.log("action", minetest.get_current_modname().." mod LOADED") end

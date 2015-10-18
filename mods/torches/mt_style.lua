@@ -2,6 +2,7 @@ local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s en
 
 minetest.register_craftitem(":default:torch", {
 	description = SL("Torch"),
+	groups = {wooden = 1},
 	inventory_image = "default_torch_on_floor.png",
 	wield_image = "default_torch_on_floor.png",
 	wield_scale = {x = 1, y = 1, z = 1 + 1/16},
@@ -112,6 +113,7 @@ if minetest.get_modpath("lottother") then
 minetest.register_craftitem(":lottother:blue_torch", {
 	description = SL("Blue Torch"),
 	inventory_image = "lottother_blue_torch_floor.png",
+	groups = {wooden = 1},
 	wield_image = "lottother_blue_torch_floor.png",
 	wield_scale = {x = 1, y = 1, z = 1 + 1/16},
 	liquids_pointable = false,
@@ -215,6 +217,7 @@ minetest.register_craftitem(":lottother:orc_torch", {
 	inventory_image = "lottother_orc_torch_floor.png",
 	wield_image = "lottother_orc_torch_floor.png",
 	wield_scale = {x = 1, y = 1, z = 1 + 1/16},
+	groups = {wooden = 1},
 	liquids_pointable = false,
    	on_place = function(itemstack, placer, pointed_thing)
 		local above = pointed_thing.above

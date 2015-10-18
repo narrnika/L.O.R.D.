@@ -1,0 +1,35 @@
+### init.lua ###
+Information about the server	=	Information about the server
+Info successfully written!	=	Info successfully written!
+News successfully written!	=	News successfully written!
+
+Info	=	Info
+News	=	News
+Help	=	Help
+List	=	List
+
+Info:	=	Info:
+News:	=	News:
+Exit	=	Exit
+Save	=	Save
+
+news_text	=	19.10.2015 Global upgrade.
+info_text	=	The server is being tested.
+
+Admin:	=	Admin:
+PvP:	=	PvP:
+Damage:	=	Damage:
+Default privileges:	=	Default privileges:
+On	=	On
+Off	=	Off
+
+Commands:	=	Commands:
+Synopsis:	=	Synopsis:
+Description:	=	Description:
+no description	=	no description
+
+Objects:	=	Objects:
+Groups:	=	Groups:
+To invenory:	=	To invenory:
+Item successfully added!	=	Item successfully added!
+Error: Inventory is full!	=	Error: Inventory is full!

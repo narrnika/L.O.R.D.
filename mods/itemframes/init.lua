@@ -111,7 +111,7 @@ minetest.register_node("itemframes:frame",{
 	paramtype = "light",
 	paramtype2 = "facedir",
 	sunlight_propagates = true,
-	groups = { choppy=2,dig_immediate=2 },
+	groups = { choppy=2,dig_immediate=2, paper = 1 },
 	legacy_wallmounted = true,
 	sounds = default.node_sound_defaults(),
 	after_place_node = function(pos, placer, itemstack)
@@ -204,7 +204,7 @@ function itemframes.register_pedestal(subname, recipeitem, groups, images, descr
 end
 
 itemframes.register_pedestal("wood", "default:wood",
-		{snappy=2,choppy=2,oddly_breakable_by_hand=2,flammable=3,pedestal=1},
+		{snappy=2,choppy=2,oddly_breakable_by_hand=2,flammable=3,pedestal=1, wooden = 1},
 		{"default_wood.png"},
 		SL("Wooden Pedestal"),
 		default.node_sound_wood_defaults()

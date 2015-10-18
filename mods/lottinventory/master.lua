@@ -221,7 +221,7 @@ minetest.register_tool("lottinventory:master_book",{
             choppy={times={[3]=0.90}, maxwear=0.05, maxlevel=0}
         }
     },
-    groups = {forbidden=1, book=1},
+    groups = {forbidden=1, book=1, paper=1},
     on_place = function(itemstack, player, pointed_thing)
 		local pn = player:get_player_name();
 		if zmc.users[pn] == nil then zmc.users[pn] = {current_item = "", alt = 1, page = 0, history={index=0,list={}}} end

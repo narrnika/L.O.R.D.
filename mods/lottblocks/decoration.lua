@@ -14,11 +14,11 @@ minetest.register_node("lottblocks:tree_vine", {
 	tiles = {"lottblocks_tree_vine_top.png", "lottblocks_tree_vine_top.png", "lottblocks_tree_vine.png", "lottblocks_tree_vine.png", "lottblocks_tree_vine.png", "lottblocks_tree_vine.png"},
 	paramtype2 = "facedir",
 	is_ground_content = false,
-	groups = {choppy=2,snappy=2},
+	groups = {choppy=2,snappy=2, tree=1},
 })
 
 stairs.register_stair_and_slab("tree_vine", "lottblocks:tree_vine",
-		{choppy=2,snappy=2},
+		{choppy=2,snappy=2, tree=1},
 		{"lottblocks_tree_vine.png"},
 		SL("Tree With Vines Stair"),
 		SL("Tree With Vines Slab")
@@ -31,11 +31,11 @@ minetest.register_node("lottblocks:tree_mossy", {
 	tiles = {"lottblocks_tree_mossy_top.png", "lottblocks_tree_mossy_top.png", "lottblocks_tree_mossy.png", "lottblocks_tree_mossy.png", "lottblocks_tree_mossy.png", "lottblocks_tree_mossy.png"},
 	paramtype2 = "facedir",
 	is_ground_content = false,
-	groups = {choppy=2},
+	groups = {choppy=2, tree=1},
 })
 
 stairs.register_stair_and_slab("tree_mossy", "lottblocks:tree_mossy",
-		{choppy=2},
+		{choppy=2, tree=1},
 		{"lottblocks_tree_mossy.png"},
 		SL("Tree With Moss Stair"),
 		SL("Tree With Moss Slab")
@@ -71,7 +71,7 @@ minetest.register_node("lottblocks:leafroof_mallorn", {
 	drawtype = "allfaces_optional",
 	is_ground_content = false,
 	sounds = default.node_sound_leaves_defaults(),
-	grups = {oddly_breakable_by_hand=2,leaves=1},
+	groups = {oddly_breakable_by_hand=2,leaves=1},
 })
 
 stairs.register_stair_and_slab("leafroof_mallorn", "lottblocks:leafroof_mallorn",
@@ -89,11 +89,11 @@ minetest.register_node("lottblocks:mallorn_pillar", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	is_ground_content = false,
-	groups = {snappy=2,choppy=2},
+	groups = {snappy=2,choppy=2, wooden=1},
 })
 
 stairs.register_stair_and_slab("mallorn_pillar", "lottblocks:mallorn_pillar",
-		{snappy=2,choppy=2},
+		{snappy=2,choppy=2, wooden=1},
 		{"lottblocks_mallorn_pillar.png"},
 		SL("Mallorn Pillar Stair"),
 		SL("Mallorn Pillar Slab")
@@ -107,11 +107,11 @@ minetest.register_node("lottblocks:mallorn_white", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	is_ground_content = false,
-	groups = {snappy=2,choppy=2},
+	groups = {snappy=2,choppy=2, wooden=1},
 })
 
 stairs.register_stair_and_slab("mallorn_white", "lottblocks:mallorn_white",
-		{snappy=2,choppy=2},
+		{snappy=2,choppy=2, wooden=1},
 		{"lottblocks_mallorn_white.png"},
 		SL("White Mallorn Stair"),
 		SL("White Mallorn Slab")

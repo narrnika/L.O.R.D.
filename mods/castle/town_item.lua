@@ -41,7 +41,7 @@ minetest.register_node("castle:workbench",{
 	tiles = {"castle_workbench_top.png", "default_wood.png", "castle_workbench_1.png", "castle_workbench_1.png", "castle_workbench_2.png", "castle_workbench_2.png"},
 	paramtype2 = "facedir",
 	paramtype = "light",
-	groups = {choppy=2,oddly_breakable_by_hand=2,flammable=2},
+	groups = {choppy=2,oddly_breakable_by_hand=2,flammable=2, wooden = 1},
 	drawtype = "normal",
     on_construct = function ( pos )
         local meta = minetest.get_meta( pos )
@@ -193,7 +193,7 @@ minetest.register_node("castle:straw", {
 	description = SL("Straw"),
 	tiles = {"castle_straw.png"},
 	is_ground_content = false,
-	groups = {snappy=3, flammable=4},
+	groups = {snappy=3, flammable=4, grass = 1},
 	sounds = default.node_sound_leaves_defaults(),
 })
 
@@ -217,7 +217,7 @@ minetest.register_node("castle:bound_straw", {
 	description = SL("Bound Straw"),
 	drawtype = "normal",
 	tiles = {"castle_straw_bale.png"},
-	groups = {choppy=4, flammable=1, oddly_breakable_by_hand=3},
+	groups = {choppy=4, flammable=1, oddly_breakable_by_hand=3, grass=1},
 	paramtype = "light",
 })
 
@@ -229,7 +229,7 @@ minetest.register_craft({
 })
 
 stairs.register_stair_and_slab("straw", "castle:straw",
-	{choppy=3, flammable=1, oddly_breakable_by_hand=3},
+	{choppy=3, flammable=1, oddly_breakable_by_hand=3, grass=1},
 	{"castle_straw.png"},
 	SL("Castle Straw Stair"),
 	SL("Castle Straw Slab"),

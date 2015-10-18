@@ -225,7 +225,7 @@ end)
 
 minetest.register_tool("lottinventory:crafts_book",{
     description = SL("Book of Crafts"),
-    groups = {book=1}, 
+    groups = {book=1, paper=1}, 
     inventory_image = "lottinventory_crafts_book.png",
     wield_image = "",
     wield_scale = {x=1,y=1,z=1},

@@ -72,6 +72,7 @@ minetest.register_tool("lottthrowing:bow_wood", {
 		end
 		return itemstack
 	end,
+	groups = {wooden = 1},
 })
 
 minetest.register_tool("lottthrowing:bow_wood_alder", {
@@ -86,6 +87,7 @@ minetest.register_tool("lottthrowing:bow_wood_alder", {
 		end
 		return itemstack
 	end,
+	groups = {wooden = 1},
 })
 
 minetest.register_tool("lottthrowing:bow_wood_birch", {
@@ -100,6 +102,7 @@ minetest.register_tool("lottthrowing:bow_wood_birch", {
 		end
 		return itemstack
 	end,
+	groups = {wooden = 1},
 })
 
 minetest.register_tool("lottthrowing:bow_wood_lebethron", {
@@ -114,6 +117,7 @@ minetest.register_tool("lottthrowing:bow_wood_lebethron", {
 		end
 		return itemstack
 	end,
+	groups = {wooden = 1},
 })
 
 minetest.register_tool("lottthrowing:bow_wood_mallorn", {
@@ -128,6 +132,7 @@ minetest.register_tool("lottthrowing:bow_wood_mallorn", {
 		end
 		return itemstack
 	end,
+	groups = {wooden = 1},
 })
 
 minetest.register_craft({
@@ -187,6 +192,7 @@ minetest.register_tool("lottthrowing:crossbow_wood", {
 		end
 		return itemstack
 	end,
+	groups = {wooden = 1},
 })
 
 minetest.register_tool("lottthrowing:crossbow_steel", {
