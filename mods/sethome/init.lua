@@ -29,7 +29,7 @@ minetest.register_privilege("home", SL("Can use /sethome and /home"))
 local changed = false
 
 minetest.register_chatcommand("home", {
-    description = "Teleport you to your home point",
+    description = SL(("Teleport you to your home point")),
     privs = {home=true},
     func = function(name)
         local player = minetest.get_player_by_name(name)
@@ -47,7 +47,7 @@ minetest.register_chatcommand("home", {
 })
 
 minetest.register_chatcommand("sethome", {
-    description = "Set your home point",
+    description = SL("Set your home point"),
     privs = {home=true},
     func = function(name)
         local player = minetest.get_player_by_name(name)

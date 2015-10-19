@@ -33,3 +33,8 @@ Groups:	=	Groups:
 To invenory:	=	To invenory:
 Item successfully added!	=	Item successfully added!
 Error: Inventory is full!	=	Error: Inventory is full!
+
+Show information about the server	=	Show information about the server
+Show the server's news	=	Show the server's news
+Show list and description of registered chat-commands	=	Show list and description of registered chat-commands
+Show list of registered objects	=	Show list of registered objects

@@ -33,3 +33,8 @@ Groups:	=	Группы:
 To invenory:	=	В инвентарь:
 Item successfully added!	=	Предмет успешно добавлен!
 Error: Inventory is full!	=	Ошибка: инвенарь полон!
+
+Show information about the server	=	Показать информацию о сервере
+Show the server's news	=	Показать новости сервера
+Show list and description of registered chat-commands	=	Показать список и описание чат-команд
+Show list of registered objects	=	Показать список зарегестрированных объектов
