@@ -140,12 +140,18 @@ local function help_form(name, select_id)
 	else
 		synopsis = list[select_id]
 	end
+	synopsis = string.gsub(synopsis, "%[", "(")
+	synopsis = string.gsub(synopsis, "%]", ")")
+	synopsis = string.gsub(synopsis, ";", ".")
 	local description
 	if minetest.chatcommands[list[select_id]].description then
 		description = minetest.chatcommands[list[select_id]].description
 	else
 		description = SL("no description")
 	end
+	description = string.gsub(description, "%[", "(")
+	description = string.gsub(description, "%]", ")")
+	description = string.gsub(description, ";", ".")
 	list = table.concat(list, ",")
 	form = form.."textlist[0.3,1.5;7.2,3.0;lst_comm;"..list..";"..tostring(select_id)..";]"
 	form = form.."textarea[0.6,5.0;7.4,0.7;txt_synopsis;"..SL("Synopsis:")..";"..synopsis.."]"
