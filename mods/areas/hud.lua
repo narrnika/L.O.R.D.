@@ -18,6 +18,8 @@ minetest.register_globalstep(function(dtime)
 		if #areaStrings > 0 then
 			areaString = areaString.."\n"..
 				table.concat(areaStrings, "\n")
+		else
+			areaString = ""
 		end
 		local hud = areas.hud[name]
 		if not hud then
