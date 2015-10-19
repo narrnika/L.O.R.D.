@@ -106,9 +106,8 @@ end
 -- 3 for checking protector overlaps
 
 protector.can_dig = function(r, pos, digger, onlyowner, infolevel)
-	if not digger then
-		return false
-	end
+	if not digger then return false end
+	if not minetest.get_player_by_name(digger) then return false end
 
 	-- Delprotect privileged users can override protections
 

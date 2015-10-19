@@ -2,10 +2,12 @@ local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s en
 
 
 local function redefinition(chatcommand, new_description)
-	if new_description then
-		minetest.chatcommands[chatcommand].description = SL(new_description)
-	else
-		minetest.chatcommands[chatcommand].description = SL(minetest.chatcommands[chatcommand].description)
+	if minetest.chatcommands[chatcommand] then
+		if new_description then
+			minetest.chatcommands[chatcommand].description = SL(new_description)
+		else
+			minetest.chatcommands[chatcommand].description = SL(minetest.chatcommands[chatcommand].description)
+		end
 	end
 end
 
@@ -37,12 +39,5 @@ redefinition("kick")
 redefinition("clearobjects")
 redefinition("msg")
 redefinition("last-login")
-
---[[
-old_commands = minetest.chatcommands["help"]
-old_commands.description = SL("Get help for commands or list privileges")
-minetest.register_chatcommand("help", minetest.chatcommands["help"])
-]]--
-
 
 if minetest.setting_getbool("msg_loading_mods") then minetest.log("action", minetest.get_current_modname().." mod LOADED") end
