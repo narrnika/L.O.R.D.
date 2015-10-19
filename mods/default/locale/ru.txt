@@ -112,3 +112,8 @@ Wooden Sword	=	Деревянный меч
 Stone Sword	=	Каменный меч
 Steel Sword	=	Стальной меч
 Bronze Sword	=	Бронзовый меч
+
+### chatcommands.lua ###
+print out privileges of player	=	Вывести привилегии игрока
+Give privilege to player	=	Дать привилегии игроку
+Remove privilege from player	=	Забрать привилегии у игрока

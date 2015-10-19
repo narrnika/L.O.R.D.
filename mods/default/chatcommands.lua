@@ -1,8 +1,10 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 --Modified from builtin/game/chatcommands.lua to hide privs starting with GAME
 
 minetest.register_chatcommand("privs", {
 	params = "<name>",
-	description = "print out privileges of player",
+	description = SL("print out privileges of player"),
 	func = function(name, param)
 		param = (param ~= "" and param or name)
 		local privs_table = minetest.get_player_privs(param)
@@ -24,7 +26,7 @@ minetest.register_chatcommand("privs", {
 
 minetest.register_chatcommand("grant", {
 	params = "<name> <privilege>|all",
-	description = "Give privilege to player",
+	description = SL("Give privilege to player"),
 	func = function(name, param)
 		if not minetest.check_player_privs(name, {privs=true}) and
 			not minetest.check_player_privs(name, {basic_privs=true}) then
@@ -83,7 +85,7 @@ minetest.register_chatcommand("grant", {
 
 minetest.register_chatcommand("revoke", {
 	params = "<name> <privilege>|all",
-	description = "Remove privilege from player",
+	description = SL("Remove privilege from player"),
 	privs = {},
 	func = function(name, param)
 		if not minetest.check_player_privs(name, {privs=true}) and

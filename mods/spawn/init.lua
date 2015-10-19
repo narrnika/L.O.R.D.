@@ -1,3 +1,4 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
 
 -- Some modified from: Minetest: builtin/static_spawn.lua
 
@@ -47,7 +48,7 @@ end
 
 
 minetest.register_chatcommand("spawn", {
-	description = "Teleport to the spawn location",
+	description = SL("Teleport to the spawn location"),
 	func = function(name, _)
 		local ok = put_player_at_spawn(minetest.get_player_by_name(name))
 		if ok then
@@ -65,3 +66,5 @@ end)
 minetest.register_on_respawnplayer(function(obj)
 	return put_player_at_spawn(obj)
 end)
+
+if minetest.setting_getbool("msg_loading_mods") then minetest.log("action", minetest.get_current_modname().." mod LOADED") end
