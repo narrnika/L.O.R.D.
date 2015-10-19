@@ -10,8 +10,8 @@ minetest.register_tool("lottblocks:lockpick", {
 minetest.register_craft({
 	output = "lottblocks:lockpick",
 	recipe = {
-		{"", "default:steel_ingot", "default:steel_ingot"},
 		{"", "default:steel_ingot", ""},
+		{"", "default:steel_ingot", "default:steel_ingot"},
 		{"", "group:stick", ""}
 	}
 })
