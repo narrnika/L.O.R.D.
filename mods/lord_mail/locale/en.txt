@@ -1,0 +1,3 @@
+### init.lua ###
+Mail Chest	=	Mail Chest
+Mail for	=	Mail for
