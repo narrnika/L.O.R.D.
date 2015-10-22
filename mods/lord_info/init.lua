@@ -15,7 +15,16 @@ minetest.register_privilege("news", {
 })
 
 -- размер и фон формы
-local form_prop = "size[8,8.5]background[5,5;1,1;gui_formbg.png;true]"
+local form_prop = "size[8,8.5]background[5,5;1,1;info_formbg.png;true]"
+
+-- замена в строке квадратных скобок на круглые и точки с запятой на точку для правилтьной обработки formspec
+local function str_clc(str)
+	local new_str = str
+	new_str = string.gsub(new_str, "%[", "(")
+	new_str = string.gsub(new_str, "%]", ")")
+	new_str = string.gsub(new_str, ";", ".")
+	return new_str
+end
 
 -- чтение/запись txt файлов
 local function read_info()
@@ -134,24 +143,18 @@ local function help_form(name, select_id)
 		if access then table.insert(list, i) end
 	end
 	table.sort(list)
-	local synopsis
-	if minetest.chatcommands[list[select_id]].params then
-		synopsis = list[select_id].." "..minetest.chatcommands[list[select_id]].params
-	else
+	local synopsis = minetest.chatcommands[list[select_id]].params
+	if (synopsis == nil)or(synopsis == "") then
 		synopsis = list[select_id]
-	end
-	synopsis = string.gsub(synopsis, "%[", "(")
-	synopsis = string.gsub(synopsis, "%]", ")")
-	synopsis = string.gsub(synopsis, ";", ".")
-	local description
-	if minetest.chatcommands[list[select_id]].description then
-		description = minetest.chatcommands[list[select_id]].description
 	else
+		synopsis = list[select_id].." "..synopsis
+	end
+	synopsis = str_clc(synopsis)
+	local description = minetest.chatcommands[list[select_id]].description
+	if (description == nil)or(description == "") then
 		description = SL("no description")
 	end
-	description = string.gsub(description, "%[", "(")
-	description = string.gsub(description, "%]", ")")
-	description = string.gsub(description, ";", ".")
+	description = str_clc(description)
 	list = table.concat(list, ",")
 	form = form.."textlist[0.3,1.5;7.2,3.0;lst_comm;"..list..";"..tostring(select_id)..";]"
 	form = form.."textarea[0.6,5.0;7.4,0.7;txt_synopsis;"..SL("Synopsis:")..";"..synopsis.."]"
@@ -159,39 +162,53 @@ local function help_form(name, select_id)
 	form = form.."button_exit[0.3,7.7;3,1;btn_exit;"..SL("Exit").."]"
 	return form
 end
-local function list_form(name, select_id)
-	local privs = minetest.get_player_privs(name)
+local function list_form(name, select_id, find)
 	local form = form_prop
 	form = form..
 		"button[0.3,0;2.5,1;btn_info;"..SL("Info").."]"..
 		"button[2.75,0;2.5,1;btn_news;"..SL("News").."]"..
 		"button[5.2,0;2.5,1;btn_help;"..SL("Help").."]"
 	form = form.."label[0.3,1.0;"..SL("Objects:").."]"
+	form = form.."field[3.04,1.0;2.5,1;txt_filter;;"..find.."]"
+	form = form.."button[5.2,0.7;2.5,1;btn_find;"..SL("Find").."]"
+
 	local list = {}
-
 	for i, j in pairs(minetest.registered_items) do
-		if i ~= '' then table.insert(list, i) end
+		if (i ~= '')and((find == "")or(string.find(string.lower(i), string.lower(find)))or(string.find(string.lower(j.description), string.lower(find)))) then
+			table.insert(list, i)
+		end
 	end
-	table.sort(list)
-	local item_name = list[select_id]
-	local stack_max = minetest.registered_items[list[select_id]].stack_max
-	local groups = {}
-	for i, j in pairs(minetest.registered_items[list[select_id]].groups) do
-		table.insert(groups, i.." = "..tostring(j))
+	if #list == 0 then
+		form = form.."textlist[0.3,1.5;7.2,3.0;lst_objs;;;]"
+		form = form.."label[0.3,4.5;"..SL("Groups:").."]"
+		form = form.."textlist[0.3,5.0;7.2,1.0;lst_groups;;;]"
+		form = form.."textarea[0.6,6.5;7.4,1.5;txt_description;"..SL("Description:")..";]"
+		form = form.."button_exit[0.3,7.7;3,1;btn_exit;"..SL("Exit").."]"
+	else
+		table.sort(list)
+		local item_name = list[select_id]
+		local stack_max = minetest.registered_items[list[select_id]].stack_max
+		local groups = {}
+		for i, j in pairs(minetest.registered_items[list[select_id]].groups) do
+			table.insert(groups, i.." = "..tostring(j))
+		end
+		groups = table.concat(groups, ",")
+		local description = minetest.registered_items[list[select_id]].description
+		if (description == nil)or(description == "") then
+			description = SL("no description")
+		end
+		description = str_clc(description)
+		list = table.concat(list, ",")
+		form = form.."field[3,3;0,0;txt_select;;"..item_name.."]" -- скрыто
+		form = form.."textlist[0.3,1.5;7.2,3.0;lst_objs;"..list..";"..tostring(select_id)..";]"
+		form = form.."label[0.3,4.5;"..SL("Groups:").."]"
+		form = form.."textlist[0.3,5.0;7.2,1.0;lst_groups;"..groups..";;]"
+		form = form.."textarea[0.6,6.5;7.4,1.5;txt_description;"..SL("Description:")..";"..description.."]"
+		form = form.."button_exit[0.3,7.7;3,1;btn_exit;"..SL("Exit").."]"
+		form = form.."label[4.0,7.9;"..SL("To invenory:").."]"
+		form = form.."item_image_button[5.7,7.7;1,1;"..item_name..";btn_giveme;1]"
+		form = form.."item_image_button[6.7,7.7;1,1;"..item_name..";btn_giveme_m;"..tostring(stack_max).."]"
 	end
-	groups = table.concat(groups, ",")
-	local description = minetest.registered_items[list[select_id]].description
-	list = table.concat(list, ",")
-	form = form.."field[0,0;0,0;txt_select;;"..item_name.."]"
-	form = form.."textlist[0.3,1.5;7.2,3.0;lst_objs;"..list..";"..tostring(select_id)..";]"
-	form = form.."label[0.3,4.5;"..SL("Groups:").."]"
-	form = form.."textlist[0.3,5.0;7.2,1.0;lst_groups;"..groups..";;]"
-	form = form.."textarea[0.6,6.5;7.4,1.5;txt_description;"..SL("Description:")..";"..description.."]"
-
-	form = form.."button_exit[0.3,7.7;3,1;btn_exit;"..SL("Exit").."]"
-	form = form.."label[4.0,7.9;"..SL("To invenory:").."]"
-	form = form.."item_image_button[5.7,7.7;1,1;"..item_name..";btn_giveme;1]"
-	form = form.."item_image_button[6.7,7.7;1,1;"..item_name..";btn_giveme_m;"..tostring(stack_max).."]"
 	return form
 end
 
@@ -218,7 +235,7 @@ minetest.register_chatcommand("list", {
 	description = SL("Show list of registered objects"),
 	privs = {give = true},
 	func = function(name)
-		minetest.show_formspec(name, "list_form", list_form(name, 1))
+		minetest.show_formspec(name, "list_form", list_form(name, 1, ""))
 	end,
 })
 
@@ -233,7 +250,7 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 		elseif fields.btn_help then
 			minetest.show_formspec(name, "help_form", help_form(name, 1))
 		elseif fields.btn_list then
-			minetest.show_formspec(name, "list_form", list_form(name, 1))
+			minetest.show_formspec(name, "list_form", list_form(name, 1, ""))
 		end
 	end
 	if (formname == "info_form")and(fields.btn_save) then
@@ -256,7 +273,7 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 		chg = string.gsub(chg, "CHG:", "")
 		chg = string.gsub(chg, "DCL:", "")
 		chg = tonumber(chg)
-		minetest.show_formspec(name, "list_form", list_form(name, chg))
+		minetest.show_formspec(name, "list_form", list_form(name, chg, fields.txt_filter))
 	end
 	if (formname == "list_form")and((fields.btn_giveme)or(fields.btn_giveme_m)) then
 		local count = (fields.btn_giveme)or(fields.btn_giveme_m)
@@ -269,6 +286,9 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 		else
 			minetest.chat_send_player(player:get_player_name(), SL("Error: Inventory is full!"))
 		end
+	end
+	if (formname == "list_form")and(fields.btn_find) then
+		minetest.show_formspec(name, "list_form", list_form(name, 1, fields.txt_filter))
 	end
 end)
 
