@@ -1,3 +1,11 @@
 ### init.lua ###
 Mail Chest	=	Почтовый ящик
 Mail for	=	Почта для
+Paper	=	Лист бумаги
+Letter	=	Лист бумаги с текстом
+Book	=	Книга
+Book With Text	=	Книга с текстом
+Title	=	Заголовок
+Contents	=	Текст
+Save	=	Записать
+by	=	Автор:
