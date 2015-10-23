@@ -80,10 +80,6 @@ minetest.register_tool("lottinventory:brewing_book",{
             choppy={times={[3]=0.90}, maxwear=0.05, maxlevel=0}
         }
     },
-    on_place = function(itemstack, player, pointed_thing)
-       inventory_plus.set_inventory_formspec(player, get_formspec(player,"brews"))
-       return itemstack; -- nothing consumed, nothing changed
-    end,
     on_use = function(itemstack, player, pointed_thing)
           inventory_plus.set_inventory_formspec(player, get_formspec(player,"brews"))
           return itemstack; -- nothing consumed, nothing changed

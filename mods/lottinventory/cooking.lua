@@ -231,11 +231,6 @@ minetest.register_tool("lottinventory:cooking_book",{
             choppy={times={[3]=0.90}, maxwear=0.05, maxlevel=0}
         }
     },
-    on_place = function(itemstack, player, pointed_thing)
-		local pn = player:get_player_name();
-		if zcc.users[pn] == nil then zcc.users[pn] = {current_item = "", alt = 1, page = 0, history={index=0,list={}}} end
-		inventory_plus.set_inventory_formspec(player, zcc.formspec(pn))
-    end,
     on_use = function(itemstack, player, pointed_thing)
 		local pn = player:get_player_name();
 		if zcc.users[pn] == nil then zcc.users[pn] = {current_item = "", alt = 1, page = 0, history={index=0,list={}}} end

@@ -226,10 +226,6 @@ minetest.register_tool("lottinventory:protection_book",{
             choppy={times={[3]=0.90}, maxwear=0.05, maxlevel=0}
         }
     },
-    on_place = function(itemstack, player, pointed_thing)
-		local pn = player:get_player_name();
-		inventory_plus.set_inventory_formspec(player, zpc.formspec(pn))
-    end,
     on_use = function(itemstack, player, pointed_thing)
 		local pn = player:get_player_name();
 		inventory_plus.set_inventory_formspec(player, zpc.formspec(pn))
