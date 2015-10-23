@@ -17,15 +17,6 @@ minetest.register_privilege("news", {
 -- размер и фон формы
 local form_prop = "size[8,8.5]background[5,5;1,1;info_formbg.png;true]"
 
--- замена в строке квадратных скобок на круглые и точки с запятой на точку для правилтьной обработки formspec
-local function str_clc(str)
-	local new_str = str
-	new_str = string.gsub(new_str, "%[", "(")
-	new_str = string.gsub(new_str, "%]", ")")
-	new_str = string.gsub(new_str, ";", ".")
-	return new_str
-end
-
 -- чтение/запись txt файлов
 local function read_info()
 	local input = io.open(info_file, "r")
@@ -87,7 +78,7 @@ local function info_form(name)
 		form = form.."label[0.3,2.0;"..SL("Damage:").." "..SL("Off").."]"
 	end
 	form = form.."label[0.3,2.5;"..SL("Default privileges:").." "..minetest.setting_get("default_privs").."]" --базовые права
-	form = form.."textarea[0.6,3.5;7.4,4.83;txt_info;"..SL("Info:")..";"..read_info().."]"
+	form = form.."textarea[0.6,3.5;7.4,4.83;txt_info;"..SL("Info:")..";"..minetest.formspec_escape(read_info()).."]"
 	if privs["info"] then
 		form = form..
 			"button_exit[0.3,7.7;3,1;btn_exit;"..SL("Exit").."]button[4.7,7.7;3,1;btn_save;"..SL("Save").."]"
@@ -110,7 +101,7 @@ local function news_form(name)
 			"button[0.3,0;2.5,1;btn_info;"..SL("Info").."]"..
 			"button[5.2,0;2.5,1;btn_help;"..SL("Help").."]"
 	end
-	form = form.."textarea[0.6,1.2;7.4,7.5;txt_news;"..SL("News:")..";"..read_news().."]"
+	form = form.."textarea[0.6,1.2;7.4,7.5;txt_news;"..SL("News:")..";"..minetest.formspec_escape(read_news()).."]"
 	if privs["news"] then
 		form = form..
 			"button_exit[0.3,7.7;3,1;btn_exit;"..SL("Exit").."]button[4.7,7.7;3,1;btn_save;"..SL("Save").."]"
@@ -149,12 +140,12 @@ local function help_form(name, select_id)
 	else
 		synopsis = list[select_id].." "..synopsis
 	end
-	synopsis = str_clc(synopsis)
+	synopsis = minetest.formspec_escape(synopsis)
 	local description = minetest.chatcommands[list[select_id]].description
 	if (description == nil)or(description == "") then
 		description = SL("no description")
 	end
-	description = str_clc(description)
+	description = minetest.formspec_escape(description)
 	list = table.concat(list, ",")
 	form = form.."textlist[0.3,1.5;7.2,3.0;lst_comm;"..list..";"..tostring(select_id)..";]"
 	form = form.."textarea[0.6,5.0;7.4,0.7;txt_synopsis;"..SL("Synopsis:")..";"..synopsis.."]"
@@ -169,7 +160,7 @@ local function list_form(name, select_id, find)
 		"button[2.75,0;2.5,1;btn_news;"..SL("News").."]"..
 		"button[5.2,0;2.5,1;btn_help;"..SL("Help").."]"
 	form = form.."label[0.3,1.0;"..SL("Objects:").."]"
-	form = form.."field[3.04,1.0;2.5,1;txt_filter;;"..find.."]"
+	form = form.."field[3.04,1.0;2.5,1;txt_filter;;"..minetest.formspec_escape(find).."]"
 	form = form.."button[5.2,0.7;2.5,1;btn_find;"..SL("Find").."]"
 
 	local list = {}
@@ -197,7 +188,7 @@ local function list_form(name, select_id, find)
 		if (description == nil)or(description == "") then
 			description = SL("no description")
 		end
-		description = str_clc(description)
+		description = minetest.formspec_escape(description)
 		list = table.concat(list, ",")
 		form = form.."field[3,3;0,0;txt_select;;"..item_name.."]" -- скрыто
 		form = form.."textlist[0.3,1.5;7.2,3.0;lst_objs;"..list..";"..tostring(select_id)..";]"
