@@ -2,3 +2,5 @@
 Empty Bucket	=	Empty Bucket
 Water Bucket	=	Water Bucket
 Lava Bucket	=	Lava Bucket
+Bucket With Ice	=	Bucket With Ice
+Bucket With Snow	=	Bucket With Snow
