@@ -26,7 +26,7 @@ protector.mod = "redo"
 protector.radius = (tonumber(minetest.setting_get("protector_radius")) or 5)
 protector.pvp = minetest.setting_getbool("protector_pvp")
 protector.spawn = (tonumber(minetest.setting_get("protector_pvp_spawn")) or 0)
-protector.damage = (tonumber(minetest.setting_get("protector_damage")) or 0)
+protector.damage = (tonumber(minetest.setting_get("protector_damage")) or 1)
 
 protector.get_member_list = function(meta)
 	return meta:get_string("members"):split(" ")
@@ -122,7 +122,7 @@ protector.can_dig = function(r, pos, digger, onlyowner, infolevel)
 	local positions = minetest.find_nodes_in_area(
 		{x = pos.x - r, y = pos.y - r, z = pos.z - r},
 		{x = pos.x + r, y = pos.y + r, z = pos.z + r},
-		{"protector_lott:protect", "protector_lott:protect2"})
+		{"group:protector"})
 
 	local meta, owner, members
 	for _, pos in ipairs(positions) do
@@ -197,8 +197,7 @@ protector.old_node_place = minetest.item_place
 
 function minetest.item_place(itemstack, placer, pointed_thing)
 
-	if itemstack:get_name() == "protector_lott:protect"
-	or itemstack:get_name() == "protector_lott:protect2" then
+	if minetest.registered_items[itemstack:get_name()].groups.protector then
 		local user = placer:get_player_name()
 		local pos = pointed_thing.under
 		if not protector.can_dig(protector.radius * 2, pos, user, true, 3) then
@@ -221,7 +220,7 @@ minetest.register_node("protector_lott:protect2", {
 	wield_image = "protector_logo.png",
 	inventory_image = "protector_logo.png",
 	sounds = default.node_sound_stone_defaults(),
-	groups = {dig_immediate = 2, unbreakable = 1},
+	groups = {dig_immediate = 2, unbreakable = 1, protector = 1},
 	paramtype = 'light',
 	paramtype2 = "wallmounted",
 	light_source = 2,

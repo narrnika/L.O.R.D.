@@ -4,6 +4,7 @@ minetest.register_alias("protector_lott:protect", "protector_lott:protect_stone"
 
 local function reg_prot_node(subname, desc, base_node_name, texture)
 	local groups = minetest.registered_nodes[base_node_name].groups
+	groups.protector = 1
 	groups.dig_immediate = 2
 	groups.unbreakable = 1
 
