@@ -3,10 +3,13 @@ local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s en
 minetest.register_alias("protector_lott:protect", "protector_lott:protect_stone")
 
 local function reg_prot_node(subname, desc, base_node_name, texture)
-	local groups = minetest.registered_nodes[base_node_name].groups
+	local groups = {}
 	groups.protector = 1
 	groups.dig_immediate = 2
 	groups.unbreakable = 1
+	for i, j in pairs(minetest.registered_nodes[base_node_name].groups) do
+		groups[i] = j
+	end
 
 	minetest.register_node("protector_lott:protect_"..subname, {
 		description = SL("Protection "..desc),
