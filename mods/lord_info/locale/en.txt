@@ -1,13 +1,21 @@
 ### init.lua ###
+Can edit info	=	Can edit info
+Can edit news	=	Can edit news
+Can edit rules	=	Can edit rules
+
 Information about the server	=	Information about the server
 Info successfully written!	=	Info successfully written!
 News successfully written!	=	News successfully written!
+Rules successfully written!	=	Rules successfully written!
 
 Info	=	Info
 News	=	News
 Help	=	Help
 List	=	List
 Find	=	Find
+Privileges	=	Privileges
+Commands	=	Commands
+How to play?	=	How to play?
 
 Info:	=	Info:
 News:	=	News:
@@ -16,6 +24,7 @@ Save	=	Save
 
 news_text	=	19.10.2015 Global upgrade.
 info_text	=	The server is being tested.
+rules_text	=	No rules!
 
 Admin:	=	Admin:
 PvP:	=	PvP:
@@ -25,6 +34,9 @@ On	=	On
 Off	=	Off
 
 Commands:	=	Commands:
+Privileges:	=	Privileges:
+Game's rules:	=	Game's rules:
+State:	=	State:
 Synopsis:	=	Synopsis:
 Description:	=	Description:
 no description	=	no description
