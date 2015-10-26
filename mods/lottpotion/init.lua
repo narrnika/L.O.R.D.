@@ -350,9 +350,9 @@ end)
 
 minetest.register_chatcommand("effect", {
 	params = "none",
-	description = "get effect info",
+	description = SL("get effect info"),
 	func = function(name, param)
-		minetest.chat_send_player(name, "effects:")
+		minetest.chat_send_player(name, SL("effects:"))
 		local lottpotion_e = lottpotion.players[name]
 		if lottpotion_e~=nil then
 			for potion_name, val in pairs(lottpotion_e) do

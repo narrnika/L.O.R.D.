@@ -1,4 +1,7 @@
 ### init.lua ###
+get effect info	=	get effect info
+effects:	=	effects:
+
 You are under the effects of the Orc Draught potion.	=	You are under the effects of the Orc Draught potion.
 You are under the effects of the Spider Poison potion.	=	You are under the effects of the Spider Poison potion.
 You are under the effects of the Limpe potion.	=	You are under the effects of the Limpe potion.

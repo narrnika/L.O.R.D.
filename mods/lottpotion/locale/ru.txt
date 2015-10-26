@@ -1,4 +1,7 @@
 ### init.lua ###
+get effect info	=	Вывести информацию об эффектах, действующих на персонажа
+effects:	=	Эффекты:
+
 You are under the effects of the Orc Draught potion.	=	Вы под воздействием орочьего питья.
 You are under the effects of the Spider Poison potion.	=	Вы под воздействием паучьего зелья.
 You are under the effects of the Limpe potion.	=	Вы под воздействием лимпа.

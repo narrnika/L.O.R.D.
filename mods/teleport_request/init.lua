@@ -1,3 +1,5 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 -- Original code by Traxie21 and released with the WTFPL license
 -- https://forum.minetest.net/viewtopic.php?id=4457
 
@@ -16,7 +18,7 @@ local tphr_list = {}
 --Teleport Request System
 local function tpr_send(sender, receiver)
 	if receiver == "" then
-		minetest.chat_send_player(sender, "Usage: /tpr <Player name>")
+		minetest.chat_send_player(sender, SL("Usage: /tpr <Player name>"))
 		return
 	end
 
@@ -25,8 +27,8 @@ local function tpr_send(sender, receiver)
 		return
 	end
 
-	minetest.chat_send_player(receiver, sender ..' is requesting to teleport to you. /tpy to accept.')
-	minetest.chat_send_player(sender, 'Teleport request sent! It will time out in '.. timeout_delay ..' seconds.')
+	minetest.chat_send_player(receiver, sender ..' '..SL('is requesting to teleport to you. /tpy to accept.'))
+	minetest.chat_send_player(sender, SL('Teleport request sent! It will time out in')..' '.. timeout_delay ..' '..SL('seconds.'))
 
 	--Write name values to list and clear old values.
 	tpr_list[receiver] = sender
@@ -40,7 +42,7 @@ end
 
 local function tphr_send(sender, receiver)
 	if receiver == "" then
-		minetest.chat_send_player(sender, "Usage: /tphr <Player name>")
+		minetest.chat_send_player(sender, SL("Usage: /tphr <Player name>"))
 		return
 	end
 
@@ -49,8 +51,8 @@ local function tphr_send(sender, receiver)
 		return
 	end
 
-	minetest.chat_send_player(receiver, sender ..' is requesting that you teleport to them. /tpy to accept; /tpn to deny')
-	minetest.chat_send_player(sender, 'Teleport request sent! It will time out in '.. timeout_delay ..' seconds.')
+	minetest.chat_send_player(receiver, sender ..' '..SL('is requesting that you teleport to them. /tpy to accept; /tpn to deny'))
+	minetest.chat_send_player(sender, SL('Teleport request sent! It will time out in')..' '.. timeout_delay ..' '..SL('seconds.'))
 
 	--Write name values to list and clear old values.
 	tphr_list[receiver] = sender
@@ -64,11 +66,11 @@ end
 
 local function tpr_deny(name)
 	if tpr_list[name] then
-		minetest.chat_send_player(tpr_list[name], 'Teleport request denied.')
+		minetest.chat_send_player(tpr_list[name], SL('Teleport request denied.'))
 		tpr_list[name] = nil
 	end
 	if tphr_list[name] then
-		minetest.chat_send_player(tphr_list[name], 'Teleport request denied.')
+		minetest.chat_send_player(tphr_list[name], SL('Teleport request denied.'))
 		tphr_list[name] = nil
 	end
 end
@@ -97,7 +99,7 @@ local function tpr_accept(name, param)
 	--Check to prevent constant teleporting.
 	if not tpr_list[name]
 	and not tphr_list[name] then
-		minetest.chat_send_player(name, "Usage: /tpy allows you to accept teleport requests sent to you by other players")
+		minetest.chat_send_player(name, SL("Usage: /tpy allows you to accept teleport requests sent to you by other players"))
 		return
 	end
 
@@ -107,13 +109,13 @@ local function tpr_accept(name, param)
 		name2 = tpr_list[name]
 		source = minetest.get_player_by_name(name)
 		target = minetest.get_player_by_name(name2)
-		chatmsg = name2 .. " is teleporting to you."
+		chatmsg = name2 .. " "..SL("is teleporting to you.")
 		tpr_list[name] = nil
 	elseif tphr_list[name] then
 		name2 = tphr_list[name]
 		source = minetest.get_player_by_name(name2)
 		target = minetest.get_player_by_name(name)
-		chatmsg = "You are teleporting to " .. name2 .. "."
+		chatmsg = SL("You are teleporting to").." " .. name2 .. "."
 		tphr_list[name] = nil
 	else
 		return
@@ -125,7 +127,7 @@ local function tpr_accept(name, param)
 		return
 	end
 
-	minetest.chat_send_player(name2, "Request Accepted!")
+	minetest.chat_send_player(name2, SL("Request Accepted!"))
 	minetest.chat_send_player(name, chatmsg)
 
 	target:setpos(find_free_position_near(source:getpos()))
@@ -135,7 +137,7 @@ end
 
 if regnewpriv then
 	minetest.register_privilege("tpr_admin", {
-		description = "Permission to override teleport to other players. UNFINISHED",
+		description = SL("Permission to override teleport to other players. UNFINISHED"),
 		give_to_singleplayer = true
 	})
 end
@@ -143,27 +145,27 @@ end
 --Initalize Commands.
 
 minetest.register_chatcommand("tpr", {
-	description = "Request teleport to another player",
+	description = SL("Request teleport to another player"),
 	params = "<playername> | leave playername empty to see help message",
 	privs = {interact=true},
 	func = tpr_send
 })
 
 minetest.register_chatcommand("tphr", {
-	description = "Request player to teleport to you",
+	description = SL("Request player to teleport to you"),
 	params = "<playername> | leave playername empty to see help message",
 	privs = {interact=true},
 	func = tphr_send
 })
 
 minetest.register_chatcommand("tpy", {
-	description = "Accept teleport requests from another player",
+	description = SL("Accept teleport requests from another player"),
 	func = tpr_accept
 })
 
 minetest.register_chatcommand("tpn", {
-	description = "Deny teleport requests from another player",
+	description = SL("Deny teleport requests from another player"),
 	func = tpr_deny
 })
 
-minetest.log("info", "[Teleport Request] Teleport Request v" .. version .. " Loaded.")
+if minetest.setting_getbool("msg_loading_mods") then minetest.log("action", minetest.get_current_modname().." mod LOADED") end

@@ -15,6 +15,7 @@ areas.pos2 = {}
 minetest.register_chatcommand("select_area", {
 	params = "<ID>",
 	description = SL("Select a area by id."),
+	privs = {[areas.config.self_protection_privilege]=true},
 	func = function(name, param)
 		local id = tonumber(param)
 		if not id then
@@ -34,7 +35,7 @@ minetest.register_chatcommand("area_pos1", {
 	params = "[X Y Z|X,Y,Z]",
 	description = SL("Set area protection region position 1 to your"
 		.." location or the one specified"),
-	privs = {},
+	privs = {[areas.config.self_protection_privilege]=true},
 	func = function(name, param)
 		local pos = nil
 		local found, _, x, y, z = param:find(
@@ -61,6 +62,7 @@ minetest.register_chatcommand("area_pos2", {
 	params = "[X Y Z|X,Y,Z]",
 	description = SL("Set area protection region position 2 to your"
 		.." location or the one specified"),
+	privs = {[areas.config.self_protection_privilege]=true},
 	func = function(name, param)
 		local pos = nil
 		local found, _, x, y, z = param:find(
@@ -88,6 +90,7 @@ minetest.register_chatcommand("area_pos", {
 	params = "set/set1/set2/get",
 	description = SL("Set area protection region, position 1, or position 2"
 		.." by punching nodes, or display the region"),
+	privs = {[areas.config.self_protection_privilege]=true},
 	func = function(name, param)
 		if param == "set" then -- Set both area positions
 			areas.set_pos[name] = "pos1"

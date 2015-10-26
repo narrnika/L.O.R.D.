@@ -1,3 +1,5 @@
+local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end
+
 local safe_region_callback = {}
 local safe_region_param = {}
 
@@ -32,7 +34,8 @@ end
 
 minetest.register_chatcommand("/y", {
 	params = "",
-	description = "Confirm a pending operation",
+	description = SL("Confirm a pending operation"),
+	privs = {worldedit=true},
 	func = function(name)
 		local callback, param = safe_region_callback[name], safe_region_param[name]
 		if not callback then
@@ -53,8 +56,9 @@ minetest.register_chatcommand("/y", {
 })
 
 minetest.register_chatcommand("/n", {
+	privs = {worldedit=true},
 	params = "",
-	description = "Confirm a pending operation",
+	description = SL("Deny a pending operation"),
 	func = function(name)
 		if not safe_region_callback[name] then
 			worldedit.player_notify(name, "no operation pending")

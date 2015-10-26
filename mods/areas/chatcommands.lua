@@ -72,6 +72,7 @@ minetest.register_chatcommand("add_owner", {
 	description = SL("Give a player access to a sub-area beetween two"
 		.." positions that have already been protected,"
 		.." Use set_owner if you don't want the parent to be set."),
+	privs = {[areas.config.self_protection_privilege]=true},
 	func = function(name, param)
 		local pid, ownerName, areaName
 				= param:match('^(%d+) ([^ ]+) (.+)$')
@@ -114,6 +115,7 @@ minetest.register_chatcommand("add_owner", {
 minetest.register_chatcommand("rename_area", {
 	params = "<ID> <newName>",
 	description = SL("Rename a area that you own"),
+	privs = {[areas.config.self_protection_privilege]=true},
 	func = function(name, param)
 		local id, newName = param:match("^(%d+)%s(.+)$")
 		if not id then
@@ -171,6 +173,7 @@ minetest.register_chatcommand("find_areas", {
 
 minetest.register_chatcommand("list_areas", {
 	description = SL("List your areas, or all areas if you are an admin"),
+	privs = {[areas.config.self_protection_privilege]=true},
 	func = function(name, param)
 		local admin = minetest.check_player_privs(name, areas.adminPrivs)
 		local areaStrings = {}
@@ -190,6 +193,7 @@ minetest.register_chatcommand("list_areas", {
 minetest.register_chatcommand("recursive_remove_areas", {
 	params = "<id>",
 	description = SL("Recursively remove areas using an id"),
+	privs = {[areas.config.self_protection_privilege]=true},
 	func = function(name, param)
 		local id = tonumber(param)
 		if not id then
@@ -210,6 +214,7 @@ minetest.register_chatcommand("recursive_remove_areas", {
 minetest.register_chatcommand("remove_area", {
 	params = "<id>",
 	description = SL("Remove an area using an id"),
+	privs = {[areas.config.self_protection_privilege]=true},
 	func = function(name, param)
 		local id = tonumber(param)
 		if not id then
@@ -230,6 +235,7 @@ minetest.register_chatcommand("remove_area", {
 minetest.register_chatcommand("change_owner", {
 	params = "<ID> <NewOwner>",
 	description = SL("Change the owner of an area using it's ID"),
+	privs = {[areas.config.self_protection_privilege]=true},
 	func = function(name, param)
 		local id, newOwner = param:match("^(%d+)%s(%S+)$")
 		if not id then
@@ -257,6 +263,7 @@ minetest.register_chatcommand("change_owner", {
 minetest.register_chatcommand("area_open", {
 	params = "<ID>",
 	description = SL("Toggle an area open (anyone can interact) or closed"),
+	privs = {[areas.config.self_protection_privilege]=true},
 	func = function(name, param)
 		local id = tonumber(param)
 		if not id then
@@ -304,6 +311,7 @@ minetest.register_chatcommand("move_area", {
 
 minetest.register_chatcommand("area_info", {
 	description = SL("Get information about area configuration and usage."),
+	privs = {[areas.config.self_protection_privilege]=true},
 	func = function(name, param)
 		local lines = {}
 		local privs = minetest.get_player_privs(name)
