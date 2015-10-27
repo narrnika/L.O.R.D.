@@ -55,6 +55,7 @@ local function regen_chance()
 end
 
 local function give_stuff_dwarf(player)
+	if not minetest.setting_getbool("give_initial_stuff") then return end
 	regen_chance()
 	if chance == 1 then
 		player:get_inventory():add_item('main', 'lottores:mithrilpick')
@@ -107,6 +108,7 @@ local function give_stuff_dwarf(player)
 end
 
 local function give_stuff_elf(player)
+	if not minetest.setting_getbool("give_initial_stuff") then return end
 	regen_chance()
 	if chance <= 2 then
 		player:get_inventory():add_item('main', 'default:pick_steel')
@@ -159,6 +161,7 @@ local function give_stuff_elf(player)
 end
 
 local function give_stuff_man(player)
+	if not minetest.setting_getbool("give_initial_stuff") then return end
 	regen_chance()
 	if chance <= 2 then
 		player:get_inventory():add_item('main', 'default:pick_steel')
@@ -208,6 +211,7 @@ local function give_stuff_man(player)
 end
 
 local function give_stuff_orc(player)
+	if not minetest.setting_getbool("give_initial_stuff") then return end
 	player:get_inventory():add_item('main', 'lottweapons:orc_sword')
 	regen_chance()
 	if chance <= 2 then
@@ -235,6 +239,7 @@ local function give_stuff_orc(player)
 end
 
 local function give_stuff_hobbit(player)
+	if not minetest.setting_getbool("give_initial_stuff") then return end
 	regen_chance()
 	if chance <= 3 then
 		player:get_inventory():add_item('main', 'default:pick_stone')
