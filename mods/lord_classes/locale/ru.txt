@@ -1,0 +1,41 @@
+### init.lua ###
+Shadow	=	Тень
+Dwarf	=	Гномы
+Elf	=	Эльфы
+Man	=	Люди
+Orc	=	Орки
+Hobbit	=	Хоббиты
+
+Male	=	Муж.
+Female	=	Жен.
+
+You became a shadow-male	=	Теперь Вы - молчаливая тень
+You became a shadow-female	=	Теперь Вы - тень
+You became a orc-male	=	Теперь Вы - орк
+You became a orc-female	=	Теперь Вы - самка орка
+You became a man-male	=	Теперь Вы - мужчина
+You became a man-female	=	Теперь Вы - женщина
+You became a dwarf-male	=	Теперь Вы - гном
+You became a dwarf-female	=	Теперь Вы - гномиха
+You became a hobbit-male	=	Теперь Вы - хоббит
+You became a hobbit-female	=	Теперь Вы - хоббитянка
+You became a elf-male	=	Теперь Вы - эльф
+You became a elf-female	=	Теперь Вы - эльфийка
+
+WARNING! Your name does not correspond to the rules of the server.	=	ВНИМАНИЕ!\nВаш ник не соответствует правилам сервера!
+Please select the race you wish to be:	=	Выберите вашу расу и пол:
+
+Cancel	=	Отмена
+Ok	=	ОК
+
+Change race	=	Выбрать расу
+
+### privileges.lua ###
+A male player	=	Персонаж мужского пола
+A female player	=	Персонаж женского пола
+A dwarf player	=	Персонаж - представитель рассы гномов
+An elf player	=	Персонаж - представитель рассы эльфов
+A human player	=	Персонаж - представитель рассы людей
+An orc player	=	Персонаж - представитель рассы орков
+A hobbit player	=	Персонаж - представитель рассы хоббитов
+A shadow player	=	Персонаж - тень
