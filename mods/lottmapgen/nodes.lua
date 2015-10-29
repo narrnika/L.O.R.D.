@@ -275,8 +275,7 @@ minetest.register_node("lottmapgen:default_grass", {
 	drop = 'default:dirt',
 	sounds = default.node_sound_dirt_defaults()
 })
-
-minetest.register_abm({
+minetest.register_abm({--превращение дефолтной земли_с_травой в такую же, как вокруг
 	nodenames = {"default:dirt_with_grass"},
 	interval = 2,
 	chance = 1,
@@ -305,8 +304,7 @@ minetest.register_abm({
 		minetest.set_node(pos, {name = curr_type })
         end
 })
-
-minetest.register_abm({
+minetest.register_abm({--превращение земли_с_травой в зелю, если выше стоит блок, перекрывающий свет
 	nodenames = {"group:lottmapgen_grass"},
 	interval = 2,
 	chance = 20,

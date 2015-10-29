@@ -47,7 +47,7 @@ minetest.register_node("lottmapgen:angmar_chest_spawner", {
 	groups = {oddly_breakable_by_hand = 1, not_in_creative_inventory=1},
 })
 
-minetest.register_abm({
+minetest.register_abm({--генерация сундука со случайным содержимым
         nodenames = {"lottmapgen:hobbit_chest_spawner"},
         interval = 9,
         chance = 1,
@@ -67,7 +67,7 @@ minetest.register_abm({
                 end
         end,
 })
-minetest.register_abm({
+minetest.register_abm({--генерация сундука со случайным содержимым
         nodenames = {"lottmapgen:gondor_chest_spawner"},
         interval = 9,
         chance = 1,
@@ -87,7 +87,7 @@ minetest.register_abm({
                 end
         end,
 })
-minetest.register_abm({
+minetest.register_abm({--генерация сундука со случайным содержимым
         nodenames = {"lottmapgen:rohan_chest_spawner"},
         interval = 9,
         chance = 1,
@@ -107,7 +107,7 @@ minetest.register_abm({
                 end
         end,
 })
-minetest.register_abm({
+minetest.register_abm({--генерация сундука со случайным содержимым
         nodenames = {"lottmapgen:elfloth_chest_spawner"},
         interval = 9,
         chance = 1,
@@ -127,7 +127,7 @@ minetest.register_abm({
                 end
         end,
 })
-minetest.register_abm({
+minetest.register_abm({--генерация сундука со случайным содержимым
         nodenames = {"lottmapgen:elfmirk_chest_spawner"},
         interval = 9,
         chance = 1,
@@ -147,7 +147,7 @@ minetest.register_abm({
                 end
         end,
 })
-minetest.register_abm({
+minetest.register_abm({--генерация сундука со случайным содержимым
         nodenames = {"lottmapgen:mordor_chest_spawner"},
         interval = 9,
         chance = 1,
@@ -167,7 +167,7 @@ minetest.register_abm({
                 end
         end,
 })
-minetest.register_abm({
+minetest.register_abm({--генерация сундука со случайным содержимым
         nodenames = {"lottmapgen:angmar_chest_spawner"},
         interval = 9,
         chance = 1,

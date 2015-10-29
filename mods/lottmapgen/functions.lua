@@ -816,7 +816,7 @@ minetest.register_node("lottmapgen:mirktreegen", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_abm({
+minetest.register_abm({--рост дерева из генерирующего блока
 	nodenames = {"lottmapgen:mallorngen"},
 	interval = 1,
 	chance = 1,
@@ -825,7 +825,7 @@ minetest.register_abm({
      end,
 })
 
-minetest.register_abm({
+minetest.register_abm({--рост дерева из генерирующего блока
 	nodenames = {"lottmapgen:mirktreegen"},
 	interval = 1,
 	chance = 1,
@@ -834,7 +834,7 @@ minetest.register_abm({
      end,
 })
 
-minetest.register_abm({
+minetest.register_abm({--рост дерева из генерирующего блока
     nodenames = {"lottmapgen:beechgen"},
     	interval = 1,
 	chance = 1,
@@ -923,7 +923,7 @@ function lottmapgen_mirktreetest(pos)
 		end
 end
 
-minetest.register_abm({
+minetest.register_abm({--рост дерева из генерирующего блока
     nodenames = {"lottmapgen:mirktest"},
     	interval = 1,
 	chance = 1,

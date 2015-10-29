@@ -4,21 +4,24 @@ local areas_mod = minetest.get_modpath("areas")
 local protect_houses = minetest.setting_getbool("protect_structures") or true
 
 local lottmapgen_list = {
-    { "Angmar Fort", "angmarfort"},
-    { "Gondor Fort", "gondorfort"},
-    { "Rohan Fort", "rohanfort"},
-    { "Orc Fort", "orcfort"},
-    { "Mallorn House", "mallornhouse"},
-    { "Lorien House", "lorienhouse"}, --Different version of "mallornhouse", made by fireuser
-    { "Mirkwood House", "mirkhouse"},
-    { "Hobbit Hole", "hobbithole"},
+    { "Angmar Fort", "angmarfort", "lottblocks_angmar_chest_top.png"},
+    { "Gondor Fort", "gondorfort", "lottblocks_gondor_chest_top.png"},
+    { "Rohan Fort", "rohanfort", "lottblocks_rohan_chest_top.png"},
+    { "Orc Fort", "orcfort", "lottblocks_mordor_chest_top.png"},
+    { "Mallorn House", "mallornhouse", "lottblocks_elf_chest_top.png"},
+--    { "Lorien House", "lorienhouse", "lottblocks_elf_chest_top.png"}, --Different version of "mallornhouse", made by fireuser
+    { "Mirkwood House", "mirkhouse", "lottblocks_elf_chest_top.png"},
+    { "Hobbit Hole", "hobbithole", "lottblocks_hobbit_chest_top.png"},
 }
 
 for i in ipairs(lottmapgen_list) do
     local builddesc = lottmapgen_list[i][1]
     local build = lottmapgen_list[i][2]
+    local buildtiles = lottmapgen_list[i][3]    
+    print(buildtiles)
     minetest.register_node("lottmapgen:"..build, {
         description = builddesc,
+        inventory_image = buildtiles,
         drawtype = "glasslike",
         walkable = false,
         tiles = {"lottother_air.png"},
@@ -28,6 +31,8 @@ for i in ipairs(lottmapgen_list) do
         groups = {not_in_creative_inventory = 1},
         on_place = function(itemstack, placer, pointed_thing)
             if pointed_thing.above then
+				minetest.place_schematic(pointed_thing.above, minetest.get_modpath("lottmapgen").."/schems/"..build..".mts", "random", {}, true)
+--[[
                 local file = io.open(minetest.get_modpath("lottmapgen").."/schems/"..build..".we")
                 local value = file:read("*a")
                 file:close()
@@ -36,13 +41,15 @@ for i in ipairs(lottmapgen_list) do
                 p.z = p.z - 2
                 local count = worldedit.deserialize(pointed_thing.above, value)
                 itemstack:take_item()
+]]--
+                itemstack:take_item()
             end
             return itemstack
         end,
     })
 end
-
-minetest.register_abm({
+--[[
+minetest.register_abm({--генерация постройки из блока
     nodenames = {"lottmapgen:lorienhouse"},
     interval = 1,
 	chance = 1,
@@ -64,13 +71,16 @@ minetest.register_abm({
           end
      end,
 })
+]]--
 
-minetest.register_abm({
+minetest.register_abm({--генерация постройки из блока
     nodenames = {"lottmapgen:mallornhouse"},
     interval = 1,
 	chance = 1,
      action = function(pos)
           if pos then
+				minetest.place_schematic(pos, minetest.get_modpath("lottmapgen").."/schems/mallornhouse.mts", "random", {}, true)
+--[[
                local file = io.open(minetest.get_modpath("lottmapgen").."/schems/mallornhouse.we")
                local value = file:read("*a")
                file:close()
@@ -84,16 +94,19 @@ minetest.register_abm({
                     areas:add("Elven Guard", "Elven House", pos1, pos2, nil)
                     areas:save()
                end
+]]--
           end
      end,
 })
 
-minetest.register_abm({
+minetest.register_abm({--генерация постройки из блока
     nodenames = {"lottmapgen:angmarfort"},
     	interval = 5,
 	chance = 1,
      action = function(pos)
           if pos then
+				minetest.place_schematic(pos, minetest.get_modpath("lottmapgen").."/schems/angmarfort.mts", "random", {}, true)
+--[[
                local file = io.open(minetest.get_modpath("lottmapgen").."/schems/angmarfort.we")
                local value = file:read("*a")
                file:close()
@@ -107,16 +120,19 @@ minetest.register_abm({
                    areas:add("Orc Guard", "Angmar Fort", pos1, pos2, nil)
                    areas:save()
                end
+]]--
           end
      end,
 })
 
-minetest.register_abm({
+minetest.register_abm({--генерация постройки из блока
     nodenames = {"lottmapgen:gondorfort"},
 	interval = 1,
 	chance = 1,
     action = function(pos)
         if pos then
+				minetest.place_schematic(pos, minetest.get_modpath("lottmapgen").."/schems/gondorfort.mts", "random", {}, true)
+--[[
                local file = io.open(minetest.get_modpath("lottmapgen").."/schems/gondorfort.we")
                local value = file:read("*a")
                file:close()
@@ -130,16 +146,19 @@ minetest.register_abm({
                    areas:add("Gondor Guard", "Gondor Castle", pos1, pos2, nil)
                    areas:save()
                end
+]]--
           end
      end,
 })
 
-minetest.register_abm({
+minetest.register_abm({--генерация постройки из блока
     nodenames = {"lottmapgen:hobbithole"},
     	interval = 1,
 	chance = 1,
      action = function(pos)
           if pos then
+				minetest.place_schematic(pos, minetest.get_modpath("lottmapgen").."/schems/hobbithole.mts", "random", {}, true)
+--[[
                local file = io.open(minetest.get_modpath("lottmapgen").."/schems/hobbithole.we")
                local value = file:read("*a")
                file:close()
@@ -153,16 +172,19 @@ minetest.register_abm({
                    areas:add("Hobbit Family", "Hobbit Hole", pos1, pos2, nil)
                    areas:save()
                end
+]]--
           end
      end,
 })
 
-minetest.register_abm({
+minetest.register_abm({--генерация постройки из блока
     nodenames = {"lottmapgen:orcfort"},
     interval = 1,
 	chance = 1,
      action = function(pos)
           if pos then
+				minetest.place_schematic(pos, minetest.get_modpath("lottmapgen").."/schems/orcfort.mts", "random", {}, true)
+--[[
                local file = io.open(minetest.get_modpath("lottmapgen").."/schems/orcfort.we")
                local value = file:read("*a")
                file:close()
@@ -176,16 +198,19 @@ minetest.register_abm({
                    areas:add("Orc Guard", "Orc Fort", pos1, pos2, nil)
                    areas:save()
                end
+]]--
           end
      end,
 })
 
-minetest.register_abm({
+minetest.register_abm({--генерация постройки из блока
     nodenames = {"lottmapgen:mirkhouse"},
     interval = 5,
 	chance = 1,
      action = function(pos)
           if pos then
+				minetest.place_schematic(pos, minetest.get_modpath("lottmapgen").."/schems/mirkhouse.mts", "random", {}, true)
+--[[
                local file = io.open(minetest.get_modpath("lottmapgen").."/schems/mirkhouse.we")
                local value = file:read("*a")
                file:close()
@@ -199,16 +224,19 @@ minetest.register_abm({
                    areas:add("Elven Guard", "Elven House", pos1, pos2, nil)
                    areas:save()
                end
+]]--
           end
      end,
 })
 
-minetest.register_abm({
+minetest.register_abm({--генерация постройки из блока
     nodenames = {"lottmapgen:rohanfort"},
     interval = 1,
 	chance = 1,
      action = function(pos)
           if pos then
+				minetest.place_schematic(pos, minetest.get_modpath("lottmapgen").."/schems/rohanfort.mts", "random", {}, true)
+--[[
                local file = io.open(minetest.get_modpath("lottmapgen").."/schems/rohanfort.we")
                local value = file:read("*a")
                file:close()
@@ -222,11 +250,13 @@ minetest.register_abm({
                    areas:add("Rohan Guard", "Rohan Fort", pos1, pos2, nil)
                    areas:save()
                end
+]]--
           end
      end,
 })
 
-minetest.register_abm({
+--[[
+minetest.register_abm({--удаление блоков, генерирующих постройки
 	nodenames = {"lottmapgen:gondorfort","lottmapgen:hobbithole","lottmapgen:orcfort","lottmapgen:rohanfort","lottmapgen:mallornhouse"},
 	interval = 4,
 	chance = 1,
@@ -235,7 +265,7 @@ minetest.register_abm({
 	end,
 })
 
-minetest.register_abm({
+minetest.register_abm({--удаление блоков, генерирующих постройки
 	nodenames = {"lottmapgen:angmarfort","lottmapgen:mirkhouse"},
 	interval = 8,
 	chance = 1,
@@ -243,3 +273,4 @@ minetest.register_abm({
 		minetest.env:remove_node(pos)
 	end,
 })
+]]--
