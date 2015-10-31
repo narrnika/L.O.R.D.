@@ -18,5 +18,6 @@ Marble Pedestal	=	Marble Pedestal
 Marble Brick Pedestal	=	Marble Brick Pedestal
 Orc Brick Pedestal	=	Orc Brick Pedestal
 
-Item frame (owned by	=	Item frame (owned by
-Pedestal (owned by	=	Pedestal (owned by
+Item frame	=	Item frame
+Pedestal	=	Pedestal
+(owned by	=	(owned by

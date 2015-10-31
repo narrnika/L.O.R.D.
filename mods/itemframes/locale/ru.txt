@@ -18,5 +18,6 @@ Marble Pedestal	=	Мраморный пьедестал
 Marble Brick Pedestal	=	Пьедестал из мраморного кирпича
 Orc Brick Pedestal	=	Пьедестал из оркского камня
 
-Item frame (owned by	=	Рамка (только для
-Pedestal (owned by	=	Пьедестал (только для
+Item frame	=	Рамка
+Pedestal	=	Пьедестал
+(owned by	=	(только для
