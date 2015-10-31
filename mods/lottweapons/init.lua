@@ -283,7 +283,7 @@ minetest.register_tool("lottweapons:galvorn_warhammer", {
 		},
 		damage_groups = {fleshy=8},
 	},
-	groups = {forbidden=1, galvorn=1},
+	groups = {forbidden=1, galvorn_item=1},
 })
 
 minetest.register_tool("lottweapons:mithril_warhammer", {
@@ -441,7 +441,7 @@ minetest.register_tool("lottweapons:galvorn_spear", {
 		},
 		damage_groups = {fleshy=7},
 	},
-	groups = {forbidden=1, tin_item = 1},
+	groups = {forbidden=1, galvorn_item=1},
 })
 
 minetest.register_tool("lottweapons:mithril_spear", {
