@@ -22,13 +22,12 @@ You became a hobbit-female	=	You became a hobbit-female
 You became a elf-male	=	You became a elf-male
 You became a elf-female	=	You became a elf-female
 
-WARNING! Your name does not correspond to the rules of the server.	=	WARNING!\nYour name does not correspond to the rules of the server.
 Please select the race you wish to be:	=	Please select the race you wish to be:
 
 Cancel	=	Cancel
 Ok	=	Ok
 
-Change race	=	Change race
+Change the race of any player	=	Change the race of any player
 
 ### privileges.lua ###
 A male player	=	A male player

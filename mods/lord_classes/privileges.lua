@@ -32,3 +32,7 @@ minetest.register_privilege("GAMEshadow", {
 	description = SL("A shadow player"),
 	give_to_singleplayer = false,
 })
+minetest.register_privilege("race", {
+	description = SL("Change race"),
+	give_to_singleplayer = false,
+})

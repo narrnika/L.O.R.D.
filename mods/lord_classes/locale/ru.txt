@@ -9,26 +9,32 @@ Hobbit	=	Хоббиты
 Male	=	Муж.
 Female	=	Жен.
 
-You became a shadow-male	=	Теперь Вы - молчаливая тень
-You became a shadow-female	=	Теперь Вы - тень
-You became a orc-male	=	Теперь Вы - орк
-You became a orc-female	=	Теперь Вы - самка орка
-You became a man-male	=	Теперь Вы - мужчина
-You became a man-female	=	Теперь Вы - женщина
-You became a dwarf-male	=	Теперь Вы - гном
-You became a dwarf-female	=	Теперь Вы - гномиха
-You became a hobbit-male	=	Теперь Вы - хоббит
-You became a hobbit-female	=	Теперь Вы - хоббитянка
-You became a elf-male	=	Теперь Вы - эльф
-You became a elf-female	=	Теперь Вы - эльфийка
+You became a shadow-male	=	Теперь Вы - молчаливая тень.
+You became a shadow-female	=	Теперь Вы - тень.
+You became a orc-male	=	Теперь Вы - орк.
+You became a orc-female	=	Теперь Вы - самка орка.
+You became a man-male	=	Теперь Вы - мужчина.
+You became a man-female	=	Теперь Вы - женщина.
+You became a dwarf-male	=	Теперь Вы - гном.
+You became a dwarf-female	=	Теперь Вы - гномиха.
+You became a hobbit-male	=	Теперь Вы - хоббит.
+You became a hobbit-female	=	Теперь Вы - хоббитянка.
+You became a elf-male	=	Теперь Вы - эльф.
+You became a elf-female	=	Теперь Вы - эльфийка.
 
-WARNING! Your name does not correspond to the rules of the server.	=	ВНИМАНИЕ!\nВаш ник не соответствует правилам сервера!
-Please select the race you wish to be:	=	Выберите вашу расу и пол:
+Please select the race you wish to be:	=	Выберите расу и пол для Вашего персонажа.\nЕсли Вы не сделаете выбор - персонаж будет тенью,\nсможет летать и проходить сквозь стены,\nно не сможет ни копать, ни строить;\nэтот выбор будет предложен Вам снова при входе в игру.
 
 Cancel	=	Отмена
 Ok	=	ОК
 
-Change race	=	Выбрать расу
+Change the race of any player	=	Изменить расу и пол любому игроку
+fail_message_1	=	Ошибка: не введено никаких параметров
+fail_message_2	=	Ошибка: недостаточно данных
+fail_message_3	=	Ошибка: неверное имя игрока
+fail_message_4	=	Ошибка: неверное название расы (доступны
+fail_message_5	=	Ошибка: неверное название пола (доступны male, female)
+ok_message_1	=	Вы успешно изменили расу/пол для игрока
+ok_message_2	=	Вам изменили расу/пол!
 
 ### privileges.lua ###
 A male player	=	Персонаж мужского пола
@@ -39,3 +45,4 @@ A human player	=	Персонаж - представитель рассы люд
 An orc player	=	Персонаж - представитель рассы орков
 A hobbit player	=	Персонаж - представитель рассы хоббитов
 A shadow player	=	Персонаж - тень
+Change race	=	Возможность изменять расу и пол любому игроку
