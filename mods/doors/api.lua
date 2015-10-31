@@ -396,7 +396,7 @@ function doors.register_trapdoor(name, def)
 		fixed = {-0.5, -0.5, 0.4, 0.5, 0.5, 0.5}
 	}
 	def_opened.tiles = { def.tile_side, def.tile_side, def.tile_side, def.tile_side,
-		def.tile_front, def.tile_front }
+		def.tile_front.."^[transformR180", def.tile_front.."^[transformR180" }
 	def_opened.drop = name_closed
 	def_opened.groups.not_in_creative_inventory = 1
 
