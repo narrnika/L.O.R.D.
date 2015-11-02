@@ -1164,7 +1164,7 @@ minetest.register_node("default:furnace_active", {
 		if listname == "fuel" then
 			if minetest.get_craft_result({method="fuel",width=1,items={stack}}).time ~= 0 then
 				if inv:is_empty("src") then
-					meta:set_string("infotext","Furnace is empty")
+					meta:set_string("infotext",SL("Furnace is empty"))
 				end
 				return stack:get_count()
 			else
@@ -1183,7 +1183,7 @@ minetest.register_node("default:furnace_active", {
 		if to_list == "fuel" then
 			if minetest.get_craft_result({method="fuel",width=1,items={stack}}).time ~= 0 then
 				if inv:is_empty("src") then
-					meta:set_string("infotext","Furnace is empty")
+					meta:set_string("infotext",SL("Furnace is empty"))
 				end
 				return count
 			else
@@ -1284,7 +1284,7 @@ minetest.register_abm({
 
 		if cooked.item:is_empty() then
 			if was_active then
-				meta:set_string("infotext","Furnace is empty")
+				meta:set_string("infotext",SL("Furnace is empty"))
 				swap_node(pos,"default:furnace")
 				meta:set_string("formspec", default.furnace_inactive_formspec)
 			end
