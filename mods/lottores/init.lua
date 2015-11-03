@@ -114,7 +114,7 @@ minetest.register_node("lottores:red_gem_ore", {
 })
 
 -- Ores Spawning
-
+--[[
 minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "lottores:limestone_ore",
@@ -289,6 +289,7 @@ minetest.register_ore({
 	height_min     = -31000,
 	height_max     = -256,
 })
+]]--
 
 -- Craft Items
 

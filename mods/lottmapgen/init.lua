@@ -1,3 +1,4 @@
+--[[
 -- paragenv7 0.3.1 by paramat
 -- For latest stable Minetest and back to 0.4.8
 -- Depends default
@@ -531,6 +532,10 @@ end)
 
 dofile(minetest.get_modpath("lottmapgen").."/schematics.lua")
 dofile(minetest.get_modpath("lottmapgen").."/deco.lua")
+dofile(minetest.get_modpath("lottmapgen").."/chests.lua")
+]]--
+
+dofile(minetest.get_modpath("lottmapgen").."/nodes.lua")
 dofile(minetest.get_modpath("lottmapgen").."/chests.lua")
 
 if minetest.setting_getbool("msg_loading_mods") then minetest.log("action", minetest.get_current_modname().." mod LOADED") end

@@ -4,7 +4,7 @@ local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s en
 -- See README.txt for licensing and other information.
 
 -- Map Generation
-dofile(minetest.get_modpath("flowers").."/mapgen.lua")
+--dofile(minetest.get_modpath("flowers").."/mapgen.lua")
 
 -- Aliases for original flowers mod
 minetest.register_alias("flowers:flower_dandelion_white", "flowers:dandelion_white")
