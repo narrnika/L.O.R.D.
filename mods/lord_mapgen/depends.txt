@@ -1,0 +1,4 @@
+default
+lottmapgen
+lottplants
+lottores

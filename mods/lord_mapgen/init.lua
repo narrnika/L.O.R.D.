@@ -14,4 +14,8 @@ minetest.register_on_mapgen_init(function(mgparams)
 	SEED = new_mgparams.seed
 end)
 
+dofile(minetest.get_modpath(minetest.get_current_modname()).."/".."bioms.lua")
+dofile(minetest.get_modpath(minetest.get_current_modname()).."/".."decorations.lua")
+dofile(minetest.get_modpath(minetest.get_current_modname()).."/".."ores.lua")
+
 if minetest.setting_getbool("msg_loading_mods") then minetest.log("action", minetest.get_current_modname().." mod LOADED") end
