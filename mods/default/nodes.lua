@@ -845,8 +845,8 @@ function default.get_chest_formspec(pos,image)
 		"list[current_player;main;0,5;8,4;]"..
 		"listring[nodemeta:".. spos .. ";main]"..
 		"listring[current_player;main]"..
-    	"background[-0.5,-0.65;9,10.35;"..image.."]"..
-    	"listcolors[#606060AA;#888;#141318;#30434C;#FFF]"
+		"background[-0.5,-0.65;9,10.35;"..image.."]"..
+		"listcolors[#606060AA;#888;#141318;#30434C;#FFF]"
 	return formspec
 end
 
@@ -871,29 +871,17 @@ minetest.register_node("default:chest", {
 		local inv = meta:get_inventory()
 		return inv:is_empty("main")
 	end,
-     allow_metadata_inventory_put = function(pos, listname, index, stack, player)
+	allow_metadata_inventory_put = function(pos, listname, index, stack, player)
 		local meta = minetest.env:get_meta(pos)
 		local inv = meta:get_inventory()
-		if listname == "main" then
-			if stack:get_definition().groups["book"] == 1 then
-				return 0
-               else
-                    return 65535
-			end
-		end
+		if listname == "main" then return 65535 end
 	end,
-     allow_metadata_inventory_move = function(pos, from_list, from_index, to_list, to_index, count, player)
+	allow_metadata_inventory_move = function(pos, from_list, from_index, to_list, to_index, count, player)
 		local meta = minetest.env:get_meta(pos)
 		local inv = meta:get_inventory()
 		local stack = inv:get_stack(from_list, from_index)
 		local to_stack = inv:get_stack(to_list, to_index)
-		if to_list == "main" then
-			if stack:get_definition().groups["book"] == 1 and to_stack:is_empty() then
-				return 0
-               else
-                    return 65535
-			end
-		end
+		if to_list == "main" then return 65535 end
 	end,
 	on_metadata_inventory_move = function(pos, from_list, from_index, to_list, to_index, count, player)
 		minetest.log("action", player:get_player_name()..
@@ -961,13 +949,7 @@ minetest.register_node("default:chest_locked", {
           local inv = meta:get_inventory()
 		local stack = inv:get_stack(from_list, from_index)
 		local to_stack = inv:get_stack(to_list, to_index)
-		if to_list == "main" then
-			if stack:get_definition().groups["book"] == 1 and to_stack:is_empty() then
-				return 0
-               else
-                    return 65535
-			end
-		end
+		if to_list == "main" then return 65535 end
 		return count
 	end,
     allow_metadata_inventory_put = function(pos, listname, index, stack, player)
@@ -979,14 +961,8 @@ minetest.register_node("default:chest_locked", {
 					minetest.pos_to_string(pos))
 			return 0
 		end
-          local inv = meta:get_inventory()
-		if listname == "main" then
-			if stack:get_definition().groups["book"] == 1 then
-				return 0
-               else
-                    return 65535
-			end
-		end
+		local inv = meta:get_inventory()
+		if listname == "main" then return 65535 end
 		return stack:get_count()
 	end,
     allow_metadata_inventory_take = function(pos, listname, index, stack, player)
