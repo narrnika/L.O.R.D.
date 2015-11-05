@@ -7,9 +7,13 @@ minetest.register_craftitem(":default:torch", {
 	wield_image = "default_torch_on_floor.png",
 	wield_scale = {x = 1, y = 1, z = 1 + 1/16},
 	liquids_pointable = false,
-   	on_place = function(itemstack, placer, pointed_thing)
+	on_place = function(itemstack, placer, pointed_thing)
 		local above = pointed_thing.above
 		local under = pointed_thing.under
+		local nu = minetest.get_node(under)
+		if minetest.registered_nodes[nu.name].on_rightclick then
+			return minetest.registered_nodes[nu.name].on_rightclick(under, nu, placer, itemstack)
+		end
 		local wdir = minetest.dir_to_wallmounted({x = under.x - above.x, y = under.y - above.y, z = under.z - above.z})
 		if wdir < 1 and not torches.enable_ceiling then
 			return itemstack
@@ -117,9 +121,13 @@ minetest.register_craftitem(":lottother:blue_torch", {
 	wield_image = "lottother_blue_torch_floor.png",
 	wield_scale = {x = 1, y = 1, z = 1 + 1/16},
 	liquids_pointable = false,
-   	on_place = function(itemstack, placer, pointed_thing)
+	on_place = function(itemstack, placer, pointed_thing)
 		local above = pointed_thing.above
 		local under = pointed_thing.under
+		local nu = minetest.get_node(under)
+		if minetest.registered_nodes[nu.name].on_rightclick then
+			return minetest.registered_nodes[nu.name].on_rightclick(under, nu, placer, itemstack)
+		end
 		local wdir = minetest.dir_to_wallmounted({x = under.x - above.x, y = under.y - above.y, z = under.z - above.z})
 		if wdir < 1 and not torches.enable_ceiling then
 			return itemstack
@@ -219,9 +227,13 @@ minetest.register_craftitem(":lottother:orc_torch", {
 	wield_scale = {x = 1, y = 1, z = 1 + 1/16},
 	groups = {wooden = 1},
 	liquids_pointable = false,
-   	on_place = function(itemstack, placer, pointed_thing)
+	on_place = function(itemstack, placer, pointed_thing)
 		local above = pointed_thing.above
 		local under = pointed_thing.under
+		local nu = minetest.get_node(under)
+		if minetest.registered_nodes[nu.name].on_rightclick then
+			return minetest.registered_nodes[nu.name].on_rightclick(under, nu, placer, itemstack)
+		end
 		local wdir = minetest.dir_to_wallmounted({x = under.x - above.x, y = under.y - above.y, z = under.z - above.z})
 		if wdir < 1 and not torches.enable_ceiling then
 			return itemstack

@@ -4,6 +4,11 @@ minetest.register_craftitem("lottfarming:melon_seed", {
 	description = SL("Melon Seed"),
 	inventory_image = "lottfarming_melon_seed.png",
 	on_place = function(itemstack, placer, pointed_thing)
+		local ptu = pointed_thing.under
+		local nu = minetest.get_node(ptu)
+		if minetest.registered_nodes[nu.name].on_rightclick then
+			return minetest.registered_nodes[nu.name].on_rightclick(ptu, nu, placer, itemstack)
+		end
 		return place_seed(itemstack, placer, pointed_thing, "lottfarming:melon_1")
 	end,
 })

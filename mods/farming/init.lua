@@ -328,6 +328,11 @@ minetest.register_craftitem("farming:seed_wheat", {
 	description = SL("Wheat Seed"),
 	inventory_image = "farming_wheat_seed.png",
 	on_place = function(itemstack, placer, pointed_thing)
+		local ptu = pointed_thing.under
+		local nu = minetest.get_node(ptu)
+		if minetest.registered_nodes[nu.name].on_rightclick then
+			return minetest.registered_nodes[nu.name].on_rightclick(ptu, nu, placer, itemstack)
+		end
 		return place_seed(itemstack, placer, pointed_thing, "farming:wheat_1")
 	end,
 })
@@ -428,6 +433,11 @@ minetest.register_craftitem("farming:seed_cotton", {
 	description = SL("Cotton Seed"),
 	inventory_image = "farming_cotton_seed.png",
 	on_place = function(itemstack, placer, pointed_thing)
+		local ptu = pointed_thing.under
+		local nu = minetest.get_node(ptu)
+		if minetest.registered_nodes[nu.name].on_rightclick then
+			return minetest.registered_nodes[nu.name].on_rightclick(ptu, nu, placer, itemstack)
+		end
 		return place_seed(itemstack, placer, pointed_thing, "farming:cotton_1")
 	end,
 })
