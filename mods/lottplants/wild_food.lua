@@ -149,12 +149,16 @@ minetest.register_node("lottplants:mushroom_wild", {
 	sunlight_propagates = true,
 	paramtype = "light",
 	drop = {
-		max_items = 5,
+		max_items = 4,
 		items = {
-			{ items = {'lottfarming:brown_mushroom'} },
-			{ items = {'lottfarming:red_mushroom'}, rarity = 5},
-			{ items = {'lottfarming:blue_mushroom'}, rarity = 10},
-			{ items = {'lottfarming:green_mushroom'}, rarity = 20}
+			{ items = {'lottfarming:brown_mushroom'}, rarity = 2},
+			{ items = {'lottfarming:brown_mushroom_spore'}, rarity = 2},
+			{ items = {'lottfarming:red_mushroom'}, rarity = 4},
+			{ items = {'lottfarming:red_mushroom_spore'}, rarity = 4},
+			{ items = {'lottfarming:blue_mushroom'}, rarity = 6},
+			{ items = {'lottfarming:blue_mushroom_spore'}, rarity = 6},
+			{ items = {'lottfarming:green_mushroom'}, rarity = 8},
+			{ items = {'lottfarming:green_mushroom_spore'}, rarity = 8}
 		}
 	},
 	walkable = false,
