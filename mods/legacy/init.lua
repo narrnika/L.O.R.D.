@@ -152,4 +152,8 @@ minetest.register_entity(":npcf:nametag", {
     end
 })
 
+minetest.register_alias("lottarmor:helmet_rohan", "lottarmor:helmet_steel")
+minetest.register_alias("lottarmor:chestplate_rohan", "lottarmor:chestplate_steel")
+minetest.register_alias("lottarmor:boots_rohan", "lottarmor:boots_steel")
+
 if minetest.setting_getbool("msg_loading_mods") then minetest.log("action", minetest.get_current_modname().." mod LOADED") end
