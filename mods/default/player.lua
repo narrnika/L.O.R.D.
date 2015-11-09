@@ -147,6 +147,12 @@ minetest.register_on_joinplayer(function(player)
 
 	player:hud_set_hotbar_image("gui_hotbar.png")
 	player:hud_set_hotbar_selected_image("gui_hotbar_selected.png")
+
+	if minetest.setting_getbool("sneak_glitch") then
+		player:set_physics_override({sneak_glitch=true})
+	else
+		player:set_physics_override({sneak_glitch=false})
+	end
 end)
 
 minetest.register_on_leaveplayer(function(player)
