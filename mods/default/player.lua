@@ -153,6 +153,12 @@ minetest.register_on_joinplayer(function(player)
 	else
 		player:set_physics_override({sneak_glitch=false})
 	end
+
+	if minetest.setting_getbool("sneak") then
+		player:set_physics_override({sneak=true})
+	else
+		player:set_physics_override({sneak=false})
+	end
 end)
 
 minetest.register_on_leaveplayer(function(player)
