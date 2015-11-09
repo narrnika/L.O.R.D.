@@ -20,13 +20,15 @@ end
 
 minetest.register_node("bones:bones", {
 	description = SL("Bones Block"),
-	tiles = {
-		"bones_top.png",
-		"bones_bottom.png",
-		"bones_side.png",
-		"bones_side.png",
-		"bones_rear.png",
-		"bones_front.png"
+	drawtype = "mesh",
+	mesh = "bones.obj",
+	tiles = {"character.png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.3, -0.5, -0.7, 0.3, -0.2, 0.7},
 	},
 	paramtype2 = "facedir",
 	groups = {dig_immediate=3},
@@ -123,9 +125,15 @@ minetest.register_on_dieplayer(function(player)
 	pos.x = math.floor(pos.x+0.5)
 	pos.y = math.floor(pos.y+0.5)
 	pos.z = math.floor(pos.z+0.5)
+	
+	while minetest.registered_nodes[minetest.get_node(pos).name].groups["protector"] do
+		pos.y = pos.y+1
+	end
+	
 	local param2 = minetest.dir_to_facedir(player:get_look_dir())
 	
 	local nn = minetest.get_node(pos).name
+	
 	if minetest.registered_nodes[nn].can_dig and
 		not minetest.registered_nodes[nn].can_dig(pos, player) then
 		local player_inv = player:get_inventory()
