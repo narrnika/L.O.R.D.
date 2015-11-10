@@ -19,6 +19,9 @@ function areas:canInteract(pos, name)
 	if minetest.check_player_privs(name, self.adminPrivs) then
 		return true
 	end
+	if minetest.get_node(pos).name == "bones:bones" then
+		return true
+	end
 	local owned = false
 	for _, area in pairs(self:getAreasAtPos(pos)) do
 		if area.owner == name or area.open then

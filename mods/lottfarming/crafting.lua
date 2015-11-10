@@ -25,10 +25,8 @@ minetest.register_node("lottfarming:decay_tree", {
 	drop = "default:dirt",
 })
 
-local function decaying_wood(pos, inv, p)
-	if pos == nil then
-		return false
-	end
+local function decaying_wood(pos)
+	if pos == nil then return false end
 	local node = minetest.env:get_node(pos)
 	local name = node.name
 	local above = minetest.env:get_node({x=pos.x, y=pos.y+1, z=pos.z})
@@ -42,12 +40,78 @@ local function decaying_wood(pos, inv, p)
 	return false
 end
 
+local function growgen(pos)
+	if pos == nil then return false end
+	name = minetest.env:get_node(pos).name
+	local farm_list = {
+		["lottfarming:turnips_1"] = "lottfarming:turnips_2",
+		["lottfarming:turnips_2"] = "lottfarming:turnips_3",
+		["lottfarming:turnips_3"] = "lottfarming:turnips_4",
+		["lottfarming:athelas_1"] = "lottfarming:athelas_2",
+		["lottfarming:athelas_2"] = "lottfarming:athelas_3",
+		["lottfarming:barley_1"] = "lottfarming:barley_2",
+		["lottfarming:barley_2"] = "lottfarming:barley_3",
+		["lottfarming:berries_1"] = "lottfarming:berries_2",
+		["lottfarming:berries_2"] = "lottfarming:berries_3",
+		["lottfarming:berries_3"] = "lottfarming:berries_4",
+		["lottfarming:blue_mushroom_1"] = "lottfarming:blue_mushroom_2",
+		["lottfarming:blue_mushroom_2"] = "lottfarming:blue_mushroom_3",
+		["lottfarming:blue_mushroom_3"] = "lottfarming:blue_mushroom_4",
+		["lottfarming:brown_mushroom_1"] = "lottfarming:brown_mushroom_2",
+		["lottfarming:brown_mushroom_2"] = "lottfarming:brown_mushroom_3",
+		["lottfarming:brown_mushroom_3"] = "lottfarming:brown_mushroom_4",
+		["lottfarming:cabbage_1"] = "lottfarming:cabbage_2",
+		["lottfarming:cabbage_2"] = "lottfarming:cabbage_3",
+		["lottfarming:green_mushroom_1"] = "lottfarming:green_mushroom_2",
+		["lottfarming:green_mushroom_2"] = "lottfarming:green_mushroom_3",
+		["lottfarming:green_mushroom_3"] = "lottfarming:green_mushroom_4",
+		["lottfarming:melon_1"] = "lottfarming:melon_2",
+		["lottfarming:melon_2"] = "lottfarming:melon_3",
+		["lottfarming:pipeweed_1"] = "lottfarming:pipeweed_2",
+		["lottfarming:pipeweed_2"] = "lottfarming:pipeweed_3",
+		["lottfarming:pipeweed_3"] = "lottfarming:pipeweed_4",
+		["lottfarming:potato_1"] = "lottfarming:potato_2",
+		["lottfarming:potato_2"] = "lottfarming:potato_3",
+		["lottfarming:red_mushroom_1"] = "lottfarming:red_mushroom_2",
+		["lottfarming:red_mushroom_2"] = "lottfarming:red_mushroom_3",
+		["lottfarming:red_mushroom_3"] = "lottfarming:red_mushroom_4",
+		["lottfarming:tomatoes_1"] = "lottfarming:tomatoes_2",
+		["lottfarming:tomatoes_2"] = "lottfarming:tomatoes_3",
+		["lottfarming:tomatoes_3"] = "lottfarming:tomatoes_4",
+		["lottfarming:corn_1"] = "lottfarming:corn_2",
+		["lottfarming:corn_2"] = "lottfarming:corn_21",
+		["lottfarming:corn_21"] = "lottfarming:corn_32",
+		["farming:wheat_1"] = "farming:wheat_2",
+		["farming:wheat_2"] = "farming:wheat_3",
+		["farming:wheat_3"] = "farming:wheat_4",
+		["farming:wheat_4"] = "farming:wheat_5",
+		["farming:wheat_5"] = "farming:wheat_6",
+		["farming:wheat_6"] = "farming:wheat_7",
+		["farming:wheat_7"] = "farming:wheat_8",
+		["farming:cotton_1"] = "farming:cotton_2",
+		["farming:cotton_2"] = "farming:cotton_3",
+		["farming:cotton_3"] = "farming:cotton_4",
+		["farming:cotton_4"] = "farming:cotton_5",
+		["farming:cotton_5"] = "farming:cotton_6",
+		["farming:cotton_6"] = "farming:cotton_7",
+		["farming:cotton_7"] = "farming:cotton_8",
+	}
+	for farm_1, farm_2 in pairs(farm_list) do
+		if name == farm_1 then
+			minetest.env:set_node(pos, {name=farm_2})
+			return true
+		end
+	end
+	return false
+end
+
+
 minetest.register_tool("lottfarming:bacteria_fertiliser", {
 	description = SL("Bacteria Fertiliser"),
 	inventory_image = "lottfarming_bacteria_fertiliser.png",
 	on_use = function(itemstack, user, pointed_thing)
-		if decaying_wood(pointed_thing.under, user:get_inventory(), 10) then
-			itemstack:add_wear(65535/80)
+		if decaying_wood(pointed_thing.under) or growgen(pointed_thing.under) then
+			itemstack:add_wear(65535/20)
 			return itemstack
 		end
 	end
@@ -55,11 +119,7 @@ minetest.register_tool("lottfarming:bacteria_fertiliser", {
 
 minetest.register_craft({
 	output = "lottfarming:bacteria_fertiliser",
-	recipe = {
-		{"default:glass", "", "default:glass"},
-		{"default:glass", "bones:bones", "default:glass"},
-		{"default:glass", "default:glass", "default:glass"},
-	}
+	recipe = {{"lottpotion:glass_bottle_water", "bones:bonedust"}}
 })
 
 minetest.register_craft({

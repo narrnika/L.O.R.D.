@@ -115,6 +115,10 @@ protector.can_dig = function(r, pos, digger, onlyowner, infolevel)
 		return true
 	end
 
+	if minetest.get_node(pos).name == "bones:bones" then
+		return true
+	end
+
 	if infolevel == 3 then infolevel = 1 end
 
 	-- Find the protector nodes
