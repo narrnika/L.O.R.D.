@@ -1,25 +1,7 @@
 minetest.register_craft({
-	type = "fuel",
-	recipe = "bones:bonedust",
-	burntime = 2,
-})
-
-minetest.register_craft({
-	type = "fuel",
-	recipe = "bones:bone",
-	burntime = 4,
-})
-
-minetest.register_craft({
-	type = "fuel",
-	recipe = "bones:bones",
-	burntime = 36,
-})
-
-minetest.register_craft({
 	output = 'bones:bone 9',
 	recipe = {
-		{'bones:bones'},
+		{'group:corpse'},
 	}
 })
 

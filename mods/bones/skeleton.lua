@@ -57,8 +57,20 @@ minetest.register_node("bones:skeleton_body", {
 		dug = {name="default_gravel_footstep", gain=1.0},
 	}),
 	on_place = function(itemstack, placer, pointed_thing)
-			local above = pointed_thing.above
-		if minetest.env:get_node({x = above.x, y = above.y + 1, z = above.z}).name ~= "air" then
+		local under = pointed_thing.under
+		local node_under = minetest.get_node(under)
+		local above = pointed_thing.above
+		local above_2 = {x = above.x, y = above.y, z = above.z}
+		above_2.y = above_2.y + 1
+		if minetest.registered_nodes[node_under.name].on_rightclick then
+			return minetest.registered_nodes[node_under.name].on_rightclick(under, node_under, placer, itemstack)
+		end
+		if minetest.is_protected(above, placer:get_player_name()) or
+		minetest.is_protected(above_2, placer:get_player_name()) then
+			minetest.record_protection_violation(above, placer:get_player_name())
+			return itemstack
+		end
+		if minetest.env:get_node(above_2).name ~= "air" then
 			return itemstack
 		end
 		local fdir = 0
@@ -72,14 +84,14 @@ minetest.register_node("bones:skeleton_body", {
 			fdir = minetest.dir_to_facedir(dir)
 		end
 		minetest.env:add_node(above, {name = "bones:skeleton_body", param2 = fdir})
-		minetest.env:add_node({x = above.x, y = above.y + 1, z = above.z}, {name = "bones:skeleton", param2 = fdir})
+		minetest.env:add_node(above_2, {name = "bones:skeleton", param2 = fdir})
 		if not minetest.setting_getbool("creative_mode") then
 			itemstack:take_item()
 		end
 		return itemstack
 	end,
 	on_destruct = function(pos)
-			local p = {x=pos.x, y=pos.y+1, z=pos.z}
+		local p = {x=pos.x, y=pos.y+1, z=pos.z}
 		minetest.env:remove_node(p)
 	end
 })
