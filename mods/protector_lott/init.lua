@@ -115,7 +115,7 @@ protector.can_dig = function(r, pos, digger, onlyowner, infolevel)
 		return true
 	end
 
-	if minetest.get_node(pos).name == "bones:bones" then
+	if minetest.registered_nodes[minetest.get_node(pos).name].groups["corpse"] then
 		return true
 	end
 
