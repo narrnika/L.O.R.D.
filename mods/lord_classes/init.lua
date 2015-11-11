@@ -3,38 +3,39 @@ local SL = rawget(_G, "intllib") and intllib.Getter() or function(s) return s en
 dofile(minetest.get_modpath(minetest.get_current_modname()).."/".."privileges.lua")
 
 -- Определение особенностей рас
-local classes	=	{}
-classes.shadow	=	{
+classes	=	{}
+classes.list	=	{}
+classes.list.shadow	=	{
 	name	= SL("Shadow"),
 	texture	= {male = "shadow_skin.png", female = "shadow_skinf.png"},
 	privs	= {male = {"fly", "fast", "noclip", "GAMEshadow"}, female = {"fly", "fast", "noclip", "shout", "GAMEshadow"}},
 	msg		= {male = SL("You became a shadow-male"), female = SL("You became a shadow-female")},
 }
-classes.orc		=	{
+classes.list.orc		=	{
 	name	= SL("Orc"),
 	texture	= {male = "orc_skin.png", female = "orc_skin.png"},
 	privs	= {male = {"interact", "shout", "home", "GAMEorc", "GAMEmale"}, female = {"interact", "shout", "home", "GAMEorc", "GAMEfemale"}},
 	msg		= {male = SL("You became a orc-male"), female = SL("You became a orc-female")},
 }
-classes.man		=	{
+classes.list.man		=	{
 	name	= SL("Man"),
 	texture	= {male = "man_skin.png", female = "man_skinf.png"},
 	privs	= {male = {"interact", "shout", "home", "GAMEman", "GAMEmale"}, female = {"interact", "shout", "home", "GAMEman", "GAMEfemale"}},
 	msg		= {male = SL("You became a man-male"), female = SL("You became a man-female")},
 }
-classes.dwarf	=	{
+classes.list.dwarf	=	{
 	name	= SL("Dwarf"),
 	texture	= {male = "dwarf_skin.png", female = "dwarf_skinf.png"},
 	privs	= {male = {"interact", "shout", "home", "GAMEdwarf", "GAMEmale"}, female = {"interact", "shout", "home", "GAMEdwarf", "GAMEfemale"}},
 	msg		= {male = SL("You became a dwarf-male"), female = SL("You became a dwarf-female")},
 }
-classes.hobbit	=	{
+classes.list.hobbit	=	{
 	name	= SL("Hobbit"),
 	texture	= {male = "hobbit_skin.png", female = "hobbit_skinf.png"},
 	privs	= {male = {"interact", "shout", "home", "GAMEhobbit", "GAMEmale"}, female = {"interact", "shout", "home", "GAMEhobbit", "GAMEfemale"}},
 	msg		= {male = SL("You became a hobbit-male"), female = SL("You became a hobbit-female")},
 }
-classes.elf		=	{
+classes.list.elf		=	{
 	name	= SL("Elf"),
 	texture	= {male = "elf_skin.png", female = "elf_skinf.png"},
 	privs	= {male = {"interact", "shout", "home", "GAMEelf", "GAMEmale"}, female = {"interact", "shout", "home", "GAMEelf", "GAMEfemale"}},
@@ -42,12 +43,13 @@ classes.elf		=	{
 }
 
 -- Раса и пол по умолчанию
-local def_race = "shadow"
-local def_gender = "female"
-local def_priv = "GAMEshadow"
+classes.default = {}
+classes.default.race = "shadow"
+classes.default.gender = "female"
+classes.default.priv = "GAMEshadow"
 
 -- Определение расы
-local function get_race(name) -- возвращает таблицу {race, gender}
+classes.get_race = function (name) -- возвращает таблицу {race, gender}
 	local privs = minetest.get_player_privs(name)
 	local ans = {}
 	if minetest.check_player_privs(name, {GAMEelf = true}) then
@@ -72,22 +74,22 @@ local function get_race(name) -- возвращает таблицу {race, gend
 end
 
 -- Присвоение расы
-local function set_race(name, race, gender)
+classes.set_race = function (name, race, gender)
 	local privs = {}
-	for _, priv in pairs(classes[race].privs[gender]) do
+	for _, priv in pairs(classes.list[race].privs[gender]) do
 		privs[priv] = true
 	end
 	minetest.set_player_privs(name, privs)
-	multiskin[name].skin = classes[race].texture[gender]
+	multiskin[name].skin = classes.list[race].texture[gender]
 	multiskin:update_player_visuals(minetest.get_player_by_name(name))
 end
 
 -- Форма выбора расы/пола
-local function change_race_form()
+classes.change_race_form = function ()
 	local form = "size[7,4]background[7,4;1,1;gui_formbg.png;true]"
 	local list = {}
-	for r, d in pairs(classes) do
-		if r ~= def_race then table.insert(list, SL(d.name)) end
+	for r, d in pairs(classes.list) do
+		if r ~= classes.default.race then table.insert(list, SL(d.name)) end
 	end
 	list = table.concat(list, ",")
 	form = form.."label[0,0;"..minetest.formspec_escape(SL("Please select the race you wish to be:")).."]"
@@ -104,7 +106,7 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 	if formname == "change_race" then
 		if fields.btn_ok then -- кнопка Ok
 			local race, gender = "", ""
-			for r, d in pairs(classes) do
+			for r, d in pairs(classes.list) do
 				if fields.lst_race == d.name then race = r end
 			end
 			if fields.lst_gender == SL("Male") then
@@ -112,13 +114,13 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 			else
 				gender = "female"
 			end
-			set_race(name, race, gender)
-			minetest.chat_send_player(name, classes[race].msg[gender])
+			classes.set_race(name, race, gender)
+			minetest.chat_send_player(name, classes.list[race].msg[gender])
 			minetest.log("action", name.." became a "..race..", "..gender)
 		elseif fields.quit then -- выход с формы (cancel или esc)
-			set_race(name, def_race, def_gender)
-			minetest.chat_send_player(name, classes[def_race].msg[def_gender])
-			minetest.log("action", name.." became a "..def_race..", "..def_gender)
+			classes.set_race(name, classes.default.race, classes.default.gender)
+			minetest.chat_send_player(name, classes.list[classes.default.race].msg[classes.default.gender])
+			minetest.log("action", name.." became a "..classes.default.race..", "..classes.default.gender)
 		else -- переключение списков
 			-- empty
 		end
@@ -128,16 +130,16 @@ end)
 -- Вход игрока в игру
 minetest.register_on_joinplayer(function(player) -- подключение игрока к игре
 	local name = player:get_player_name()
-	if get_race(name).race == def_race then -- раса определена - тень
-		multiskin[name].skin = classes[get_race(name).race].texture[get_race(name).gender] -- ставим базовый скин
+	if classes.get_race(name).race == classes.default.race then -- раса определена - тень
+		multiskin[name].skin = classes.list[classes.get_race(name).race].texture[classes.get_race(name).gender] -- ставим базовый скин
 		multiskin:update_player_visuals(player) -- обновляем скин
-		minetest.show_formspec(name, "change_race", change_race_form()) -- показываем форму выбора
-	elseif get_race(name).race then -- раса - не тень, но определена
-		multiskin[name].skin = classes[get_race(name).race].texture[get_race(name).gender] -- ставим базовый скин
+		minetest.show_formspec(name, "change_race", classes.change_race_form()) -- показываем форму выбора
+	elseif classes.get_race(name).race then -- раса - не тень, но определена
+		multiskin[name].skin = classes.list[classes.get_race(name).race].texture[classes.get_race(name).gender] -- ставим базовый скин
 		multiskin:update_player_visuals(player) -- обновляем скин
 	else -- раса не определена
-		set_race(name, def_race, def_gender) -- делаем тенью
-		minetest.show_formspec(name, "change_race", change_race_form()) -- показываем форму выбора
+		classes.set_race(name, classes.default.race, classes.default.gender) -- делаем тенью
+		minetest.show_formspec(name, "change_race", classes.change_race_form()) -- показываем форму выбора
 	end
 end)
 
@@ -159,17 +161,17 @@ minetest.register_chatcommand("race", { -- изменение расы любо�
 			minetest.chat_send_player(name, SL("fail_message_2"))
 		elseif not(minetest.get_player_by_name(params_list[1])) then -- неверное имя игрока
 			minetest.chat_send_player(name, SL("fail_message_3"))
-		elseif not(classes[params_list[2]]) then -- неверное название расы
+		elseif not(classes.list[params_list[2]]) then -- неверное название расы
 			local list = {}
-			for i in pairs(classes) do table.insert(list, i) end
+			for i in pairs(classes.list) do table.insert(list, i) end
 			list = table.concat(list, ", ")
 			minetest.chat_send_player(name, SL("fail_message_4").." "..list..")")
 		elseif not(params_list[3] == 'male' or params_list[3] == 'female') then -- неверное название пола
 			minetest.chat_send_player(name, SL("fail_message_5"))
 		else -- всё верно
-			set_race(params_list[1], params_list[2], params_list[3])
+			classes.set_race(params_list[1], params_list[2], params_list[3])
 			minetest.chat_send_player(name, SL("ok_message_1").." "..params_list[1])
-			minetest.chat_send_player(params_list[1], SL("ok_message_2")..classes[params_list[2]].msg[params_list[3]])
+			minetest.chat_send_player(params_list[1], SL("ok_message_2")..classes.list[params_list[2]].msg[params_list[3]])
 		end
 	end
 })
