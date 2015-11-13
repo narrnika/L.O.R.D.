@@ -186,6 +186,8 @@ minetest.register_on_dieplayer(function(player)
 	if minetest.setting_getbool("creative_mode") then return end
 	local race = classes.get_race(player:get_player_name()).race
 	local gender = classes.get_race(player:get_player_name()).gender
+	local player_inv = player:get_inventory()
+	local armor_inv = minetest.get_inventory({type="detached", name=player:get_player_name().."_armor"})
 	
 	if race == classes.default.race then return end
 	
@@ -199,6 +201,12 @@ minetest.register_on_dieplayer(function(player)
 		if new_pos then
 			pos = new_pos
 		else
+			for i = 1, player_inv:get_size("main") do player_inv:set_stack("main", i, nil) end
+			for i = 1, player_inv:get_size("craft") do player_inv:set_stack("craft", i, nil) end
+			for i = 1, player_inv:get_size("armor") do player_inv:set_stack("armor", i, nil) end
+			for i = 1, armor_inv:get_size("armor") do armor_inv:set_stack("armor", i, nil) end
+			armor:set_player_armor(player)
+			armor:update_inventory(player)
 			return
 		end
 	end
@@ -208,7 +216,6 @@ minetest.register_on_dieplayer(function(player)
 	
 	local meta = minetest.get_meta(pos)
 	local inv = meta:get_inventory()
-	local player_inv = player:get_inventory()
 	inv:set_size("main", 8*4)
 	local empty_list = inv:get_list("main")
 	inv:set_list("main", player_inv:get_list("main"))
@@ -217,6 +224,13 @@ minetest.register_on_dieplayer(function(player)
 		inv:add_item("main", player_inv:get_stack("craft", i))
 		player_inv:set_stack("craft", i, nil)
 	end
+	for i = 1, player_inv:get_size("armor") do
+		inv:add_item("main", player_inv:get_stack("armor", i))
+		player_inv:set_stack("armor", i, nil)
+		armor_inv:set_stack("armor", i, nil)
+	end
+	armor:set_player_armor(player)
+	armor:update_inventory(player)
 	meta:set_string("formspec",bones_formspec)
 	if publish < 0 then -- все трупы - достояние общественности
 		meta:set_string("infotext", SL("Unknown corpse"))

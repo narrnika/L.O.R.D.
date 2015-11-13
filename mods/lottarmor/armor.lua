@@ -514,6 +514,7 @@ if ARMOR_DROP == true or ARMOR_DESTROY == true then
 			obj:setvelocity({x=math.random(-1, 1), y=5, z=math.random(-1, 1)})
 		end
 	end
+--[[
 	minetest.register_on_dieplayer(function(player)
 		local name, player_inv, armor_inv, pos = armor:get_valid_player(player, "[on_dieplayer]")
 		if not name then
@@ -561,6 +562,7 @@ if ARMOR_DROP == true or ARMOR_DESTROY == true then
 			end)
 		end
 	end)
+]]--
 end
 
 minetest.register_globalstep(function(dtime)
