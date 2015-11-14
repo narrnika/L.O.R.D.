@@ -105,14 +105,12 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 	local name = player:get_player_name()
 	if formname == "change_race" then
 		if fields.btn_ok then -- кнопка Ok
-			local race, gender = "", ""
+			local race, gender = classes.default.race, classes.default.gender
 			for r, d in pairs(classes.list) do
 				if fields.lst_race == d.name then race = r end
 			end
 			if fields.lst_gender == SL("Male") then
 				gender = "male"
-			else
-				gender = "female"
 			end
 			classes.set_race(name, race, gender)
 			minetest.chat_send_player(name, classes.list[race].msg[gender])

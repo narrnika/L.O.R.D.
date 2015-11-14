@@ -204,7 +204,9 @@ minetest.register_on_dieplayer(function(player)
 			for i = 1, player_inv:get_size("main") do player_inv:set_stack("main", i, nil) end
 			for i = 1, player_inv:get_size("craft") do player_inv:set_stack("craft", i, nil) end
 			for i = 1, player_inv:get_size("armor") do player_inv:set_stack("armor", i, nil) end
-			for i = 1, armor_inv:get_size("armor") do armor_inv:set_stack("armor", i, nil) end
+			if armor_inv then 
+				for i = 1, armor_inv:get_size("armor") do armor_inv:set_stack("armor", i, nil) end
+			end
 			armor:set_player_armor(player)
 			armor:update_inventory(player)
 			return
@@ -227,7 +229,9 @@ minetest.register_on_dieplayer(function(player)
 	for i = 1, player_inv:get_size("armor") do
 		inv:add_item("main", player_inv:get_stack("armor", i))
 		player_inv:set_stack("armor", i, nil)
-		armor_inv:set_stack("armor", i, nil)
+		if armor_inv then 
+			armor_inv:set_stack("armor", i, nil)
+		end
 	end
 	armor:set_player_armor(player)
 	armor:update_inventory(player)
