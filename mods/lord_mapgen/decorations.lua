@@ -1,7 +1,7 @@
 local base_scale = 0.05
 local dx, dy, dz = 13, 13, 13
 local function simple_tree(tree, leaf)
-	schematic = {}
+	local schematic = {}
 	schematic.size = {x=5, y=6, z=5}
 	schematic.data = {}
 	for z = 1, 5 do
@@ -16,6 +16,7 @@ local function simple_tree(tree, leaf)
 	end
 	return schematic
 end
+local noise = {offset = 0, scale = base_scale*0.1, spread = {x=dx*0.5, y=dy*0.5, z=dz*0.5}, seed = SEED, octaves = 5, persistence = 1}
 
 --= angmar =--
 minetest.register_decoration({decoration = "default:dry_shrub",
@@ -48,16 +49,16 @@ minetest.register_decoration({schematic = simple_tree("lottplants:pinetree", "lo
 	place_on = {"lottmapgen:angsnowblock"},
 	flags = {place_center_x = true, place_center_y = false, place_center_z = true, force_placement = true},
 })
--- angmar_fort
+--[[ angmar_fort
 minetest.register_decoration({
 	deco_type = "schematic",
 	schematic = "schems/angmarfort.mts",
-	noise_params = {offset=0, scale=base_scale*0.25, spread={x = dx, y = dy, z = dz}, seed=SEED+05, octaves=3, persist=0.7},
+	noise_params = noise,
 	biomes = {"angmar"},
 	place_on = {"lottmapgen:angsnowblock"},
 	flags = {place_center_x = true, place_center_y = false, place_center_z = true, force_placement = true},
 	rotation = "random",
-})
+})]]--
 
 --= ironhill =--
 minetest.register_decoration({decoration = "default:grass_1",
@@ -174,16 +175,16 @@ minetest.register_decoration({schematic = simple_tree("default:jungletree", "lot
 	place_on = {"lottmapgen:mirkwood_grass"},
 	flags = {place_center_x = true, place_center_y = false, place_center_z = true, force_placement = true},
 })
--- mirk_house
+--[[ mirk_house
 minetest.register_decoration({
 	deco_type = "schematic",
 	schematic = "schems/mirkhouse.mts",
-	noise_params = {offset=0, scale=base_scale*0.25, spread={x = dx, y = dy, z = dz}, seed=SEED+05, octaves=3, persist=0.7},
+	noise_params = noise,
 	biomes = {"mirkwood"},
 	place_on = {"lottmapgen:mirkwood_grass"},
 	flags = {place_center_x = true, place_center_y = false, place_center_z = true, force_placement = true},
 	rotation = "random",
-})
+})]]--
 
 --= fangorn =--
 minetest.register_decoration({decoration = "lottplants:berries_wild",
@@ -457,16 +458,16 @@ minetest.register_decoration({schematic = simple_tree("default:tree", "default:l
 	place_on = {"lottmapgen:gondor_grass"},
 	flags = {place_center_x = true, place_center_y = false, place_center_z = true, force_placement = true},
 })
--- gondor_fort
+--[[ gondor_fort
 minetest.register_decoration({
 	deco_type = "schematic",
 	schematic = "schems/gondorfort.mts",
-	noise_params = {offset=0, scale=base_scale*0.25, spread={x = dx, y = dy, z = dz}, seed=SEED+05, octaves=3, persist=0.7},
+	noise_params = noise,
 	biomes = {"gondor"},
 	place_on = {"lottmapgen:gondor_grass"},
 	flags = {place_center_x = true, place_center_y = false, place_center_z = true, force_placement = true},
 	rotation = "random",
-})
+})]]--
 
 --= shire =--
 minetest.register_decoration({decoration = "lottplants:corn_wild",
@@ -562,16 +563,16 @@ minetest.register_decoration({schematic = simple_tree("default:tree", "default:l
 	place_on = {"lottmapgen:shire_grass"},
 	flags = {place_center_x = true, place_center_y = false, place_center_z = true, force_placement = true},
 })
--- hobbite_hole
+--[[ hobbite_hole
 minetest.register_decoration({
 	deco_type = "schematic",
 	schematic = "schems/hobbithole.mts",
-	noise_params = {offset=0, scale=base_scale*0.25, spread={x = dx, y = dy, z = dz}, seed=SEED+05, octaves=3, persist=0.7},
+	noise_params = noise,
 	biomes = {"shire"},
 	place_on = {"lottmapgen:shire_grass"},
 	flags = {place_center_x = true, place_center_y = false, place_center_z = true, force_placement = true},
 	rotation = "random",
-})
+})]]--
 
 --= rohan =--
 minetest.register_decoration({decoration = "default:grass_1",
@@ -717,16 +718,16 @@ minetest.register_decoration({schematic = simple_tree("default:tree", "default:l
 	place_on = {"lottmapgen:rohan_grass"},
 	flags = {place_center_x = true, place_center_y = false, place_center_z = true, force_placement = true},
 })
--- rohan_fort
+--[[ rohan_fort
 minetest.register_decoration({
 	deco_type = "schematic",
 	schematic = "schems/rohanfort.mts",
-	noise_params = {offset=0, scale=base_scale*0.25, spread={x = dx, y = dy, z = dz}, seed=SEED+05, octaves=3, persist=0.7},
+	noise_params = noise,
 	biomes = {"rohan"},
 	place_on = {"lottmapgen:rohan_grass"},
 	flags = {place_center_x = true, place_center_y = false, place_center_z = true, force_placement = true},
 	rotation = "random",
-})
+})]]--
 
 --= lorien =--
 minetest.register_decoration({decoration = "lottplants:lorien_grass_1",
@@ -808,16 +809,16 @@ minetest.register_decoration({schematic = simple_tree("lottplants:mallorntree_yo
 	place_on = {"lottmapgen:lorien_grass"},
 	flags = {place_center_x = true, place_center_y = false, place_center_z = true, force_placement = true},
 })
--- mallorn_house
+--[[ mallorn_house
 minetest.register_decoration({
 	deco_type = "schematic",
 	schematic = "schems/mallornhouse.mts",
-	noise_params = {offset=0, scale=base_scale*0.25, spread={x = dx, y = dy, z = dz}, seed=SEED+05, octaves=3, persist=0.7},
+	noise_params = noise,
 	biomes = {"lorien"},
 	place_on = {"lottmapgen:lorien_grass"},
 	flags = {place_center_x = true, place_center_y = false, place_center_z = true, force_placement = true},
 	rotation = "random",
-})
+})]]--
 
 --= ithilien =--
 minetest.register_decoration({decoration = "lottplants:eglantive",
@@ -993,13 +994,13 @@ minetest.register_decoration({
 	flags = {place_center_x = true, place_center_y = false, place_center_z = true, force_placement = true},
 	rotation = "random",
 })
--- orc_fort
+--[[ orc_fort
 minetest.register_decoration({
 	deco_type = "schematic",
 	schematic = "schems/orcfort.mts",
-	noise_params = {offset=0, scale=base_scale, spread={x = dx, y = dy, z = dz}, seed=SEED+03, octaves=1},
+	noise_params = noise,
 	biomes = {"mordor"},
 	place_on = {"lottmapgen:mordor_stone"},
 	flags = {place_center_x = true, place_center_y = false, place_center_z = true, force_placement = true},
 	rotation = "random",
-})
+})]]--
